@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/fAeM6X74IRnYOhRq7D4keyCOV7U</id>
+  <title>arXiv Query: search_query=&amp;id_list=2402.02750&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-10T10:23:26Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=1&amp;id_list=2402.02750" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2402.02750v2</id>
+    <title>KIVI: A Tuning-Free Asymmetric 2bit Quantization for KV Cache</title>
+    <updated>2024-07-25T09:16:05Z</updated>
+    <link href="https://arxiv.org/abs/2402.02750v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2402.02750v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Efficiently serving large language models (LLMs) requires batching of many requests to reduce the cost per request. Yet, with larger batch sizes and longer context lengths, the key-value (KV) cache, which stores attention keys and values to avoid re-computations, significantly increases memory demands and becomes the new bottleneck in speed and memory usage. Additionally, the loading of the KV cache causes the computational core to be idle, which limits the inference speed. A straightforward and effective solution to reduce KV cache size is quantization, which decreases the total bytes taken by KV cache. However, there is a lack of in-depth studies that explore the element distribution of KV cache to understand the hardness and limitation of KV cache quantization. To fill the gap, we conducted a comprehensive study on the element distribution in KV cache of popular LLMs. Our findings indicate that the key cache should be quantized per-channel, i.e., group elements along the channel dimension and quantize them together. In contrast, the value cache should be quantized per-token. From this analysis, we developed a tuning-free 2bit KV cache quantization algorithm named KIVI. With hardware-friendly implementation, KIVI can enable Llama, Falcon, and Mistral models to maintain almost the same quality while using $\mathbf{2.6\times}$ less peak memory (including model weight). This reduction in memory usage enables up to $\mathbf{4\times}$ larger batch size, bringing $\mathbf{2.35\times \sim 3.47\times}$ throughput on real LLM inference workload. The source code is available at https://github.com/jy-yuan/KIVI.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.PF" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-02-05T06:06:47Z</published>
+    <arxiv:comment>ICML2024</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Zirui Liu</name>
+    </author>
+    <author>
+      <name>Jiayi Yuan</name>
+    </author>
+    <author>
+      <name>Hongye Jin</name>
+    </author>
+    <author>
+      <name>Shaochen Zhong</name>
+    </author>
+    <author>
+      <name>Zhaozhuo Xu</name>
+    </author>
+    <author>
+      <name>Vladimir Braverman</name>
+    </author>
+    <author>
+      <name>Beidi Chen</name>
+    </author>
+    <author>
+      <name>Xia Hu</name>
+    </author>
+    <arxiv:doi>10.13140/RG.2.2.28167.37282</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.13140/RG.2.2.28167.37282" title="doi"/>
+  </entry>
+</feed>

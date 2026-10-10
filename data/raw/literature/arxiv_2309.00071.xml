@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/dVkU1hcYyRI0sjrx4WDbeQKJov0</id>
+  <title>arXiv Query: search_query=&amp;id_list=2309.00071&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-10T10:23:52Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=1&amp;id_list=2309.00071" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2309.00071v3</id>
+    <title>YaRN: Efficient Context Window Extension of Large Language Models</title>
+    <updated>2026-02-06T19:40:50Z</updated>
+    <link href="https://arxiv.org/abs/2309.00071v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2309.00071v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Rotary Position Embeddings (RoPE) have been shown to effectively encode positional information in transformer-based language models. However, these models fail to generalize past the sequence length they were trained on. We present YaRN (Yet another RoPE extensioN method), a compute-efficient method to extend the context window of such models, requiring 10x less tokens and 2.5x less training steps than previous methods. Using YaRN, we show that LLaMA models can effectively utilize and extrapolate to context lengths much longer than their original pre-training would allow, while also surpassing previous the state-of-the-art at context window extension. In addition, we demonstrate that YaRN exhibits the capability to extrapolate beyond the limited context of a fine-tuning dataset. Code is available at https://github.com/jquesnelle/yarn</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2023-08-31T18:18:07Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Bowen Peng</name>
+    </author>
+    <author>
+      <name>Jeffrey Quesnelle</name>
+    </author>
+    <author>
+      <name>Honglu Fan</name>
+    </author>
+    <author>
+      <name>Enrico Shippole</name>
+    </author>
+  </entry>
+</feed>

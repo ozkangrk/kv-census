@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/yh/GzOSLXRLFOsBR72HjXh2uqmM</id>
+  <title>arXiv Query: search_query=&amp;id_list=2405.10637&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-10T10:23:46Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=1&amp;id_list=2405.10637" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2405.10637v2</id>
+    <title>Layer-Condensed KV Cache for Efficient Inference of Large Language Models</title>
+    <updated>2024-06-04T00:08:10Z</updated>
+    <link href="https://arxiv.org/abs/2405.10637v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2405.10637v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Huge memory consumption has been a major bottleneck for deploying high-throughput large language models in real-world applications. In addition to the large number of parameters, the key-value (KV) cache for the attention mechanism in the transformer architecture consumes a significant amount of memory, especially when the number of layers is large for deep language models. In this paper, we propose a novel method that only computes and caches the KVs of a small number of layers, thus significantly saving memory consumption and improving inference throughput. Our experiments on large language models show that our method achieves up to 26$\times$ higher throughput than standard transformers and competitive performance in language modeling and downstream tasks. In addition, our method is orthogonal to existing transformer memory-saving techniques, so it is straightforward to integrate them with our model, achieving further improvement in inference efficiency. Our code is available at https://github.com/whyNLP/LCKV.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-05-17T08:59:46Z</published>
+    <arxiv:comment>Accepted to ACL2024 main conference</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Haoyi Wu</name>
+    </author>
+    <author>
+      <name>Kewei Tu</name>
+    </author>
+  </entry>
+</feed>

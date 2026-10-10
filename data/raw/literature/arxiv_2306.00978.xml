@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/ztj05hgdF51LmN5ah5xjrP0m97U</id>
+  <title>arXiv Query: search_query=&amp;id_list=2306.00978&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-10T10:24:52Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=1&amp;id_list=2306.00978" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2306.00978v6</id>
+    <title>AWQ: Activation-aware Weight Quantization for LLM Compression and Acceleration</title>
+    <updated>2026-04-25T06:58:16Z</updated>
+    <link href="https://arxiv.org/abs/2306.00978v6" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2306.00978v6" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large language models (LLMs) have transformed numerous AI applications. On-device LLM is becoming increasingly important: running LLMs locally on edge devices can reduce the cloud computing cost and protect users' privacy. However, the astronomical model size and the limited hardware resource pose significant deployment challenges. We propose Activation-aware Weight Quantization (AWQ), a hardware-friendly approach for LLM low-bit weight-only quantization. AWQ finds that not all weights in an LLM are equally important. Protecting only 1% salient weights can greatly reduce quantization error. To identify salient weight channels, we should refer to the activation distribution, not weights. To avoid the hardware-inefficient mix-precision quantization, we mathematically derive that scaling up the salient channels can reduce the quantization error. AWQ employs an equivalent transformation to scale the salient weight channels to protect them. The scale is determined by collecting the activation statistics offline. AWQ does not rely on any backpropagation or reconstruction, so it generalizes to different domains and modalities without overfitting the calibration set. AWQ outperforms existing work on various language modeling and domain-specific benchmarks (coding and math). Thanks to better generalization, it achieves excellent quantization performance for instruction-tuned LMs and, for the first time, multi-modal LMs. Alongside AWQ, we implement TinyChat, an efficient and flexible inference framework tailored for 4-bit on-device LLM/VLMs. With kernel fusion and platform-aware weight packing, TinyChat offers more than 3x speedup over the Huggingface FP16 implementation on both desktop and mobile GPUs. It also democratizes the deployment of the 70B Llama-2 model on mobile GPUs.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2023-06-01T17:59:10Z</published>
+    <arxiv:comment>MLSys 2024 Best Paper Award. Code available at: https://github.com/mit-han-lab/llm-awq</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Ji Lin</name>
+    </author>
+    <author>
+      <name>Jiaming Tang</name>
+    </author>
+    <author>
+      <name>Haotian Tang</name>
+    </author>
+    <author>
+      <name>Shang Yang</name>
+    </author>
+    <author>
+      <name>Wei-Ming Chen</name>
+    </author>
+    <author>
+      <name>Wei-Chen Wang</name>
+    </author>
+    <author>
+      <name>Guangxuan Xiao</name>
+    </author>
+    <author>
+      <name>Xingyu Dang</name>
+    </author>
+    <author>
+      <name>Chuang Gan</name>
+    </author>
+    <author>
+      <name>Song Han</name>
+    </author>
+  </entry>
+</feed>

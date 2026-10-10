@@ -1,0 +1,266 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/yLhbtDliraYi2cgEytiOjDQB5WY</id>
+  <title>arXiv Query: search_query=all:"Falcon-H1"&amp;id_list=&amp;start=0&amp;max_results=8</title>
+  <updated>2026-10-10T10:24:19Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=all:%22Falcon-H1%22&amp;start=0&amp;max_results=8&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>8</opensearch:itemsPerPage>
+  <opensearch:totalResults>9</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2507.22448v1</id>
+    <title>Falcon-H1: A Family of Hybrid-Head Language Models Redefining Efficiency and Performance</title>
+    <updated>2025-07-30T07:55:33Z</updated>
+    <link href="https://arxiv.org/abs/2507.22448v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2507.22448v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>In this report, we introduce Falcon-H1, a new series of large language models (LLMs) featuring hybrid architecture designs optimized for both high performance and efficiency across diverse use cases. Unlike earlier Falcon models built solely on Transformer or Mamba architectures, Falcon-H1 adopts a parallel hybrid approach that combines Transformer-based attention with State Space Models (SSMs), known for superior long-context memory and computational efficiency. We systematically revisited model design, data strategy, and training dynamics, challenging conventional practices in the field. Falcon-H1 is released in multiple configurations, including base and instruction-tuned variants at 0.5B, 1.5B, 1.5B-deep, 3B, 7B, and 34B parameters. Quantized instruction-tuned models are also available, totaling over 30 checkpoints on Hugging Face Hub. Falcon-H1 models demonstrate state-of-the-art performance and exceptional parameter and training efficiency. The flagship Falcon-H1-34B matches or outperforms models up to 70B scale, such as Qwen3-32B, Qwen2.5-72B, and Llama3.3-70B, while using fewer parameters and less data. Smaller models show similar trends: the Falcon-H1-1.5B-Deep rivals current leading 7B-10B models, and Falcon-H1-0.5B performs comparably to typical 7B models from 2024. These models excel across reasoning, mathematics, multilingual tasks, instruction following, and scientific knowledge. With support for up to 256K context tokens and 18 languages, Falcon-H1 is suitable for a wide range of applications. All models are released under a permissive open-source license, underscoring our commitment to accessible and impactful AI research.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-07-30T07:55:33Z</published>
+    <arxiv:comment>Technical report of Falcon-H1 model series</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Jingwei Zuo</name>
+    </author>
+    <author>
+      <name>Maksim Velikanov</name>
+    </author>
+    <author>
+      <name>Ilyas Chahed</name>
+    </author>
+    <author>
+      <name>Younes Belkada</name>
+    </author>
+    <author>
+      <name>Dhia Eddine Rhayem</name>
+    </author>
+    <author>
+      <name>Guillaume Kunsch</name>
+    </author>
+    <author>
+      <name>Hakim Hacid</name>
+    </author>
+    <author>
+      <name>Hamza Yous</name>
+    </author>
+    <author>
+      <name>Brahim Farhat</name>
+    </author>
+    <author>
+      <name>Ibrahim Khadraoui</name>
+    </author>
+    <author>
+      <name>Mugariya Farooq</name>
+    </author>
+    <author>
+      <name>Giulia Campesan</name>
+    </author>
+    <author>
+      <name>Ruxandra Cojocaru</name>
+    </author>
+    <author>
+      <name>Yasser Djilali</name>
+    </author>
+    <author>
+      <name>Shi Hu</name>
+    </author>
+    <author>
+      <name>Iheb Chaabane</name>
+    </author>
+    <author>
+      <name>Puneesh Khanna</name>
+    </author>
+    <author>
+      <name>Mohamed El Amine Seddik</name>
+    </author>
+    <author>
+      <name>Ngoc Dung Huynh</name>
+    </author>
+    <author>
+      <name>Phuc Le Khac</name>
+    </author>
+    <author>
+      <name>Leen AlQadi</name>
+    </author>
+    <author>
+      <name>Billel Mokeddem</name>
+    </author>
+    <author>
+      <name>Mohamed Chami</name>
+    </author>
+    <author>
+      <name>Abdalgader Abubaker</name>
+    </author>
+    <author>
+      <name>Mikhail Lubinets</name>
+    </author>
+    <author>
+      <name>Kacper Piskorski</name>
+    </author>
+    <author>
+      <name>Slim Frikha</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.01106v1</id>
+    <title>Component-Aware Self-Speculative Decoding in Hybrid Language Models</title>
+    <updated>2026-05-01T21:25:25Z</updated>
+    <link href="https://arxiv.org/abs/2605.01106v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.01106v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Speculative decoding accelerates autoregressive inference by drafting candidate tokens with a fast model and verifying them in parallel with the target. Self-speculative methods avoid the need for an external drafter but have been studied exclusively in homogeneous Transformer architectures. We introduce component-aware self-speculative decoding, the first method to exploit the internal architectural heterogeneity of hybrid language models, isolating the SSM/linear-attention subgraph as a zero-cost internal draft. We evaluate this on two architecturally distinct hybrid families: Falcon-H1 (parallel: Mamba-2 + attention per layer) and Qwen3.5 (sequential: interleaved linear and attention layers), with a pure Transformer control (Qwen2.5). Parallel hybrids achieve acceptance rates of alpha = 0.68 at draft length k=2 under greedy decoding, while sequential hybrids yield only alpha = 0.038 -- an 18x gap attributable to how each architecture integrates its components. The property is scale-invariant: Falcon-H1 at 3B reproduces the rates observed at 0.5B. We further show that perplexity degradation from a companion ablation study predicts speculative viability without running speculative decoding: a 3.15x ratio (Falcon) maps to alpha = 0.37 at k=4, while 81.96x (Qwen) maps to alpha = 0.019. For sequential hybrids, generic LayerSkip achieves 12x higher acceptance rates than the component-aware strategy. The composition pattern of hybrid models -- not merely the presence of alternative components -- determines whether component-level self-speculation is viable.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-01T21:25:25Z</published>
+    <arxiv:comment>29 pages, 1 figure, 9 tables. Code: https://github.com/hecboar/hybrid-speculative-decoding</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Hector Borobia</name>
+    </author>
+    <author>
+      <name>Elies Seguí-Mas</name>
+    </author>
+    <author>
+      <name>Guillermina Tormo-Carbó</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.04434v1</id>
+    <title>What Attention Recalls and Recurrence Controls in Hybrid Language Models</title>
+    <updated>2026-09-03T19:56:26Z</updated>
+    <link href="https://arxiv.org/abs/2609.04434v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.04434v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Hybrid language models combine attention with a fixed-size recurrent state, but the role of each channel remains unclear. We introduce two cache-level interventions. Split-prefill keeps only the KV cache or only the recurrent state from a prefilled context, then generates an answer. State-swap pairs the KV cache from one context with the recurrent state from another in a single forward pass. On Qwen3.5 and Falcon-H1, the two channels split sharply by function. Exact retrieval survives only through attention (64-98% of full accuracy) and collapses to zero through recurrence. Output language and persona reverse the pattern: both survive recurrence (70-80% and 3-5x) while KV-only drops to ~1% language accuracy. State-swap confirms this causally: the answer takes its value from the KV side and its language from the recurrent side. Recurrent-only generation also accepts words that were never in the context but share meaning or parts with seen items. Attention provides a lookup over what was said; the recurrent state shapes how the model says it next.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-03T19:56:26Z</published>
+    <arxiv:comment>Accepted to Findings of EMNLP 2026. 13 pages, 3 figures, 8 tables. Code: https://github.com/kirillTerra/split-prefill</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Kirill Afendulev</name>
+    </author>
+    <author>
+      <name>Alexey Dontsov</name>
+    </author>
+    <author>
+      <name>Elena Tutubalina</name>
+    </author>
+    <author>
+      <name>Anton Korznikov</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.28827v1</id>
+    <title>RightNow-Arabic-0.5B-Turbo: An Open Sub-1B Arabic Language Model via Vocabulary Injection and Edge-First Deployment</title>
+    <updated>2026-04-10T00:56:50Z</updated>
+    <link href="https://arxiv.org/abs/2605.28827v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.28827v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Open Arabic large language models split into two classes: sub-1B multilingual models that treat Arabic as an afterthought (Qwen2.5-0.5B, Falcon-H1-0.5B), and 7B-70B Arabic-specialized models that require a server to run (Jais, AceGPT, ALLaM, SILMA). The one published attempt at a sub-2B Arabic-specialized model, Kuwain-1.5B, never released its weights. We present RightNow-Arabic-0.5B-Turbo, a 518M-parameter Arabic-specialized decoder LLM built on Qwen2.5-0.5B. The pipeline adds 27,032 Arabic tokens via mean-subtoken initialization, continues pretraining on 504M Arabic tokens on 8xH100 with FSDP, FlashAttention varlen packing, and Liger fused kernels, then applies supervised fine-tuning on 129,116 Arabic instruction pairs with response-only loss masking, direct preference optimization on 6,750 Arabic preference pairs, and weight soup merging across three checkpoints. On three lm-evaluation-harness Arabic benchmarks (COPA-ar, Arabic HellaSwag, ArabicMMLU) the merged model reaches 35.9% mean accuracy, beats every same-class open model, ties Falcon-H1-1.5B on COPA-ar (58.4%) at one-third the size, and recovers 67% of SILMA-9B's mean at 1/18 the parameters. The edge build quantizes to 398 MB (q4_k_m) and delivers 635 tokens/s at batch size 1 on a single H100 via llama.cpp. All code (5,555 lines across 25 scripts), weights (bf16, int8, and four GGUF quantizations), and benchmark scripts are released at https://huggingface.co/RightNowAI/RightNow-Arabic-0.5B-Turbo.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-04-10T00:56:50Z</published>
+    <arxiv:comment>12 pages, 7 tables, 4 figures, 1 algorithm. Weights: https://huggingface.co/RightNowAI/RightNow-Arabic-0.5B-Turbo</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Jaber Jaber</name>
+    </author>
+    <author>
+      <name>Osama Jaber</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2604.22127v1</id>
+    <title>Where Should LoRA Go? Component-Type Placement in Hybrid Language Models</title>
+    <updated>2026-04-24T00:20:29Z</updated>
+    <link href="https://arxiv.org/abs/2604.22127v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2604.22127v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Hybrid language models that interleave attention with recurrent components are increasingly competitive with pure Transformers, yet standard LoRA practice applies adapters uniformly without considering the distinct functional roles of each component type. We systematically study component-type LoRA placement across two hybrid architectures -- Qwen3.5-0.8B (sequential, GatedDeltaNet + softmax attention) and Falcon-H1-0.5B (parallel, Mamba-2 SSM + attention) -- fine-tuned on three domains and evaluated on five benchmarks. We find that the attention pathway -- despite being the minority component -- consistently outperforms full-model adaptation with 5-10x fewer trainable parameters. Crucially, adapting the recurrent backbone is destructive in sequential hybrids (-14.8 pp on GSM8K) but constructive in parallel ones (+8.6 pp). We further document a transfer asymmetry: parallel hybrids exhibit positive cross-task transfer while sequential hybrids suffer catastrophic forgetting. These results establish that hybrid topology fundamentally determines adaptation response, and that component-aware LoRA placement is a necessary design dimension for hybrid architectures.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-04-24T00:20:29Z</published>
+    <arxiv:comment>21 pages, 5 figures, 7 tables. Code and data: https://github.com/hecboar/lora-placement-hybrid</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Hector Borobia</name>
+    </author>
+    <author>
+      <name>Elies Seguí-Mas</name>
+    </author>
+    <author>
+      <name>Guillermina Tormo-Carbó</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2603.22473v2</id>
+    <title>Component Ablation for Efficient Hybrid Language Model Architectures: Performance, Resilience, and Compression Implications</title>
+    <updated>2026-06-05T23:29:35Z</updated>
+    <link href="https://arxiv.org/abs/2603.22473v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2603.22473v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Hybrid language models combine softmax attention with linear-time sequence mechanisms such as state-space or linear-attention layers, but the functional contribution of each component type remains insufficiently characterized. We study component-level ablation in two sub-1B hybrid language models, Qwen3.5-0.8B and Falcon-H1-0.5B, using likelihood-based evaluation, downstream benchmarks, layer-wise interventions, random controls, and representation-level diagnostics.
+  Across the tested models, removing either attention or the alternative sequence-processing pathway substantially degrades performance, indicating that both component types contribute to model behavior. Likelihood metrics are especially sensitive to the linear-attention or state-space pathway, while downstream benchmark degradation depends on task and architecture. Layer-wise ablations show that component importance is position-dependent, with the strongest effects concentrated in early or mid-network components rather than uniformly across depth. Random-removal controls further show that hybrid architectures and same-family Transformer baselines degrade differently under structural perturbation.
+  These results suggest that component ablation is a useful diagnostic for understanding hybrid language model architectures. The findings provide evidence relevant to efficient model design, compression, robustness analysis, and deployment decisions in architectures that combine attention with alternative sequence-processing mechanisms.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-23T18:41:49Z</published>
+    <arxiv:comment>25 pages, 7 figures, 6 tables; revised title, abstract, figures, and data/code repository URL</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Hector Borobia</name>
+    </author>
+    <author>
+      <name>Elies Seguí-Mas</name>
+    </author>
+    <author>
+      <name>Guillermina Tormo-Carbó</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2510.26941v1</id>
+    <title>LLM-based Multi-class Attack Analysis and Mitigation Framework in IoT/IIoT Networks</title>
+    <updated>2025-10-30T18:55:08Z</updated>
+    <link href="https://arxiv.org/abs/2510.26941v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2510.26941v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The Internet of Things has expanded rapidly, transforming communication and operations across industries but also increasing the attack surface and security breaches. Artificial Intelligence plays a key role in securing IoT, enabling attack detection, attack behavior analysis, and mitigation suggestion. Despite advancements, evaluations remain purely qualitative, and the lack of a standardized, objective benchmark for quantitatively measuring AI-based attack analysis and mitigation hinders consistent assessment of model effectiveness. In this work, we propose a hybrid framework combining Machine Learning (ML) for multi-class attack detection with Large Language Models (LLMs) for attack behavior analysis and mitigation suggestion. After benchmarking several ML and Deep Learning (DL) classifiers on the Edge-IIoTset and CICIoT2023 datasets, we applied structured role-play prompt engineering with Retrieval-Augmented Generation (RAG) to guide ChatGPT-o3 and DeepSeek-R1 in producing detailed, context-aware responses. We introduce novel evaluation metrics for quantitative assessment to guide us and an ensemble of judge LLMs, namely ChatGPT-4o, DeepSeek-V3, Mixtral 8x7B Instruct, Gemini 2.5 Flash, Meta Llama 4, TII Falcon H1 34B Instruct, xAI Grok 3, and Claude 4 Sonnet, to independently evaluate the responses. Results show that Random Forest has the best detection model, and ChatGPT-o3 outperformed DeepSeek-R1 in attack analysis and mitigation.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-10-30T18:55:08Z</published>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Seif Ikbarieh</name>
+    </author>
+    <author>
+      <name>Maanak Gupta</name>
+    </author>
+    <author>
+      <name>Elmahedi Mahalal</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2601.19510v2</id>
+    <title>ALRM: Agentic LLM for Robotic Manipulation</title>
+    <updated>2026-01-29T05:46:28Z</updated>
+    <link href="https://arxiv.org/abs/2601.19510v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2601.19510v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large Language Models (LLMs) have recently empowered agentic frameworks to exhibit advanced reasoning and planning capabilities. However, their integration in robotic control pipelines remains limited in two aspects: (1) prior \ac{llm}-based approaches often lack modular, agentic execution mechanisms, limiting their ability to plan, reflect on outcomes, and revise actions in a closed-loop manner; and (2) existing benchmarks for manipulation tasks focus on low-level control and do not systematically evaluate multistep reasoning and linguistic variation. In this paper, we propose Agentic LLM for Robot Manipulation (ALRM), an LLM-driven agentic framework for robotic manipulation. ALRM integrates policy generation with agentic execution through a ReAct-style reasoning loop, supporting two complementary modes: Code-asPolicy (CaP) for direct executable control code generation, and Tool-as-Policy (TaP) for iterative planning and tool-based action execution. To enable systematic evaluation, we also introduce a novel simulation benchmark comprising 56 tasks across multiple environments, capturing linguistically diverse instructions. Experiments with ten LLMs demonstrate that ALRM provides a scalable, interpretable, and modular approach for bridging natural language reasoning with reliable robotic execution. Results reveal Claude-4.1-Opus as the top closed-source model and Falcon-H1-7B as the top open-source model under CaP.</summary>
+    <category term="cs.RO" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-01-27T11:54:14Z</published>
+    <arxiv:primary_category term="cs.RO"/>
+    <author>
+      <name>Vitor Gaboardi dos Santos</name>
+    </author>
+    <author>
+      <name>Ibrahim Khadraoui</name>
+    </author>
+    <author>
+      <name>Ibrahim Farhat</name>
+    </author>
+    <author>
+      <name>Hamza Yous</name>
+    </author>
+    <author>
+      <name>Samy Teffahi</name>
+    </author>
+    <author>
+      <name>Hakim Hacid</name>
+    </author>
+  </entry>
+</feed>

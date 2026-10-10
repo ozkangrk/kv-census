@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/2+vyeY/IddqnbEP4+Z9B5mjpAz0</id>
+  <title>arXiv Query: search_query=&amp;id_list=2401.09670&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-10T10:22:56Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=1&amp;id_list=2401.09670" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2401.09670v3</id>
+    <title>DistServe: Disaggregating Prefill and Decoding for Goodput-optimized Large Language Model Serving</title>
+    <updated>2024-06-06T15:50:51Z</updated>
+    <link href="https://arxiv.org/abs/2401.09670v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2401.09670v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>DistServe improves the performance of large language models (LLMs) serving by disaggregating the prefill and decoding computation. Existing LLM serving systems colocate the two phases and batch the computation of prefill and decoding across all users and requests. We find that this strategy not only leads to strong prefill-decoding interferences but also couples the resource allocation and parallelism plans for both phases. LLM applications often emphasize individual latency for each phase: time to first token (TTFT) for the prefill phase and time per output token (TPOT) of each request for the decoding phase. In the presence of stringent latency requirements, existing systems have to prioritize one latency over the other, or over-provision compute resources to meet both.
+  DistServe assigns prefill and decoding computation to different GPUs, hence eliminating prefill-decoding interferences. Given the application's TTFT and TPOT requirements, DistServe co-optimizes the resource allocation and parallelism strategy tailored for each phase. DistServe also places the two phases according to the serving cluster's bandwidth to minimize the communication caused by disaggregation. As a result, DistServe significantly improves LLM serving performance in terms of the maximum rate that can be served within both TTFT and TPOT constraints on each GPU. Our evaluations show that on various popular LLMs, applications, and latency requirements, DistServe can serve 7.4x more requests or 12.6x tighter SLO, compared to state-of-the-art systems, while staying within latency constraints for &gt; 90% of requests.</summary>
+    <category term="cs.DC" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-01-18T01:03:38Z</published>
+    <arxiv:comment>OSDI 2024</arxiv:comment>
+    <arxiv:primary_category term="cs.DC"/>
+    <author>
+      <name>Yinmin Zhong</name>
+    </author>
+    <author>
+      <name>Shengyu Liu</name>
+    </author>
+    <author>
+      <name>Junda Chen</name>
+    </author>
+    <author>
+      <name>Jianbo Hu</name>
+    </author>
+    <author>
+      <name>Yibo Zhu</name>
+    </author>
+    <author>
+      <name>Xuanzhe Liu</name>
+    </author>
+    <author>
+      <name>Xin Jin</name>
+    </author>
+    <author>
+      <name>Hao Zhang</name>
+    </author>
+  </entry>
+</feed>

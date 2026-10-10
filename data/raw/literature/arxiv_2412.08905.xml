@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/C/22QdVNaZ6s/5RR+wvPXnbhgIw</id>
+  <title>arXiv Query: search_query=&amp;id_list=2412.08905&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-10T10:24:39Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=1&amp;id_list=2412.08905" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2412.08905v1</id>
+    <title>Phi-4 Technical Report</title>
+    <updated>2024-12-12T03:37:41Z</updated>
+    <link href="https://arxiv.org/abs/2412.08905v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2412.08905v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We present phi-4, a 14-billion parameter language model developed with a training recipe that is centrally focused on data quality. Unlike most language models, where pre-training is based primarily on organic data sources such as web content or code, phi-4 strategically incorporates synthetic data throughout the training process. While previous models in the Phi family largely distill the capabilities of a teacher model (specifically GPT-4), phi-4 substantially surpasses its teacher model on STEM-focused QA capabilities, giving evidence that our data-generation and post-training techniques go beyond distillation. Despite minimal changes to the phi-3 architecture, phi-4 achieves strong performance relative to its size -- especially on reasoning-focused benchmarks -- due to improved data, training curriculum, and innovations in the post-training scheme.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-12-12T03:37:41Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Marah Abdin</name>
+    </author>
+    <author>
+      <name>Jyoti Aneja</name>
+    </author>
+    <author>
+      <name>Harkirat Behl</name>
+    </author>
+    <author>
+      <name>Sébastien Bubeck</name>
+    </author>
+    <author>
+      <name>Ronen Eldan</name>
+    </author>
+    <author>
+      <name>Suriya Gunasekar</name>
+    </author>
+    <author>
+      <name>Michael Harrison</name>
+    </author>
+    <author>
+      <name>Russell J. Hewett</name>
+    </author>
+    <author>
+      <name>Mojan Javaheripi</name>
+    </author>
+    <author>
+      <name>Piero Kauffmann</name>
+    </author>
+    <author>
+      <name>James R. Lee</name>
+    </author>
+    <author>
+      <name>Yin Tat Lee</name>
+    </author>
+    <author>
+      <name>Yuanzhi Li</name>
+    </author>
+    <author>
+      <name>Weishung Liu</name>
+    </author>
+    <author>
+      <name>Caio C. T. Mendes</name>
+    </author>
+    <author>
+      <name>Anh Nguyen</name>
+    </author>
+    <author>
+      <name>Eric Price</name>
+    </author>
+    <author>
+      <name>Gustavo de Rosa</name>
+    </author>
+    <author>
+      <name>Olli Saarikivi</name>
+    </author>
+    <author>
+      <name>Adil Salim</name>
+    </author>
+    <author>
+      <name>Shital Shah</name>
+    </author>
+    <author>
+      <name>Xin Wang</name>
+    </author>
+    <author>
+      <name>Rachel Ward</name>
+    </author>
+    <author>
+      <name>Yue Wu</name>
+    </author>
+    <author>
+      <name>Dingli Yu</name>
+    </author>
+    <author>
+      <name>Cyril Zhang</name>
+    </author>
+    <author>
+      <name>Yi Zhang</name>
+    </author>
+  </entry>
+</feed>

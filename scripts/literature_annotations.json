@@ -1,0 +1,138 @@
+{
+ "kwon2023paged": {
+  "ann": "The retrieved abstract states that per-request KV-cache memory is huge and grows and shrinks dynamically, that fragmentation and redundant duplication limit batch size, and that PagedAttention/vLLM reaches near-zero KV-cache waste with flexible sharing. It directly supports the premise that KV memory, not parameter count, is the binding constraint in LLM serving.",
+  "section": "Related work (serving systems); Introduction motivation"
+ },
+ "zhong2024distserve": {
+  "ann": "The abstract documents disaggregating prefill and decoding onto different GPUs and co-optimizing per-phase resource allocation for TTFT/TPOT goodput. It supports discussing KV-cache placement/duplication as a first-class concern in serving systems.",
+  "section": "Related work (serving systems)"
+ },
+ "dao2022flashattention": {
+  "ann": "The abstract argues attention is IO-bound between GPU HBM and SRAM and proposes tiling to cut memory reads/writes, with linear memory instead of quadratic. It grounds the kernel-level view of attention memory traffic as distinct from KV-cache capacity.",
+  "section": "Related work (attention kernels)"
+ },
+ "dao2023flashattention2": {
+  "ann": "The abstract reports better work partitioning across thread blocks/warps and roughly 2x speedup over FlashAttention, reaching 50-73% of theoretical FLOPs/s on A100. Background for attention efficiency at long context.",
+  "section": "Related work (attention kernels)"
+ },
+ "shazeer2019mqa": {
+  "ann": "The abstract attributes slow incremental decoding to the memory-bandwidth cost of repeatedly loading keys and values, and proposes sharing one KV head across query heads with only minor quality loss. It is the origin of KV-head reduction (MQA).",
+  "section": "Related work (KV-head reduction)"
+ },
+ "ainslie2023gqa": {
+  "ann": "The abstract introduces grouped-query attention, an intermediate number of KV heads between MHA and MQA, uptrained from multi-head checkpoints with about 5% of original pre-training compute at near-MHA quality. It is the mechanism behind the census variation in GQA ratio.",
+  "section": "Related work (KV-head reduction); RQ2 mechanisms"
+ },
+ "deepseekai2024v2": {
+  "ann": "The abstract reports a 236B-total/21B-active MoE whose Multi-head Latent Attention compresses the KV cache into a latent vector, with a 93.3% KV-cache reduction and up to 5.76x generation throughput versus DeepSeek 67B. It is the canonical MLA reference and also documents the MoE/KV interaction.",
+  "section": "Related work (KV-head reduction, MoE); RQ2/RQ3 discussion"
+ },
+ "jiang2023mistral": {
+  "ann": "The abstract describes Mistral 7B combining grouped-query attention with sliding-window attention to handle sequences of arbitrary length at reduced inference cost. It anchors the gqa+swa architecture class in the census.",
+  "section": "Related work (attention scope); Data & Methods labels"
+ },
+ "xiao2023streamingllm": {
+  "ann": "The abstract shows that window attention fails once text exceeds the cache size, that keeping KV of initial tokens (attention sinks) largely recovers performance, and that StreamingLLM runs stably to 4M+ tokens. Context for bounded-cache attention designs.",
+  "section": "Related work (attention scope)"
+ },
+ "zhang2023h2o": {
+  "ann": "The abstract frames KV eviction as dynamically retaining a balance of recent tokens and 'heavy hitters' (a small set of tokens contributing most attention value), with throughput gains up to 29x over leading inference systems. Representative KV-eviction baseline.",
+  "section": "Related work (KV compression)"
+ },
+ "liu2024kivi": {
+  "ann": "The abstract studies KV element distributions (keys quantized per-channel, values per-token) and derives a tuning-free 2-bit KV quantization giving 2.6x lower peak memory and up to about 4x larger batch. It grounds the KV-precision axis of the capacity model.",
+  "section": "Related work (KV quantization); RQ3 methods"
+ },
+ "hooper2024kvquant": {
+  "ann": "The abstract reports 3-bit KV quantization with under 0.1 perplexity degradation, enabling 1M-token LLaMA-7B inference on one A100-80GB. It supports the low-KV-precision scenarios in the capacity analysis.",
+  "section": "Related work (KV quantization); RQ3"
+ },
+ "chang2024palu": {
+  "ann": "The abstract proposes low-rank projection of the linear layers, caching compressed intermediate states and reconstructing keys and values on the fly, compressing the KV cache by about 50% while maintaining accuracy. It is the low-rank KV-compression representative.",
+  "section": "Related work (KV compression)"
+ },
+ "frantar2022gptq": {
+  "ann": "The abstract quantizes weights of models up to 175B parameters to 3-4 bits in about four GPU-hours with negligible degradation, fitting a 175B model on a single GPU. It anchors the weight-precision side of the capacity model.",
+  "section": "Related work (weight quantization); RQ3 methods"
+ },
+ "dettmers2022int8": {
+  "ann": "The abstract halves inference memory via Int8 matrix multiplication with a mixed-precision decomposition that isolates emergent outlier features. Complements weight-quantization options in the capacity analysis.",
+  "section": "Related work (weight quantization); RQ3"
+ },
+ "sun2024yoco": {
+  "ann": "The abstract introduces a decoder-decoder architecture (YOCO) that caches key-value pairs only once and reuses the global KV cache across layers via cross-attention, reporting large memory, prefill-latency and throughput gains and extension to 1M context. It is the cross-layer shared-KV architecture the census labels as KV-shared.",
+  "section": "Related work (cross-layer KV sharing)"
+ },
+ "wu2024cla": {
+  "ann": "The abstract computes and caches KV for only a small number of layers, reporting up to 26x higher throughput with competitive quality, and notes orthogonality to other memory-saving techniques. Second cross-layer KV-sharing design.",
+  "section": "Related work (cross-layer KV sharing)"
+ },
+ "su2021roformer": {
+  "ann": "The abstract proposes rotary position embedding (RoPE), encoding absolute positions with a rotation matrix while incorporating relative position dependencies, with flexible sequence length. It is the position mechanism that long-context census models extend.",
+  "section": "Methods (long-context scaling background)"
+ },
+ "peng2023yarn": {
+  "ann": "The abstract presents YaRN, a compute-efficient RoPE-based context-window extension requiring 10x fewer tokens and 2.5x fewer training steps than prior methods, letting LLaMA models use much longer contexts. Context for why declared context lengths grew over the census window.",
+  "section": "Methods (long-context scaling); RQ1 discussion"
+ },
+ "katharopoulos2020linear": {
+  "ann": "The abstract rewrites self-attention as a linear dot-product of kernel feature maps, reducing complexity from quadratic to linear and enabling an iterative RNN-like implementation that is up to 4000x faster on long autoregressive prediction. It is the origin of constant-state linear attention.",
+  "section": "Related work (linear attention); KV accounting for recurrent layers"
+ },
+ "sun2023retnet": {
+  "ann": "The abstract derives the retention mechanism with parallel, recurrent, and chunkwise paradigms, where the recurrent form gives O(1) inference cost with improved GPU memory. Another constant-state attention family relevant to fixed-state KV accounting.",
+  "section": "Related work (linear attention)"
+ },
+ "peng2023rwkv": {
+  "ann": "The abstract presents RWKV, which combines parallelizable transformer training with constant-memory RNN inference and scales to 14B parameters, performing on par with similarly sized transformers. It is the open-weight recurrent family included in the census.",
+  "section": "Related work (linear attention); family context"
+ },
+ "yang2024gdn": {
+  "ann": "The abstract combines gating for adaptive memory control with the delta rule for targeted updates (Gated DeltaNet), outperforming Mamba2 and DeltaNet, and builds hybrids with sliding-window attention or Mamba2 layers. A modern fixed-state linear-attention design used by recent models.",
+  "section": "Related work (linear attention)"
+ },
+ "gu2023mamba": {
+  "ann": "The abstract makes SSM parameters input-dependent (selective state spaces) with a hardware-aware recurrent algorithm, reporting 5x higher inference throughput than Transformers and linear scaling in sequence length. It is the fixed-state recurrent class the census accounts for as constant KV-independent state.",
+  "section": "Related work (SSMs); Methods (recurrent-layer state accounting)"
+ },
+ "de2024griffin": {
+  "ann": "The abstract proposes Hawk (gated linear recurrences) and Griffin (mixing gated linear recurrences with local attention), matching Llama-2 quality with lower inference latency and higher throughput and extrapolating beyond training lengths. Canonical hybrid of recurrent and windowed attention.",
+  "section": "Related work (SSM hybrids)"
+ },
+ "lieber2024jamba": {
+  "ann": "The abstract describes Jamba, an open-weight hybrid that interleaves Transformer and Mamba layers with MoE, fitting in a single 80GB GPU and supporting 256K-token contexts with smaller memory footprint than vanilla Transformers. An open-weight hybrid MoE family in the census.",
+  "section": "Related work (SSM hybrids); family context"
+ },
+ "zuo2025falcon": {
+  "ann": "The abstract introduces Falcon-H1, parallel attention+SSM hybrid models released at 0.5B-34B scales with up to 256K context, including more than 30 checkpoints on the Hugging Face Hub under a permissive license. A 2025 hybrid family directly represented in census rows.",
+  "section": "Related work (SSM hybrids); Data & Methods"
+ },
+ "jiang2024mixtral": {
+  "ann": "The abstract documents Mixtral 8x7B, a sparse MoE built on the Mistral 7B architecture where each token activates 2 of 8 experts (47B total, 13B active), trained with 32k context. Canonical sparse-MoE reference for the MoE-versus-dense KV-per-parameter comparison.",
+  "section": "Related work (MoE); RQ2 (H3)"
+ },
+ "grattafiori2024llama3": {
+  "ann": "The abstract presents the Llama 3 family, including a 405B dense transformer with up to 128K context, publicly released with pre- and post-trained versions. Major open-weight family anchoring many census rows.",
+  "section": "Results (model family reports)"
+ },
+ "gemmateam2025gemma3": {
+  "ann": "The abstract states Gemma 3 changes the architecture specifically to reduce KV-cache memory that explodes with long context, by increasing the ratio of local to global attention layers and keeping the local span short, with at least 128K context. A publisher-side instance of this paper's thesis on window share.",
+  "section": "Results (model family reports); RQ2"
+ },
+ "yang2025qwen3": {
+  "ann": "The abstract presents Qwen3, spanning dense and MoE architectures from 0.6B to 235B parameters with a unified thinking/non-thinking mode, released under Apache 2.0. A large open-weight family providing both dense and MoE census rows.",
+  "section": "Results (model family reports); RQ2 (H3)"
+ },
+ "abdin2024phi4": {
+  "ann": "The abstract presents phi-4, a 14B dense model whose training recipe centers on synthetic data quality, with minimal architectural change from phi-3. A compact dense family for the census comparison.",
+  "section": "Results (model family reports)"
+ },
+ "olmo2024olmo2": {
+  "ann": "The abstract presents OLMo 2, dense models at 7B/13B/32B with fully released weights, training data, code, logs and checkpoints. The maximal-transparency family for census cross-checks.",
+  "section": "Results (model family reports)"
+ },
+ "rajesh2025edgemem": {
+  "ann": "The abstract reports an empirical comparison of five local LLM runtimes (MLX, MLC-LLM, llama.cpp, Ollama, PyTorch MPS) on Apple Silicon with 192 GB of unified memory, measuring TTFT, throughput, long-context key-value/prompt caching, and batching/concurrency up to 100,000 tokens. It directly grounds the unified-memory edge-serving discussion.",
+  "section": "Results/Discussion (edge capacity, RQ3)"
+ }
+}

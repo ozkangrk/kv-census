@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/V1DIChBuq1y9enNBBoMQDGQ7nTY</id>
+  <title>arXiv Query: search_query=&amp;id_list=2305.13048&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-10T10:24:02Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=1&amp;id_list=2305.13048" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2305.13048v2</id>
+    <title>RWKV: Reinventing RNNs for the Transformer Era</title>
+    <updated>2023-12-11T03:58:56Z</updated>
+    <link href="https://arxiv.org/abs/2305.13048v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2305.13048v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Transformers have revolutionized almost all natural language processing (NLP) tasks but suffer from memory and computational complexity that scales quadratically with sequence length. In contrast, recurrent neural networks (RNNs) exhibit linear scaling in memory and computational requirements but struggle to match the same performance as Transformers due to limitations in parallelization and scalability. We propose a novel model architecture, Receptance Weighted Key Value (RWKV), that combines the efficient parallelizable training of transformers with the efficient inference of RNNs.
+  Our approach leverages a linear attention mechanism and allows us to formulate the model as either a Transformer or an RNN, thus parallelizing computations during training and maintains constant computational and memory complexity during inference. We scale our models as large as 14 billion parameters, by far the largest dense RNN ever trained, and find RWKV performs on par with similarly sized Transformers, suggesting future work can leverage this architecture to create more efficient models. This work presents a significant step towards reconciling trade-offs between computational efficiency and model performance in sequence processing tasks.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2023-05-22T13:57:41Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Bo Peng</name>
+    </author>
+    <author>
+      <name>Eric Alcaide</name>
+    </author>
+    <author>
+      <name>Quentin Anthony</name>
+    </author>
+    <author>
+      <name>Alon Albalak</name>
+    </author>
+    <author>
+      <name>Samuel Arcadinho</name>
+    </author>
+    <author>
+      <name>Stella Biderman</name>
+    </author>
+    <author>
+      <name>Huanqi Cao</name>
+    </author>
+    <author>
+      <name>Xin Cheng</name>
+    </author>
+    <author>
+      <name>Michael Chung</name>
+    </author>
+    <author>
+      <name>Matteo Grella</name>
+    </author>
+    <author>
+      <name>Kranthi Kiran GV</name>
+    </author>
+    <author>
+      <name>Xuzheng He</name>
+    </author>
+    <author>
+      <name>Haowen Hou</name>
+    </author>
+    <author>
+      <name>Jiaju Lin</name>
+    </author>
+    <author>
+      <name>Przemyslaw Kazienko</name>
+    </author>
+    <author>
+      <name>Jan Kocon</name>
+    </author>
+    <author>
+      <name>Jiaming Kong</name>
+    </author>
+    <author>
+      <name>Bartlomiej Koptyra</name>
+    </author>
+    <author>
+      <name>Hayden Lau</name>
+    </author>
+    <author>
+      <name>Krishna Sri Ipsit Mantri</name>
+    </author>
+    <author>
+      <name>Ferdinand Mom</name>
+    </author>
+    <author>
+      <name>Atsushi Saito</name>
+    </author>
+    <author>
+      <name>Guangyu Song</name>
+    </author>
+    <author>
+      <name>Xiangru Tang</name>
+    </author>
+    <author>
+      <name>Bolun Wang</name>
+    </author>
+    <author>
+      <name>Johan S. Wind</name>
+    </author>
+    <author>
+      <name>Stanislaw Wozniak</name>
+    </author>
+    <author>
+      <name>Ruichong Zhang</name>
+    </author>
+    <author>
+      <name>Zhenyuan Zhang</name>
+    </author>
+    <author>
+      <name>Qihang Zhao</name>
+    </author>
+    <author>
+      <name>Peng Zhou</name>
+    </author>
+    <author>
+      <name>Qinghua Zhou</name>
+    </author>
+    <author>
+      <name>Jian Zhu</name>
+    </author>
+    <author>
+      <name>Rui-Jie Zhu</name>
+    </author>
+  </entry>
+</feed>

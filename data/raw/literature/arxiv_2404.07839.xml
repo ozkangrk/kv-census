@@ -1,0 +1,209 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/LAUoNxiuCY6bfE2b0fwCBDW7ajo</id>
+  <title>arXiv Query: search_query=&amp;id_list=2404.07839&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-10T10:25:12Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=1&amp;id_list=2404.07839" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2404.07839v2</id>
+    <title>RecurrentGemma: Moving Past Transformers for Efficient Open Language Models</title>
+    <updated>2024-08-28T15:05:42Z</updated>
+    <link href="https://arxiv.org/abs/2404.07839v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2404.07839v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We introduce RecurrentGemma, a family of open language models which uses Google's novel Griffin architecture. Griffin combines linear recurrences with local attention to achieve excellent performance on language. It has a fixed-sized state, which reduces memory use and enables efficient inference on long sequences. We provide two sizes of models, containing 2B and 9B parameters, and provide pre-trained and instruction tuned variants for both. Our models achieve comparable performance to similarly-sized Gemma baselines despite being trained on fewer tokens.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-04-11T15:27:22Z</published>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Aleksandar Botev</name>
+    </author>
+    <author>
+      <name>Soham De</name>
+    </author>
+    <author>
+      <name>Samuel L Smith</name>
+    </author>
+    <author>
+      <name>Anushan Fernando</name>
+    </author>
+    <author>
+      <name>George-Cristian Muraru</name>
+    </author>
+    <author>
+      <name>Ruba Haroun</name>
+    </author>
+    <author>
+      <name>Leonard Berrada</name>
+    </author>
+    <author>
+      <name>Razvan Pascanu</name>
+    </author>
+    <author>
+      <name>Pier Giuseppe Sessa</name>
+    </author>
+    <author>
+      <name>Robert Dadashi</name>
+    </author>
+    <author>
+      <name>Léonard Hussenot</name>
+    </author>
+    <author>
+      <name>Johan Ferret</name>
+    </author>
+    <author>
+      <name>Sertan Girgin</name>
+    </author>
+    <author>
+      <name>Olivier Bachem</name>
+    </author>
+    <author>
+      <name>Alek Andreev</name>
+    </author>
+    <author>
+      <name>Kathleen Kenealy</name>
+    </author>
+    <author>
+      <name>Thomas Mesnard</name>
+    </author>
+    <author>
+      <name>Cassidy Hardin</name>
+    </author>
+    <author>
+      <name>Surya Bhupatiraju</name>
+    </author>
+    <author>
+      <name>Shreya Pathak</name>
+    </author>
+    <author>
+      <name>Laurent Sifre</name>
+    </author>
+    <author>
+      <name>Morgane Rivière</name>
+    </author>
+    <author>
+      <name>Mihir Sanjay Kale</name>
+    </author>
+    <author>
+      <name>Juliette Love</name>
+    </author>
+    <author>
+      <name>Pouya Tafti</name>
+    </author>
+    <author>
+      <name>Armand Joulin</name>
+    </author>
+    <author>
+      <name>Noah Fiedel</name>
+    </author>
+    <author>
+      <name>Evan Senter</name>
+    </author>
+    <author>
+      <name>Yutian Chen</name>
+    </author>
+    <author>
+      <name>Srivatsan Srinivasan</name>
+    </author>
+    <author>
+      <name>Guillaume Desjardins</name>
+    </author>
+    <author>
+      <name>David Budden</name>
+    </author>
+    <author>
+      <name>Arnaud Doucet</name>
+    </author>
+    <author>
+      <name>Sharad Vikram</name>
+    </author>
+    <author>
+      <name>Adam Paszke</name>
+    </author>
+    <author>
+      <name>Trevor Gale</name>
+    </author>
+    <author>
+      <name>Sebastian Borgeaud</name>
+    </author>
+    <author>
+      <name>Charlie Chen</name>
+    </author>
+    <author>
+      <name>Andy Brock</name>
+    </author>
+    <author>
+      <name>Antonia Paterson</name>
+    </author>
+    <author>
+      <name>Jenny Brennan</name>
+    </author>
+    <author>
+      <name>Meg Risdal</name>
+    </author>
+    <author>
+      <name>Raj Gundluru</name>
+    </author>
+    <author>
+      <name>Nesh Devanathan</name>
+    </author>
+    <author>
+      <name>Paul Mooney</name>
+    </author>
+    <author>
+      <name>Nilay Chauhan</name>
+    </author>
+    <author>
+      <name>Phil Culliton</name>
+    </author>
+    <author>
+      <name>Luiz Gustavo Martins</name>
+    </author>
+    <author>
+      <name>Elisa Bandy</name>
+    </author>
+    <author>
+      <name>David Huntsperger</name>
+    </author>
+    <author>
+      <name>Glenn Cameron</name>
+    </author>
+    <author>
+      <name>Arthur Zucker</name>
+    </author>
+    <author>
+      <name>Tris Warkentin</name>
+    </author>
+    <author>
+      <name>Ludovic Peran</name>
+    </author>
+    <author>
+      <name>Minh Giang</name>
+    </author>
+    <author>
+      <name>Zoubin Ghahramani</name>
+    </author>
+    <author>
+      <name>Clément Farabet</name>
+    </author>
+    <author>
+      <name>Koray Kavukcuoglu</name>
+    </author>
+    <author>
+      <name>Demis Hassabis</name>
+    </author>
+    <author>
+      <name>Raia Hadsell</name>
+    </author>
+    <author>
+      <name>Yee Whye Teh</name>
+    </author>
+    <author>
+      <name>Nando de Frietas</name>
+    </author>
+  </entry>
+</feed>

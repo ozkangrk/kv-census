@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/96E59QgnU09aGMPqNFUQWjsPi1s</id>
+  <title>arXiv Query: search_query=&amp;id_list=1911.02150&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-10T09:44:15Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=1&amp;id_list=1911.02150" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/1911.02150v1</id>
+    <title>Fast Transformer Decoding: One Write-Head is All You Need</title>
+    <updated>2019-11-06T00:19:05Z</updated>
+    <link href="https://arxiv.org/abs/1911.02150v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1911.02150v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Multi-head attention layers, as used in the Transformer neural sequence model, are a powerful alternative to RNNs for moving information across and between sequences. While training these layers is generally fast and simple, due to parallelizability across the length of the sequence, incremental inference (where such paralleization is impossible) is often slow, due to the memory-bandwidth cost of repeatedly loading the large "keys" and "values" tensors. We propose a variant called multi-query attention, where the keys and values are shared across all of the different attention "heads", greatly reducing the size of these tensors and hence the memory bandwidth requirements of incremental decoding. We verify experimentally that the resulting models can indeed be much faster to decode, and incur only minor quality degradation from the baseline.</summary>
+    <category term="cs.NE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2019-11-06T00:19:05Z</published>
+    <arxiv:primary_category term="cs.NE"/>
+    <author>
+      <name>Noam Shazeer</name>
+    </author>
+  </entry>
+</feed>

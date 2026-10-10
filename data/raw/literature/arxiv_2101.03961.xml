@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/QIlTsgSme9s68wQy5Mis17DQy6s</id>
+  <title>arXiv Query: search_query=&amp;id_list=2101.03961&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-10T10:25:15Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=1&amp;id_list=2101.03961" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2101.03961v3</id>
+    <title>Switch Transformers: Scaling to Trillion Parameter Models with Simple and Efficient Sparsity</title>
+    <updated>2022-06-16T20:36:07Z</updated>
+    <link href="https://arxiv.org/abs/2101.03961v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2101.03961v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>In deep learning, models typically reuse the same parameters for all inputs. Mixture of Experts (MoE) defies this and instead selects different parameters for each incoming example. The result is a sparsely-activated model -- with outrageous numbers of parameters -- but a constant computational cost. However, despite several notable successes of MoE, widespread adoption has been hindered by complexity, communication costs and training instability -- we address these with the Switch Transformer. We simplify the MoE routing algorithm and design intuitive improved models with reduced communication and computational costs. Our proposed training techniques help wrangle the instabilities and we show large sparse models may be trained, for the first time, with lower precision (bfloat16) formats. We design models based off T5-Base and T5-Large to obtain up to 7x increases in pre-training speed with the same computational resources. These improvements extend into multilingual settings where we measure gains over the mT5-Base version across all 101 languages. Finally, we advance the current scale of language models by pre-training up to trillion parameter models on the "Colossal Clean Crawled Corpus" and achieve a 4x speedup over the T5-XXL model.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2021-01-11T16:11:52Z</published>
+    <arxiv:comment>JMLR</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>William Fedus</name>
+    </author>
+    <author>
+      <name>Barret Zoph</name>
+    </author>
+    <author>
+      <name>Noam Shazeer</name>
+    </author>
+  </entry>
+</feed>

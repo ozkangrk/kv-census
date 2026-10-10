@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/41GWRclFLtBZzj/r7lO6uB/ObY4</id>
+  <title>arXiv Query: search_query=&amp;id_list=2305.13245&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-10T10:23:09Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=1&amp;id_list=2305.13245" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2305.13245v3</id>
+    <title>GQA: Training Generalized Multi-Query Transformer Models from Multi-Head Checkpoints</title>
+    <updated>2023-12-23T17:55:11Z</updated>
+    <link href="https://arxiv.org/abs/2305.13245v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2305.13245v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Multi-query attention (MQA), which only uses a single key-value head, drastically speeds up decoder inference. However, MQA can lead to quality degradation, and moreover it may not be desirable to train a separate model just for faster inference. We (1) propose a recipe for uptraining existing multi-head language model checkpoints into models with MQA using 5% of original pre-training compute, and (2) introduce grouped-query attention (GQA), a generalization of multi-query attention which uses an intermediate (more than one, less than number of query heads) number of key-value heads. We show that uptrained GQA achieves quality close to multi-head attention with comparable speed to MQA.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2023-05-22T17:16:38Z</published>
+    <arxiv:comment>Accepted at EMNLP 2023. Added to related work</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Joshua Ainslie</name>
+    </author>
+    <author>
+      <name>James Lee-Thorp</name>
+    </author>
+    <author>
+      <name>Michiel de Jong</name>
+    </author>
+    <author>
+      <name>Yury Zemlyanskiy</name>
+    </author>
+    <author>
+      <name>Federico Lebrón</name>
+    </author>
+    <author>
+      <name>Sumit Sanghai</name>
+    </author>
+  </entry>
+</feed>

@@ -1,0 +1,877 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/pzc54N5hqaqne0/6/rJ1Xub9qDY</id>
+  <title>arXiv Query: search_query=&amp;id_list=2503.19786&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-10T10:24:32Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=1&amp;id_list=2503.19786" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2503.19786v1</id>
+    <title>Gemma 3 Technical Report</title>
+    <updated>2025-03-25T15:52:34Z</updated>
+    <link href="https://arxiv.org/abs/2503.19786v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2503.19786v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We introduce Gemma 3, a multimodal addition to the Gemma family of lightweight open models, ranging in scale from 1 to 27 billion parameters. This version introduces vision understanding abilities, a wider coverage of languages and longer context - at least 128K tokens. We also change the architecture of the model to reduce the KV-cache memory that tends to explode with long context. This is achieved by increasing the ratio of local to global attention layers, and keeping the span on local attention short. The Gemma 3 models are trained with distillation and achieve superior performance to Gemma 2 for both pre-trained and instruction finetuned versions. In particular, our novel post-training recipe significantly improves the math, chat, instruction-following and multilingual abilities, making Gemma3-4B-IT competitive with Gemma2-27B-IT and Gemma3-27B-IT comparable to Gemini-1.5-Pro across benchmarks. We release all our models to the community.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-03-25T15:52:34Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name> Gemma Team</name>
+    </author>
+    <author>
+      <name>Aishwarya Kamath</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Johan Ferret</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Shreya Pathak</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Nino Vieillard</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Ramona Merhej</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Sarah Perrin</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Tatiana Matejovicova</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Alexandre Ramé</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Morgane Rivière</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Louis Rouillard</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Thomas Mesnard</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Geoffrey Cideron</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Jean-bastien Grill</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Sabela Ramos</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Edouard Yvinec</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Michelle Casbon</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Etienne Pot</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Ivo Penchev</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Gaël Liu</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Francesco Visin</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Kathleen Kenealy</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Lucas Beyer</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Xiaohai Zhai</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Anton Tsitsulin</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Robert Busa-Fekete</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Alex Feng</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Noveen Sachdeva</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Benjamin Coleman</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Yi Gao</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Basil Mustafa</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Iain Barr</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Emilio Parisotto</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>David Tian</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Matan Eyal</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Colin Cherry</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Jan-Thorsten Peter</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Danila Sinopalnikov</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Surya Bhupatiraju</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Rishabh Agarwal</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Mehran Kazemi</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Dan Malkin</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Ravin Kumar</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>David Vilar</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Idan Brusilovsky</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Jiaming Luo</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Andreas Steiner</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Abe Friesen</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Abhanshu Sharma</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Abheesht Sharma</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Adi Mayrav Gilady</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Adrian Goedeckemeyer</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Alaa Saade</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Alex Feng</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Alexander Kolesnikov</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Alexei Bendebury</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Alvin Abdagic</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Amit Vadi</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>András György</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>André Susano Pinto</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Anil Das</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Ankur Bapna</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Antoine Miech</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Antoine Yang</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Antonia Paterson</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Ashish Shenoy</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Ayan Chakrabarti</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Bilal Piot</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Bo Wu</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Bobak Shahriari</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Bryce Petrini</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Charlie Chen</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Charline Le Lan</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Christopher A. Choquette-Choo</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>CJ Carey</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Cormac Brick</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Daniel Deutsch</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Danielle Eisenbud</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Dee Cattle</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Derek Cheng</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Dimitris Paparas</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Divyashree Shivakumar Sreepathihalli</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Doug Reid</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Dustin Tran</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Dustin Zelle</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Eric Noland</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Erwin Huizenga</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Eugene Kharitonov</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Frederick Liu</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Gagik Amirkhanyan</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Glenn Cameron</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Hadi Hashemi</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Hanna Klimczak-Plucińska</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Harman Singh</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Harsh Mehta</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Harshal Tushar Lehri</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Hussein Hazimeh</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Ian Ballantyne</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Idan Szpektor</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Ivan Nardini</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Jean Pouget-Abadie</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Jetha Chan</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Joe Stanton</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>John Wieting</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Jonathan Lai</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Jordi Orbay</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Joseph Fernandez</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Josh Newlan</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Ju-yeong Ji</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Jyotinder Singh</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Kat Black</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Kathy Yu</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Kevin Hui</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Kiran Vodrahalli</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Klaus Greff</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Linhai Qiu</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Marcella Valentine</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Marina Coelho</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Marvin Ritter</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Matt Hoffman</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Matthew Watson</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Mayank Chaturvedi</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Michael Moynihan</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Min Ma</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Nabila Babar</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Natasha Noy</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Nathan Byrd</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Nick Roy</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Nikola Momchev</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Nilay Chauhan</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Noveen Sachdeva</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Oskar Bunyan</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Pankil Botarda</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Paul Caron</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Paul Kishan Rubenstein</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Phil Culliton</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Philipp Schmid</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Pier Giuseppe Sessa</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Pingmei Xu</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Piotr Stanczyk</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Pouya Tafti</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Rakesh Shivanna</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Renjie Wu</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Renke Pan</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Reza Rokni</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Rob Willoughby</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Rohith Vallu</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Ryan Mullins</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Sammy Jerome</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Sara Smoot</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Sertan Girgin</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Shariq Iqbal</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Shashir Reddy</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Shruti Sheth</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Siim Põder</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Sijal Bhatnagar</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Sindhu Raghuram Panyam</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Sivan Eiger</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Susan Zhang</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Tianqi Liu</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Trevor Yacovone</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Tyler Liechty</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Uday Kalra</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Utku Evci</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Vedant Misra</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Vincent Roseberry</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Vlad Feinberg</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Vlad Kolesnikov</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Woohyun Han</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Woosuk Kwon</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Xi Chen</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Yinlam Chow</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Yuvein Zhu</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Zichuan Wei</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Zoltan Egyed</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Victor Cotruta</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Minh Giang</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Phoebe Kirk</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Anand Rao</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Kat Black</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Nabila Babar</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Jessica Lo</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Erica Moreira</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Luiz Gustavo Martins</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Omar Sanseviero</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Lucas Gonzalez</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Zach Gleicher</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Tris Warkentin</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Vahab Mirrokni</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Evan Senter</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Eli Collins</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Joelle Barral</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Zoubin Ghahramani</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Raia Hadsell</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Yossi Matias</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>D. Sculley</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Slav Petrov</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Noah Fiedel</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Noam Shazeer</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Oriol Vinyals</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Jeff Dean</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Demis Hassabis</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Koray Kavukcuoglu</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Clement Farabet</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Elena Buchatskaya</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Jean-Baptiste Alayrac</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Rohan Anil</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name> Dmitry</name>
+      <arxiv:affiliation>Dima</arxiv:affiliation>
+    </author>
+    <author>
+      <name> Lepikhin</name>
+    </author>
+    <author>
+      <name>Sebastian Borgeaud</name>
+    </author>
+    <author>
+      <name>Olivier Bachem</name>
+    </author>
+    <author>
+      <name>Armand Joulin</name>
+    </author>
+    <author>
+      <name>Alek Andreev</name>
+    </author>
+    <author>
+      <name>Cassidy Hardin</name>
+    </author>
+    <author>
+      <name>Robert Dadashi</name>
+    </author>
+    <author>
+      <name>Léonard Hussenot</name>
+    </author>
+  </entry>
+</feed>

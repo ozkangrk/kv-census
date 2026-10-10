@@ -1,0 +1,197 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/87BRvdbG3NjapWmiFja1nsEHgis</id>
+  <title>arXiv Query: search_query=all:"MLC-LLM"&amp;id_list=&amp;start=0&amp;max_results=8</title>
+  <updated>2026-10-10T10:28:30Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=all:%22MLC-LLM%22&amp;start=0&amp;max_results=8&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>8</opensearch:itemsPerPage>
+  <opensearch:totalResults>5</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2511.05502v1</id>
+    <title>Production-Grade Local LLM Inference on Apple Silicon: A Comparative Study of MLX, MLC-LLM, Ollama, llama.cpp, and PyTorch MPS</title>
+    <updated>2025-10-09T23:53:38Z</updated>
+    <link href="https://arxiv.org/abs/2511.05502v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2511.05502v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We present a systematic, empirical evaluation of five local large language model (LLM) runtimes on Apple Silicon: MLX, MLC-LLM, llama.cpp, Ollama, and PyTorch MPS. Experiments were conducted on a Mac Studio equipped with an M2 Ultra processor and 192 GB of unified memory. Using the Qwen-2.5 model family across prompts ranging from a few hundred to 100,000 tokens, we measure time-to-first-token (TTFT), steady-state throughput, latency percentiles, long-context behavior (key-value and prompt caching), quantization support, streaming performance, batching and concurrency behavior, and deployment complexity.
+  Under our settings, MLX achieves the highest sustained generation throughput, while MLC-LLM delivers consistently lower TTFT for moderate prompt sizes and offers stronger out-of-the-box inference features. llama.cpp is highly efficient for lightweight single-stream use, Ollama emphasizes developer ergonomics but lags in throughput and TTFT, and PyTorch MPS remains limited by memory constraints on large models and long contexts.
+  All frameworks execute fully on-device with no telemetry, ensuring strong privacy guarantees. We release scripts, logs, and plots to reproduce all results. Our analysis clarifies the design trade-offs in Apple-centric LLM deployments and provides evidence-based recommendations for interactive and long-context processing. Although Apple Silicon inference frameworks still trail NVIDIA GPU-based systems such as vLLM in absolute performance, they are rapidly maturing into viable, production-grade solutions for private, on-device LLM inference.</summary>
+    <category term="cs.AR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-10-09T23:53:38Z</published>
+    <arxiv:primary_category term="cs.AR"/>
+    <author>
+      <name>Varun Rajesh</name>
+    </author>
+    <author>
+      <name>Om Jodhpurkar</name>
+    </author>
+    <author>
+      <name>Pooja Anbuselvan</name>
+    </author>
+    <author>
+      <name>Mantinder Singh</name>
+    </author>
+    <author>
+      <name>Ashok Jallepali</name>
+    </author>
+    <author>
+      <name>Shantanu Godbole</name>
+    </author>
+    <author>
+      <name>Pradeep Kumar Sharma</name>
+    </author>
+    <author>
+      <name>Hritvik Shrivastava</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2412.15803v2</id>
+    <title>WebLLM: A High-Performance In-Browser LLM Inference Engine</title>
+    <updated>2026-04-13T04:55:03Z</updated>
+    <link href="https://arxiv.org/abs/2412.15803v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2412.15803v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Advancements in large language models (LLMs) have unlocked remarkable capabilities. While deploying these models typically requires server-grade GPUs and cloud-based inference, the recent emergence of smaller open-source models and increasingly powerful consumer devices have made on-device deployment practical. The web browser as a platform for on-device deployment is universally accessible, provides a natural agentic environment, and conveniently abstracts out the different backends from diverse device vendors. To address this opportunity, we introduce WebLLM, an open-source JavaScript framework that enables high-performance LLM inference entirely within web browsers. WebLLM provides an OpenAI-style API for seamless integration into web applications, and leverages WebGPU for efficient local GPU acceleration and WebAssembly for performant CPU computation. With machine learning compilers MLC-LLM and Apache TVM, WebLLM leverages optimized WebGPU kernels, overcoming the absence of performant WebGPU kernel libraries. Evaluations show that WebLLM can retain up to 80% native performance on the same device, with room to further close the gap. WebLLM paves the way for universally accessible, privacy-preserving, personalized, and locally powered LLM applications in web browsers. The code is available at: https://github.com/mlc-ai/web-llm.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-12-20T11:24:13Z</published>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Charlie F. Ruan</name>
+    </author>
+    <author>
+      <name>Yucheng Qin</name>
+    </author>
+    <author>
+      <name>Akaash R. Parthasarathy</name>
+    </author>
+    <author>
+      <name>Xun Zhou</name>
+    </author>
+    <author>
+      <name>Ruihang Lai</name>
+    </author>
+    <author>
+      <name>Hongyi Jin</name>
+    </author>
+    <author>
+      <name>Yixin Dong</name>
+    </author>
+    <author>
+      <name>Bohan Hou</name>
+    </author>
+    <author>
+      <name>Meng-Shiun Yu</name>
+    </author>
+    <author>
+      <name>Yiyan Zhai</name>
+    </author>
+    <author>
+      <name>Sudeep Agarwal</name>
+    </author>
+    <author>
+      <name>Hangrui Cao</name>
+    </author>
+    <author>
+      <name>Siyuan Feng</name>
+    </author>
+    <author>
+      <name>Tianqi Chen</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2403.20041v3</id>
+    <title>Transformer-Lite: High-efficiency Deployment of Large Language Models on Mobile Phone GPUs</title>
+    <updated>2024-07-05T07:18:42Z</updated>
+    <link href="https://arxiv.org/abs/2403.20041v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2403.20041v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The Large Language Model (LLM) is widely employed for tasks such as intelligent assistants, text summarization, translation, and multi-modality on mobile phones. However, the current methods for on-device LLM deployment maintain slow inference speed, which causes poor user experience. To facilitate high-efficiency LLM deployment on device GPUs, we propose four optimization techniques: (a) a symbolic expression-based approach to support dynamic shape model inference; (b) operator optimizations and execution priority setting to enhance inference speed and reduce phone lagging; (c) an FP4 quantization method termed M0E4 to reduce dequantization overhead; (d) a sub-tensor-based technique to eliminate the need for copying KV cache after LLM inference. Furthermore, we implement these methods in our mobile inference engine, Transformer-Lite, which is compatible with both Qualcomm and MTK processors. We evaluated Transformer-Lite's performance using LLMs with varied architectures and parameters ranging from 2B to 14B. Specifically, we achieved prefill and decoding speeds of 121 token/s and 14 token/s for ChatGLM2 6B, and 330 token/s and 30 token/s for smaller Gemma 2B, respectively. Compared with CPU-based FastLLM and GPU-based MLC-LLM, our engine attains over 10x speedup for the prefill speed and 2~3x speedup for the decoding speed.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-03-29T08:26:53Z</published>
+    <arxiv:comment>21 pages, 6 figures, fix "E0M4" spell mistake, fix FLOPS to TFLOPS</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Luchang Li</name>
+    </author>
+    <author>
+      <name>Sheng Qian</name>
+    </author>
+    <author>
+      <name>Jie Lu</name>
+    </author>
+    <author>
+      <name>Lunxi Yuan</name>
+    </author>
+    <author>
+      <name>Rui Wang</name>
+    </author>
+    <author>
+      <name>Qin Xie</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2404.09151v3</id>
+    <title>Productively Deploying Emerging Models on Emerging Platforms: A Top-Down Approach for Testing and Debugging</title>
+    <updated>2025-04-03T23:20:47Z</updated>
+    <link href="https://arxiv.org/abs/2404.09151v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2404.09151v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>While existing machine learning (ML) frameworks focus on established platforms, like running CUDA on server-grade GPUs, there have been growing demands to enable emerging AI applications in a broader set of scenarios, such as running Large Language Models (LLMs) within browsers and mobile phones. However, deploying emerging models on new platforms (such as Metal and WebGPU) presents significant software engineering challenges due to rapid model evolution and limited tooling and practices for these platforms.
+  Previous practice for ML model deployment often follows a bottom-up fashion, where engineers first implement individual required operators and then put them together. However, this traditional development approach fails to meet the productivity requirements when deploying emerging ML applications, with the testing and debugging part as a bottleneck. To this end, we introduce \textsc{TapML}, a top-down approach designed to streamline model deployment on diverse platforms. While the traditional bottom-up approach requires crafting manual tests, \textsc{TapML} automatically creates high-quality, realistic test data through operator-wise test carving. Furthermore, \textsc{TapML} uses a migration-based strategy to gradually offload model implementation from the mature source platform to the target platform, minimizing the debugging scope of compound errors.
+  \textsc{TapML} has been used as the default development method in the MLC-LLM project to deploy emerging ML models. Within 2 years, \textsc{TapML} has accelerated the deployment of 105 emerging models in 27 model architectures across 5 emerging platforms. We show that \textsc{TapML} effectively boosts developer productivity while ensuring the quality of deployed models. Furthermore, we summarize comprehensive case studies from our real-world development, offering best practices for developing emerging ML systems.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-04-14T06:09:35Z</published>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Siyuan Feng</name>
+    </author>
+    <author>
+      <name>Jiawei Liu</name>
+    </author>
+    <author>
+      <name>Ruihang Lai</name>
+    </author>
+    <author>
+      <name>Charlie F. Ruan</name>
+    </author>
+    <author>
+      <name>Yong Yu</name>
+    </author>
+    <author>
+      <name>Lingming Zhang</name>
+    </author>
+    <author>
+      <name>Tianqi Chen</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2512.21571v1</id>
+    <title>nncase: An End-to-End Compiler for Efficient LLM Deployment on Heterogeneous Storage Architectures</title>
+    <updated>2025-12-25T08:27:53Z</updated>
+    <link href="https://arxiv.org/abs/2512.21571v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2512.21571v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The efficient deployment of large language models (LLMs) is hindered by memory architecture heterogeneity, where traditional compilers suffer from fragmented workflows and high adaptation costs. We present nncase, an open-source, end-to-end compilation framework designed to unify optimization across diverse targets. Central to nncase is an e-graph-based term rewriting engine that mitigates the phase ordering problem, enabling global exploration of computation and data movement strategies. The framework integrates three key modules: Auto Vectorize for adapting to heterogeneous computing units, Auto Distribution for searching parallel strategies with cost-aware communication optimization, and Auto Schedule for maximizing on-chip cache locality. Furthermore, a buffer-aware Codegen phase ensures efficient kernel instantiation. Evaluations show that nncase outperforms mainstream frameworks like MLC LLM and Intel IPEX on Qwen3 series models and achieves performance comparable to the hand-optimized llama.cpp on CPUs, demonstrating the viability of automated compilation for high-performance LLM deployment. The source code is available at https://github.com/kendryte/nncase.</summary>
+    <category term="cs.DC" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-12-25T08:27:53Z</published>
+    <arxiv:primary_category term="cs.DC"/>
+    <author>
+      <name>Hui Guo</name>
+    </author>
+    <author>
+      <name>Qihang Zheng</name>
+    </author>
+    <author>
+      <name>Chenghai Huo</name>
+    </author>
+    <author>
+      <name>Dongliang Guo</name>
+    </author>
+    <author>
+      <name>Haoqi Yang</name>
+    </author>
+    <author>
+      <name>Yang Zhang</name>
+    </author>
+  </entry>
+</feed>

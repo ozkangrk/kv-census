@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/lWzdOZlxs/BwTzb3xJPqG7X8I0E</id>
+  <title>arXiv Query: search_query=&amp;id_list=2405.16712&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-10T10:25:18Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=1&amp;id_list=2405.16712" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2405.16712v1</id>
+    <title>Zamba: A Compact 7B SSM Hybrid Model</title>
+    <updated>2024-05-26T22:23:02Z</updated>
+    <link href="https://arxiv.org/abs/2405.16712v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2405.16712v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>In this technical report, we present Zamba, a novel 7B SSM-transformer hybrid model which achieves competitive performance against leading open-weight models at a comparable scale. Zamba is trained on 1T tokens from openly available datasets and is the best non-transformer model at this scale. Zamba pioneers a unique architecture combining a Mamba backbone with a single shared attention module, thus obtaining the benefits of attention at minimal parameter cost. Due to its architecture, Zamba is significantly faster at inference than comparable transformer models and requires substantially less memory for generation of long sequences. Zamba is pretrained in two phases: the first phase is based on existing web datasets, while the second one consists of annealing the model over high-quality instruct and synthetic datasets, and is characterized by a rapid learning rate decay. We open-source the weights and all checkpoints for Zamba, through both phase 1 and annealing phases.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-05-26T22:23:02Z</published>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Paolo Glorioso</name>
+    </author>
+    <author>
+      <name>Quentin Anthony</name>
+    </author>
+    <author>
+      <name>Yury Tokpanov</name>
+    </author>
+    <author>
+      <name>James Whittington</name>
+    </author>
+    <author>
+      <name>Jonathan Pilault</name>
+    </author>
+    <author>
+      <name>Adam Ibrahim</name>
+    </author>
+    <author>
+      <name>Beren Millidge</name>
+    </author>
+  </entry>
+</feed>
