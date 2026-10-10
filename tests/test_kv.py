@@ -687,7 +687,9 @@ class TestWave2LegacyNaming:
         # per-token = 2*8*8*18*2 = 4608
         cfg = load("allenai__DataDecide-c4-10M")
         assert kv.kv_bytes_per_token(cfg) == 2 * 8 * 8 * 18 * 2  # = 4_608
-        assert kv.describe(cfg)["attention_type"] == "mha"
+        # ai2 naming has no num_key_value_heads/num_attention_heads at all,
+        # so the gate-literal identity is not verifiable -> non-pure label
+        assert kv.describe(cfg)["attention_type"] == "mha+legacycfg"
 
     def test_hf_olmo_multi_query(self):
         cfg = {"model_type": "hf_olmo", "d_model": 2048, "n_heads": 16,
@@ -709,7 +711,8 @@ class TestWave2LegacyNaming:
         # -> per-token = 2*60*8*128*2 = 245_760
         cfg = load("tiiuae__falcon-11B")
         d = kv.describe(cfg)
-        assert d["attention_type"] == "gqa"
+        # kv heads come from num_kv_heads (not num_key_value_heads) -> +legacycfg
+        assert d["attention_type"] == "gqa+legacycfg"
         assert kv.kv_bytes_per_token(cfg) == 2 * 60 * 8 * 128 * 2  # = 245_760
         # Qwen-14B (Qwen-1): MHA, 40 heads, kv_channels 128 -> 2*40*40*128*2 = 819_200
         cfg = load("Qwen__Qwen-14B")
@@ -929,7 +932,7 @@ class TestWave2Misc:
         # MolmoE: d_model 2048, n_heads 16 -> head 128; MHA; layer count from config
         cfg = load("allenai__MolmoE-1B-0924")
         d = kv.describe(cfg)
-        assert d["attention_type"] == "mha"
+        assert d["attention_type"] == "mha+legacycfg"  # ai2 n_heads naming
         assert kv.kv_bytes_per_token(cfg) == d["num_layers"] * 2 * 16 * 128 * 2
 
     def test_minicpm3_mla(self):
@@ -1019,3 +1022,23 @@ class TestNemotronFlash:
         assert (d["n_full_layers"], d["n_recurrent_layers"]) == (2, 10)
         assert kv.kv_bytes_per_token(cfg) == 4096
         assert kv.fixed_state_bytes(cfg) == 6 * 1_074_688 + 4 * 8_425_472  # = 40_150_016
+
+
+class TestGateLiteralLabels:
+    """Pure labels must also survive the gate's literal-only key reading
+    (num_key_value_heads else num_attention_heads; head_dim else
+    hidden//heads). Rows whose geometry comes from legacy keys get
+    +legacycfg instead of a bare mha/gqa/mqa label."""
+
+    def test_chatglm_multi_query_group_num(self):
+        # octogeex: kv heads = multi_query_group_num (2 of 32); gate would
+        # read num_attention_heads=32 -> mismatch -> +legacycfg
+        cfg = load("bigcode__octogeex")
+        d = kv.describe(cfg)
+        assert d["attention_type"] == "gqa+legacycfg"
+        assert d["num_kv_heads"] == 2
+
+    def test_plain_llama_stays_pure(self):
+        cfg = llama_like(L=8, heads=32, kv=8)
+        d = kv.describe(cfg)
+        assert d["attention_type"] == "gqa"  # identity holds under both readings

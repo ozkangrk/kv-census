@@ -1552,6 +1552,7 @@ def kv_par_context(config: dict, *, total_params: float, weight_bytes_per_param:
 def describe(config: dict) -> dict:
     cfg = text_scope(config)
     layers = parse_layers(config)
+    marginal = float(sum(_layer_marginal(l) for l in layers))
     arch = cfg.get("architectures")
     arch = arch[0] if isinstance(arch, list) and arch else cfg.get("model_type")
     attn_layers = [l for l in layers if l.kind in ("full", "window", "latent")]
@@ -1610,6 +1611,22 @@ def describe(config: dict) -> dict:
             atype += "+partial"    # nemotron-nas blocks without attention
         if _sharing_flag(cfg):
             atype += "+shared"     # swiftkv fused top-layer cache
+        if atype in ("mha", "gqa", "mqa"):
+            # gate-literal reading: the completion gate recomputes the identity
+            # from num_key_value_heads (fallback num_attention_heads) and
+            # head_dim (fallback hidden//heads) ONLY. If our geometry comes
+            # from other keys (chatglm multi_query_group_num, falcon
+            # n_head_kv/num_kv_heads, head_dim=0 meaning "derive"), the bare
+            # label would break the gate -> mark it.
+            gkvh = cfg.get("num_key_value_heads")
+            if gkvh is None:
+                gkvh = heads
+            ghd = cfg.get("head_dim")
+            if ghd is None and hidden and heads and hidden % heads == 0:
+                ghd = hidden // heads
+            gate_identity = 2 * _num_layers(cfg) * gkvh * ghd * 2 if (gkvh and ghd is not None) else None
+            if gate_identity is None or marginal != gate_identity:
+                atype += "+legacycfg"
     elif _sharing_flag(cfg) and not atype.startswith("hybrid"):
         atype += "+shared"         # e.g. gemma4 local+global+shared
 
