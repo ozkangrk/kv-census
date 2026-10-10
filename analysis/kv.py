@@ -871,9 +871,12 @@ def kv_par_context(config: dict, *, total_params: float, weight_bytes_per_param:
                    bytes_per_element: int = 2) -> float:
     """Smallest integer T >= 1 with kv_bytes_at(T) >= total_params*weight_bytes_per_param.
 
-    Bounded caches (pure window/recurrent) that saturate below parity return the
-    saturation context (max window W; 0 for windowless bounded caches that still
-    grow to a point... a constant pure-recurrent cache returns math.inf).
+    Convention for bounded caches (windows and/or recurrent state only, no
+    unbounded layers): if the cache saturates below parity, the saturation
+    context (the largest window W) is returned as a marker; a windowless,
+    constant cache (pure recurrent) that cannot reach parity returns
+    math.inf.  If the bounded cache does reach parity (small model), the
+    normal smallest-T rule applies.
     """
     if total_params <= 0:
         raise KVConfigError("total_params must be positive")
