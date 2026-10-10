@@ -77,7 +77,7 @@ Phase 2 (analiz) orkestratörde.
   11 MINOR + 7 not); raporlar reviews/ altında, tüm yanıtlar reviews/responses.md'de.
 - Kritik düzeltmeler (hepsi make analysis ile yeniden üretildi, gate yeniden 6/6 geçti):
   1) MEKANİZMA REGRESYONU OFF-BY-ONE: beta etiketleri kaymıştı (intercept, params betası
-     gibi okunuyordu) — düzeltildi; y стандартize; tablo/makrolar yeniden üretildi; tüm
+     gibi okunuyordu) — düzeltildi; bağımlı değişken de standartlaştırıldı; tablo/makrolar yeniden üretildi; tüm
      işaretler artık saf muhasebeyle uyumlu.
   2) DEDUP BİRİMİ: family-dedup aynı-geometri fine-tune'ları çökertmiyordu (2068 grupta
      292 farklı geometri; en büyük küme 260 satır, 143'ü 2025+). 2025 "sıçraması" büyük
@@ -94,3 +94,8 @@ Phase 2 (analiz) orkestratörde.
      ifşası yumuşatması.
 - Düzeltme sonrası: 16 sayfa, ~5.980 kelime, 34/34 atıf, 0 overfull; gate 6/6 PASS (67 sn).
 - Sonraki: Phase 5 — SUMMARY_TR.md, son gate, final commit.
+
+## Phase 5 — Tamamlama (tamamlandı)
+- SUMMARY_TR.md yazıldı. Son gate koşusu: 6/6 PASS (exit 0, 48 sn). Final commit yapıldı.
+- Proje teslim durumunda: paper/main.pdf 16 sayfa, ~5.980 kelime, 6 şekil, 5 üretilmiş
+  tablo + 82+ makro; results/ altında 7 çıktı dosyası; tüm ham veri ve API önbelleği repoda.
