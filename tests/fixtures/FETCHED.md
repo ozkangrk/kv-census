@@ -35,3 +35,23 @@ data/raw/configs/, owned by census-data).
 - RichardErkhov/google_-_recurrentgemma-2b-it-4bits
                                  <- google/recurrentgemma-2b-it gated
   (4-bit quantized mirror; config.json is google's + quantization_config)
+
+
+## Census wave-2 fixtures (2026-10-10, second batch)
+Copied verbatim from the census cache `data/raw/configs/` (fetched by the
+census-data agent from the same repos; provenance = the repo id in the
+filename). Includes e.g. allenai/DataDecide-c4-10M (hf_olmo), Qwen/Qwen3.5-0.8B,
+inclusionAI/Ling-2.5-1T, RWKV/RWKV7-1.5B-20260805, apple/OpenELM-1_1B,
+nvidia/Llama-3_1-Nemotron-51B-Instruct, nvidia/NVIDIA-Nemotron-3-Ultra-550B,
+ibm-granite/granite-swash-2b + granite-switch-4.1-3b, LGAI-EXAONE 3.5/4.5,
+ServiceNow-AI/Apriel-H1, Snowflake/Llama-3.1-SwiftKV-8B, deepseek-ai/DeepSeek-V4-Flash,
+EleutherAI/olmo3-7b, allenai/MolmoE-1B, MiniMaxAI M1/M2, internlm/Atria-Dawn-Preview
+(glm_moe_dsa), moonshotai/Kimi-VL-A3B (untyped MLA config),
+microsoft/Phi-4-mini-flash + bitnet-b1.58, stabilityai japanese-stablelm-alpha,
+zai-org/cogvlm-base-224, baichuan-inc/Baichuan-Audio-Base, Qwen VL families,
+openbmb MiniCPM3 + MiniCPM-SALA, inclusionAI/Ring-flash-linear-2.0,
+tencent/Hy4-preview, tiiuae/falcon-11B, Snowflake/snowflake-arctic,
+01-ai/Yi-VL-34B, Qwen/Qwen-14B, internlm/Agent-FLAN-7b, EleutherAI GPT-2 +
+bigcode/astraios (gpt_bigcode), bigcode/octogeex (chatglm), microsoft/Phi-3-vision,
+HuggingFaceTB/SmolVLM2-2.2B-Base (intentionally underdetermined: used to assert
+KVConfigError), LGAI-EXAONE/EXAONE-3.5.

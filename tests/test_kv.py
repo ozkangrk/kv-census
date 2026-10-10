@@ -675,3 +675,347 @@ class TestRealConfigs:
         cfg = load("baichuan-inc__Baichuan2-7B-Chat")
         assert kv.kv_bytes_per_token(cfg) == 2 * 32 * 32 * 128 * 2
         assert kv.describe(cfg)["attention_type"] == "mha"
+
+
+# --------------------------------------------------------------------------- #
+# census wave 2: naming variants, hybrids, sparse/compressed attention, sharing
+# --------------------------------------------------------------------------- #
+
+class TestWave2LegacyNaming:
+    def test_hf_olmo_ai2_naming(self):
+        # DataDecide-c4-10M: d_model 144, n_heads 8, n_layers 8 -> MHA head 18
+        # per-token = 2*8*8*18*2 = 4608
+        cfg = load("allenai__DataDecide-c4-10M")
+        assert kv.kv_bytes_per_token(cfg) == 2 * 8 * 8 * 18 * 2  # = 4_608
+        assert kv.describe(cfg)["attention_type"] == "mha"
+
+    def test_hf_olmo_multi_query(self):
+        cfg = {"model_type": "hf_olmo", "d_model": 2048, "n_heads": 16,
+               "n_layers": 12, "multi_query_attention": True, "multi_query_groups": 4}
+        # kv = 4, head = 128: per-token = 2*12*4*128*2 = 24_576
+        assert kv.kv_bytes_per_token(cfg) == 2 * 12 * 4 * 128 * 2
+
+    def test_gpt2_and_gpt_bigcode_naming(self):
+        # n_embd 768, n_head 12 -> head 64; 12 layers MHA: 2*12*12*64*2 = 36_864
+        cfg = load("EleutherAI__GPT-2-wikitext-chunks")
+        assert kv.kv_bytes_per_token(cfg) == 2 * 12 * 12 * 64 * 2
+        # astraios (gpt_bigcode): n_embd 2048, n_head 16 -> head 128, and
+        # multi_query=True -> 1 kv head (MQA): 2*24*1*128*2 = 12_288
+        cfg = load("bigcode__astraios-1b-fft")
+        assert kv.kv_bytes_per_token(cfg) == 2 * 24 * 1 * 128 * 2  # = 12_288
+
+    def test_falcon_modern_and_qwen1(self):
+        # falcon-11B: modern naming with num_kv_heads=8 (GQA); head 128
+        # -> per-token = 2*60*8*128*2 = 245_760
+        cfg = load("tiiuae__falcon-11B")
+        d = kv.describe(cfg)
+        assert d["attention_type"] == "gqa"
+        assert kv.kv_bytes_per_token(cfg) == 2 * 60 * 8 * 128 * 2  # = 245_760
+        # Qwen-14B (Qwen-1): MHA, 40 heads, kv_channels 128 -> 2*40*40*128*2 = 819_200
+        cfg = load("Qwen__Qwen-14B")
+        assert kv.kv_bytes_per_token(cfg) == 2 * 40 * 40 * 128 * 2
+
+    def test_exaone_num_layers_alias(self):
+        # EXAONE-3.5: uses num_layers=30 instead of num_hidden_layers; GQA 8/32
+        cfg = load("LGAI-EXAONE__EXAONE-3.5-2.4B-Instruct")
+        assert kv.kv_bytes_per_token(cfg) == 2 * 30 * 8 * 80 * 2  # = 768_000
+
+
+class TestWave2WindowPatterns:
+    def test_olmo3_sliding_window(self):
+        # olmo3-7b: 32 layers, layer_types 3x sliding + full every 4th
+        # (i+1)%4==0 default -> 8 full + 24 window W=4096; kv=32 (MHA), head 128
+        cfg = load("EleutherAI__olmo3-7b-sdf-sft-clean150")
+        d = kv.describe(cfg)
+        assert (d["n_full_layers"], d["n_window_layers"], d["window_size"]) == (8, 24, 4096)
+        assert kv.kv_bytes_per_token(cfg) == 8 * 2 * 32 * 128 * 2  # = 131_072
+
+    def test_exaone45_lllg_pattern(self):
+        # EXAONE-4.5-33B: explicit layer_types L,L,L,G repeating (64 layers)
+        # -> 16 full + 48 window W=4096; kv 8, head 128
+        cfg = load("LGAI-EXAONE__EXAONE-4.5-33B")
+        d = kv.describe(cfg)
+        assert (d["n_full_layers"], d["n_window_layers"]) == (16, 48)
+        assert kv.kv_bytes_per_token(cfg) == 16 * 2 * 8 * 128 * 2  # = 65_536
+
+    def test_granite_swa(self):
+        # granite-swash-2b: explicit layer_types; full at 0,3,7,11,15,19,23
+        # -> 6 full? config list: [F,S,S,S,F,S,S,S,F,...] count = 6 full of 24
+        # kv 4, head 128 (2560/20): per full layer 2*4*128*2 = 2048
+        cfg = load("ibm-granite__granite-swash-2b")
+        d = kv.describe(cfg)
+        assert d["attention_type"] == "local+global"
+        assert kv.kv_bytes_per_token(cfg) == d["n_full_layers"] * 2048
+
+    def test_phi4flash_odd_first_half_window(self):
+        # Phi-4-mini-flash: window W=512 on odd layers of the first half
+        # (i < 32//2 and i%2==1 -> layers 1,3,...,15 = 8 window), rest full
+        cfg = load("microsoft__Phi-4-mini-flash-reasoning")
+        d = kv.describe(cfg)
+        assert (d["n_full_layers"], d["n_window_layers"], d["window_size"]) == (24, 8, 512)
+        # 24 full layers * 2*20*64*2 = 61_440
+        assert kv.kv_bytes_per_token(cfg) == 24 * 2 * 20 * 64 * 2
+
+
+class TestWave2GdnAndLightning:
+    def test_qwen35(self):
+        # Qwen3.5-0.8B: 24 layers, full at (i+1)%4==0 -> 6 full (kv 2, hd 256
+        # -> 2048 B/token each = 12_288); 18 gdn layers:
+        # rnn = 16*128*128 = 262_144; conv = (2*16*128 + 16*128)*3 = 18_432
+        # -> 280_576 elems -> 561_152 B per layer -> 10_100_736 total state.
+        cfg = load("Qwen__Qwen3.5-0.8B")
+        d = kv.describe(cfg)
+        assert (d["n_full_layers"], d["n_recurrent_layers"]) == (6, 18)
+        assert kv.kv_bytes_per_token(cfg) == 12288
+        assert kv.fixed_state_bytes(cfg) == 18 * 280_576 * 2
+
+    def test_minimax_m1_lightning_hybrid(self):
+        # MiniMax-M1: 10 softmax-full (kv 8, hd 128 -> 4096 B/token each)
+        # + 70 lightning layers of 64*128*128 = 1_048_576 elems -> 140 MiB
+        cfg = load("MiniMaxAI__MiniMax-M1-40k")
+        d = kv.describe(cfg)
+        assert (d["n_full_layers"], d["n_recurrent_layers"]) == (10, 70)
+        assert kv.kv_bytes_per_token(cfg) == 10 * 2 * 8 * 128 * 2
+        assert kv.fixed_state_bytes(cfg) == 70 * 1_048_576 * 2
+
+    def test_minimax_m2_all_full(self):
+        # MiniMax-M2: attn_type_list all 1 -> plain GQA (kv 8, hd 128, 62 layers)
+        cfg = load("MiniMaxAI__MiniMax-M2")
+        d = kv.describe(cfg)
+        assert d["attention_type"] == "gqa" and d["n_recurrent_layers"] == 0
+        assert kv.kv_bytes_per_token(cfg) == 62 * 2 * 8 * 128 * 2  # = 253_952
+
+    def test_minicpm_sala_mixer_types(self):
+        # SALA: 'minicpm4' full GQA (kv 2, hd 128 -> 512 B/token) +
+        # 'lightning-attn' state 32*128*128 = 524_288 elems -> 1_048_576 B
+        cfg = load("openbmb__MiniCPM-SALA")
+        d = kv.describe(cfg)
+        n_full = d["n_full_layers"]; n_rec = d["n_recurrent_layers"]
+        assert n_full + n_rec == 32
+        assert (n_full, n_rec) == (8, 24)
+        assert kv.kv_bytes_per_token(cfg) == n_full * 2 * 2 * 128 * 2  # = 8_192
+        assert kv.fixed_state_bytes(cfg) == n_rec * 524_288 * 2
+
+    def test_rwkv7(self):
+        # RWKV7-1.5B: heads 32, head_dim 64, hidden 2048, 24 layers:
+        # state = 32*64*64 + 2048 = 133_120 elems -> 266_240 B per layer
+        cfg = load("RWKV__RWKV7-1.5B-20260805")
+        assert kv.fixed_state_bytes(cfg) == 24 * 133_120 * 2  # = 6_389_760
+
+    def test_ling_hybrid(self):
+        # Ling-2.5-1T (bailing_hybrid): attention (MLA 576*2=1152 B/token) at
+        # (i+1)%8==0 -> layers 7,15,...,79 = 10 layers -> 11_520 B/token;
+        # 70 lightning layers of 64*128*128 = 1_048_576 elems -> 140 MiB state.
+        cfg = load("inclusionAI__Ling-2.5-1T")
+        d = kv.describe(cfg)
+        assert (d["n_latent_layers"], d["n_recurrent_layers"]) == (10, 70)
+        assert kv.kv_bytes_per_token(cfg) == 10 * 576 * 2
+        assert kv.fixed_state_bytes(cfg) == 70 * 1_048_576 * 2
+
+    def test_ring_flash_linear(self):
+        # bailing_moe_linear: attention at (i+1)%8==0 of 32 -> 4 GQA layers
+        # (kv 4, hd 128 -> 2048 B/token each); 28 lightning layers of
+        # 32*128*128 elems.
+        cfg = load("inclusionAI__Ring-flash-linear-2.0")
+        d = kv.describe(cfg)
+        assert (d["n_full_layers"], d["n_recurrent_layers"]) == (4, 28)
+        assert kv.kv_bytes_per_token(cfg) == 4 * 2 * 4 * 128 * 2  # = 8_192
+        assert kv.fixed_state_bytes(cfg) == 28 * 524_288 * 2
+
+    def test_apriel_h_layout(self):
+        # hybrid_block_layout t/m2; t layers GQA kv 8 hd 128 (4096 B/token);
+        # m2 layers: d_inner 4096, d_state 16, n_groups 1, d_conv 4:
+        # ssm 65_536 + conv (4096+32)*3 = 12_384 -> 77_920 elems -> 155_840 B
+        cfg = load("ServiceNow-AI__Apriel-H1-15b-Thinker-SFT")
+        d = kv.describe(cfg)
+        assert kv.kv_bytes_per_token(cfg) == d["n_full_layers"] * 4096
+        assert kv.fixed_state_bytes(cfg) == d["n_recurrent_layers"] * 77_920 * 2
+
+
+class TestWave2SparseAndShared:
+    def test_deepseek_v4_flash(self):
+        # DeepSeek-V4-Flash: 43 layers shared-KV MQA (kv 1, hd 512):
+        # every layer has a W=128 window branch (1*512 elems per cached token);
+        # ratios [0,0,(4,128)x20,0]: 21 CSA + 20 HCA + 3 sliding (config list).
+        # CSA stream: (512+128)/4 = 160 elems/token; HCA: 512/128 = 4 elems.
+        # marginal = (21*160 + 20*4) * 2 B = 6_880 B/token.
+        cfg = load("deepseek-ai__DeepSeek-V4-Flash")
+        d = kv.describe(cfg)
+        assert d["attention_type"] == "mla+swa"
+        assert d["n_window_layers"] == 43
+        assert kv.kv_bytes_per_token(cfg) == (21 * 160 + 20 * 4) * 2  # = 6_880
+        # at T=1_000_000: window layers hold 128 tokens: 43*512*128*2
+        assert kv.kv_bytes_at(cfg, 1_000_000) == 6880 * 1_000_000 + 43 * 512 * 128 * 2
+
+    def test_deepseek_v4_nanowhale_all_sliding(self):
+        # compress_ratios all 0 -> every layer pure sliding (no streams)
+        cfg = {"model_type": "deepseek_v4", "hidden_size": 320, "num_hidden_layers": 4,
+               "num_attention_heads": 8, "num_key_value_heads": 1, "head_dim": 96,
+               "sliding_window": 128, "compress_ratios": [0, 0, 0, 0]}
+        assert kv.kv_bytes_per_token(cfg) == 0.0
+        assert kv.kv_bytes_at(cfg, 1000) == 4 * 96 * 128 * 2  # = 98_304
+
+    def test_glm_moe_dsa(self):
+        # Atria (glm_moe_dsa): 78 MLA latent layers (576*2 = 1152 B/token each)
+        # + 'full' indexer streams (index_head_dim 128 -> 256 B/token each);
+        # config carries indexer_types with 21 'full' layers.
+        cfg = load("internlm__Atria-Dawn-Preview")
+        d = kv.describe(cfg)
+        n_mla = 78
+        n_idx = d["n_latent_layers"] - n_mla
+        assert n_idx >= 0
+        assert kv.kv_bytes_per_token(cfg) == n_mla * 576 * 2 + n_idx * 128 * 2
+
+    def test_swiftkv_shared_cache(self):
+        # 32-layer llama, kv 8 hd 128; SwiftKV: first 16 layers own a cache,
+        # the last 16 share ONE fused cache -> 17 distinct caches.
+        # per-token = 17 * 2*8*128*2 = 69_632
+        cfg = load("Snowflake__Llama-3.1-SwiftKV-8B-Instruct")
+        assert kv.kv_bytes_per_token(cfg) == 17 * 4096  # = 69_632
+        assert kv.describe(cfg)["kv_shared_cross_layer"] is True
+
+    def test_openelm_per_layer_gqa(self):
+        # OpenELM-1.1B: per-layer kv-head lists; sum 2*k[i]*64*2 over 28 layers
+        cfg = load("apple__OpenELM-1_1B")
+        kvs = cfg["num_kv_heads"]
+        assert kv.kv_bytes_per_token(cfg) == sum(2 * k * 64 * 2 for k in kvs)
+        d = kv.describe(cfg)
+        assert d["num_kv_heads"] == kvs[0]
+
+    def test_nemotron_nas_block_configs(self):
+        # DeciLM block_configs: kv heads per layer = num_attention_heads/group
+        cfg = load("nvidia__Llama-3_1-Nemotron-51B-Instruct")
+        groups = [b["attention"]["n_heads_in_group"] for b in cfg["block_configs"]
+                  if isinstance(b.get("attention"), dict)
+                  and not b["attention"].get("no_op")
+                  and not b["attention"].get("replace_with_linear")]
+        heads = cfg["num_attention_heads"]
+        hd = 8192 // heads
+        assert kv.kv_bytes_per_token(cfg) == sum(2 * (heads // g) * hd * 2 for g in groups)
+
+    def test_gemma4_shared_kv(self):
+        # synthetic gemma4_text: 8 layers alternating, num_kv_shared_layers=4
+        # -> attention caches emitted ceil(8/4) = 2 times
+        cfg = {"model_type": "gemma4_text", "hidden_size": 1024, "num_hidden_layers": 8,
+               "num_attention_heads": 8, "num_key_value_heads": 2, "head_dim": 256,
+               "sliding_window": 1024, "num_kv_shared_layers": 4,
+               "layer_types": ["full_attention", "sliding_attention"] * 4}
+        # attention caches survive at group starts (attn idx 0 and 4), both
+        # full layers here -> 2 caches -> 2*2*2*256*2 = 4_096 B/token
+        assert kv.kv_bytes_per_token(cfg) == 2 * 2 * 2 * 256 * 2  # = 4_096
+        assert kv.describe(cfg)["kv_shared_cross_layer"] is True
+
+    def test_kimi_vl_untyped_mla(self):
+        # Kimi-VL config.json carries no model_type/architectures but has the
+        # deepseek-v2 MLA fields -> detected as MLA backbone: 27*576*2
+        cfg = load("moonshotai__Kimi-VL-A3B-Instruct")
+        assert kv.kv_bytes_per_token(cfg) == 27 * 576 * 2  # = 31_104
+
+
+class TestWave2Misc:
+    def test_nemotron3_layers_block_type(self):
+        # Nemotron-3-Ultra: layers_block_type values mamba/moe/attention, no
+        # num_hidden_layers (derived from the list). kv 2, hd 128; mamba2:
+        # d_inner 16384 (256*64), d_state 128, n_groups 8, conv 4:
+        # ssm 2_097_152 + conv (16384+2048)*3 = 55_296 -> 2_152_448 elems.
+        cfg = load("nvidia__NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16")
+        d = kv.describe(cfg)
+        # 108 blocks: 12 attention + 48 mamba + 48 moe (moe emits nothing)
+        assert (d["n_full_layers"], d["n_recurrent_layers"], d["num_layers"]) == (12, 48, 108)
+        assert kv.kv_bytes_per_token(cfg) == 12 * 2 * 2 * 128 * 2  # = 12_288
+        assert kv.fixed_state_bytes(cfg) == 48 * 2_152_448 * 2
+
+    def test_molmoe_ai2_naming(self):
+        # MolmoE: d_model 2048, n_heads 16 -> head 128; MHA; layer count from config
+        cfg = load("allenai__MolmoE-1B-0924")
+        d = kv.describe(cfg)
+        assert d["attention_type"] == "mha"
+        assert kv.kv_bytes_per_token(cfg) == d["num_layers"] * 2 * 16 * 128 * 2
+
+    def test_minicpm3_mla(self):
+        # MiniCPM3-4B: MLA latent (256 + 32) * 2 = 576 B/token/layer, 62 layers
+        cfg = load("openbmb__MiniCPM3-4B")
+        assert kv.kv_bytes_per_token(cfg) == 62 * (256 + 32) * 2  # = 35_712
+
+    def test_vl_flat_and_nested(self):
+        # Qwen2.5-VL-32B (flat): kv 8 of 40, head 128, 64 layers -> 131_072
+        cfg = load("Qwen__Qwen2.5-VL-32B-Instruct")
+        assert kv.kv_bytes_per_token(cfg) == 2 * 64 * 8 * 128 * 2
+        # Qwen3-VL-2B (text_config): kv 8 of 16, head 128, 28 layers
+        cfg = load("Qwen__Qwen3-VL-2B-Instruct")
+        assert kv.kv_bytes_per_token(cfg) == 2 * 28 * 8 * 128 * 2  # = 114_688
+
+    def test_bitnet_and_alpha_variants(self):
+        # bitnet: GQA kv 5 of 20, head 128, 30 layers
+        cfg = load("microsoft__bitnet-b1.58-2B-4T")
+        assert kv.kv_bytes_per_token(cfg) == 2 * 30 * 5 * 128 * 2
+        # japanese-stablelm-alpha-7b: MHA 32/32, head 128
+        cfg = load("stabilityai__japanese-stablelm-base-alpha-7b")
+        assert kv.kv_bytes_per_token(cfg) == 2 * 32 * 32 * 128 * 2
+
+    def test_cogvlm_flat_mha(self):
+        # cogvlm-base-224: vicuna-style flat MHA, 32 layers of 2*32*128*2
+        cfg = load("zai-org__cogvlm-base-224-hf")
+        assert kv.kv_bytes_per_token(cfg) == 2 * 32 * 32 * 128 * 2  # = 524_288
+
+    def test_llava_flat_backbone(self):
+        # Yi-VL-34B (llava container, flat llama fields): kv 8, head 128, 60 L
+        cfg = load("01-ai__Yi-VL-34B")
+        assert kv.kv_bytes_per_token(cfg) == 2 * 60 * 8 * 128 * 2  # = 245_760
+
+    def test_underdetermined_raises(self):
+        # SmolVLM2 text_config lacks num_attention_heads entirely -> must raise
+        cfg = load("HuggingFaceTB__SmolVLM2-2.2B-Base") if (FIX / "HuggingFaceTB__SmolVLM2-2.2B-Base.json").exists() else {
+            "model_type": "llama", "hidden_size": 2048, "num_hidden_layers": 24, "head_dim": 64}
+        with pytest.raises(kv.KVConfigError):
+            kv.parse_layers(cfg)
+
+
+class TestLabelHonesty:
+    """Pure mha/gqa/mqa labels must satisfy 2*L*kvh*hd*2 exactly."""
+
+    def test_openelm_label_variable(self):
+        cfg = load("apple__OpenELM-1_1B")
+        d = kv.describe(cfg)
+        assert d["attention_type"] == "gqa+variable"
+        ident = 2 * d["num_layers"] * d["num_kv_heads"] * d["head_dim"] * 2
+        assert d["kv_bytes_per_token_bf16"] != ident  # per-layer kv list varies
+
+    def test_swiftkv_label_shared(self):
+        cfg = load("Snowflake__Llama-3.1-SwiftKV-8B-Instruct")
+        d = kv.describe(cfg)
+        assert d["attention_type"] == "gqa+partial+shared"
+        assert d["kv_shared_cross_layer"] is True
+        # 16 own caches + 1 fused: 17*4096 = 69_632 != 32*4096
+        assert d["kv_bytes_per_token_bf16"] == 17 * 4096
+
+    def test_nemotron_nas_label_variable_partial(self):
+        cfg = load("nvidia__Llama-3_1-Nemotron-51B-Instruct")
+        d = kv.describe(cfg)
+        assert d["attention_type"].startswith("gqa+")
+        assert "variable" in d["attention_type"] or "partial" in d["attention_type"]
+
+    def test_pure_labels_satisfy_identity(self):
+        # a plain uniform full-attention model keeps the bare label
+        cfg = llama_like(L=8, heads=32, kv=8)
+        d = kv.describe(cfg)
+        assert d["attention_type"] == "gqa"
+        assert d["kv_bytes_per_token_bf16"] == 2 * 8 * 8 * 128 * 2
+
+
+class TestNemotronFlash:
+    def test_1b(self):
+        # grounded in nvidia's remote code: 24 blocks = 4 deltanet + 6 mamba2
+        # + 2 attention(kv 4, kq=v=128) + 12 FFN-only.
+        # attention: 2 * 2*4*128*2 = 4096 B/token.
+        # mamba2: d_inner 4096, d_state 128, n_groups 1, d_conv 4:
+        #   524_288 + (4096+256)*3 = 537_344 elems -> 1_074_688 B per layer.
+        # deltanet: state [2048,2048] + qkv convs (2*2048+2048)*3:
+        #   4_194_304 + 18_432 = 4_212_736 elems -> 8_425_472 B per layer.
+        # fixed state = 6*1_074_688 + 4*8_425_472 = 40_150_016 B
+        cfg = load("nvidia__Nemotron-Flash-1B")
+        d = kv.describe(cfg)
+        assert d["attention_type"] == "hybrid-mamba"
+        assert (d["n_full_layers"], d["n_recurrent_layers"]) == (2, 10)
+        assert kv.kv_bytes_per_token(cfg) == 4096
+        assert kv.fixed_state_bytes(cfg) == 6 * 1_074_688 + 4 * 8_425_472  # = 40_150_016
