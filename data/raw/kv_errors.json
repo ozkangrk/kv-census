@@ -516,30 +516,6 @@
   "error": "KVConfigError: unknown/unregistered architecture (model_type='flex_olmo')"
  },
  {
-  "repo_id": "allenai/Bolmo-1B",
-  "error": "KVConfigError: unknown/unregistered architecture (model_type='bolmo')"
- },
- {
-  "repo_id": "allenai/Bolmo-1B-Stage1",
-  "error": "KVConfigError: unknown/unregistered architecture (model_type='bolmo')"
- },
- {
-  "repo_id": "allenai/Bolmo-7B",
-  "error": "KVConfigError: unknown/unregistered architecture (model_type='bolmo')"
- },
- {
-  "repo_id": "allenai/Bolmo-7B-Stage1",
-  "error": "KVConfigError: unknown/unregistered architecture (model_type='bolmo')"
- },
- {
-  "repo_id": "allenai/Bwen-8B",
-  "error": "KVConfigError: unknown/unregistered architecture (model_type='bolmo')"
- },
- {
-  "repo_id": "allenai/Bwen-8B-Stage1",
-  "error": "KVConfigError: unknown/unregistered architecture (model_type='bolmo')"
- },
- {
   "repo_id": "allenai/DataDecide-c4-10M",
   "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
  },
@@ -1986,14 +1962,6 @@
  {
   "repo_id": "allenai/FlexOlmo-7x7B-1T-RT",
   "error": "KVConfigError: unknown/unregistered architecture (model_type='flex_olmo')"
- },
- {
-  "repo_id": "allenai/Llama-3-Blama-8B",
-  "error": "KVConfigError: unknown/unregistered architecture (model_type='bolmo')"
- },
- {
-  "repo_id": "allenai/Llama-3-Blama-8B-Stage1",
-  "error": "KVConfigError: unknown/unregistered architecture (model_type='bolmo')"
  },
  {
   "repo_id": "allenai/Molmo-72B-0924",

@@ -1,0 +1,62 @@
+.venv/bin/python scripts/fetch_census.py
+[2026-10-10T11:39:41+00:00] org mistralai: 56 candidates after prefilter
+[2026-10-10T11:39:41+00:00] org Qwen: 180 candidates after prefilter
+[2026-10-10T11:39:41+00:00] org google: 424 candidates after prefilter
+[2026-10-10T11:39:41+00:00] org google-deepmind: 0 candidates after prefilter
+[2026-10-10T11:39:41+00:00] org microsoft: 238 candidates after prefilter
+[2026-10-10T11:39:41+00:00] org deepseek-ai: 101 candidates after prefilter
+[2026-10-10T11:39:41+00:00] org 01-ai: 24 candidates after prefilter
+[2026-10-10T11:39:41+00:00] org tiiuae: 66 candidates after prefilter
+[2026-10-10T11:39:41+00:00] org allenai: 755 candidates after prefilter
+[2026-10-10T11:39:41+00:00] org nvidia: 523 candidates after prefilter
+[2026-10-10T11:39:41+00:00] org ibm-granite: 139 candidates after prefilter
+[2026-10-10T11:39:41+00:00] org CohereForAI: 0 candidates after prefilter
+[2026-10-10T11:39:41+00:00] org CohereLabs: 40 candidates after prefilter
+[2026-10-10T11:39:41+00:00] org zai-org: 112 candidates after prefilter
+[2026-10-10T11:39:41+00:00] org THUDM: 0 candidates after prefilter
+[2026-10-10T11:39:41+00:00] org moonshotai: 12 candidates after prefilter
+[2026-10-10T11:39:41+00:00] org MiniMaxAI: 18 candidates after prefilter
+[2026-10-10T11:39:41+00:00] org openai: 5 candidates after prefilter
+[2026-10-10T11:39:41+00:00] org internlm: 89 candidates after prefilter
+[2026-10-10T11:39:41+00:00] org baichuan-inc: 20 candidates after prefilter
+[2026-10-10T11:39:41+00:00] org stabilityai: 47 candidates after prefilter
+[2026-10-10T11:39:41+00:00] org HuggingFaceTB: 46 candidates after prefilter
+[2026-10-10T11:39:41+00:00] org apple: 72 candidates after prefilter
+[2026-10-10T11:39:41+00:00] org LiquidAI: 48 candidates after prefilter
+[2026-10-10T11:39:41+00:00] org ServiceNow-AI: 9 candidates after prefilter
+[2026-10-10T11:39:41+00:00] org ai21labs: 13 candidates after prefilter
+[2026-10-10T11:39:41+00:00] org openbmb: 93 candidates after prefilter
+[2026-10-10T11:39:41+00:00] org bigcode: 66 candidates after prefilter
+[2026-10-10T11:39:41+00:00] org core42: 0 candidates after prefilter
+[2026-10-10T11:39:41+00:00] org upstage: 24 candidates after prefilter
+[2026-10-10T11:39:41+00:00] org stepfun-ai: 19 candidates after prefilter
+[2026-10-10T11:39:41+00:00] org tencent: 81 candidates after prefilter
+[2026-10-10T11:39:41+00:00] org inclusionAI: 155 candidates after prefilter
+[2026-10-10T11:39:41+00:00] org meta-llama: 57 candidates after prefilter
+[2026-10-10T11:39:41+00:00] org EleutherAI: 943 candidates after prefilter
+[2026-10-10T11:39:41+00:00] org RWKV: 55 candidates after prefilter
+[2026-10-10T11:39:41+00:00] org mosaicml: 0 candidates after prefilter
+[2026-10-10T11:39:41+00:00] org databricks: 0 candidates after prefilter
+[2026-10-10T11:39:41+00:00] org Snowflake: 16 candidates after prefilter
+[2026-10-10T11:39:41+00:00] org LGAI-EXAONE: 22 candidates after prefilter
+[2026-10-10T11:39:41+00:00] DONE: included=2417 gated_skipped=237
+[2026-10-10T11:39:41+00:00] included_per_year={"2023": 263, "2024": 675, "2025": 1057, "2026": 422}
+.venv/bin/python scripts/build_models_csv.py
+min_150_rows: PASS (1490 rows)
+unique_repo_id: PASS
+at_least_3_years_2023_2026: PASS ({"2023": 192, "2024": 584, "2025": 501, "2026": 213})
+config_file_for_every_row: PASS (missing=[])
+kv_identity_pure_attention: PASS (0 bad e.g. [])
+geometry_matches_raw_config: PASS (0 bad e.g. [])
+gated_skipped_count: 237
+n_rows: 1490
+rows_per_year: {"2023": 192, "2024": 584, "2025": 501, "2026": 213}
+rows_per_org: {"01-ai": 22, "EleutherAI": 374, "HuggingFaceTB": 25, "LGAI-EXAONE": 6, "LiquidAI": 34, "MiniMaxAI": 8, "Qwen": 105, "RWKV": 28, "ServiceNow-AI": 4, "Snowflake": 3, "ai21labs": 6, "allenai": 178, "apple": 4, "baichuan-inc": 11, "bigcode": 5, "deepseek-ai": 70, "ibm-granite": 87, "inclusionAI": 28, "internlm": 47, "microsoft": 118, "mistralai": 22, "moonshotai": 8, "nvidia": 105, "openai": 4, "openbmb": 35, "stabilityai": 26, "stepfun-ai": 7, "tencent": 20, "tiiuae": 45, "upstage": 12, "zai-org": 43}
+attention_type_counts: {"gqa": 652, "mha": 568, "hybrid-mamba": 125, "mla": 50, "hybrid-gdn": 40, "rwkv": 31, "local+global": 8, "mamba": 6, "hybrid-lightning": 5, "gqa+swa": 4, "mqa": 1}
+n_distinct_orgs: 31
+n_dedup_groups: 1248
+n_params_from_safetensors: 1201
+n_params_from_config: 258
+n_params_missing: 31
+n_kv_errors: 927
+kv_errors_sample: ["01-ai/Yi-VL-34B :: KVConfigError: unknown/unregistered architecture (model_type='llava')", "01-ai/Yi-VL-6B :: KVConfigError: unknown/unregistered architecture (model_type='llava')", "CohereLabs/North-Mini-Code-1.0 :: KVConfigError: unknown/unregistered architecture (model_type='cohere2_moe')", "CohereLabs/North-Mini-Code-1.0-eagle :: KVConfigError: unknown/unregistered architecture (model_type='cohere2')", "CohereLabs/command-a-plus-05-2026-bf16 :: KVConfigError: unknown/unregistered architecture (model_type='cohere2_moe')", "EleutherAI/GPT-2-wikitext-chunks :: KVConfigError: unknown/unregistered architecture (model_type='gpt2')", "EleutherAI/GPT-2-wikitext-chunks-epsroot-0 :: KVConfigError: unknown/unregistered architecture (model_type='gpt2')", "EleutherAI/Hermes-btlm-3b-8k :: KVConfigError: unknown/unregistered architecture (model_type='btlm')", "EleutherAI/bergson-magic-gpt-2 :: KVConfigError: unknown/unregistered architecture (model_type='gpt2')", "EleutherAI/gpt-2-wikitext-chunks-epsroot-0-bs64 :: KVConfigError: unknown/unregistered architecture (model_type='gpt2')"]

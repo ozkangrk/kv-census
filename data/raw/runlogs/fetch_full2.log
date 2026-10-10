@@ -1,0 +1,75 @@
+[2026-10-10T10:33:40+00:00] org mistralai: 56 candidates after prefilter
+[2026-10-10T10:33:40+00:00] org Qwen: 182 candidates after prefilter
+[2026-10-10T10:33:40+00:00] org google: 424 candidates after prefilter
+[2026-10-10T10:33:40+00:00] org google-deepmind: 0 candidates after prefilter
+[2026-10-10T10:33:40+00:00] org microsoft: 238 candidates after prefilter
+[2026-10-10T10:34:36+00:00] org deepseek-ai: 105 candidates after prefilter
+[2026-10-10T10:34:41+00:00] org 01-ai: 28 repos listed
+[2026-10-10T10:34:41+00:00] org 01-ai: 24 candidates after prefilter
+[2026-10-10T10:35:06+00:00] org tiiuae: 137 repos listed
+[2026-10-10T10:35:06+00:00] org tiiuae: 74 candidates after prefilter
+[2026-10-10T10:36:14+00:00] org allenai: 978 repos listed
+[2026-10-10T10:36:14+00:00] org allenai: 755 candidates after prefilter
+[2026-10-10T10:48:05+00:00] org nvidia: 955 repos listed
+[2026-10-10T10:48:05+00:00] org nvidia: 524 candidates after prefilter
+[2026-10-10T10:53:47+00:00] org ibm-granite: 243 repos listed
+[2026-10-10T10:53:47+00:00] org ibm-granite: 139 candidates after prefilter
+[2026-10-10T10:55:46+00:00] org CohereForAI: 0 repos listed
+[2026-10-10T10:55:46+00:00] org CohereForAI: 0 candidates after prefilter
+[2026-10-10T10:55:47+00:00] org CohereLabs: 55 repos listed
+[2026-10-10T10:55:47+00:00] org CohereLabs: 40 candidates after prefilter
+[2026-10-10T10:56:20+00:00] org zai-org: 154 repos listed
+[2026-10-10T10:56:20+00:00] org zai-org: 112 candidates after prefilter
+[2026-10-10T10:57:59+00:00] org THUDM: 0 repos listed
+[2026-10-10T10:57:59+00:00] org THUDM: 0 candidates after prefilter
+[2026-10-10T10:57:59+00:00] org moonshotai: 19 repos listed
+[2026-10-10T10:57:59+00:00] org moonshotai: 12 candidates after prefilter
+[2026-10-10T10:58:20+00:00] org MiniMaxAI: 21 repos listed
+[2026-10-10T10:58:20+00:00] org MiniMaxAI: 19 candidates after prefilter
+[2026-10-10T10:58:37+00:00] org openai: 39 repos listed
+[2026-10-10T10:58:37+00:00] org openai: 5 candidates after prefilter
+[2026-10-10T10:58:42+00:00] org internlm: 134 repos listed
+[2026-10-10T10:58:42+00:00] org internlm: 91 candidates after prefilter
+[2026-10-10T11:00:03+00:00] org baichuan-inc: 25 repos listed
+[2026-10-10T11:00:03+00:00] org baichuan-inc: 20 candidates after prefilter
+[2026-10-10T11:00:23+00:00] org stabilityai: 117 repos listed
+[2026-10-10T11:00:23+00:00] org stabilityai: 47 candidates after prefilter
+[2026-10-10T11:01:06+00:00] org HuggingFaceTB: 84 repos listed
+[2026-10-10T11:01:06+00:00] org HuggingFaceTB: 46 candidates after prefilter
+[2026-10-10T11:01:44+00:00] org apple: 143 repos listed
+[2026-10-10T11:01:44+00:00] org apple: 72 candidates after prefilter
+[2026-10-10T11:02:28+00:00] org LiquidAI: 183 repos listed
+[2026-10-10T11:02:28+00:00] org LiquidAI: 49 candidates after prefilter
+[2026-10-10T11:03:07+00:00] org ServiceNow-AI: 10 repos listed
+[2026-10-10T11:03:07+00:00] org ServiceNow-AI: 9 candidates after prefilter
+[2026-10-10T11:03:24+00:00] org ai21labs: 17 repos listed
+[2026-10-10T11:03:24+00:00] org ai21labs: 13 candidates after prefilter
+[2026-10-10T11:03:37+00:00] org openbmb: 173 repos listed
+[2026-10-10T11:03:37+00:00] org openbmb: 94 candidates after prefilter
+[2026-10-10T11:05:06+00:00] org bigcode: 69 repos listed
+[2026-10-10T11:05:06+00:00] org bigcode: 66 candidates after prefilter
+[2026-10-10T11:05:53+00:00] org core42: 0 repos listed
+[2026-10-10T11:05:53+00:00] org core42: 0 candidates after prefilter
+[2026-10-10T11:05:53+00:00] org upstage: 26 repos listed
+[2026-10-10T11:05:53+00:00] org upstage: 25 candidates after prefilter
+[2026-10-10T11:06:15+00:00] org stepfun-ai: 51 repos listed
+[2026-10-10T11:06:15+00:00] org stepfun-ai: 19 candidates after prefilter
+[2026-10-10T11:06:31+00:00] org tencent: 161 repos listed
+[2026-10-10T11:06:31+00:00] org tencent: 81 candidates after prefilter
+[2026-10-10T11:07:33+00:00] org inclusionAI: 212 repos listed
+[2026-10-10T11:07:33+00:00] org inclusionAI: 155 candidates after prefilter
+[2026-10-10T11:09:44+00:00] org meta-llama: 70 repos listed
+[2026-10-10T11:09:44+00:00] org meta-llama: 57 candidates after prefilter
+[2026-10-10T11:10:34+00:00] org EleutherAI: 978 repos listed
+[2026-10-10T11:10:34+00:00] org EleutherAI: 943 candidates after prefilter
+[2026-10-10T11:21:54+00:00] org RWKV: 55 candidates after prefilter
+[2026-10-10T11:21:57+00:00] org mosaicml: 5 repos listed
+[2026-10-10T11:21:57+00:00] org mosaicml: 0 candidates after prefilter
+[2026-10-10T11:21:57+00:00] org databricks: 0 repos listed
+[2026-10-10T11:21:57+00:00] org databricks: 0 candidates after prefilter
+[2026-10-10T11:21:58+00:00] org Snowflake: 32 repos listed
+[2026-10-10T11:21:58+00:00] org Snowflake: 16 candidates after prefilter
+[2026-10-10T11:22:10+00:00] org LGAI-EXAONE: 50 repos listed
+[2026-10-10T11:22:10+00:00] org LGAI-EXAONE: 22 candidates after prefilter
+[2026-10-10T11:22:28+00:00] DONE: included=2362 gated_skipped=236
+[2026-10-10T11:22:28+00:00] included_per_year={"2023": 268, "2024": 684, "2025": 1048, "2026": 362}

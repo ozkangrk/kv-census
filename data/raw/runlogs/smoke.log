@@ -1,0 +1,6 @@
+[2026-10-10T10:20:53+00:00] org deepseek-ai: 105 repos listed
+[2026-10-10T10:20:53+00:00] org deepseek-ai: 105 candidates after prefilter
+[2026-10-10T10:21:58+00:00] org RWKV: 55 repos listed
+[2026-10-10T10:21:58+00:00] org RWKV: 55 candidates after prefilter
+[2026-10-10T10:22:34+00:00] DONE: included=124 gated_skipped=0
+[2026-10-10T10:22:34+00:00] included_per_year={"2023": 23, "2024": 49, "2025": 29, "2026": 23}

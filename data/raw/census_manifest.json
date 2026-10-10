@@ -46035,16 +46035,15 @@
   "architectures": [
    "BolmoForCausalLM"
   ],
-  "config_file": "data/raw/configs/allenai__Bolmo-1B.json",
   "created_at": "2025-12-10T10:06:38.000Z",
-  "decision": "included",
+  "decision": "excluded",
   "gated": false,
   "library_name": "transformers",
   "model_type": "bolmo",
   "name": "Bolmo-1B",
   "org": "allenai",
   "pipeline_tag": "text-generation",
-  "reason": "text",
+  "reason": "tiny_vocab_non_language:520",
   "repo_id": "allenai/Bolmo-1B",
   "safetensors_parameters": {
    "F32": 1468911776
@@ -46069,16 +46068,15 @@
   "architectures": [
    "BolmoForCausalLM"
   ],
-  "config_file": "data/raw/configs/allenai__Bolmo-1B-Stage1.json",
   "created_at": "2026-08-26T13:16:56.000Z",
-  "decision": "included",
+  "decision": "excluded",
   "gated": false,
   "library_name": "transformers",
   "model_type": "bolmo",
   "name": "Bolmo-1B-Stage1",
   "org": "allenai",
   "pipeline_tag": "text-generation",
-  "reason": "text",
+  "reason": "tiny_vocab_non_language:520",
   "repo_id": "allenai/Bolmo-1B-Stage1",
   "safetensors_parameters": {
    "F32": 1468911776
@@ -46103,16 +46101,15 @@
   "architectures": [
    "BolmoForCausalLM"
   ],
-  "config_file": "data/raw/configs/allenai__Bolmo-7B.json",
   "created_at": "2025-12-13T14:25:25.000Z",
-  "decision": "included",
+  "decision": "excluded",
   "gated": false,
   "library_name": "transformers",
   "model_type": "bolmo",
   "name": "Bolmo-7B",
   "org": "allenai",
   "pipeline_tag": "text-generation",
-  "reason": "text",
+  "reason": "tiny_vocab_non_language:520",
   "repo_id": "allenai/Bolmo-7B",
   "safetensors_parameters": {
    "F32": 7633084576
@@ -46137,16 +46134,15 @@
   "architectures": [
    "BolmoForCausalLM"
   ],
-  "config_file": "data/raw/configs/allenai__Bolmo-7B-Stage1.json",
   "created_at": "2026-08-26T13:12:59.000Z",
-  "decision": "included",
+  "decision": "excluded",
   "gated": false,
   "library_name": "transformers",
   "model_type": "bolmo",
   "name": "Bolmo-7B-Stage1",
   "org": "allenai",
   "pipeline_tag": "text-generation",
-  "reason": "text",
+  "reason": "tiny_vocab_non_language:520",
   "repo_id": "allenai/Bolmo-7B-Stage1",
   "safetensors_parameters": {
    "F32": 7633084576
@@ -46171,16 +46167,15 @@
   "architectures": [
    "BolmoForCausalLM"
   ],
-  "config_file": "data/raw/configs/allenai__Bwen-8B.json",
   "created_at": "2026-08-26T13:21:04.000Z",
-  "decision": "included",
+  "decision": "excluded",
   "gated": false,
   "library_name": "transformers",
   "model_type": "bolmo",
   "name": "Bwen-8B",
   "org": "allenai",
   "pipeline_tag": "text-generation",
-  "reason": "text",
+  "reason": "tiny_vocab_non_language:520",
   "repo_id": "allenai/Bwen-8B",
   "safetensors_parameters": {
    "F32": 8313169056
@@ -46205,16 +46200,15 @@
   "architectures": [
    "BolmoForCausalLM"
   ],
-  "config_file": "data/raw/configs/allenai__Bwen-8B-Stage1.json",
   "created_at": "2026-08-26T13:18:26.000Z",
-  "decision": "included",
+  "decision": "excluded",
   "gated": false,
   "library_name": "transformers",
   "model_type": "bolmo",
   "name": "Bwen-8B-Stage1",
   "org": "allenai",
   "pipeline_tag": "text-generation",
-  "reason": "text",
+  "reason": "tiny_vocab_non_language:520",
   "repo_id": "allenai/Bwen-8B-Stage1",
   "safetensors_parameters": {
    "F32": 8313169056
@@ -62285,16 +62279,15 @@
   "architectures": [
    "BolmoForCausalLM"
   ],
-  "config_file": "data/raw/configs/allenai__Llama-3-Blama-8B.json",
   "created_at": "2026-08-26T13:40:05.000Z",
-  "decision": "included",
+  "decision": "excluded",
   "gated": false,
   "library_name": "transformers",
   "model_type": "bolmo",
   "name": "Llama-3-Blama-8B",
   "org": "allenai",
   "pipeline_tag": "text-generation",
-  "reason": "text",
+  "reason": "tiny_vocab_non_language:520",
   "repo_id": "allenai/Llama-3-Blama-8B",
   "safetensors_parameters": {
    "F32": 8250736800
@@ -62319,16 +62312,15 @@
   "architectures": [
    "BolmoForCausalLM"
   ],
-  "config_file": "data/raw/configs/allenai__Llama-3-Blama-8B-Stage1.json",
   "created_at": "2026-08-26T13:32:05.000Z",
-  "decision": "included",
+  "decision": "excluded",
   "gated": false,
   "library_name": "transformers",
   "model_type": "bolmo",
   "name": "Llama-3-Blama-8B-Stage1",
   "org": "allenai",
   "pipeline_tag": "text-generation",
-  "reason": "text",
+  "reason": "tiny_vocab_non_language:520",
   "repo_id": "allenai/Llama-3-Blama-8B-Stage1",
   "safetensors_parameters": {
    "F32": 8250736800
@@ -121358,16 +121350,15 @@
   "architectures": [
    "JambaForCausalLM"
   ],
-  "config_file": "data/raw/configs/microsoft__Dayhoff-170M-GR-1000.json",
   "created_at": "2026-02-04T00:21:00.000Z",
-  "decision": "included",
+  "decision": "excluded",
   "gated": false,
   "library_name": "transformers",
   "model_type": "jamba",
   "name": "Dayhoff-170M-GR-1000",
   "org": "microsoft",
   "pipeline_tag": "text-generation",
-  "reason": "text",
+  "reason": "tiny_vocab_non_language:40",
   "repo_id": "microsoft/Dayhoff-170M-GR-1000",
   "safetensors_parameters": {
    "BF16": 170126064,
@@ -121392,16 +121383,15 @@
   "architectures": [
    "JambaForCausalLM"
   ],
-  "config_file": "data/raw/configs/microsoft__Dayhoff-170M-GR-16000.json",
   "created_at": "2026-01-24T19:27:52.000Z",
-  "decision": "included",
+  "decision": "excluded",
   "gated": false,
   "library_name": "transformers",
   "model_type": "jamba",
   "name": "Dayhoff-170M-GR-16000",
   "org": "microsoft",
   "pipeline_tag": "text-generation",
-  "reason": "text",
+  "reason": "tiny_vocab_non_language:40",
   "repo_id": "microsoft/Dayhoff-170M-GR-16000",
   "safetensors_parameters": {
    "BF16": 170126064,
@@ -121426,16 +121416,15 @@
   "architectures": [
    "JambaForCausalLM"
   ],
-  "config_file": "data/raw/configs/microsoft__Dayhoff-170M-GR-31000.json",
   "created_at": "2026-01-24T19:28:13.000Z",
-  "decision": "included",
+  "decision": "excluded",
   "gated": false,
   "library_name": "transformers",
   "model_type": "jamba",
   "name": "Dayhoff-170M-GR-31000",
   "org": "microsoft",
   "pipeline_tag": "text-generation",
-  "reason": "text",
+  "reason": "tiny_vocab_non_language:40",
   "repo_id": "microsoft/Dayhoff-170M-GR-31000",
   "safetensors_parameters": {
    "BF16": 170126064,
@@ -121460,16 +121449,15 @@
   "architectures": [
    "JambaForCausalLM"
   ],
-  "config_file": "data/raw/configs/microsoft__Dayhoff-170M-GR-46000.json",
   "created_at": "2026-01-24T19:28:32.000Z",
-  "decision": "included",
+  "decision": "excluded",
   "gated": false,
   "library_name": "transformers",
   "model_type": "jamba",
   "name": "Dayhoff-170M-GR-46000",
   "org": "microsoft",
   "pipeline_tag": "text-generation",
-  "reason": "text",
+  "reason": "tiny_vocab_non_language:40",
   "repo_id": "microsoft/Dayhoff-170M-GR-46000",
   "safetensors_parameters": {
    "BF16": 170126064,
@@ -121494,16 +121482,15 @@
   "architectures": [
    "JambaForCausalLM"
   ],
-  "config_file": "data/raw/configs/microsoft__Dayhoff-170M-GR-61000.json",
   "created_at": "2026-01-24T19:28:54.000Z",
-  "decision": "included",
+  "decision": "excluded",
   "gated": false,
   "library_name": "transformers",
   "model_type": "jamba",
   "name": "Dayhoff-170M-GR-61000",
   "org": "microsoft",
   "pipeline_tag": "text-generation",
-  "reason": "text",
+  "reason": "tiny_vocab_non_language:40",
   "repo_id": "microsoft/Dayhoff-170M-GR-61000",
   "safetensors_parameters": {
    "BF16": 170126064,
@@ -121528,16 +121515,15 @@
   "architectures": [
    "JambaForCausalLM"
   ],
-  "config_file": "data/raw/configs/microsoft__Dayhoff-170M-GRS-112000.json",
   "created_at": "2026-02-24T01:50:49.000Z",
-  "decision": "included",
+  "decision": "excluded",
   "gated": false,
   "library_name": "transformers",
   "model_type": "jamba",
   "name": "Dayhoff-170M-GRS-112000",
   "org": "microsoft",
   "pipeline_tag": "text-generation",
-  "reason": "text",
+  "reason": "tiny_vocab_non_language:40",
   "repo_id": "microsoft/Dayhoff-170M-GRS-112000",
   "safetensors_parameters": {
    "BF16": 170126064,
@@ -121562,16 +121548,15 @@
   "architectures": [
    "JambaForCausalLM"
   ],
-  "config_file": "data/raw/configs/microsoft__Dayhoff-170M-GRS-2000.json",
   "created_at": "2026-02-24T01:50:20.000Z",
-  "decision": "included",
+  "decision": "excluded",
   "gated": false,
   "library_name": "transformers",
   "model_type": "jamba",
   "name": "Dayhoff-170M-GRS-2000",
   "org": "microsoft",
   "pipeline_tag": "text-generation",
-  "reason": "text",
+  "reason": "tiny_vocab_non_language:40",
   "repo_id": "microsoft/Dayhoff-170M-GRS-2000",
   "safetensors_parameters": {
    "BF16": 170126064,
@@ -121596,16 +121581,15 @@
   "architectures": [
    "JambaForCausalLM"
   ],
-  "config_file": "data/raw/configs/microsoft__Dayhoff-170M-GRS-26000.json",
   "created_at": "2026-02-24T01:51:07.000Z",
-  "decision": "included",
+  "decision": "excluded",
   "gated": false,
   "library_name": "transformers",
   "model_type": "jamba",
   "name": "Dayhoff-170M-GRS-26000",
   "org": "microsoft",
   "pipeline_tag": "text-generation",
-  "reason": "text",
+  "reason": "tiny_vocab_non_language:40",
   "repo_id": "microsoft/Dayhoff-170M-GRS-26000",
   "safetensors_parameters": {
    "BF16": 170126064,
@@ -121630,16 +121614,15 @@
   "architectures": [
    "JambaForCausalLM"
   ],
-  "config_file": "data/raw/configs/microsoft__Dayhoff-170M-GRS-50000.json",
   "created_at": "2026-02-24T01:51:26.000Z",
-  "decision": "included",
+  "decision": "excluded",
   "gated": false,
   "library_name": "transformers",
   "model_type": "jamba",
   "name": "Dayhoff-170M-GRS-50000",
   "org": "microsoft",
   "pipeline_tag": "text-generation",
-  "reason": "text",
+  "reason": "tiny_vocab_non_language:40",
   "repo_id": "microsoft/Dayhoff-170M-GRS-50000",
   "safetensors_parameters": {
    "BF16": 170126064,
@@ -121664,16 +121647,15 @@
   "architectures": [
    "JambaForCausalLM"
   ],
-  "config_file": "data/raw/configs/microsoft__Dayhoff-170M-GRS-76000.json",
   "created_at": "2026-02-24T01:51:47.000Z",
-  "decision": "included",
+  "decision": "excluded",
   "gated": false,
   "library_name": "transformers",
   "model_type": "jamba",
   "name": "Dayhoff-170M-GRS-76000",
   "org": "microsoft",
   "pipeline_tag": "text-generation",
-  "reason": "text",
+  "reason": "tiny_vocab_non_language:40",
   "repo_id": "microsoft/Dayhoff-170M-GRS-76000",
   "safetensors_parameters": {
    "BF16": 170126064,
@@ -121698,16 +121680,15 @@
   "architectures": [
    "JambaForCausalLM"
   ],
-  "config_file": "data/raw/configs/microsoft__Dayhoff-170M-GRS-SS-110000.json",
   "created_at": "2026-04-03T22:15:59.000Z",
-  "decision": "included",
+  "decision": "excluded",
   "gated": false,
   "library_name": "transformers",
   "model_type": "jamba",
   "name": "Dayhoff-170M-GRS-SS-110000",
   "org": "microsoft",
   "pipeline_tag": "text-generation",
-  "reason": "text",
+  "reason": "tiny_vocab_non_language:40",
   "repo_id": "microsoft/Dayhoff-170M-GRS-SS-110000",
   "safetensors_parameters": {
    "BF16": 170126064,
@@ -121732,16 +121713,15 @@
   "architectures": [
    "JambaForCausalLM"
   ],
-  "config_file": "data/raw/configs/microsoft__Dayhoff-170M-GRS-SS-122000.json",
   "created_at": "2026-04-03T22:16:27.000Z",
-  "decision": "included",
+  "decision": "excluded",
   "gated": false,
   "library_name": "transformers",
   "model_type": "jamba",
   "name": "Dayhoff-170M-GRS-SS-122000",
   "org": "microsoft",
   "pipeline_tag": "text-generation",
-  "reason": "text",
+  "reason": "tiny_vocab_non_language:40",
   "repo_id": "microsoft/Dayhoff-170M-GRS-SS-122000",
   "safetensors_parameters": {
    "BF16": 170126064,
@@ -121766,16 +121746,15 @@
   "architectures": [
    "JambaForCausalLM"
   ],
-  "config_file": "data/raw/configs/microsoft__Dayhoff-170M-GRS-SS-134000.json",
   "created_at": "2026-04-03T22:16:56.000Z",
-  "decision": "included",
+  "decision": "excluded",
   "gated": false,
   "library_name": "transformers",
   "model_type": "jamba",
   "name": "Dayhoff-170M-GRS-SS-134000",
   "org": "microsoft",
   "pipeline_tag": "text-generation",
-  "reason": "text",
+  "reason": "tiny_vocab_non_language:40",
   "repo_id": "microsoft/Dayhoff-170M-GRS-SS-134000",
   "safetensors_parameters": {
    "BF16": 170126064,
@@ -121800,16 +121779,15 @@
   "architectures": [
    "JambaForCausalLM"
   ],
-  "config_file": "data/raw/configs/microsoft__Dayhoff-170M-GRS-SS-14000.json",
   "created_at": "2026-04-03T22:11:59.000Z",
-  "decision": "included",
+  "decision": "excluded",
   "gated": false,
   "library_name": "transformers",
   "model_type": "jamba",
   "name": "Dayhoff-170M-GRS-SS-14000",
   "org": "microsoft",
   "pipeline_tag": "text-generation",
-  "reason": "text",
+  "reason": "tiny_vocab_non_language:40",
   "repo_id": "microsoft/Dayhoff-170M-GRS-SS-14000",
   "safetensors_parameters": {
    "BF16": 170126064,
@@ -121834,16 +121812,15 @@
   "architectures": [
    "JambaForCausalLM"
   ],
-  "config_file": "data/raw/configs/microsoft__Dayhoff-170M-GRS-SS-26000.json",
   "created_at": "2026-04-03T22:12:29.000Z",
-  "decision": "included",
+  "decision": "excluded",
   "gated": false,
   "library_name": "transformers",
   "model_type": "jamba",
   "name": "Dayhoff-170M-GRS-SS-26000",
   "org": "microsoft",
   "pipeline_tag": "text-generation",
-  "reason": "text",
+  "reason": "tiny_vocab_non_language:40",
   "repo_id": "microsoft/Dayhoff-170M-GRS-SS-26000",
   "safetensors_parameters": {
    "BF16": 170126064,
@@ -121868,16 +121845,15 @@
   "architectures": [
    "JambaForCausalLM"
   ],
-  "config_file": "data/raw/configs/microsoft__Dayhoff-170M-GRS-SS-38000.json",
   "created_at": "2026-04-03T22:13:01.000Z",
-  "decision": "included",
+  "decision": "excluded",
   "gated": false,
   "library_name": "transformers",
   "model_type": "jamba",
   "name": "Dayhoff-170M-GRS-SS-38000",
   "org": "microsoft",
   "pipeline_tag": "text-generation",
-  "reason": "text",
+  "reason": "tiny_vocab_non_language:40",
   "repo_id": "microsoft/Dayhoff-170M-GRS-SS-38000",
   "safetensors_parameters": {
    "BF16": 170126064,
@@ -121902,16 +121878,15 @@
   "architectures": [
    "JambaForCausalLM"
   ],
-  "config_file": "data/raw/configs/microsoft__Dayhoff-170M-GRS-SS-50000.json",
   "created_at": "2026-04-03T22:13:36.000Z",
-  "decision": "included",
+  "decision": "excluded",
   "gated": false,
   "library_name": "transformers",
   "model_type": "jamba",
   "name": "Dayhoff-170M-GRS-SS-50000",
   "org": "microsoft",
   "pipeline_tag": "text-generation",
-  "reason": "text",
+  "reason": "tiny_vocab_non_language:40",
   "repo_id": "microsoft/Dayhoff-170M-GRS-SS-50000",
   "safetensors_parameters": {
    "BF16": 170126064,
@@ -121936,16 +121911,15 @@
   "architectures": [
    "JambaForCausalLM"
   ],
-  "config_file": "data/raw/configs/microsoft__Dayhoff-170M-GRS-SS-62000.json",
   "created_at": "2026-04-03T22:14:05.000Z",
-  "decision": "included",
+  "decision": "excluded",
   "gated": false,
   "library_name": "transformers",
   "model_type": "jamba",
   "name": "Dayhoff-170M-GRS-SS-62000",
   "org": "microsoft",
   "pipeline_tag": "text-generation",
-  "reason": "text",
+  "reason": "tiny_vocab_non_language:40",
   "repo_id": "microsoft/Dayhoff-170M-GRS-SS-62000",
   "safetensors_parameters": {
    "BF16": 170126064,
@@ -121970,16 +121944,15 @@
   "architectures": [
    "JambaForCausalLM"
   ],
-  "config_file": "data/raw/configs/microsoft__Dayhoff-170M-GRS-SS-74000.json",
   "created_at": "2026-04-03T22:14:33.000Z",
-  "decision": "included",
+  "decision": "excluded",
   "gated": false,
   "library_name": "transformers",
   "model_type": "jamba",
   "name": "Dayhoff-170M-GRS-SS-74000",
   "org": "microsoft",
   "pipeline_tag": "text-generation",
-  "reason": "text",
+  "reason": "tiny_vocab_non_language:40",
   "repo_id": "microsoft/Dayhoff-170M-GRS-SS-74000",
   "safetensors_parameters": {
    "BF16": 170126064,
@@ -122004,16 +121977,15 @@
   "architectures": [
    "JambaForCausalLM"
   ],
-  "config_file": "data/raw/configs/microsoft__Dayhoff-170M-GRS-SS-86000.json",
   "created_at": "2026-04-03T22:15:01.000Z",
-  "decision": "included",
+  "decision": "excluded",
   "gated": false,
   "library_name": "transformers",
   "model_type": "jamba",
   "name": "Dayhoff-170M-GRS-SS-86000",
   "org": "microsoft",
   "pipeline_tag": "text-generation",
-  "reason": "text",
+  "reason": "tiny_vocab_non_language:40",
   "repo_id": "microsoft/Dayhoff-170M-GRS-SS-86000",
   "safetensors_parameters": {
    "BF16": 170126064,
@@ -122038,16 +122010,15 @@
   "architectures": [
    "JambaForCausalLM"
   ],
-  "config_file": "data/raw/configs/microsoft__Dayhoff-170M-GRS-SS-98000.json",
   "created_at": "2026-04-03T22:15:31.000Z",
-  "decision": "included",
+  "decision": "excluded",
   "gated": false,
   "library_name": "transformers",
   "model_type": "jamba",
   "name": "Dayhoff-170M-GRS-SS-98000",
   "org": "microsoft",
   "pipeline_tag": "text-generation",
-  "reason": "text",
+  "reason": "tiny_vocab_non_language:40",
   "repo_id": "microsoft/Dayhoff-170M-GRS-SS-98000",
   "safetensors_parameters": {
    "BF16": 170126064,
@@ -122072,16 +122043,15 @@
   "architectures": [
    "JambaForCausalLM"
   ],
-  "config_file": "data/raw/configs/microsoft__Dayhoff-170M-UR-90-31000.json",
   "created_at": "2026-01-24T17:55:03.000Z",
-  "decision": "included",
+  "decision": "excluded",
   "gated": false,
   "library_name": "transformers",
   "model_type": "jamba",
   "name": "Dayhoff-170M-UR-90-31000",
   "org": "microsoft",
   "pipeline_tag": "text-generation",
-  "reason": "text",
+  "reason": "tiny_vocab_non_language:40",
   "repo_id": "microsoft/Dayhoff-170M-UR-90-31000",
   "safetensors_parameters": {
    "BF16": 170126064,
@@ -122106,16 +122076,15 @@
   "architectures": [
    "JambaForCausalLM"
   ],
-  "config_file": "data/raw/configs/microsoft__Dayhoff-170M-UR90-1000.json",
   "created_at": "2026-02-04T00:20:41.000Z",
-  "decision": "included",
+  "decision": "excluded",
   "gated": false,
   "library_name": "transformers",
   "model_type": "jamba",
   "name": "Dayhoff-170M-UR90-1000",
   "org": "microsoft",
   "pipeline_tag": "text-generation",
-  "reason": "text",
+  "reason": "tiny_vocab_non_language:40",
   "repo_id": "microsoft/Dayhoff-170M-UR90-1000",
   "safetensors_parameters": {
    "BF16": 170126064,
@@ -122140,16 +122109,15 @@
   "architectures": [
    "JambaForCausalLM"
   ],
-  "config_file": "data/raw/configs/microsoft__Dayhoff-170M-UR90-16000.json",
   "created_at": "2026-01-24T18:13:04.000Z",
-  "decision": "included",
+  "decision": "excluded",
   "gated": false,
   "library_name": "transformers",
   "model_type": "jamba",
   "name": "Dayhoff-170M-UR90-16000",
   "org": "microsoft",
   "pipeline_tag": "text-generation",
-  "reason": "text",
+  "reason": "tiny_vocab_non_language:40",
   "repo_id": "microsoft/Dayhoff-170M-UR90-16000",
   "safetensors_parameters": {
    "BF16": 170126064,
@@ -122174,16 +122142,15 @@
   "architectures": [
    "JambaForCausalLM"
   ],
-  "config_file": "data/raw/configs/microsoft__Dayhoff-170M-UR90-31000.json",
   "created_at": "2026-01-24T18:13:26.000Z",
-  "decision": "included",
+  "decision": "excluded",
   "gated": false,
   "library_name": "transformers",
   "model_type": "jamba",
   "name": "Dayhoff-170M-UR90-31000",
   "org": "microsoft",
   "pipeline_tag": "text-generation",
-  "reason": "text",
+  "reason": "tiny_vocab_non_language:40",
   "repo_id": "microsoft/Dayhoff-170M-UR90-31000",
   "safetensors_parameters": {
    "BF16": 170126064,
@@ -122208,16 +122175,15 @@
   "architectures": [
    "JambaForCausalLM"
   ],
-  "config_file": "data/raw/configs/microsoft__Dayhoff-170M-UR90-46000.json",
   "created_at": "2026-01-24T18:13:47.000Z",
-  "decision": "included",
+  "decision": "excluded",
   "gated": false,
   "library_name": "transformers",
   "model_type": "jamba",
   "name": "Dayhoff-170M-UR90-46000",
   "org": "microsoft",
   "pipeline_tag": "text-generation",
-  "reason": "text",
+  "reason": "tiny_vocab_non_language:40",
   "repo_id": "microsoft/Dayhoff-170M-UR90-46000",
   "safetensors_parameters": {
    "BF16": 170126064,
@@ -122242,16 +122208,15 @@
   "architectures": [
    "JambaForCausalLM"
   ],
-  "config_file": "data/raw/configs/microsoft__Dayhoff-170M-UR90-61000.json",
   "created_at": "2026-01-24T18:14:08.000Z",
-  "decision": "included",
+  "decision": "excluded",
   "gated": false,
   "library_name": "transformers",
   "model_type": "jamba",
   "name": "Dayhoff-170M-UR90-61000",
   "org": "microsoft",
   "pipeline_tag": "text-generation",
-  "reason": "text",
+  "reason": "tiny_vocab_non_language:40",
   "repo_id": "microsoft/Dayhoff-170M-UR90-61000",
   "safetensors_parameters": {
    "BF16": 170126064,
@@ -122276,16 +122241,15 @@
   "architectures": [
    "JambaForCausalLM"
   ],
-  "config_file": "data/raw/configs/microsoft__Dayhoff-170M-UR90-HL-10000.json",
   "created_at": "2026-04-02T01:37:55.000Z",
-  "decision": "included",
+  "decision": "excluded",
   "gated": false,
   "library_name": "transformers",
   "model_type": "jamba",
   "name": "Dayhoff-170M-UR90-HL-10000",
   "org": "microsoft",
   "pipeline_tag": "text-generation",
-  "reason": "text",
+  "reason": "tiny_vocab_non_language:40",
   "repo_id": "microsoft/Dayhoff-170M-UR90-HL-10000",
   "safetensors_parameters": {
    "BF16": 170126064,
@@ -122310,16 +122274,15 @@
   "architectures": [
    "JambaForCausalLM"
   ],
-  "config_file": "data/raw/configs/microsoft__Dayhoff-170M-UR90-HL-12000.json",
   "created_at": "2026-04-02T01:38:17.000Z",
-  "decision": "included",
+  "decision": "excluded",
   "gated": false,
   "library_name": "transformers",
   "model_type": "jamba",
   "name": "Dayhoff-170M-UR90-HL-12000",
   "org": "microsoft",
   "pipeline_tag": "text-generation",
-  "reason": "text",
+  "reason": "tiny_vocab_non_language:40",
   "repo_id": "microsoft/Dayhoff-170M-UR90-HL-12000",
   "safetensors_parameters": {
    "BF16": 170126064,
@@ -122344,16 +122307,15 @@
   "architectures": [
    "JambaForCausalLM"
   ],
-  "config_file": "data/raw/configs/microsoft__Dayhoff-170M-UR90-HL-14000.json",
   "created_at": "2026-04-02T01:38:40.000Z",
-  "decision": "included",
+  "decision": "excluded",
   "gated": false,
   "library_name": "transformers",
   "model_type": "jamba",
   "name": "Dayhoff-170M-UR90-HL-14000",
   "org": "microsoft",
   "pipeline_tag": "text-generation",
-  "reason": "text",
+  "reason": "tiny_vocab_non_language:40",
   "repo_id": "microsoft/Dayhoff-170M-UR90-HL-14000",
   "safetensors_parameters": {
    "BF16": 170126064,
@@ -122378,16 +122340,15 @@
   "architectures": [
    "JambaForCausalLM"
   ],
-  "config_file": "data/raw/configs/microsoft__Dayhoff-170M-UR90-HL-16000.json",
   "created_at": "2026-04-02T01:39:12.000Z",
-  "decision": "included",
+  "decision": "excluded",
   "gated": false,
   "library_name": "transformers",
   "model_type": "jamba",
   "name": "Dayhoff-170M-UR90-HL-16000",
   "org": "microsoft",
   "pipeline_tag": "text-generation",
-  "reason": "text",
+  "reason": "tiny_vocab_non_language:40",
   "repo_id": "microsoft/Dayhoff-170M-UR90-HL-16000",
   "safetensors_parameters": {
    "BF16": 170126064,
@@ -122412,16 +122373,15 @@
   "architectures": [
    "JambaForCausalLM"
   ],
-  "config_file": "data/raw/configs/microsoft__Dayhoff-170M-UR90-HL-18000.json",
   "created_at": "2026-04-02T01:39:34.000Z",
-  "decision": "included",
+  "decision": "excluded",
   "gated": false,
   "library_name": "transformers",
   "model_type": "jamba",
   "name": "Dayhoff-170M-UR90-HL-18000",
   "org": "microsoft",
   "pipeline_tag": "text-generation",
-  "reason": "text",
+  "reason": "tiny_vocab_non_language:40",
   "repo_id": "microsoft/Dayhoff-170M-UR90-HL-18000",
   "safetensors_parameters": {
    "BF16": 170126064,
@@ -122446,16 +122406,15 @@
   "architectures": [
    "JambaForCausalLM"
   ],
-  "config_file": "data/raw/configs/microsoft__Dayhoff-170M-UR90-HL-2000.json",
   "created_at": "2026-04-02T01:36:05.000Z",
-  "decision": "included",
+  "decision": "excluded",
   "gated": false,
   "library_name": "transformers",
   "model_type": "jamba",
   "name": "Dayhoff-170M-UR90-HL-2000",
   "org": "microsoft",
   "pipeline_tag": "text-generation",
-  "reason": "text",
+  "reason": "tiny_vocab_non_language:40",
   "repo_id": "microsoft/Dayhoff-170M-UR90-HL-2000",
   "safetensors_parameters": {
    "BF16": 170126064,
@@ -122480,16 +122439,15 @@
   "architectures": [
    "JambaForCausalLM"
   ],
-  "config_file": "data/raw/configs/microsoft__Dayhoff-170M-UR90-HL-20000.json",
   "created_at": "2026-04-02T01:39:56.000Z",
-  "decision": "included",
+  "decision": "excluded",
   "gated": false,
   "library_name": "transformers",
   "model_type": "jamba",
   "name": "Dayhoff-170M-UR90-HL-20000",
   "org": "microsoft",
   "pipeline_tag": "text-generation",
-  "reason": "text",
+  "reason": "tiny_vocab_non_language:40",
   "repo_id": "microsoft/Dayhoff-170M-UR90-HL-20000",
   "safetensors_parameters": {
    "BF16": 170126064,
@@ -122514,16 +122472,15 @@
   "architectures": [
    "JambaForCausalLM"
   ],
-  "config_file": "data/raw/configs/microsoft__Dayhoff-170M-UR90-HL-22000.json",
   "created_at": "2026-04-02T01:40:18.000Z",
-  "decision": "included",
+  "decision": "excluded",
   "gated": false,
   "library_name": "transformers",
   "model_type": "jamba",
   "name": "Dayhoff-170M-UR90-HL-22000",
   "org": "microsoft",
   "pipeline_tag": "text-generation",
-  "reason": "text",
+  "reason": "tiny_vocab_non_language:40",
   "repo_id": "microsoft/Dayhoff-170M-UR90-HL-22000",
   "safetensors_parameters": {
    "BF16": 170126064,
@@ -122548,16 +122505,15 @@
   "architectures": [
    "JambaForCausalLM"
   ],
-  "config_file": "data/raw/configs/microsoft__Dayhoff-170M-UR90-HL-24000.json",
   "created_at": "2026-04-02T01:40:50.000Z",
-  "decision": "included",
+  "decision": "excluded",
   "gated": false,
   "library_name": "transformers",
   "model_type": "jamba",
   "name": "Dayhoff-170M-UR90-HL-24000",
   "org": "microsoft",
   "pipeline_tag": "text-generation",
-  "reason": "text",
+  "reason": "tiny_vocab_non_language:40",
   "repo_id": "microsoft/Dayhoff-170M-UR90-HL-24000",
   "safetensors_parameters": {
    "BF16": 170126064,
@@ -122582,16 +122538,15 @@
   "architectures": [
    "JambaForCausalLM"
   ],
-  "config_file": "data/raw/configs/microsoft__Dayhoff-170M-UR90-HL-26000.json",
   "created_at": "2026-04-02T01:41:12.000Z",
-  "decision": "included",
+  "decision": "excluded",
   "gated": false,
   "library_name": "transformers",
   "model_type": "jamba",
   "name": "Dayhoff-170M-UR90-HL-26000",
   "org": "microsoft",
   "pipeline_tag": "text-generation",
-  "reason": "text",
+  "reason": "tiny_vocab_non_language:40",
   "repo_id": "microsoft/Dayhoff-170M-UR90-HL-26000",
   "safetensors_parameters": {
    "BF16": 170126064,
@@ -122616,16 +122571,15 @@
   "architectures": [
    "JambaForCausalLM"
   ],
-  "config_file": "data/raw/configs/microsoft__Dayhoff-170M-UR90-HL-28000.json",
   "created_at": "2026-04-02T01:41:34.000Z",
-  "decision": "included",
+  "decision": "excluded",
   "gated": false,
   "library_name": "transformers",
   "model_type": "jamba",
   "name": "Dayhoff-170M-UR90-HL-28000",
   "org": "microsoft",
   "pipeline_tag": "text-generation",
-  "reason": "text",
+  "reason": "tiny_vocab_non_language:40",
   "repo_id": "microsoft/Dayhoff-170M-UR90-HL-28000",
   "safetensors_parameters": {
    "BF16": 170126064,
@@ -122650,16 +122604,15 @@
   "architectures": [
    "JambaForCausalLM"
   ],
-  "config_file": "data/raw/configs/microsoft__Dayhoff-170M-UR90-HL-30000.json",
   "created_at": "2026-04-02T01:42:06.000Z",
-  "decision": "included",
+  "decision": "excluded",
   "gated": false,
   "library_name": "transformers",
   "model_type": "jamba",
   "name": "Dayhoff-170M-UR90-HL-30000",
   "org": "microsoft",
   "pipeline_tag": "text-generation",
-  "reason": "text",
+  "reason": "tiny_vocab_non_language:40",
   "repo_id": "microsoft/Dayhoff-170M-UR90-HL-30000",
   "safetensors_parameters": {
    "BF16": 170126064,
@@ -122684,16 +122637,15 @@
   "architectures": [
    "JambaForCausalLM"
   ],
-  "config_file": "data/raw/configs/microsoft__Dayhoff-170M-UR90-HL-32000.json",
   "created_at": "2026-04-02T01:42:38.000Z",
-  "decision": "included",
+  "decision": "excluded",
   "gated": false,
   "library_name": "transformers",
   "model_type": "jamba",
   "name": "Dayhoff-170M-UR90-HL-32000",
   "org": "microsoft",
   "pipeline_tag": "text-generation",
-  "reason": "text",
+  "reason": "tiny_vocab_non_language:40",
   "repo_id": "microsoft/Dayhoff-170M-UR90-HL-32000",
   "safetensors_parameters": {
    "BF16": 170126064,
@@ -122718,16 +122670,15 @@
   "architectures": [
    "JambaForCausalLM"
   ],
-  "config_file": "data/raw/configs/microsoft__Dayhoff-170M-UR90-HL-34000.json",
   "created_at": "2026-04-02T01:43:10.000Z",
-  "decision": "included",
+  "decision": "excluded",
   "gated": false,
   "library_name": "transformers",
   "model_type": "jamba",
   "name": "Dayhoff-170M-UR90-HL-34000",
   "org": "microsoft",
   "pipeline_tag": "text-generation",
-  "reason": "text",
+  "reason": "tiny_vocab_non_language:40",
   "repo_id": "microsoft/Dayhoff-170M-UR90-HL-34000",
   "safetensors_parameters": {
    "BF16": 170126064,
@@ -122752,16 +122703,15 @@
   "architectures": [
    "JambaForCausalLM"
   ],
-  "config_file": "data/raw/configs/microsoft__Dayhoff-170M-UR90-HL-36000.json",
   "created_at": "2026-04-02T01:43:42.000Z",
-  "decision": "included",
+  "decision": "excluded",
   "gated": false,
   "library_name": "transformers",
   "model_type": "jamba",
   "name": "Dayhoff-170M-UR90-HL-36000",
   "org": "microsoft",
   "pipeline_tag": "text-generation",
-  "reason": "text",
+  "reason": "tiny_vocab_non_language:40",
   "repo_id": "microsoft/Dayhoff-170M-UR90-HL-36000",
   "safetensors_parameters": {
    "BF16": 170126064,
@@ -122786,16 +122736,15 @@
   "architectures": [
    "JambaForCausalLM"
   ],
-  "config_file": "data/raw/configs/microsoft__Dayhoff-170M-UR90-HL-38000.json",
   "created_at": "2026-04-02T01:44:06.000Z",
-  "decision": "included",
+  "decision": "excluded",
   "gated": false,
   "library_name": "transformers",
   "model_type": "jamba",
   "name": "Dayhoff-170M-UR90-HL-38000",
   "org": "microsoft",
   "pipeline_tag": "text-generation",
-  "reason": "text",
+  "reason": "tiny_vocab_non_language:40",
   "repo_id": "microsoft/Dayhoff-170M-UR90-HL-38000",
   "safetensors_parameters": {
    "BF16": 170126064,
@@ -122820,16 +122769,15 @@
   "architectures": [
    "JambaForCausalLM"
   ],
-  "config_file": "data/raw/configs/microsoft__Dayhoff-170M-UR90-HL-4000.json",
   "created_at": "2026-04-02T01:36:37.000Z",
-  "decision": "included",
+  "decision": "excluded",
   "gated": false,
   "library_name": "transformers",
   "model_type": "jamba",
   "name": "Dayhoff-170M-UR90-HL-4000",
   "org": "microsoft",
   "pipeline_tag": "text-generation",
-  "reason": "text",
+  "reason": "tiny_vocab_non_language:40",
   "repo_id": "microsoft/Dayhoff-170M-UR90-HL-4000",
   "safetensors_parameters": {
    "BF16": 170126064,
@@ -122854,16 +122802,15 @@
   "architectures": [
    "JambaForCausalLM"
   ],
-  "config_file": "data/raw/configs/microsoft__Dayhoff-170M-UR90-HL-40000.json",
   "created_at": "2026-04-02T01:44:28.000Z",
-  "decision": "included",
+  "decision": "excluded",
   "gated": false,
   "library_name": "transformers",
   "model_type": "jamba",
   "name": "Dayhoff-170M-UR90-HL-40000",
   "org": "microsoft",
   "pipeline_tag": "text-generation",
-  "reason": "text",
+  "reason": "tiny_vocab_non_language:40",
   "repo_id": "microsoft/Dayhoff-170M-UR90-HL-40000",
   "safetensors_parameters": {
    "BF16": 170126064,
@@ -122888,16 +122835,15 @@
   "architectures": [
    "JambaForCausalLM"
   ],
-  "config_file": "data/raw/configs/microsoft__Dayhoff-170M-UR90-HL-42000.json",
   "created_at": "2026-04-02T01:44:50.000Z",
-  "decision": "included",
+  "decision": "excluded",
   "gated": false,
   "library_name": "transformers",
   "model_type": "jamba",
   "name": "Dayhoff-170M-UR90-HL-42000",
   "org": "microsoft",
   "pipeline_tag": "text-generation",
-  "reason": "text",
+  "reason": "tiny_vocab_non_language:40",
   "repo_id": "microsoft/Dayhoff-170M-UR90-HL-42000",
   "safetensors_parameters": {
    "BF16": 170126064,
@@ -122922,16 +122868,15 @@
   "architectures": [
    "JambaForCausalLM"
   ],
-  "config_file": "data/raw/configs/microsoft__Dayhoff-170M-UR90-HL-44000.json",
   "created_at": "2026-04-02T01:45:12.000Z",
-  "decision": "included",
+  "decision": "excluded",
   "gated": false,
   "library_name": "transformers",
   "model_type": "jamba",
   "name": "Dayhoff-170M-UR90-HL-44000",
   "org": "microsoft",
   "pipeline_tag": "text-generation",
-  "reason": "text",
+  "reason": "tiny_vocab_non_language:40",
   "repo_id": "microsoft/Dayhoff-170M-UR90-HL-44000",
   "safetensors_parameters": {
    "BF16": 170126064,
@@ -122956,16 +122901,15 @@
   "architectures": [
    "JambaForCausalLM"
   ],
-  "config_file": "data/raw/configs/microsoft__Dayhoff-170M-UR90-HL-46000.json",
   "created_at": "2026-04-02T01:45:34.000Z",
-  "decision": "included",
+  "decision": "excluded",
   "gated": false,
   "library_name": "transformers",
   "model_type": "jamba",
   "name": "Dayhoff-170M-UR90-HL-46000",
   "org": "microsoft",
   "pipeline_tag": "text-generation",
-  "reason": "text",
+  "reason": "tiny_vocab_non_language:40",
   "repo_id": "microsoft/Dayhoff-170M-UR90-HL-46000",
   "safetensors_parameters": {
    "BF16": 170126064,
@@ -122990,16 +122934,15 @@
   "architectures": [
    "JambaForCausalLM"
   ],
-  "config_file": "data/raw/configs/microsoft__Dayhoff-170M-UR90-HL-48000.json",
   "created_at": "2026-04-02T01:46:06.000Z",
-  "decision": "included",
+  "decision": "excluded",
   "gated": false,
   "library_name": "transformers",
   "model_type": "jamba",
   "name": "Dayhoff-170M-UR90-HL-48000",
   "org": "microsoft",
   "pipeline_tag": "text-generation",
-  "reason": "text",
+  "reason": "tiny_vocab_non_language:40",
   "repo_id": "microsoft/Dayhoff-170M-UR90-HL-48000",
   "safetensors_parameters": {
    "BF16": 170126064,
@@ -123024,16 +122967,15 @@
   "architectures": [
    "JambaForCausalLM"
   ],
-  "config_file": "data/raw/configs/microsoft__Dayhoff-170M-UR90-HL-6000.json",
   "created_at": "2026-04-02T01:36:59.000Z",
-  "decision": "included",
+  "decision": "excluded",
   "gated": false,
   "library_name": "transformers",
   "model_type": "jamba",
   "name": "Dayhoff-170M-UR90-HL-6000",
   "org": "microsoft",
   "pipeline_tag": "text-generation",
-  "reason": "text",
+  "reason": "tiny_vocab_non_language:40",
   "repo_id": "microsoft/Dayhoff-170M-UR90-HL-6000",
   "safetensors_parameters": {
    "BF16": 170126064,
@@ -123058,16 +123000,15 @@
   "architectures": [
    "JambaForCausalLM"
   ],
-  "config_file": "data/raw/configs/microsoft__Dayhoff-170M-UR90-HL-8000.json",
   "created_at": "2026-04-02T01:37:33.000Z",
-  "decision": "included",
+  "decision": "excluded",
   "gated": false,
   "library_name": "transformers",
   "model_type": "jamba",
   "name": "Dayhoff-170M-UR90-HL-8000",
   "org": "microsoft",
   "pipeline_tag": "text-generation",
-  "reason": "text",
+  "reason": "tiny_vocab_non_language:40",
   "repo_id": "microsoft/Dayhoff-170M-UR90-HL-8000",
   "safetensors_parameters": {
    "BF16": 170126064,
@@ -123092,16 +123033,15 @@
   "architectures": [
    "JambaForCausalLM"
   ],
-  "config_file": "data/raw/configs/microsoft__Dayhoff-170m-GR.json",
   "created_at": "2025-07-04T18:15:40.000Z",
-  "decision": "included",
+  "decision": "excluded",
   "gated": false,
   "library_name": "transformers",
   "model_type": "jamba",
   "name": "Dayhoff-170m-GR",
   "org": "microsoft",
   "pipeline_tag": "text-generation",
-  "reason": "text",
+  "reason": "tiny_vocab_non_language:40",
   "repo_id": "microsoft/Dayhoff-170m-GR",
   "safetensors_parameters": {
    "F32": 170298096
@@ -123125,16 +123065,15 @@
   "architectures": [
    "JambaForCausalLM"
   ],
-  "config_file": "data/raw/configs/microsoft__Dayhoff-170m-UR50.json",
   "created_at": "2025-07-04T18:12:37.000Z",
-  "decision": "included",
+  "decision": "excluded",
   "gated": false,
   "library_name": "transformers",
   "model_type": "jamba",
   "name": "Dayhoff-170m-UR50",
   "org": "microsoft",
   "pipeline_tag": "text-generation",
-  "reason": "text",
+  "reason": "tiny_vocab_non_language:40",
   "repo_id": "microsoft/Dayhoff-170m-UR50",
   "safetensors_parameters": {
    "F32": 170298096
@@ -123158,16 +123097,15 @@
   "architectures": [
    "JambaForCausalLM"
   ],
-  "config_file": "data/raw/configs/microsoft__Dayhoff-170m-UR50-BRn.json",
   "created_at": "2025-07-04T18:19:55.000Z",
-  "decision": "included",
+  "decision": "excluded",
   "gated": false,
   "library_name": "transformers",
   "model_type": "jamba",
   "name": "Dayhoff-170m-UR50-BRn",
   "org": "microsoft",
   "pipeline_tag": "text-generation",
-  "reason": "text",
+  "reason": "tiny_vocab_non_language:40",
   "repo_id": "microsoft/Dayhoff-170m-UR50-BRn",
   "safetensors_parameters": {
    "F32": 170298096
@@ -123191,16 +123129,15 @@
   "architectures": [
    "JambaForCausalLM"
   ],
-  "config_file": "data/raw/configs/microsoft__Dayhoff-170m-UR50-BRq.json",
   "created_at": "2025-07-04T18:16:11.000Z",
-  "decision": "included",
+  "decision": "excluded",
   "gated": false,
   "library_name": "transformers",
   "model_type": "jamba",
   "name": "Dayhoff-170m-UR50-BRq",
   "org": "microsoft",
   "pipeline_tag": "text-generation",
-  "reason": "text",
+  "reason": "tiny_vocab_non_language:40",
   "repo_id": "microsoft/Dayhoff-170m-UR50-BRq",
   "safetensors_parameters": {
    "F32": 170298096
@@ -123224,16 +123161,15 @@
   "architectures": [
    "JambaForCausalLM"
   ],
-  "config_file": "data/raw/configs/microsoft__Dayhoff-170m-UR50-BRu.json",
   "created_at": "2025-07-04T18:16:44.000Z",
-  "decision": "included",
+  "decision": "excluded",
   "gated": false,
   "library_name": "transformers",
   "model_type": "jamba",
   "name": "Dayhoff-170m-UR50-BRu",
   "org": "microsoft",
   "pipeline_tag": "text-generation",
-  "reason": "text",
+  "reason": "tiny_vocab_non_language:40",
   "repo_id": "microsoft/Dayhoff-170m-UR50-BRu",
   "safetensors_parameters": {
    "F32": 170298096
@@ -123257,16 +123193,15 @@
   "architectures": [
    "JambaForCausalLM"
   ],
-  "config_file": "data/raw/configs/microsoft__Dayhoff-170m-UR90.json",
   "created_at": "2025-07-04T18:22:54.000Z",
-  "decision": "included",
+  "decision": "excluded",
   "gated": false,
   "library_name": "transformers",
   "model_type": "jamba",
   "name": "Dayhoff-170m-UR90",
   "org": "microsoft",
   "pipeline_tag": "text-generation",
-  "reason": "text",
+  "reason": "tiny_vocab_non_language:40",
   "repo_id": "microsoft/Dayhoff-170m-UR90",
   "safetensors_parameters": {
    "F32": 170298096
@@ -123290,16 +123225,15 @@
   "architectures": [
    "JambaForCausalLM"
   ],
-  "config_file": "data/raw/configs/microsoft__Dayhoff-3b-GR-HM.json",
   "created_at": "2025-07-04T18:17:24.000Z",
-  "decision": "included",
+  "decision": "excluded",
   "gated": false,
   "library_name": "transformers",
   "model_type": "jamba",
   "name": "Dayhoff-3b-GR-HM",
   "org": "microsoft",
   "pipeline_tag": "text-generation",
-  "reason": "text",
+  "reason": "tiny_vocab_non_language:40",
   "repo_id": "microsoft/Dayhoff-3b-GR-HM",
   "safetensors_parameters": {
    "F32": 2981431616
@@ -123323,16 +123257,15 @@
   "architectures": [
    "JambaForCausalLM"
   ],
-  "config_file": "data/raw/configs/microsoft__Dayhoff-3b-GR-HM-1000.json",
   "created_at": "2026-02-04T00:22:48.000Z",
-  "decision": "included",
+  "decision": "excluded",
   "gated": false,
   "library_name": "transformers",
   "model_type": "jamba",
   "name": "Dayhoff-3b-GR-HM-1000",
   "org": "microsoft",
   "pipeline_tag": "text-generation",
-  "reason": "text",
+  "reason": "tiny_vocab_non_language:40",
   "repo_id": "microsoft/Dayhoff-3b-GR-HM-1000",
   "safetensors_parameters": {
    "BF16": 2980284736,
@@ -123357,16 +123290,15 @@
   "architectures": [
    "JambaForCausalLM"
   ],
-  "config_file": "data/raw/configs/microsoft__Dayhoff-3b-GR-HM-11000.json",
   "created_at": "2026-01-24T18:15:57.000Z",
-  "decision": "included",
+  "decision": "excluded",
   "gated": false,
   "library_name": "transformers",
   "model_type": "jamba",
   "name": "Dayhoff-3b-GR-HM-11000",
   "org": "microsoft",
   "pipeline_tag": "text-generation",
-  "reason": "text",
+  "reason": "tiny_vocab_non_language:40",
   "repo_id": "microsoft/Dayhoff-3b-GR-HM-11000",
   "safetensors_parameters": {
    "BF16": 2980284736,
@@ -123391,16 +123323,15 @@
   "architectures": [
    "JambaForCausalLM"
   ],
-  "config_file": "data/raw/configs/microsoft__Dayhoff-3b-GR-HM-21000.json",
   "created_at": "2026-01-24T18:18:47.000Z",
-  "decision": "included",
+  "decision": "excluded",
   "gated": false,
   "library_name": "transformers",
   "model_type": "jamba",
   "name": "Dayhoff-3b-GR-HM-21000",
   "org": "microsoft",
   "pipeline_tag": "text-generation",
-  "reason": "text",
+  "reason": "tiny_vocab_non_language:40",
   "repo_id": "microsoft/Dayhoff-3b-GR-HM-21000",
   "safetensors_parameters": {
    "BF16": 2980284736,
@@ -123425,16 +123356,15 @@
   "architectures": [
    "JambaForCausalLM"
   ],
-  "config_file": "data/raw/configs/microsoft__Dayhoff-3b-GR-HM-31000.json",
   "created_at": "2026-01-24T18:21:28.000Z",
-  "decision": "included",
+  "decision": "excluded",
   "gated": false,
   "library_name": "transformers",
   "model_type": "jamba",
   "name": "Dayhoff-3b-GR-HM-31000",
   "org": "microsoft",
   "pipeline_tag": "text-generation",
-  "reason": "text",
+  "reason": "tiny_vocab_non_language:40",
   "repo_id": "microsoft/Dayhoff-3b-GR-HM-31000",
   "safetensors_parameters": {
    "BF16": 2980284736,
@@ -123459,16 +123389,15 @@
   "architectures": [
    "JambaForCausalLM"
   ],
-  "config_file": "data/raw/configs/microsoft__Dayhoff-3b-GR-HM-41000.json",
   "created_at": "2026-01-24T18:24:36.000Z",
-  "decision": "included",
+  "decision": "excluded",
   "gated": false,
   "library_name": "transformers",
   "model_type": "jamba",
   "name": "Dayhoff-3b-GR-HM-41000",
   "org": "microsoft",
   "pipeline_tag": "text-generation",
-  "reason": "text",
+  "reason": "tiny_vocab_non_language:40",
   "repo_id": "microsoft/Dayhoff-3b-GR-HM-41000",
   "safetensors_parameters": {
    "BF16": 2980284736,
@@ -123493,16 +123422,15 @@
   "architectures": [
    "JambaForCausalLM"
   ],
-  "config_file": "data/raw/configs/microsoft__Dayhoff-3b-GR-HM-c.json",
   "created_at": "2025-07-04T18:13:18.000Z",
-  "decision": "included",
+  "decision": "excluded",
   "gated": false,
   "library_name": "transformers",
   "model_type": "jamba",
   "name": "Dayhoff-3b-GR-HM-c",
   "org": "microsoft",
   "pipeline_tag": "text-generation",
-  "reason": "text",
+  "reason": "tiny_vocab_non_language:40",
   "repo_id": "microsoft/Dayhoff-3b-GR-HM-c",
   "safetensors_parameters": {
    "F32": 2981431616
@@ -123526,16 +123454,15 @@
   "architectures": [
    "JambaForCausalLM"
   ],
-  "config_file": "data/raw/configs/microsoft__Dayhoff-3b-UR90.json",
   "created_at": "2025-07-04T18:20:27.000Z",
-  "decision": "included",
+  "decision": "excluded",
   "gated": false,
   "library_name": "transformers",
   "model_type": "jamba",
   "name": "Dayhoff-3b-UR90",
   "org": "microsoft",
   "pipeline_tag": "text-generation",
-  "reason": "text",
+  "reason": "tiny_vocab_non_language:40",
   "repo_id": "microsoft/Dayhoff-3b-UR90",
   "safetensors_parameters": {
    "F32": 2981431616
@@ -123559,16 +123486,15 @@
   "architectures": [
    "JambaForCausalLM"
   ],
-  "config_file": "data/raw/configs/microsoft__Dayhoff-3b-UR90-10.json",
   "created_at": "2026-04-14T00:23:43.000Z",
-  "decision": "included",
+  "decision": "excluded",
   "gated": false,
   "library_name": "transformers",
   "model_type": "jamba",
   "name": "Dayhoff-3b-UR90-10",
   "org": "microsoft",
   "pipeline_tag": "text-generation",
-  "reason": "text",
+  "reason": "tiny_vocab_non_language:40",
   "repo_id": "microsoft/Dayhoff-3b-UR90-10",
   "safetensors_parameters": {
    "BF16": 2980284736,
@@ -123593,16 +123519,15 @@
   "architectures": [
    "JambaForCausalLM"
   ],
-  "config_file": "data/raw/configs/microsoft__Dayhoff-3b-UR90-10000.json",
   "created_at": "2026-04-14T00:27:13.000Z",
-  "decision": "included",
+  "decision": "excluded",
   "gated": false,
   "library_name": "transformers",
   "model_type": "jamba",
   "name": "Dayhoff-3b-UR90-10000",
   "org": "microsoft",
   "pipeline_tag": "text-generation",
-  "reason": "text",
+  "reason": "tiny_vocab_non_language:40",
   "repo_id": "microsoft/Dayhoff-3b-UR90-10000",
   "safetensors_parameters": {
    "BF16": 2980284736,
@@ -123627,16 +123552,15 @@
   "architectures": [
    "JambaForCausalLM"
   ],
-  "config_file": "data/raw/configs/microsoft__Dayhoff-3b-UR90-20350.json",
   "created_at": "2026-04-14T00:30:50.000Z",
-  "decision": "included",
+  "decision": "excluded",
   "gated": false,
   "library_name": "transformers",
   "model_type": "jamba",
   "name": "Dayhoff-3b-UR90-20350",
   "org": "microsoft",
   "pipeline_tag": "text-generation",
-  "reason": "text",
+  "reason": "tiny_vocab_non_language:40",
   "repo_id": "microsoft/Dayhoff-3b-UR90-20350",
   "safetensors_parameters": {
    "BF16": 2980284736,
@@ -123661,16 +123585,15 @@
   "architectures": [
    "JambaForCausalLM"
   ],
-  "config_file": "data/raw/configs/microsoft__Dayhoff-3b-UR90-30000.json",
   "created_at": "2026-04-14T00:33:33.000Z",
-  "decision": "included",
+  "decision": "excluded",
   "gated": false,
   "library_name": "transformers",
   "model_type": "jamba",
   "name": "Dayhoff-3b-UR90-30000",
   "org": "microsoft",
   "pipeline_tag": "text-generation",
-  "reason": "text",
+  "reason": "tiny_vocab_non_language:40",
   "repo_id": "microsoft/Dayhoff-3b-UR90-30000",
   "safetensors_parameters": {
    "BF16": 2980284736,

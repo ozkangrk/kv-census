@@ -255,15 +255,27 @@ def build() -> list[dict]:
             notes.append("language_backbone_of_multimodal")
             notes.append("params_include_vision_tower")
 
-        # params: Hub safetensors metadata. Integer/bool tensors (U8/BOOL/I64)
-        # in legacy GPT-NeoX-style checkpoints are causal-mask/metadata buffers,
-        # not parameters, so they are subtracted from the reported total.
+        # params: Hub safetensors metadata. Legacy GPT-NeoX-style checkpoints
+        # ship causal-mask bool buffers (count L x max_pos^2 elements, reported
+        # as U8/BOOL) and I64 metadata; those are not parameters. Native 4-bit
+        # models (gpt-oss MXFP4) legitimately report their packed weights as
+        # U8, so U8/BOOL are subtracted only when their size matches the
+        # L x max_position_embeddings^2 mask pattern (1% tolerance).
         st_params = None
         st_detail = e.get("safetensors_parameters") or {}
-        buffer_dtypes = {"U8", "BOOL", "I64"}
-        counted = sum(v for k, v in st_detail.items() if k not in buffer_dtypes)
-        if isinstance(e.get("safetensors_total"), int) and counted > 0:
-            st_params = counted
+        if st_detail:
+            Lm = cfg_txt.get("num_hidden_layers")
+            Mp = cfg_txt.get("max_position_embeddings")
+            mask_elems = Lm * Mp * Mp if (isinstance(Lm, int) and isinstance(Mp, int)) else None
+            counted = 0
+            for dt, v in st_detail.items():
+                if dt == "I64":
+                    continue  # metadata buffers, never parameters
+                if dt in ("U8", "BOOL") and mask_elems and abs(v - mask_elems) <= 0.01 * mask_elems:
+                    continue  # causal-mask buffers
+                counted += v
+            if counted > 0:
+                st_params = counted
         elif isinstance(e.get("safetensors_total"), int) and e["safetensors_total"] > 0:
             st_params = e["safetensors_total"]
         if st_params:

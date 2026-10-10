@@ -57,6 +57,7 @@ for d in (HUB_API, CONFIGS):
     d.mkdir(parents=True, exist_ok=True)
 
 MIN_DATE = "2023-01-01"
+MIN_TEXT_VOCAB = 1000  # text/code LLM tokenizers are >= ~4k; protein/DNA are 20-50
 MAX_DATE = datetime.now(timezone.utc).strftime("%Y-%m-%d")
 USER_AGENT = "kv-census/0.1 (census of open-weight LLMs on HF; anonymous, no token)"
 MIN_INTERVAL = 0.5  # seconds between requests (2 req/s, well under the 4 req/s cap)
@@ -385,8 +386,21 @@ def main() -> int:
                         http_status = "not_json"
                 stat_path.write_text(json.dumps({"status": http_status}))
             if config_ok:
-                entry.update({"decision": "included", "reason": reason,
-                              "config_file": str(cfg_path.relative_to(ROOT))})
+                cfg_probe = json.loads(cfg_path.read_text())
+                for key in ("text_config", "llm_config", "language_config", "text_model"):
+                    sub = cfg_probe.get(key)
+                    if isinstance(sub, dict) and "num_hidden_layers" in sub:
+                        cfg_probe = sub
+                        break
+                vocab = cfg_probe.get("vocab_size")
+                if isinstance(vocab, int) and vocab < MIN_TEXT_VOCAB:
+                    # protein/DNA/music-token "language models" are not text
+                    # LLMs (e.g. microsoft Dayhoff protein models, vocab 40)
+                    entry.update({"decision": "excluded",
+                                  "reason": f"tiny_vocab_non_language:{vocab}"})
+                else:
+                    entry.update({"decision": "included", "reason": reason,
+                                  "config_file": str(cfg_path.relative_to(ROOT))})
             elif http_status in (401, 403):
                 entry.update({"decision": "gated_skipped",
                               "reason": f"config_http_{http_status}"})

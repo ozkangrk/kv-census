@@ -7,9 +7,10 @@
   "outside_window": 1056,
   "pipeline": 516,
   "quant_name": 260,
+  "tiny_vocab_non_language": 77,
   "unclassified": 1843
  },
- "generated_at": "2026-10-10T11:36:13+00:00",
+ "generated_at": "2026-10-10T11:41:34+00:00",
  "included_per_org": {
   "01-ai": 24,
   "CohereLabs": 3,
@@ -23,7 +24,7 @@
   "ServiceNow-AI": 7,
   "Snowflake": 8,
   "ai21labs": 6,
-  "allenai": 618,
+  "allenai": 610,
   "apple": 16,
   "baichuan-inc": 19,
   "bigcode": 20,
@@ -32,7 +33,7 @@
   "ibm-granite": 99,
   "inclusionAI": 99,
   "internlm": 74,
-  "microsoft": 146,
+  "microsoft": 77,
   "mistralai": 23,
   "moonshotai": 11,
   "nvidia": 138,
@@ -48,11 +49,11 @@
  "included_per_year": {
   "2023": 263,
   "2024": 675,
-  "2025": 1057,
-  "2026": 422
+  "2025": 1046,
+  "2026": 356
  },
  "n_gated_skipped": 237,
- "n_included": 2417,
+ "n_included": 2340,
  "n_manifest": 7556,
  "unclassified": [
   "CohereLabs/Cohere-embed-english-light-v3.0 -> unclassified:none:none",

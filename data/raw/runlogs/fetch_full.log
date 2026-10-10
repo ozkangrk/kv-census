@@ -1,0 +1,27 @@
+[2026-10-10T10:23:56+00:00] org mistralai: 77 repos listed
+[2026-10-10T10:23:56+00:00] org mistralai: 56 candidates after prefilter
+[2026-10-10T10:24:22+00:00] org Qwen: 469 repos listed
+[2026-10-10T10:24:22+00:00] org Qwen: 182 candidates after prefilter
+[2026-10-10T10:26:05+00:00] org google: 1136 repos listed
+[2026-10-10T10:26:05+00:00] org google: 424 candidates after prefilter
+[2026-10-10T10:29:15+00:00] org google-deepmind: 0 repos listed
+[2026-10-10T10:29:15+00:00] org google-deepmind: 0 candidates after prefilter
+[2026-10-10T10:29:16+00:00] org microsoft: 545 repos listed
+[2026-10-10T10:29:16+00:00] org microsoft: 238 candidates after prefilter
+[2026-10-10T10:30:44+00:00]   429 at https://huggingface.co/api/models/microsoft/SatCLIP-ResNet18-L10; sleeping 5s
+[2026-10-10T10:30:49+00:00]   429 at https://huggingface.co/api/models/microsoft/SatCLIP-ResNet18-L10; sleeping 5s
+[2026-10-10T10:30:54+00:00]   429 at https://huggingface.co/api/models/microsoft/SatCLIP-ResNet18-L10; sleeping 5s
+[2026-10-10T10:30:59+00:00]   429 at https://huggingface.co/api/models/microsoft/SatCLIP-ResNet18-L10; sleeping 5s
+Traceback (most recent call last):
+  File "/home/ozkangu/Desktop/research/kv-census/scripts/fetch_census.py", line 414, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/ozkangu/Desktop/research/kv-census/scripts/fetch_census.py", line 308, in main
+    info = cached_json(info_path, url=f"https://huggingface.co/api/models/{rid}")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ozkangu/Desktop/research/kv-census/scripts/fetch_census.py", line 191, in cached_json
+    r = http_get(url, params=params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ozkangu/Desktop/research/kv-census/scripts/fetch_census.py", line 184, in http_get
+    raise RuntimeError(f"HTTP failed after {tries} tries: {url}")
+RuntimeError: HTTP failed after 4 tries: https://huggingface.co/api/models/microsoft/SatCLIP-ResNet18-L10
