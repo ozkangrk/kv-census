@@ -20,7 +20,7 @@ kaydedildi.
   p≈10⁻⁹⁹). DESTEKLENDİ (güçlü seyreltme etkisi; dizi başına KV değişmez).
 - **RQ3/H4:** KV-parite bağlamı (KV = ağırlık baytı olan T*) aile biriminde yalnız 2,2×,
   geometri dedup'ta 11,0× büyüdü — hipotezin "10 kat" iddiası birime duyarlı: REDDEDİLDİ
-  (birincil birimde). KV-baskınlık (T*<32k) payı %71→%11'e düştü.
+  (birincil birimde). KV-baskınlık (T*<32k) payı %70,7→%8,1'e düştü (makrolardan; Phase 4 düzeltmeleri sonrası).
 - **RQ4:** Analitik muhasebe, HF transformers'ın gerçekte ayırdığı cache baytlarıyla 7
   model/6 sınıfta karşılaştırıldı: 6/7 satır %1 içinde; sapmalar bulgu olarak açıklandı
   (transformers 5.19 kayar pencereyi W−1'e kırpar; MLA gizil değişken olarak saklanır;
