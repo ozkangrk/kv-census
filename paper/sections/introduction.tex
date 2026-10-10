@@ -1,0 +1,93 @@
+\section{Introduction}
+\label{sec:intro}
+
+Practitioners size serving hardware by parameter count: count parameters,
+multiply by bytes per weight, buy that much memory. This habit breaks down for
+long-context and multi-sequence serving. There, the
+binding constraint is the key--value (KV) cache that attention layers append to
+at every decoded token. Serving systems already treat it as the scarce
+resource: PagedAttention exists because per-request KV memory dominates and
+fragments GPU memory \cite{kwon2023paged}, DistServe replicates the KV cache
+when it splits prefill from decoding \cite{zhong2024distserve}, and
+FlashAttention restructures the kernel around memory traffic \cite{dao2022flashattention}.
+
+The KV cache does not scale with parameter count. Its size follows three
+architectural choices. \emph{Attention geometry}: a full-attention layer stores
+keys and values for $2 \times n_{\mathrm{kv\,heads}} \times d_{\mathrm{head}}$
+elements per token, so layers, KV heads, and head dimension set the marginal
+bytes. \emph{Attention scope}: a sliding-window layer retains only its window,
+not the whole context \cite{jiang2023mistral}. \emph{State type}: recurrent and
+linear-attention layers carry a fixed-size state instead of a growing cache
+\cite{gu2023mamba,katharopoulos2020linear}, and multi-head latent attention
+compresses keys and values into a low-rank latent \cite{deepseekai2024v2}.
+Grouped-query and multi-query attention cut KV heads directly
+\cite{shazeer2019mqa,ainslie2023gqa}, and cross-layer sharing stores one cache
+for many layers \cite{sun2024yoco}. Two checkpoints with equal parameter counts
+can therefore differ by an order of magnitude in KV bytes per token. On
+unified-memory edge devices, where weights and KV compete for one pool of
+memory, this difference decides how many concurrent long contexts fit; measured
+runtime comparisons on such hardware already rank models by KV and prompt-cache
+behavior \cite{rajesh2025edgemem}.
+
+Which of these designs the field actually ships is an empirical question, and
+the answer changes what hardware practitioners should buy. Answering it needs a
+census: open weights so the config is public, published configs so geometry is
+exact, and release dates so trends are datable. We built one from the Hugging
+Face Hub, restricted to original publishers and decoder-only language models
+released since January 2023. The census covers \kvcCensusRows{} checkpoints from
+\kvcOrgCount{} publishers; after deduplicating base/instruct twins that share
+geometry, \kvcDedupRows{} remain. We skipped \kvcGatedSkipped{} gated
+repositories whose configs are not publicly downloadable and report this as a
+coverage limitation. The deduplicated set spans full attention (MHA, MQA, GQA),
+sliding-window and local/global mixes, latent attention, recurrent hybrids
+(Mamba, RWKV, gated DeltaNet), and cross-layer KV sharing. Table~\ref{tab:overview}
+summarizes the census by year.
+
+We ask four research questions and report four pre-registered verdicts
+(thresholds fixed before trend inspection):
+\begin{itemize}
+  \item \textbf{RQ1 (trend).} How did KV bytes per token, and KV bytes per token
+  per billion parameters, evolve from 2023 to 2026? \emph{H1: the median
+  per-parameter KV cost fell substantially} --- verdict \kvcHOneVerdict{}, the
+  pooled 2025--2026 median is \kvcHOneRatio{} of the 2023 median.
+  \item \textbf{RQ2 (mechanisms).} How much cross-model variance do GQA ratio,
+  head dimension, depth, window share, recurrent share, latent attention, and
+  cross-layer sharing explain, relative to parameter count? \emph{H2: parameter
+  count is a weak predictor} --- verdict \kvcHTwoVerdict{}, $R^2=\kvcParamsRsq$
+  for parameters alone versus $R^2=\kvcGeomRsq$ for geometry and mechanisms
+  alone. \emph{H3: mixture-of-experts (MoE) models have much lower KV per total
+  parameter} --- verdict \kvcHThreeVerdict{}, the MoE median is
+  \kvcHThreeRatio{} of the dense median.
+  \item \textbf{RQ3 (capacity).} Under fixed memory budgets and weight
+  precisions, what context and concurrency can each model serve? We define the
+  \emph{KV-parity context} $T^{*}$: the context length at which one sequence's
+  KV bytes equal the model's weight bytes.
+  \emph{H4: the KV-parity context grew by orders of magnitude} --- verdict
+  \kvcHFourVerdict{}, the median grew only \kvcHFourRatio$\times$.
+  \item \textbf{RQ4 (validity).} Do analytic estimates match the cache tensors
+  a reference implementation (HF \texttt{transformers}) actually allocates?
+  Validation covers \kvcValRows{} models in \kvcValClasses{} attention classes;
+  \kvcValWithin{} rows agree within 1\%, and we explain every larger gap.
+\end{itemize}
+
+Our contributions:
+\begin{itemize}
+  \item A census of \kvcCensusRows{} open-weight checkpoints with per-checkpoint
+  KV accounting that covers every attention class we found on the Hub, released
+  as data, code, and reproducible pipeline.
+  \item Population-level trend and regression results: per-parameter KV cost is
+  falling, but it is set by architecture, not size; MoE amplifies this
+  separation between parameters and memory.
+  \item A capacity model that turns each config into context and concurrency
+  limits under stated budgets and precisions, with the KV-parity context as a
+  single comparable number per model.
+  \item A validation experiment checking analytic bytes against allocated cache
+  tensors, including the cases where implementations diverge from the
+  theoretical minimum.
+  \item An honest negative result: H4 is refuted. The median KV-parity context
+  grew only \kvcHFourRatio$\times$, not by orders of magnitude. We report the
+  refutation as a first-class finding, not a failure.
+\end{itemize}
+
+The one-sentence thesis is \emph{memory is architecture}: to know what a
+model costs to serve, read its config, not its parameter count.

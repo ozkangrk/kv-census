@@ -18,7 +18,7 @@ validate:
 	$(VENV) analysis/validate_experiment.py
 
 paper:
-	cd paper && tectonic -X compile main.tex
+	cd paper && TECTONIC_CACHE_DIR=../.tools/tectonic-cache ../.tools/tectonic -X compile main.tex
 
 test:
 	$(VENV) -m pytest tests/ -q

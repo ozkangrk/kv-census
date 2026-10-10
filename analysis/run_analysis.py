@@ -455,10 +455,10 @@ def make_tex(d, dedup, r1, r1s, r2, s3, cap, per_year, r3s, heat, sub, vrows):
     (GEN / "table_capacity.tex").write_text("\n".join(T3) + "\n")
 
     T4 = [r"% AUTO-GENERATED"]
-    T4.append(r"\begin{table}[t]\centering\small" "\n" r"\caption{RQ4 validation: analytic (kv.py) vs measured HF cache bytes on reduced-depth random-init instances.}\label{tab:validation}")
-    T4.append(r"\begin{tabular}{llrrrl}\toprule model & class & analytic & measured & rel.err & note\\\midrule")
+    T4.append(r"\begin{table}[t]\centering\scriptsize\setlength{\tabcolsep}{3pt}" "\n" r"\caption{RQ4 validation: analytic (kv.py) vs measured HF cache bytes on reduced-depth random-init instances.}\label{tab:validation}")
+    T4.append(r"\begin{tabular}{lp{2.1cm}rrrp{5.2cm}}" "\n" r"\toprule model & class & analytic & measured & rel.err & note\\\midrule")
     for r in vrows:
-        note = esc(r["explanation"][:60]) + ("" if len(r["explanation"]) <= 60 else r"\ldots")
+        note = esc(r["explanation"][:180])
         T4.append(f"{esc(r['model_or_arch'].split('/')[-1])} & {esc(r['attention_class'])} & {float(r['analytic_bytes'])/1e6:.2f}M & {float(r['measured_bytes'])/1e6:.2f}M & {100*float(r['rel_error']):.3f}\\% & {note}\\\\")
     T4.append(r"\bottomrule\end{tabular}\end{table}")
     (GEN / "table_validation.tex").write_text("\n".join(T4) + "\n")

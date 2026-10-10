@@ -1,0 +1,92 @@
+\section{Related Work}
+\label{sec:related-work}
+
+The mechanisms we count were proposed one paper at a time; we group them by
+theme and state what each changes in the cache.
+
+\paragraph{KV-head reduction.}
+Multi-query attention traces slow decoding to repeated key--value loads and
+shares one KV head across all query heads \cite{shazeer2019mqa}. Grouped-query
+attention interpolates between multi-head and multi-query and is cheap to
+uptrain from a multi-head checkpoint \cite{ainslie2023gqa}. Multi-head latent attention compresses keys and values
+into a low-rank latent plus a small rope component; DeepSeek-V2 reports a
+large KV-cache reduction and higher generation throughput
+\cite{deepseekai2024v2}. These designs cut the KV-head term of the geometry
+without shrinking the model.
+
+\paragraph{Attention scope and sparsity.}
+Mistral~7B pairs grouped-query attention with a sliding window, bounding each
+layer's cache by the window rather than the context \cite{jiang2023mistral}.
+StreamingLLM shows window attention fails once text exceeds the cache and that
+retaining initial-token sinks restores stability over millions of tokens
+\cite{xiao2023streamingllm}. H2O evicts dynamically, keeping recent tokens plus
+a small set of heavy hitters \cite{zhang2023h2o}. We count windowed layers as
+they ship in configs; eviction at serving time is orthogonal and outside the
+census.
+
+\paragraph{KV compression and quantization.}
+KIVI quantizes the KV cache to 2 bits, keys per channel and values per token
+\cite{liu2024kivi}; KVQuant pushes long-context KV to low precision
+\cite{hooper2024kvquant}; Palu projects the cache to low rank and reconstructs
+keys and values on the fly \cite{chang2024palu}. On the weight side, GPTQ
+\cite{frantar2022gptq} and outlier-aware Int8 \cite{dettmers2022int8} shrink
+the term the cache competes with. Our capacity model treats weight and KV
+precision as parameters; the census itself is BF16.
+
+\paragraph{Cross-layer KV sharing.}
+YOCO caches key--value pairs once and reuses them across layers through
+cross-attention \cite{sun2024yoco}. Layer-condensed KV caches only a small
+number of bottom layers and reads the rest from that cache \cite{wu2024cla}.
+The census counts each shared cache once, as the configs declare it.
+
+\paragraph{Recurrent and linear-attention state.}
+Linear attention rewrites attention as a kernel dot product with an RNN-style
+constant-state update \cite{katharopoulos2020linear}; RetNet derives a retention
+operator with a recurrent mode \cite{sun2023retnet}; RWKV trains an RNN at
+transformer scale \cite{peng2023rwkv}; Gated DeltaNet adds gating and a delta
+rule to the fixed state \cite{yang2024gdn}. Selective state-space models make
+the state input-dependent \cite{gu2023mamba}. Hybrids mix these with attention:
+Griffin interleaves gated linear recurrences with local attention
+\cite{de2024griffin}; Jamba interleaves Transformer, Mamba, and MoE layers
+\cite{lieber2024jamba}; Falcon-H1 runs attention and SSM branches in parallel
+\cite{zuo2025falcon}. Our accounting carries their state as a fixed,
+context-independent term.
+
+\paragraph{Mixture-of-experts.}
+Mixtral activates two of eight experts per token, decoupling total from active
+parameters \cite{jiang2024mixtral}. DeepSeek-V2 combines the sparse-router
+trick with latent attention \cite{deepseekai2024v2}. Routers add parameters
+without adding cache, which is why we test KV cost per total parameter against
+dense models as a separate hypothesis.
+
+\paragraph{Long-context scaling.}
+Rotary position embeddings give flexible sequence length to attention
+\cite{su2021roformer}; YaRN extends trained context windows cheaply
+\cite{peng2023yarn}. Longer declared contexts raise the stakes of every byte
+per token, which is the trend our capacity analysis prices.
+
+\paragraph{Model family reports.}
+Publisher reports document the geometry shifts we measure: Llama~3
+\cite{grattafiori2024llama3} releases a large dense family with long context;
+Qwen3 \cite{yang2025qwen3} spans dense and MoE sizes under one release; Gemma~3
+explicitly rebalances local and global layers to contain KV memory at long
+context \cite{gemmateam2025gemma3}; phi-4 stays dense \cite{abdin2024phi4};
+OLMo~2 releases weights, data, and logs \cite{olmo2024olmo2}. Each report is
+one family; none says what the population does.
+
+\paragraph{Serving systems and edge.}
+vLLM's PagedAttention manages KV memory in pages \cite{kwon2023paged};
+DistServe places prefill and decoding to control KV duplication
+\cite{zhong2024distserve}; FlashAttention and its successor cut attention
+memory traffic \cite{dao2022flashattention,dao2023flashattention2}. On
+unified-memory hardware, runtime comparisons treat KV and prompt caching as
+first-class metrics \cite{rajesh2025edgemem}. These systems manage whatever
+cache a model brings; they do not say how large that cache is across models.
+
+\paragraph{Position.}
+The works above propose mechanisms or systems and evaluate them on a handful
+of checkpoints. We measure, at population scale, which mechanisms publishers
+actually ship and what each costs in KV bytes per token, with release dates
+attached. To our knowledge no public dataset ties Hub release metadata to
+per-checkpoint KV accounting across attention classes; the census fills that
+gap.

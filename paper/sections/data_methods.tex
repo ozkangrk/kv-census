@@ -1,0 +1,106 @@
+\section{Data and Methods}\label{sec:data-methods}
+
+\subsection{Census scope and inclusion criteria}\label{dm:census}
+We census open-weight, decoder-only language models published on the Hugging Face Hub
+between January 2023 and the census snapshot in October 2026. We keep checkpoints released
+by the original publisher organization (\kvcOrgCount{} organizations) and exclude
+fine-tunes, merges, and quantized re-uploads from third-party accounts. Multimodal models
+enter through their text backbone: we parse the language-model sub-configuration and ignore
+vision and audio towers. The census holds \kvcCensusRows{} checkpoint rows ---
+\kvcYearRowsTwentyThree{} released in 2023, \kvcYearRowsTwentyFour{} in 2024,
+\kvcYearRowsTwentyFive{} in 2025, and \kvcYearRowsTwentySix{} in 2026 to date. Every
+\texttt{config.json} is snapshotted and all Hub API responses are cached on disk, so the
+pipeline re-runs offline and deterministically.
+
+Selection effects are counted, not hidden. Gated repositories whose \texttt{config.json}
+is not publicly downloadable are skipped; \kvcGatedSkipped{} repositories were skipped this
+way, which biases the census away from gated families and is reported as a selection-bias
+limitation. The release date is the Hub \texttt{createdAt} timestamp, a proxy that can
+predate or lag the effective public release. Parsing failed for \kvcKvErrRows{}
+configurations; these are listed in \texttt{data/kv\_config\_errors.txt} and excluded from
+the census table. \kvcNoParams{} included rows carry no parameter count (neither
+safetensors metadata nor a sufficient configuration); both gaps are carried as
+limitations. Where a count exists, it comes from
+Hub safetensors metadata, otherwise it is computed from the configuration; the per-row
+source is recorded in the \texttt{params\_source} column.
+
+\subsection{KV-cache accounting conventions}\label{dm:kv}
+All cache sizes are analytic per-sequence minima computed by \texttt{analysis/kv.py}, a
+library of pure functions over the snapshotted configuration dictionaries; it never loads
+weights. A full-attention layer caches one key and one value tensor of
+$n_{\mathrm{kv}} \times d_h$ elements per token, i.e.\ $2\,n_{\mathrm{kv}}\,d_h\,B$ bytes
+per token, where $B$ is the bytes per element (2 for BF16). Grouped-query and multi-query
+attention are the same formula with reduced $n_{\mathrm{kv}}$
+\cite{shazeer2019mqa,ainslie2023gqa}. A sliding-window layer with window $W$ holds
+$\min(T,W)$ tokens at context $T$ \cite{jiang2023mistral}. A multi-head latent attention
+layer caches only the compressed latent, $(r_{\mathrm{kv}}+d_{\mathrm{rope}})\,B$ bytes
+per token, where $r_{\mathrm{kv}}$ is the latent rank (\texttt{kv\_lora\_rank}) and
+$d_{\mathrm{rope}}$ the decoupled RoPE dimension (\texttt{qk\_rope\_head\_dim})
+\cite{deepseekai2024v2}; values are decompressed on the fly, so we count the theoretical
+latent and measure the as-implemented cache in the validation experiment. A recurrent
+layer --- Mamba-style state-space layers \cite{gu2023mamba}, linear attention
+\cite{katharopoulos2020linear}, gated delta-rule, RWKV --- holds a constant state whose
+size is computed from the configuration (SSM and convolution state, or a matrix state) and
+does not depend on $T$. Falcon-H1 layers carry both an attention and a recurrent cache,
+and each is counted. Caches shared across layers are counted once \cite{sun2024yoco}.
+
+The headline outcome is the asymptotic marginal cache cost per token,
+$\lim_{T\to\infty}\mathrm{d}\,\mathrm{bytes}(T)/\mathrm{d}T$: only layers whose cache grows
+without bound (full and latent layers) contribute, since windowed layers saturate at $W$
+tokens and recurrent state is constant. Labels are honest by construction: a model is
+labelled \texttt{mha}, \texttt{gqa}, or \texttt{mqa} only if it is pure full attention and
+the computed per-token bytes equal $2\,L\,n_{\mathrm{kv}}\,d_h\,B$ exactly; any windowed,
+recurrent, latent, or shared component forces a descriptive label such as
+\texttt{gqa+swa}, \texttt{hybrid-mamba}, or \texttt{mla}. Family-specific parsing rules
+follow the upstream \texttt{transformers} configuration semantics --- explicit head
+dimensions, per-family window flags, hybrid layer-pattern strings --- cross-checked against
+published configurations \cite{grattafiori2024llama3,yang2025qwen3}. The library carries
+107 unit tests against hand-computed values and 61 real configuration snapshots; an
+unknown architecture raises an error rather than defaulting to a guess.
+
+\subsection{Pre-registered analysis}\label{dm:plan}
+The analysis plan (\texttt{analysis/PLAN.md}) was fixed before any trend statistic was
+computed, and every deviation is recorded there as a dated note. Trend and regression
+statistics use a deduplicated set: checkpoints with identical attention geometry share a
+\texttt{dedup\_group}, and the representative is the earliest-released member, ties broken
+by repository id. This leaves \kvcDedupRows{} rows in \kvcGroups{} groups. RQ1 reports
+per-year medians and interquartile ranges of the two primary outcomes and Spearman rank
+correlations against release date, with pre-registered support thresholds. RQ2 regresses
+$\log_{10}$ bytes/token on $\log_{10}$ parameters by OLS, with 95\% confidence intervals
+from 1000 bootstrap resamples at seed 0, and fits a mechanism regression adding GQA ratio,
+head dimension, depth, window share, recurrent share, a latent indicator, and a
+shared-cache indicator, reported as standardized coefficients with variance inflation
+factors. The MoE-versus-dense comparison uses a two-sided Mann-Whitney $U$ test with a
+rank-biserial effect size. Capacity computations use all rows: each checkpoint is its own
+capacity point.
+
+\subsection{Capacity model}\label{dm:capacity}
+For every checkpoint we solve a one-dimensional memory budget: usable KV pool $=$ budget
+$-$ weight bytes $-$ runtime overhead. Budgets are 24, 80, and 128 GiB ($2^{30}$ bytes),
+matching common accelerator and unified-memory tiers. Weights occupy 2 bytes per parameter
+(BF16), 1 byte (FP8), or 4.5 bits per parameter under 4-bit quantization, the effective
+figure including 16 group-scale bits per 32-element group \cite{frantar2022gptq}. The KV
+cache is priced at 2 or 1 byte per element (BF16 or FP8) \cite{liu2024kivi}; we do not
+model allocator fragmentation, which serving systems manage separately
+\cite{kwon2023paged}. Runtime overhead is a free parameter: we report the full grid over
+0, 2, 6, and 12 GiB and use 6 GiB in the headline tables. Because $\mathrm{bytes}(T)$ is
+monotone piecewise linear with breakpoints at the window sizes, the maximum token count
+under the pool and the KV-parity context $T^{*}$ --- the length at which one sequence's
+cache equals the BF16 weight bytes --- are solved exactly on each linear segment. The plan
+pre-registered a log-spaced grid with interpolation; the exact solve is a strict
+refinement of the same model, recorded as a dated deviation.
+
+\subsection{Validation against allocated caches}\label{dm:validation}
+Analytic minima are meaningless if the reference stack allocates something else. For RQ4
+we instantiate reduced models directly from the snapshotted configurations with
+\texttt{from\_config} (random initialization, no weight downloads, CPU only). Depth is cut
+to the smallest value that preserves one full period of the layer-type pattern, the
+vocabulary is shrunk, and per-layer attention geometry --- KV heads, head dimensions,
+latent ranks, window sizes --- is kept exact. We prefill $T$ tokens, with $T>W$ for
+windowed models, and sum the bytes of every cache tensor the returned cache object holds:
+keys and values, convolution and SSM states. The analytic side is evaluated on the same
+reduced configuration in float32. The relative error is
+$\lvert\mathrm{measured}-\mathrm{analytic}\rvert/\mathrm{analytic}$; every row above 1\%
+must carry an explanation, and the explanation itself is a reported finding. The
+experiment covers \kvcValRows{} models spanning \kvcValClasses{} attention classes, with
+\kvcValWithin{} rows within 1\%.

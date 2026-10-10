@@ -1,0 +1,72 @@
+\section{Discussion}\label{sec:discussion}
+
+\paragraph{Memory is architecture.}
+The census supports the title claim mechanically. Parameter count alone explains
+\kvcParRsq{} of the variance in $\log_{10}$ KV bytes per token on the deduplicated
+set --- a weak predictor, as H2 anticipated --- while attention geometry and
+mechanism indicators alone reach \kvcGeomRsq{}, and the combined model
+\kvcFullRsq{} (Table~\ref{tab:mechanism}). The
+dominant mechanisms are discrete, inspectable design knobs, not scaling
+accidents: sharing KV heads across query heads
+\cite{shazeer2019mqa,ainslie2023gqa}, bounding the cache with sliding windows
+\cite{xiao2023streamingllm,jiang2023mistral}, compressing keys and values into
+latents \cite{deepseekai2024v2}, and sharing one cache across layers
+\cite{sun2024yoco,wu2024cla}. Because these are choices, equal-parameter models
+diverge widely: the dense and MoE medians sit at \kvcMedKvppDense{} versus
+\kvcMedKvppMoe{} bytes per token per $10^9$ parameters. A deployment that sizes
+memory by parameter count is therefore wrong in both directions, and the error
+lands on the constraint that binds first \cite{kwon2023paged}.
+
+\paragraph{The 2025 bump is release mix.}
+Median per-parameter KV cost fell from \kvcMedianKvppTwentyThree{} (2023) to
+\kvcMedianKvppTwentyFour{} (2024), rose to \kvcMedianKvppTwentyFive{} in 2025,
+then fell to \kvcMedianKvppTwentySix{} in 2026 (Table~\ref{tab:overview}). The
+2025 rise is composition, not regression: the median 2025 model is smaller,
+with absolute KV per token down (\kvcMedianKvTokTwentyFour{} to
+\kvcMedianKvTokTwentyFive) while per-parameter KV rose --- the signature of many
+small checkpoints whose attention stacks stay proportionally large. Across
+checkpoints the pooled trend stays negative (Spearman $\rho=$
+\kvcSpearmanRhoPP, $p=\kvcSpearmanPPp$). The planning lesson is that a yearly
+fleet median tracks what publishers ship that year; in a year dominated by
+small releases, per-parameter heuristics will under-provision KV memory even
+while per-token architecture improves.
+
+\paragraph{MoE dilutes KV per parameter, not KV per sequence.}
+H3 was supported with the strongest effect in the census: MoE median
+\kvcMedKvppMoe{} versus dense \kvcMedKvppDense{} bytes per token per $10^9$
+parameters (rank-biserial \kvcMoeRB, $p=$\kvcMoeP). The mechanism is dilution:
+experts add weights without adding attention layers, so the cache is set by the
+shared trunk \cite{jiang2024mixtral,deepseekai2024v2}. Dilution is not
+cheapness. Per-sequence KV bytes are unchanged by expert count, while total
+weights crowd the memory pool: \kvcInfeasibleBigModels{} census models exceed
+128\,GiB at 4-bit weights under the modeled 6\,GiB runtime overhead and admit no
+KV at all (Table~\ref{tab:capacity}). On
+unified-memory edge devices, where weights and KV share one pool, this asymmetry
+decides what can be served at all \cite{rajesh2025edgemem}.
+
+\paragraph{Why H4 failed.}
+Absolute KV per token fell across the window --- the median dropped from
+\kvcMedianKvTokTwentyThree{} (2023) to \kvcMedianKvTokTwentySix{} (2026) --- but
+the KV-parity context is a ratio of weight bytes to KV bytes, so it moves only
+when KV falls \emph{relative to} weights. Both moved at once. Window-heavy and
+latent designs, and above all MoE weight growth, pushed parity out or removed
+it: \kvcParityInfShareTwentySix\% of the 2026 fleet has bounded caches and never
+reaches parity, and the share of models whose KV outgrows weights before 32k
+context fell from \kvcDominantShareTwentyThree\% (2023) to
+\kvcDominantShareTwentySix\% (2026). Against this, the 2025 small-model mass
+pulled the yearly median back to \kvcParityMedTwentyFive{} tokens, below the
+2023 median of \kvcParityMedTwentyThree{}. The pooled 2025--2026 median reached
+only \kvcHFourRatio{} times the 2023 value, far short of the pre-registered
+tenfold threshold, so H4 is \kvcHFourVerdict{} (Fig.~\ref{fig:parity}). The
+direction of the hypothesis was right; its magnitude was not, because parity
+inherits weight-byte growth and release mix, not KV savings alone.
+
+\paragraph{Capacity levers.}
+Under fixed budgets, geometry decides which lever pays. At 24\,GiB, small dense
+checkpoints leave most of the pool for KV; at 128\,GiB the constraint flips to
+weights, where \kvcInfeasibleBigModels{} models fit nothing even at 4-bit
+(Table~\ref{tab:capacity}, Fig.~\ref{fig:capacity}). Weight quantization
+\cite{frantar2022gptq,dettmers2022int8} and KV quantization
+\cite{liu2024kivi,hooper2024kvquant} expand opposite sides of the same unified
+pool, so the cheaper lever is a property of the specific attention geometry,
+not of parameter count.

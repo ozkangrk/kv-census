@@ -1,0 +1,32 @@
+\section{Conclusion}\label{sec:conclusion}
+
+We took a census of \kvcCensusRows{} open-weight checkpoints from
+\kvcOrgCount{} organizations, reduced to \kvcDedupRows{} geometry groups, and
+accounted their KV caches from configurations alone, and validated the
+accounting against reference implementations. Four verdicts.
+For RQ1, per-parameter KV cost is falling: the pooled 2025--2026 median is
+\kvcHOneRatio{} of the 2023 median (H1 supported), though not monotonically,
+because the 2025 release mix moved against the trend.
+For RQ2, parameter count is a weak predictor of KV footprint ($R^2=$
+\kvcParRsq) while attention geometry alone explains \kvcGeomRsq, and MoE models
+carry \kvcHThreeRatio{} times the dense per-parameter KV cost (H2 and H3
+supported).
+For RQ3, the KV-parity context grew only \kvcHFourRatio{} (H4 refuted): KV
+savings and weight growth offset each other, and release mix sets the median,
+even as KV-dominance at 32k context receded.
+For RQ4, the analytic accounting matches reference implementations on
+\kvcValWithin{} of \kvcValRows{} validation rows within 1\%, across
+\kvcValClasses{} attention classes.
+
+The practical rule is the title: size serving memory by attention geometry, not
+by parameter count. Read the layer count, KV heads, head dimension, window
+sizes, and state shapes from the configuration; compute the cache; then pick the
+quantization levers the geometry leaves room for. On a fixed unified-memory
+device this computation, not the parameter count on the model card, decides how
+many long contexts the hardware can hold.
+
+Three extensions follow. Measure real runtimes at scale, adding the allocator
+and kernel effects the analytic model omits. Extend to closed models where
+configuration metadata becomes available. Re-run the census periodically:
+window share, latent compression, and hybrid recurrence are still moving
+quickly, and the 2026 medians already rest on a partial year.

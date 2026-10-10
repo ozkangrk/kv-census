@@ -57,3 +57,17 @@ Phase 2 (analiz) orkestratörde.
     128GiB/4-bit'te 1,8M token; tam ızgara (3 bütçe × 3 ağırlık hassasiyeti × 2 KV hassasiyeti ×
     4 overhead) results/ altında.
 - Sonraki adım: Phase 3 yazım (4 paralel yazar + orkestratör entegrasyonu).
+
+## Phase 3 — Yazım (tamamlandı)
+- 4 paralel yazar: intro/related (768+683 kelime, 34 anahtarın 34'ü related_work'te atıflı),
+  data&methods (1053), results (1399, 56 macro), discussion/limitations/conclusion/disclosure
+  (600+504+271+205). Orkestratör fig3_mechanism (fig:mechanism) entegrasyonu ve \section{Results}
+  başlığını ekledi; validation tablosunun overfull hbox'ı üreticide düzeltildi.
+- ORTAM SAPMASI: ~/.local/bin/tectonic 9 baytlık bozuk stub'muş ("Not Found"), sistemde LaTeX yok.
+  Çözüm: tectonic 0.17.0 (aarch64-musl) resmi GitHub release'ten projeye indirildi (.tools/tectonic),
+  Makefile paper hedefi proje-içi binary + TECTONIC_CACHE_DIR=../.tools/tectonic-cache kullanıyor;
+  sistem dizinlerine dokunulmadı. Araç kurulumu AGENTS.md'deki araştırma-API beyaz listesinin
+  dışındadır (PyPI/uv gibi altyapı indirmesi olarak değerlendirildi) — kullanıcıya raporlandı.
+- Derleme: make paper → main.pdf, 15 sayfa (≥8), gate-tarzı kelime sayısı 5.242 (≥4.000),
+  34/34 bib anahtarı atıflı, 0 uncited, \input{generated/...} mevcut.
+- Sonraki: Phase 4 çapraz inceleme (methods-reviewer + claims-auditor).

@@ -1,12 +1,13 @@
 % AUTO-GENERATED
-\begin{table}[t]\centering\small
+\begin{table}[t]\centering\scriptsize\setlength{\tabcolsep}{3pt}
 \caption{RQ4 validation: analytic (kv.py) vs measured HF cache bytes on reduced-depth random-init instances.}\label{tab:validation}
-\begin{tabular}{llrrrl}\toprule model & class & analytic & measured & rel.err & note\\\midrule
-phi-2 & mha & 41.94M & 41.94M & 0.000\% & MHA reference: 32 q/kv heads, head\_dim 80 (hidden 2560 / 32)\ldots\\
-Qwen2.5-0.5B & gqa & 2.10M & 2.10M & 0.000\% & GQA reference: 14 q heads / 2 kv heads, head\_dim 64 (explici\ldots\\
-starcoder2-3b & gqa+swa & 8.39M & 8.39M & 0.024\% & sliding-window GQA: all layers windowed, W=4096 (config slid\ldots\\
-gpt-oss-20b & gqa+swa & 8.91M & 8.91M & 0.046\% & window+global hybrid (layer pattern [sliding, full], period \ldots\\
-DeepSeek-V2-Lite & mla & 9.44M & 9.44M & 0.000\% & MLA: kv\_lora\_rank 512 + qk\_rope\_head\_dim 64; 2 layers kept =\ldots\\
-granite-4.0-h-micro & hybrid-mamba & 27.73M & 27.89M & 0.565\% & hybrid mamba2+attention: attention at layer idx 5, 15, 25, 3\ldots\\
-mamba-2.8b & mamba & 0.39M & 0.41M & 5.263\% & pure recurrent (Mamba-1 SSM); state is T-independent, T=512 \ldots\\
+\begin{tabular}{lp{2.1cm}rrrp{5.2cm}}
+\toprule model & class & analytic & measured & rel.err & note\\\midrule
+phi-2 & mha & 41.94M & 41.94M & 0.000\% & MHA reference: 32 q/kv heads, head\_dim 80 (hidden 2560 / 32), full attention. DynamicCache stores K and V of shape [B, kv\_heads, T, head\_dim] in float32 (layer 0: 2048 tokens); mat\\
+Qwen2.5-0.5B & gqa & 2.10M & 2.10M & 0.000\% & GQA reference: 14 q heads / 2 kv heads, head\_dim 64 (explicit in config). DynamicCache stores K and V of shape [B, kv\_heads, T, head\_dim] in float32 (layer 0: 2048 tokens); matches\\
+starcoder2-3b & gqa+swa & 8.39M & 8.39M & 0.024\% & sliding-window GQA: all layers windowed, W=4096 (config sliding\_window; no layer\_types). T=4352 > W so the window saturates. transformers 5.x DynamicSlidingWindowLayer keeps W-1=40\\
+gpt-oss-20b & gqa+swa & 8.91M & 8.91M & 0.046\% & window+global hybrid (layer pattern [sliding, full], period 2), W=128, T=2048 > W; MoE experts 32 -> 8 (routing only, no KV effect). sliding layer 0 stores W-1=127 of 2048 position\\
+DeepSeek-V2-Lite & mla & 9.44M & 9.44M & 0.000\% & MLA: kv\_lora\_rank 512 + qk\_rope\_head\_dim 64; 2 layers kept = layer 0 (dense MLP, first\_k\_dense\_replace=1) + 1 MoE layer; routed experts 64 -> 8 (no KV effect). transformers caches \\
+granite-4.0-h-micro & hybrid-mamba & 27.73M & 27.89M & 0.565\% & hybrid mamba2+attention: attention at layer idx 5, 15, 25, 35 -> period 10 (9 mamba2 + 1 GQA-attention layer kept). mamba2 layers hold constant state: conv\_states [B,4352,4] (d\_inn\\
+mamba-2.8b & mamba & 0.39M & 0.41M & 5.263\% & pure recurrent (Mamba-1 SSM); state is T-independent, T=512 suffices. conv\_states [B,5120,4] + recurrent\_states [B,5120,16] in float32, both independent of T. The >1\% gap is conv-s\\
 \bottomrule\end{tabular}\end{table}

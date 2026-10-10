@@ -1,0 +1,57 @@
+\section{Limitations}\label{sec:limitations}
+
+\paragraph{Gating and family coverage.}
+The census covers only what is publicly downloadable without license acceptance.
+Gating excluded \kvcGatedSkipped{} repositories, and the exclusions are
+concentrated: every \texttt{meta-llama} checkpoint was gated at snapshot time,
+so the census contains no Llama rows at all, and the earlier
+\texttt{google/gemma} catalog was skipped, leaving only the recent
+\texttt{gemma-4} checkpoints to represent that family. Both families anchor a
+large share of real deployments, and the Gemma~3 report documents exactly the
+window-heavy, KV-saving designs this paper studies \cite{gemmateam2025gemma3}.
+Their partial absence shifts yearly medians and the mechanism mix in directions
+we cannot sign from the data at hand; a Llama-only or Gemma-only census would
+likely sit at different medians for both KV per token and window share.
+
+\paragraph{Release-date proxy and snapshot.}
+Release dating uses the Hub \texttt{createdAt} timestamp, which measures upload,
+not publication. Re-uploads, staged rollouts, and repository reorganization can
+move a model across year boundaries, and every per-year statistic inherits that
+noise. A model announced in one year and uploaded in the next is dated late;
+variants uploaded together with their base model are dated early. The snapshot is single-point-in-time (2026-10-10): repositories were not
+re-crawled, deleted or renamed repos are not re-checked, and 2026 figures cover
+a partial year of \kvcRqOneNTwentySix{} deduplicated rows, so the 2026 medians
+will move once the year completes.
+
+\paragraph{Dropped rows and dedup heuristics.}
+Coverage inside included repositories is imperfect. \kvcKvErrRows{}
+configurations could not be parsed into an attention geometry (missing or
+non-standard fields) and were dropped. \kvcNoParams{} rows lack parameter counts
+and are excluded from per-parameter statistics and from every capacity
+computation. The dedup heuristic collapses checkpoints with identical geometry
+into one row per group and keeps base/instruct twins that differ in geometry
+separate; trend medians are sensitive to where those group boundaries fall.
+
+\paragraph{Analytic values are theoretical minima.}
+All KV figures follow from the configurations, not from measurements of deployed
+runtimes. Implementations can allocate more: latent attention may be cached
+decompressed, sliding windows may be allocated in full, and recurrent states
+carry padding. RQ4 quantifies the gap on reduced-depth instances:
+\kvcValWithin{} of \kvcValRows{} validation rows agree within 1\%, spanning
+\kvcValClasses{} attention classes, and the largest residual comes from a pure
+recurrent model whose state accounting differs (Table~\ref{tab:validation}).
+The validation covers classes, not every census family.
+
+\paragraph{Capacity model idealizations.}
+The capacity model is deliberately minimal. It ignores allocator fragmentation
+--- the problem paged attention was built to solve \cite{kwon2023paged} ---
+plus activation memory, kernel workspaces, and other runtime internals. Runtime
+overhead enters as a modeled parameter reported as a sensitivity grid (0--12
+GiB; headline tables use 6 GiB), not as a measurement. Budgets are treated as
+uniform unified memory; prefill/decode disaggregation changes the arithmetic
+\cite{zhong2024distserve}. Finally, the Hub is a biased frame. We include original
+publishers only (\kvcOrgCount{} organizations), open weights only, and no closed
+models; the fine-tune and merge ecosystem is excluded by design, and recent
+release years skew toward many small checkpoints. Fleet medians therefore
+describe the open-weight release stream, not production traffic, and readers
+should not read them as market shares.
