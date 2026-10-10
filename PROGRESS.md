@@ -8,3 +8,31 @@
   scipy, matplotlib, requests, pytest; sürümler `requirements.txt`'e sabitlendi.
 - Sonraki adım: Phase 1 — 4 paralel alt-ajan (census-data, kv-accounting, validation,
   literature).
+
+### Phase 1 ara durum (13:40)
+- literature ✅: paper/references.bib 34 giriş (hepsi arXiv eprint'li, orkestratör 5/5 spot-check),
+  50 ham API yanıtı data/raw/literature/ altında; commit 9eb7b88.
+- kv-accounting ✅: analysis/kv.py (994 satır) + tests/test_kv.py (67 test, hepsi geçti; orkestratör
+  `make test` + 13 fixture bağımsız formül kontrolü). Önemli bulgular: gpt-oss 1:1 sliding/full,
+  deepseek-v2 tüm katmanlar MLA, falcon-h1 her katmanda attention+mamba birlikte. Commit 3300e0f.
+- census-data: aşama A (sayım/snapshot) sürüyor. validation: kv.py hazır, deney entegrasyonu sürüyor.
+
+## Phase 1 — Paralel yapı (tamamlandı, ~12:00-14:30)
+Tüm teslimler orkestratör tarafından bağımsız doğrulandı:
+- **census-data ✅** data/models.csv: 2.331 satır (benzersiz repo_id), 2.068 dedup grubu, 33 org;
+  yıl dağılımı 2023:263 / 2024:670 / 2025:1044 / 2026:354; 2.437 config snapshot'ı; 7.344 önbellek
+  API yanıtı; gated atlanan 237 repo (google 130, meta-llama 42, CohereLabs 24 — seçim yanlılığı
+  sınırlaması olarak raporlanacak); 9 KVConfigError satırı (kv_config_errors.txt); 104 paramsız satır.
+  Orkestratör simülasyonu: 1.519 saf-attention satırında 2·L·kvh·hd·2 kimliği ve ham config eşleşmesi
+  0 hata; `make data` offline byte-identical (md5 8b8e5f5b…).
+- **kv-accounting ✅** analysis/kv.py: 105 test (orkestratör yeniden çalıştırdı); 2.427/2.437 config
+  çözümleniyor. Bulgu: gpt-oss 1:1 sliding/full; DeepSeek-V2+ tüm dikkat katmanları MLA; Falcon-H1
+  katman başına attention+mamba (2 cache birimi). Etiket dürüstlüğü kuralı kodda zorunlu.
+- **validation ✅** results/kv_validation.csv: 7 model / 6 sınıf / 6 satır %1 içinde; 5,26% sapma =
+  conv-state padding (gerçek RQ4 bulgusu). `make validate` 35 sn (orkestratör: rel_error sütunu
+  yeniden hesaplandı, birebir). Bulgu: transformers 5.19'da SWA cache W-1'e kırpılıyor; MLA latent
+  olarak (sıkıştırılmış) saklanıyor.
+- **literature ✅** paper/references.bib: 34 giriş, hepsi arXiv eprint'li, 0 URL-only; 50 ham yanıt;
+  orkestratör 5/5 arXiv API başlık spot-check. Anahtar listesi yazarlara iletilecek.
+Açık konular: 237 gated skip + 9 kv hatası + 104 paramsız satır → Limitations bölümünde. Sonraki:
+Phase 2 (analiz) orkestratörde.

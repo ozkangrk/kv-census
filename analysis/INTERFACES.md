@@ -48,6 +48,15 @@ def kv_bytes_at(config: dict, T: int, *, bytes_per_element: int = 2) -> float
 def fixed_state_bytes(config: dict, *, bytes_per_element: int = 2) -> float
     # Sum of constant per-layer state bytes (recurrent layers only).
 
+def describe(config: dict) -> dict
+    # One call for the census builder. Returns dict with keys:
+    # arch, num_layers, num_attention_heads, num_kv_heads, head_dim, hidden_size,
+    # attention_type (label rules above), gqa_ratio, window_size, n_full_layers,
+    # n_window_layers, n_latent_layers, n_recurrent_layers, kv_lora_rank,
+    # qk_rope_head_dim, kv_shared_cross_layer (bool), kv_bytes_per_token_bf16,
+    # kv_bytes_at_32k, kv_bytes_at_128k, recurrent_state_bytes.
+    # Missing/not-applicable values are None (census writes empty cells).
+
 def kv_par_context(config: dict, *, total_params: float, weight_bytes_per_param: float = 2.0,
                    bytes_per_element: int = 2) -> float
     # Smallest T with kv_bytes_at(T) >= total_params * weight_bytes_per_param.
