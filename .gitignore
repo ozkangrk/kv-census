@@ -3,3 +3,8 @@ __pycache__/
 *.pyc
 paper/*.aux
 paper/*.log
+.pytest_cache/
+paper/*.aux
+paper/*.log
+paper/*.out
+paper/*.synctex*
