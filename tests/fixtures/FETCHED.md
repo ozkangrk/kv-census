@@ -21,6 +21,7 @@ data/raw/configs/, owned by census-data).
 - ibm-granite/granite-4.0-h-micro, ai21labs/Jamba-v0.1
 - nvidia/Nemotron-H-47B-Base-8k
 - state-spaces/mamba-2.8b, state-spaces/mamba2-2.7b (original release format)
+- tiiuae/falcon-mamba-7b
 - LiquidAI/LFM2-1.2B, MiniMaxAI/MiniMax-Text-01
 
 ## Mirrors (original repo is gated; config.json identical except

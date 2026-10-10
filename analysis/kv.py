@@ -75,7 +75,8 @@ MLA (latent) layers
     checkpoints).
 
 Recurrent layers (constant state, independent of T)
-    * **mamba1** (``jamba``, pure ``mamba``): d_inner = expand*hidden;
+    * **mamba1** (``jamba``, pure ``mamba``, ``falcon_mamba``): d_inner =
+      expand*hidden;
       ssm state ``d_inner * d_state`` elements; conv state
       ``d_inner * (d_conv - 1)`` elements (the conv runs over d_inner
       channels only).
@@ -355,8 +356,8 @@ def _mla(cfg: dict, bpe: int) -> list[LayerKV]:
 def _mamba1_state_elems(cfg: dict) -> int:
     hidden = _req_int(cfg, "hidden_size", min_val=1)
     expand = _opt_int(cfg, "mamba_expand", _opt_int(cfg, "expand", 2))
-    d_state = _opt_int(cfg, "mamba_d_state", _opt_int(cfg, "d_state", 16))
-    d_conv = _opt_int(cfg, "mamba_d_conv", _opt_int(cfg, "d_conv", 4))
+    d_state = _opt_int(cfg, "mamba_d_state", _opt_int(cfg, "d_state", _opt_int(cfg, "state_size", 16)))
+    d_conv = _opt_int(cfg, "mamba_d_conv", _opt_int(cfg, "d_conv", _opt_int(cfg, "conv_kernel", 4)))
     d_inner = _opt_int(cfg, "mamba_d_inner") or expand * hidden
     if d_state < 1 or d_conv < 1:
         raise KVConfigError("bad mamba d_state/d_conv")
@@ -772,6 +773,7 @@ _REGISTRY: dict[str, object] = {
     "minimax_text_01": _b_minimax,
     "mamba": lambda c, b: _b_mamba_pure(c, b, mamba2=False),
     "mamba2": lambda c, b: _b_mamba_pure(c, b, mamba2=True),
+    "falcon_mamba": lambda c, b: _b_mamba_pure(c, b, mamba2=False),
     "rwkv": _b_rwkv,
     "rwkv5": _b_rwkv,
     "rwkv6": _b_rwkv,

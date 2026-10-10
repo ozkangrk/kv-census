@@ -316,6 +316,16 @@ class TestPureRecurrent:
         cfg = {"d_model": 512, "n_layer": 3, "ssm_cfg": {"layer": "Mamba2"}}
         assert kv.fixed_state_bytes(cfg) == 3 * 280_576  # = 841_728
 
+    def test_falcon_mamba(self):
+        # falcon-mamba-7b: mamba1-style with expand 16, state_size 16,
+        # conv_kernel 4: d_inner = 16*4096 = 65_536;
+        # ssm = 65_536*16 = 1_048_576; conv = 65_536*3 = 196_608 elems
+        # -> 1_245_184 elems -> 2_490_368 B per layer, 64 layers.
+        cfg = load("tiiuae__falcon-mamba-7b")
+        assert kv.fixed_state_bytes(cfg) == 64 * 1_245_184 * 2  # = 159_383_552
+        assert kv.kv_bytes_per_token(cfg) == 0.0
+        assert kv.describe(cfg)["attention_type"] == "mamba"
+
     def test_recurrent_gemma(self):
         # block_types ["recurrent","recurrent","attention"], hidden 2560,
         # lru_width 2560, conv1d_width 4: rnn = 2560, conv = 2560*3 = 7_680
