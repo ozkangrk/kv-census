@@ -1,0 +1,9 @@
+HuggingFaceTB/SmolVLM2-2.2B-Base :: KVConfigError: missing num_attention_heads
+HuggingFaceTB/SmolVLM2-2.2B-Instruct :: KVConfigError: missing num_attention_heads
+deepseek-ai/DeepSeek-V4.1-Flash :: KVConfigError: unknown compress_ratios entry in [0, 0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+deepseek-ai/deepseek-vl-7b-base :: KVConfigError: missing required config field 'hidden_size' (model_type=llama)
+deepseek-ai/deepseek-vl-7b-chat :: KVConfigError: missing required config field 'hidden_size' (model_type=llama)
+nvidia/Hymba-1.5B-Base :: KVConfigError: unknown/unregistered architecture (model_type='hymba')
+nvidia/Hymba-1.5B-Instruct :: KVConfigError: unknown/unregistered architecture (model_type='hymba')
+nvidia/MM-Embed :: KVConfigError: missing required config field 'hidden_size' (model_type=llava_next)
+tencent/VersaViT :: KVConfigError: missing num_hidden_layers

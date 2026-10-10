@@ -1,0 +1,121 @@
+[
+ {
+  "repo_id": "Snowflake/Llama-3.1-SwiftKV-8B-Instruct",
+  "arch": "arch=LlamaSwiftKVForCausalLM",
+  "kv_shared": "true",
+  "reported": "69632",
+  "identity": 131072
+ },
+ {
+  "repo_id": "Snowflake/Llama-3.3-SwiftKV-70B-Instruct",
+  "arch": "arch=LlamaSwiftKVForCausalLM",
+  "kv_shared": "true",
+  "reported": "167936",
+  "identity": 327680
+ },
+ {
+  "repo_id": "apple/OpenELM-1_1B",
+  "arch": "arch=OpenELMForCausalLM",
+  "kv_shared": "false",
+  "reported": "43264",
+  "identity": 28672
+ },
+ {
+  "repo_id": "apple/OpenELM-1_1B-Instruct",
+  "arch": "arch=OpenELMForCausalLM",
+  "kv_shared": "false",
+  "reported": "43264",
+  "identity": 28672
+ },
+ {
+  "repo_id": "apple/OpenELM-270M",
+  "arch": "arch=OpenELMForCausalLM",
+  "kv_shared": "false",
+  "reported": "16128",
+  "identity": 12288
+ },
+ {
+  "repo_id": "apple/OpenELM-270M-Instruct",
+  "arch": "arch=OpenELMForCausalLM",
+  "kv_shared": "false",
+  "reported": "16128",
+  "identity": 12288
+ },
+ {
+  "repo_id": "apple/OpenELM-3B",
+  "arch": "arch=OpenELMForCausalLM",
+  "kv_shared": "false",
+  "reported": "83968",
+  "identity": 55296
+ },
+ {
+  "repo_id": "apple/OpenELM-3B-Instruct",
+  "arch": "arch=OpenELMForCausalLM",
+  "kv_shared": "false",
+  "reported": "83968",
+  "identity": 55296
+ },
+ {
+  "repo_id": "apple/OpenELM-450M",
+  "arch": "arch=OpenELMForCausalLM",
+  "kv_shared": "false",
+  "reported": "23296",
+  "identity": 15360
+ },
+ {
+  "repo_id": "apple/OpenELM-450M-Instruct",
+  "arch": "arch=OpenELMForCausalLM",
+  "kv_shared": "false",
+  "reported": "23296",
+  "identity": 15360
+ },
+ {
+  "repo_id": "nvidia/Llama-3_1-Nemotron-51B-Instruct",
+  "arch": "arch=DeciLMForCausalLM",
+  "kv_shared": "false",
+  "reported": "189952",
+  "identity": 327680
+ },
+ {
+  "repo_id": "nvidia/Llama-3_1-Nemotron-Ultra-253B-CPT-v1",
+  "arch": "arch=DeciLMForCausalLM",
+  "kv_shared": "false",
+  "reported": "262144",
+  "identity": 663552
+ },
+ {
+  "repo_id": "nvidia/Llama-3_1-Nemotron-Ultra-253B-v1",
+  "arch": "arch=DeciLMForCausalLM",
+  "kv_shared": "false",
+  "reported": "262144",
+  "identity": 663552
+ },
+ {
+  "repo_id": "nvidia/Llama-3_3-Nemotron-Super-49B-GenRM",
+  "arch": "arch=DeciLMForCausalLM",
+  "kv_shared": "false",
+  "reported": "200704",
+  "identity": 327680
+ },
+ {
+  "repo_id": "nvidia/Llama-3_3-Nemotron-Super-49B-GenRM-Multilingual",
+  "arch": "arch=DeciLMForCausalLM",
+  "kv_shared": "false",
+  "reported": "200704",
+  "identity": 327680
+ },
+ {
+  "repo_id": "nvidia/Llama-3_3-Nemotron-Super-49B-v1",
+  "arch": "arch=DeciLMForCausalLM",
+  "kv_shared": "false",
+  "reported": "200704",
+  "identity": 327680
+ },
+ {
+  "repo_id": "nvidia/Llama-3_3-Nemotron-Super-49B-v1_5",
+  "arch": "arch=DeciLMForCausalLM",
+  "kv_shared": "false",
+  "reported": "200704",
+  "identity": 327680
+ }
+]

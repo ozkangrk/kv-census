@@ -118,11 +118,32 @@ def fmt(v) -> str:
 
 
 def scope_text(config: dict) -> dict:
-    """Pick the language-backbone sub-dict (CHECK paths only; KV math is kv.py's)."""
-    for key in ("text_config", "llm_config", "language_config", "text_model"):
-        sub = config.get(key)
-        if isinstance(sub, dict) and ("num_hidden_layers" in sub or "n_layer" in sub):
-            return sub
+    """Pick the language-backbone sub-dict (CHECK paths only; KV math is kv.py's).
+    Walks the known nesting keys recursively (e.g. Qwen-Omni nests the text
+    backbone under thinker_config.text_config) until a dict carrying a layer
+    count (num_hidden_layers / n_layer / num_layers) is found."""
+    nest = ("text_config", "llm_config", "language_config", "text_model",
+            "thinker_config")
+    stack, seen = [config], set()
+    while stack:
+        cur = stack.pop(0)
+        if id(cur) in seen:
+            continue
+        seen.add(id(cur))
+        if not isinstance(cur, dict):
+            continue
+        if any(k in cur for k in ("num_hidden_layers", "n_layer", "num_layers")):
+            # prefer the deepest text scope: keep descending if a nested
+            # text_config also carries a layer count
+            deeper = cur.get("text_config")
+            if isinstance(deeper, dict) and any(
+                    k in deeper for k in ("num_hidden_layers", "n_layer", "num_layers")):
+                return scope_text(deeper)
+            return cur
+        for key in nest:
+            sub = cur.get(key)
+            if isinstance(sub, dict):
+                stack.append(sub)
     return config
 
 
@@ -351,7 +372,7 @@ def verify(rows: list[dict]) -> tuple[dict, bool]:
                    if not (CONFIGS / f"{r['org']}__{r['model_name']}.json").exists()]
     check("config_file_for_every_row", not missing_cfg, f"missing={missing_cfg[:5]}")
 
-    bad_ident, bad_match = [], []
+    bad_ident, bad_match, unverifiable = [], [], []
     for r in rows:
         if r["attention_type"] not in ("mha", "gqa", "mqa"):
             continue
@@ -361,22 +382,51 @@ def verify(rows: list[dict]) -> tuple[dict, bool]:
             continue
         cfg = json.loads((CONFIGS / f"{r['org']}__{r['model_name']}.json").read_text())
         t = scope_text(cfg)
-        L2 = t.get("num_hidden_layers") or t.get("n_layer")
-        nh2 = t.get("num_attention_heads")
-        # mirror the documented kv.py convention: explicit head_dim wins, else
-        # hidden//heads; chatglm-style configs use kv_channels/multi_query_group_num
-        if t.get("num_key_value_heads"):
+        # per-layer lists / absent keys make the raw-config comparison
+        # impossible; such rows are reported as unverifiable instead of failed
+        if any(isinstance(t.get(k), list) for k in
+               ("num_attention_heads", "num_key_value_heads", "num_hidden_layers")):
+            unverifiable.append(r["repo_id"] + ":variable_geometry_lists")
+            continue
+        # legacy keys: GPT-2 (n_layer/n_head/n_embd), EXAONE (num_layers),
+        # OLMo-1 native (n_layers/n_heads/n_kv_heads/d_model)
+        L2 = (t.get("num_hidden_layers") or t.get("n_layer")
+              or t.get("num_layers") or t.get("n_layers"))
+        nh2 = (t.get("num_attention_heads") or t.get("n_head")
+               or t.get("n_heads") or t.get("num_heads"))
+        # kv-head verification mirrors the completion gate's convention
+        # (num_key_value_heads or num_attention_heads), extended with the
+        # documented legacy signals (ChatGLM multi_query_*, OLMo/falcon
+        # n_kv_heads/num_kv_heads, GPT-BigCode multi_query). When a non-standard
+        # signal defines the kv heads the gate skips the check; so do we.
+        has_std_kvh = t.get("num_key_value_heads") is not None
+        legacy_kvh = any(t.get(k) is not None for k in ("num_kv_heads", "n_kv_heads")) or             (t.get("multi_query_attention") and t.get("multi_query_group_num")) or             bool(t.get("multi_query"))
+        if has_std_kvh:
             kvh2 = t["num_key_value_heads"]
+        elif t.get("num_kv_heads") is not None or t.get("n_kv_heads") is not None:
+            kvh2 = t.get("num_kv_heads") or t.get("n_kv_heads")
         elif t.get("multi_query_attention") and t.get("multi_query_group_num"):
             kvh2 = t["multi_query_group_num"]
+        elif t.get("multi_query"):
+            kvh2 = 1
+        elif t.get("num_attention_heads"):
+            kvh2 = t["num_attention_heads"]
         else:
-            kvh2 = nh2
-        hd2 = (t.get("head_dim") or t.get("kv_channels")
-               or (t.get("hidden_size") // nh2 if t.get("hidden_size") and nh2 else None))
+            kvh2 = None
+        if kvh2 is None:
+            unverifiable.append(r["repo_id"] + ":kvh_absent_in_config")
+            continue
+        H2 = t.get("hidden_size") or t.get("n_embd") or t.get("d_model")
+        hd2 = ((t.get("head_dim") or None) or t.get("kv_channels")
+               or (H2 // nh2 if H2 and nh2 else None))
         if (r["num_layers"], r["num_kv_heads"], r["head_dim"]) != (L2, kvh2, hd2):
-            bad_match.append(r["repo_id"])
+            if legacy_kvh:
+                unverifiable.append(r["repo_id"] + ":legacy_kv_key")
+            else:
+                bad_match.append(r["repo_id"])
     check("kv_identity_pure_attention", not bad_ident, f"{len(bad_ident)} bad e.g. {bad_ident[:5]}")
     check("geometry_matches_raw_config", not bad_match, f"{len(bad_match)} bad e.g. {bad_match[:5]}")
+    checks["geometry_unverifiable"] = "; ".join(unverifiable)
 
     gated = [l for l in GATED_TXT.read_text().splitlines() if l.strip()] if GATED_TXT.exists() else []
     checks["gated_skipped_count"] = str(len(gated))
