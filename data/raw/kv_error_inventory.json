@@ -1,0 +1,632 @@
+{
+ "(no-model-type)": {
+  "count": 38,
+  "example_config": "data/raw/configs/MiniMaxAI__MiniMax-M3.json",
+  "example_error": "unknown/unregistered architecture (model_type='minimaxm3sparse')",
+  "example_repo": "MiniMaxAI/MiniMax-M3"
+ },
+ "GOT": {
+  "count": 1,
+  "example_config": "data/raw/configs/stepfun-ai__GOT-OCR2_0.json",
+  "example_error": "unknown/unregistered architecture (model_type='GOT')",
+  "example_repo": "stepfun-ai/GOT-OCR2_0"
+ },
+ "InternLMXComposer": {
+  "count": 2,
+  "example_config": "data/raw/configs/internlm__internlm-xcomposer-7b.json",
+  "example_error": "unknown/unregistered architecture (model_type='InternLMXComposer')",
+  "example_repo": "internlm/internlm-xcomposer-7b"
+ },
+ "apriel": {
+  "count": 2,
+  "example_config": "data/raw/configs/ServiceNow-AI__Apriel-5B-Base.json",
+  "example_error": "unknown/unregistered architecture (model_type='apriel')",
+  "example_repo": "ServiceNow-AI/Apriel-5B-Base"
+ },
+ "apriel_h": {
+  "count": 1,
+  "example_config": "data/raw/configs/ServiceNow-AI__Apriel-H1-15b-Thinker-SFT.json",
+  "example_error": "unknown/unregistered architecture (model_type='apriel_h')",
+  "example_repo": "ServiceNow-AI/Apriel-H1-15b-Thinker-SFT"
+ },
+ "arctic": {
+  "count": 3,
+  "example_config": "data/raw/configs/Snowflake__snowflake-arctic-base.json",
+  "example_error": "unknown/unregistered architecture (model_type='arctic')",
+  "example_repo": "Snowflake/snowflake-arctic-base"
+ },
+ "baichuan_m1": {
+  "count": 2,
+  "example_config": "data/raw/configs/baichuan-inc__Baichuan-M1-14B-Base.json",
+  "example_error": "unknown/unregistered architecture (model_type='baichuan_m1')",
+  "example_repo": "baichuan-inc/Baichuan-M1-14B-Base"
+ },
+ "bailing_hybrid": {
+  "count": 13,
+  "example_config": "data/raw/configs/inclusionAI__Ling-2.5-1T.json",
+  "example_error": "unknown/unregistered architecture (model_type='bailing_hybrid')",
+  "example_repo": "inclusionAI/Ling-2.5-1T"
+ },
+ "bailing_moe": {
+  "count": 27,
+  "example_config": "data/raw/configs/inclusionAI__Ling-1T.json",
+  "example_error": "unknown/unregistered architecture (model_type='bailing_moe')",
+  "example_repo": "inclusionAI/Ling-1T"
+ },
+ "bailing_moe_linear": {
+  "count": 4,
+  "example_config": "data/raw/configs/inclusionAI__Ring-flash-linear-2.0.json",
+  "example_error": "unknown/unregistered architecture (model_type='bailing_moe_linear')",
+  "example_repo": "inclusionAI/Ring-flash-linear-2.0"
+ },
+ "beit3_llava": {
+  "count": 2,
+  "example_config": "data/raw/configs/openbmb__RLHF-V.json",
+  "example_error": "unknown/unregistered architecture (model_type='beit3_llava')",
+  "example_repo": "openbmb/RLHF-V"
+ },
+ "biogpt": {
+  "count": 2,
+  "example_config": "data/raw/configs/microsoft__BioGPT-Large.json",
+  "example_error": "unknown/unregistered architecture (model_type='biogpt')",
+  "example_repo": "microsoft/BioGPT-Large"
+ },
+ "bitnet": {
+  "count": 2,
+  "example_config": "data/raw/configs/microsoft__bitnet-b1.58-2B-4T.json",
+  "example_error": "unknown/unregistered architecture (model_type='bitnet')",
+  "example_repo": "microsoft/bitnet-b1.58-2B-4T"
+ },
+ "bolmo": {
+  "count": 8,
+  "example_config": "data/raw/configs/allenai__Bolmo-1B.json",
+  "example_error": "unknown/unregistered architecture (model_type='bolmo')",
+  "example_repo": "allenai/Bolmo-1B"
+ },
+ "btlm": {
+  "count": 1,
+  "example_config": "data/raw/configs/EleutherAI__Hermes-btlm-3b-8k.json",
+  "example_error": "unknown/unregistered architecture (model_type='btlm')",
+  "example_repo": "EleutherAI/Hermes-btlm-3b-8k"
+ },
+ "chatglm": {
+  "count": 12,
+  "example_config": "data/raw/configs/bigcode__octogeex.json",
+  "example_error": "missing num_hidden_layers",
+  "example_repo": "bigcode/octogeex"
+ },
+ "circuitgpt": {
+  "count": 1,
+  "example_config": "data/raw/configs/openai__circuit-sparsity.json",
+  "example_error": "unknown/unregistered architecture (model_type='circuitgpt')",
+  "example_repo": "openai/circuit-sparsity"
+ },
+ "cogvlm2": {
+  "count": 2,
+  "example_config": "data/raw/configs/zai-org__cogvlm2-llama3-chat-19B-tgi.json",
+  "example_error": "unknown/unregistered architecture (model_type='cogvlm2')",
+  "example_repo": "zai-org/cogvlm2-llama3-chat-19B-tgi"
+ },
+ "cohere2": {
+  "count": 1,
+  "example_config": "data/raw/configs/CohereLabs__North-Mini-Code-1.0-eagle.json",
+  "example_error": "unknown/unregistered architecture (model_type='cohere2')",
+  "example_repo": "CohereLabs/North-Mini-Code-1.0-eagle"
+ },
+ "cohere2_moe": {
+  "count": 2,
+  "example_config": "data/raw/configs/CohereLabs__North-Mini-Code-1.0.json",
+  "example_error": "unknown/unregistered architecture (model_type='cohere2_moe')",
+  "example_repo": "CohereLabs/North-Mini-Code-1.0"
+ },
+ "cpmant": {
+  "count": 1,
+  "example_config": "data/raw/configs/openbmb__cpm-ant-10b.json",
+  "example_error": "unknown/unregistered architecture (model_type='cpmant')",
+  "example_repo": "openbmb/cpm-ant-10b"
+ },
+ "cpmbee": {
+  "count": 4,
+  "example_config": "data/raw/configs/openbmb__cpm-bee-10b.json",
+  "example_error": "unknown/unregistered architecture (model_type='cpmbee')",
+  "example_repo": "openbmb/cpm-bee-10b"
+ },
+ "deepseek": {
+  "count": 2,
+  "example_config": "data/raw/configs/deepseek-ai__deepseek-moe-16b-base.json",
+  "example_error": "unknown/unregistered architecture (model_type='deepseek')",
+  "example_repo": "deepseek-ai/deepseek-moe-16b-base"
+ },
+ "deepseek_v4": {
+  "count": 11,
+  "example_config": "data/raw/configs/HuggingFaceTB__nanowhale-100m.json",
+  "example_error": "missing required config field 'kv_lora_rank' (model_type=deepseek_v4)",
+  "example_repo": "HuggingFaceTB/nanowhale-100m"
+ },
+ "deepseek_v41_text": {
+  "count": 1,
+  "example_config": "data/raw/configs/deepseek-ai__DeepSeek-V4.1-Flash.json",
+  "example_error": "unknown/unregistered architecture (model_type='deepseek_v41_text')",
+  "example_repo": "deepseek-ai/DeepSeek-V4.1-Flash"
+ },
+ "emo": {
+  "count": 8,
+  "example_config": "data/raw/configs/allenai__EMO.json",
+  "example_error": "unknown/unregistered architecture (model_type='emo')",
+  "example_repo": "allenai/EMO"
+ },
+ "exaone": {
+  "count": 6,
+  "example_config": "data/raw/configs/LGAI-EXAONE__EXAONE-3.5-2.4B-Instruct.json",
+  "example_error": "missing num_hidden_layers",
+  "example_repo": "LGAI-EXAONE/EXAONE-3.5-2.4B-Instruct"
+ },
+ "exaone4_5_text": {
+  "count": 1,
+  "example_config": "data/raw/configs/LGAI-EXAONE__EXAONE-4.5-33B.json",
+  "example_error": "unknown/unregistered architecture (model_type='exaone4_5_text')",
+  "example_repo": "LGAI-EXAONE/EXAONE-4.5-33B"
+ },
+ "falcon": {
+  "count": 7,
+  "example_config": "data/raw/configs/tiiuae__falcon-11B.json",
+  "example_error": "unknown/unregistered architecture (model_type='falcon')",
+  "example_repo": "tiiuae/falcon-11B"
+ },
+ "flex_olmo": {
+  "count": 16,
+  "example_config": "data/raw/configs/allenai__BAR-2x7B-Base.json",
+  "example_error": "unknown/unregistered architecture (model_type='flex_olmo')",
+  "example_repo": "allenai/BAR-2x7B-Base"
+ },
+ "gemma4_text": {
+  "count": 4,
+  "example_config": "data/raw/configs/google__gemma-4-26B-A4B-it-assistant.json",
+  "example_error": "unknown/unregistered architecture (model_type='gemma4_text')",
+  "example_repo": "google/gemma-4-26B-A4B-it-assistant"
+ },
+ "gemma4_unified_text": {
+  "count": 1,
+  "example_config": "data/raw/configs/google__gemma-4-12B-it-assistant.json",
+  "example_error": "unknown/unregistered architecture (model_type='gemma4_unified_text')",
+  "example_repo": "google/gemma-4-12B-it-assistant"
+ },
+ "glm4_moe_lite": {
+  "count": 1,
+  "example_config": "data/raw/configs/zai-org__GLM-4.7-Flash.json",
+  "example_error": "unknown/unregistered architecture (model_type='glm4_moe_lite')",
+  "example_repo": "zai-org/GLM-4.7-Flash"
+ },
+ "glm4v_moe_text": {
+  "count": 2,
+  "example_config": "data/raw/configs/zai-org__GLM-4.5V.json",
+  "example_error": "unknown/unregistered architecture (model_type='glm4v_moe_text')",
+  "example_repo": "zai-org/GLM-4.5V"
+ },
+ "glm4v_text": {
+  "count": 8,
+  "example_config": "data/raw/configs/zai-org__AutoGLM-Phone-9B.json",
+  "example_error": "unknown/unregistered architecture (model_type='glm4v_text')",
+  "example_repo": "zai-org/AutoGLM-Phone-9B"
+ },
+ "glm_moe_dsa": {
+  "count": 7,
+  "example_config": "data/raw/configs/internlm__Atria-Dawn-Preview.json",
+  "example_error": "unknown/unregistered architecture (model_type='glm_moe_dsa')",
+  "example_repo": "internlm/Atria-Dawn-Preview"
+ },
+ "gpt2": {
+  "count": 6,
+  "example_config": "data/raw/configs/EleutherAI__GPT-2-wikitext-chunks.json",
+  "example_error": "unknown/unregistered architecture (model_type='gpt2')",
+  "example_repo": "EleutherAI/GPT-2-wikitext-chunks"
+ },
+ "gpt2_custom": {
+  "count": 1,
+  "example_config": "data/raw/configs/EleutherAI__gpt2-custom.json",
+  "example_error": "unknown/unregistered architecture (model_type='gpt2_custom')",
+  "example_repo": "EleutherAI/gpt2-custom"
+ },
+ "gpt_bigcode": {
+  "count": 21,
+  "example_config": "data/raw/configs/bigcode__astraios-1b-fft.json",
+  "example_error": "unknown/unregistered architecture (model_type='gpt_bigcode')",
+  "example_repo": "bigcode/astraios-1b-fft"
+ },
+ "gpt_oss_puzzle": {
+  "count": 1,
+  "example_config": "data/raw/configs/nvidia__gpt-oss-puzzle-88B.json",
+  "example_error": "unknown/unregistered architecture (model_type='gpt_oss_puzzle')",
+  "example_repo": "nvidia/gpt-oss-puzzle-88B"
+ },
+ "granite_swa": {
+  "count": 1,
+  "example_config": "data/raw/configs/ibm-granite__granite-swash-2b.json",
+  "example_error": "unknown/unregistered architecture (model_type='granite_swa')",
+  "example_repo": "ibm-granite/granite-swash-2b"
+ },
+ "granite_switch": {
+  "count": 3,
+  "example_config": "data/raw/configs/ibm-granite__granite-switch-4.1-30b-preview.json",
+  "example_error": "unknown/unregistered architecture (model_type='granite_switch')",
+  "example_repo": "ibm-granite/granite-switch-4.1-30b-preview"
+ },
+ "granitemoe_swa": {
+  "count": 1,
+  "example_config": "data/raw/configs/ibm-granite__granite-swash-3b-a600m.json",
+  "example_error": "unknown/unregistered architecture (model_type='granitemoe_swa')",
+  "example_repo": "ibm-granite/granite-swash-3b-a600m"
+ },
+ "hf_olmo": {
+  "count": 355,
+  "example_config": "data/raw/configs/allenai__DataDecide-c4-10M.json",
+  "example_error": "unknown/unregistered architecture (model_type='hf_olmo')",
+  "example_repo": "allenai/DataDecide-c4-10M"
+ },
+ "hy_v3": {
+  "count": 3,
+  "example_config": "data/raw/configs/tencent__Hy3.json",
+  "example_error": "unknown/unregistered architecture (model_type='hy_v3')",
+  "example_repo": "tencent/Hy3"
+ },
+ "hy_v4": {
+  "count": 1,
+  "example_config": "data/raw/configs/tencent__Hy4-preview.json",
+  "example_error": "unknown/unregistered architecture (model_type='hy_v4')",
+  "example_repo": "tencent/Hy4-preview"
+ },
+ "hymba": {
+  "count": 2,
+  "example_config": "data/raw/configs/nvidia__Hymba-1.5B-Base.json",
+  "example_error": "unknown/unregistered architecture (model_type='hymba')",
+  "example_repo": "nvidia/Hymba-1.5B-Base"
+ },
+ "internlm": {
+  "count": 5,
+  "example_config": "data/raw/configs/internlm__Agent-FLAN-7b.json",
+  "example_error": "unknown/unregistered architecture (model_type='internlm')",
+  "example_repo": "internlm/Agent-FLAN-7b"
+ },
+ "internlmxcomposer2": {
+  "count": 4,
+  "example_config": "data/raw/configs/internlm__internlm-xcomposer2-4khd-7b.json",
+  "example_error": "unknown/unregistered architecture (model_type='internlmxcomposer2')",
+  "example_repo": "internlm/internlm-xcomposer2-4khd-7b"
+ },
+ "lfm2_moe": {
+  "count": 4,
+  "example_config": "data/raw/configs/LiquidAI__LFM2-24B-A2B.json",
+  "example_error": "lfm2 config lacks GDN num_heads",
+  "example_repo": "LiquidAI/LFM2-24B-A2B"
+ },
+ "llama": {
+  "count": 4,
+  "example_config": "data/raw/configs/HuggingFaceTB__SmolVLM2-2.2B-Base.json",
+  "example_error": "missing required config field 'num_attention_heads' (model_type=llama)",
+  "example_repo": "HuggingFaceTB/SmolVLM2-2.2B-Base"
+ },
+ "llama_swiftkv": {
+  "count": 2,
+  "example_config": "data/raw/configs/Snowflake__Llama-3.1-SwiftKV-8B-Instruct.json",
+  "example_error": "unknown/unregistered architecture (model_type='llama_swiftkv')",
+  "example_repo": "Snowflake/Llama-3.1-SwiftKV-8B-Instruct"
+ },
+ "llava": {
+  "count": 4,
+  "example_config": "data/raw/configs/01-ai__Yi-VL-34B.json",
+  "example_error": "unknown/unregistered architecture (model_type='llava')",
+  "example_repo": "01-ai/Yi-VL-34B"
+ },
+ "llava_llama": {
+  "count": 2,
+  "example_config": "data/raw/configs/microsoft__elem2design.json",
+  "example_error": "unknown/unregistered architecture (model_type='llava_llama')",
+  "example_repo": "microsoft/elem2design"
+ },
+ "llava_mistral": {
+  "count": 1,
+  "example_config": "data/raw/configs/microsoft__llava-med-v1.5-mistral-7b.json",
+  "example_error": "unknown/unregistered architecture (model_type='llava_mistral')",
+  "example_repo": "microsoft/llava-med-v1.5-mistral-7b"
+ },
+ "llava_qwen2": {
+  "count": 3,
+  "example_config": "data/raw/configs/apple__FastVLM-0.5B.json",
+  "example_error": "unknown/unregistered architecture (model_type='llava_qwen2')",
+  "example_repo": "apple/FastVLM-0.5B"
+ },
+ "minicpm": {
+  "count": 11,
+  "example_config": "data/raw/configs/openbmb__AgentCPM-Report.json",
+  "example_error": "unknown/unregistered architecture (model_type='minicpm')",
+  "example_repo": "openbmb/AgentCPM-Report"
+ },
+ "minicpm3": {
+  "count": 1,
+  "example_config": "data/raw/configs/openbmb__MiniCPM3-4B.json",
+  "example_error": "unknown/unregistered architecture (model_type='minicpm3')",
+  "example_repo": "openbmb/MiniCPM3-4B"
+ },
+ "minicpm_sala": {
+  "count": 1,
+  "example_config": "data/raw/configs/openbmb__MiniCPM-SALA.json",
+  "example_error": "unknown/unregistered architecture (model_type='minicpm_sala')",
+  "example_repo": "openbmb/MiniCPM-SALA"
+ },
+ "minicpmv": {
+  "count": 6,
+  "example_config": "data/raw/configs/openbmb__AgentCPM-GUI.json",
+  "example_error": "unknown/unregistered architecture (model_type='minicpmv')",
+  "example_repo": "openbmb/AgentCPM-GUI"
+ },
+ "minimax_m1": {
+  "count": 2,
+  "example_config": "data/raw/configs/MiniMaxAI__MiniMax-M1-40k.json",
+  "example_error": "unknown/unregistered architecture (model_type='minimax_m1')",
+  "example_repo": "MiniMaxAI/MiniMax-M1-40k"
+ },
+ "minimax_m2": {
+  "count": 4,
+  "example_config": "data/raw/configs/MiniMaxAI__MiniMax-M2.json",
+  "example_error": "unknown/unregistered architecture (model_type='minimax_m2')",
+  "example_repo": "MiniMaxAI/MiniMax-M2"
+ },
+ "ministral3": {
+  "count": 1,
+  "example_config": "data/raw/configs/mistralai__Devstral-2-123B-Instruct-2512.json",
+  "example_error": "unknown/unregistered architecture (model_type='ministral3')",
+  "example_repo": "mistralai/Devstral-2-123B-Instruct-2512"
+ },
+ "mistral": {
+  "count": 1,
+  "example_config": "data/raw/configs/nvidia__MM-Embed.json",
+  "example_error": "unknown/unregistered architecture (model_type='llava_next')",
+  "example_repo": "nvidia/MM-Embed"
+ },
+ "molmo": {
+  "count": 4,
+  "example_config": "data/raw/configs/allenai__Molmo-72B-0924.json",
+  "example_error": "unknown/unregistered architecture (model_type='molmo')",
+  "example_repo": "allenai/Molmo-72B-0924"
+ },
+ "nemotron-nas": {
+  "count": 7,
+  "example_config": "data/raw/configs/nvidia__Llama-3_1-Nemotron-51B-Instruct.json",
+  "example_error": "unknown/unregistered architecture (model_type='nemotron-nas')",
+  "example_repo": "nvidia/Llama-3_1-Nemotron-51B-Instruct"
+ },
+ "nemotron_flash": {
+  "count": 3,
+  "example_config": "data/raw/configs/nvidia__Nemotron-Flash-1B.json",
+  "example_error": "unknown/unregistered architecture (model_type='nemotron_flash')",
+  "example_repo": "nvidia/Nemotron-Flash-1B"
+ },
+ "nemotron_h": {
+  "count": 8,
+  "example_config": "data/raw/configs/nvidia__NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16.json",
+  "example_error": "missing num_hidden_layers",
+  "example_repo": "nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16"
+ },
+ "nemotron_h_puzzle": {
+  "count": 1,
+  "example_config": "data/raw/configs/nvidia__NVIDIA-Nemotron-Labs-3-Puzzle-75B-A9B-BF16.json",
+  "example_error": "unknown/unregistered architecture (model_type='nemotron_h_puzzle')",
+  "example_repo": "nvidia/NVIDIA-Nemotron-Labs-3-Puzzle-75B-A9B-BF16"
+ },
+ "olmo": {
+  "count": 1,
+  "example_config": "data/raw/configs/allenai__OLMo-7B-0424.json",
+  "example_error": "missing required config field 'hidden_size' (model_type=olmo)",
+  "example_repo": "allenai/OLMo-7B-0424"
+ },
+ "olmo2-retrofit": {
+  "count": 1,
+  "example_config": "data/raw/configs/allenai__Olmo-3-7B-RL-Zero-Mix.json",
+  "example_error": "unknown/unregistered architecture (model_type='olmo2-retrofit')",
+  "example_repo": "allenai/Olmo-3-7B-RL-Zero-Mix"
+ },
+ "olmo2_noqknorm_prenorm": {
+  "count": 1,
+  "example_config": "data/raw/configs/allenai__Dense_1b_130B.json",
+  "example_error": "unknown/unregistered architecture (model_type='olmo2_noqknorm_prenorm')",
+  "example_repo": "allenai/Dense_1b_130B"
+ },
+ "olmo3": {
+  "count": 23,
+  "example_config": "data/raw/configs/EleutherAI__olmo3-7b-sdf-sft-clean150.json",
+  "example_error": "unknown/unregistered architecture (model_type='olmo3')",
+  "example_repo": "EleutherAI/olmo3-7b-sdf-sft-clean150"
+ },
+ "olmo_hils": {
+  "count": 1,
+  "example_config": "data/raw/configs/tencent__HiLS-Attention-7B.json",
+  "example_error": "unknown/unregistered architecture (model_type='olmo_hils')",
+  "example_repo": "tencent/HiLS-Attention-7B"
+ },
+ "olmo_hybrid": {
+  "count": 4,
+  "example_config": "data/raw/configs/allenai__Olmo-Hybrid-7B.json",
+  "example_error": "unknown/unregistered architecture (model_type='olmo_hybrid')",
+  "example_repo": "allenai/Olmo-Hybrid-7B"
+ },
+ "omni": {
+  "count": 4,
+  "example_config": "data/raw/configs/baichuan-inc__Baichuan-Audio-Base.json",
+  "example_error": "unknown/unregistered architecture (model_type='omni')",
+  "example_repo": "baichuan-inc/Baichuan-Audio-Base"
+ },
+ "omnilmm": {
+  "count": 2,
+  "example_config": "data/raw/configs/openbmb__OmniLMM-12B.json",
+  "example_error": "unknown/unregistered architecture (model_type='omnilmm')",
+  "example_repo": "openbmb/OmniLMM-12B"
+ },
+ "openelm": {
+  "count": 8,
+  "example_config": "data/raw/configs/apple__OpenELM-1_1B.json",
+  "example_error": "unknown/unregistered architecture (model_type='openelm')",
+  "example_repo": "apple/OpenELM-1_1B"
+ },
+ "opt": {
+  "count": 1,
+  "example_config": "data/raw/configs/allenai__open-instruct-opt-6.7b-tulu.json",
+  "example_error": "unknown/unregistered architecture (model_type='opt')",
+  "example_repo": "allenai/open-instruct-opt-6.7b-tulu"
+ },
+ "penguinvl_qwen3": {
+  "count": 2,
+  "example_config": "data/raw/configs/tencent__Penguin-VL-2B.json",
+  "example_error": "unknown/unregistered architecture (model_type='penguinvl_qwen3')",
+  "example_repo": "tencent/Penguin-VL-2B"
+ },
+ "phi3_v": {
+  "count": 4,
+  "example_config": "data/raw/configs/microsoft__Phi-3-vision-128k-instruct.json",
+  "example_error": "unknown/unregistered architecture (model_type='phi3_v')",
+  "example_repo": "microsoft/Phi-3-vision-128k-instruct"
+ },
+ "phi3small": {
+  "count": 2,
+  "example_config": "data/raw/configs/microsoft__Phi-3-small-128k-instruct.json",
+  "example_error": "unknown/unregistered architecture (model_type='phi3small')",
+  "example_repo": "microsoft/Phi-3-small-128k-instruct"
+ },
+ "phi4flash": {
+  "count": 1,
+  "example_config": "data/raw/configs/microsoft__Phi-4-mini-flash-reasoning.json",
+  "example_error": "unknown/unregistered architecture (model_type='phi4flash')",
+  "example_repo": "microsoft/Phi-4-mini-flash-reasoning"
+ },
+ "qwen": {
+  "count": 11,
+  "example_config": "data/raw/configs/Qwen__Qwen-14B.json",
+  "example_error": "unknown/unregistered architecture (model_type='qwen')",
+  "example_repo": "Qwen/Qwen-14B"
+ },
+ "qwen2_5_omni": {
+  "count": 2,
+  "example_config": "data/raw/configs/Qwen__Qwen2.5-Omni-3B.json",
+  "example_error": "unknown/unregistered architecture (model_type='qwen2_5_omni')",
+  "example_repo": "Qwen/Qwen2.5-Omni-3B"
+ },
+ "qwen2_5_vl": {
+  "count": 23,
+  "example_config": "data/raw/configs/Qwen__Qwen2.5-VL-32B-Instruct.json",
+  "example_error": "unknown/unregistered architecture (model_type='qwen2_5_vl')",
+  "example_repo": "Qwen/Qwen2.5-VL-32B-Instruct"
+ },
+ "qwen2_5_vl_text": {
+  "count": 10,
+  "example_config": "data/raw/configs/allenai__SAGE-MM-Qwen2.5-VL-7B-SFT.json",
+  "example_error": "unknown/unregistered architecture (model_type='qwen2_5_vl_text')",
+  "example_repo": "allenai/SAGE-MM-Qwen2.5-VL-7B-SFT"
+ },
+ "qwen2_vl": {
+  "count": 12,
+  "example_config": "data/raw/configs/Qwen__QVQ-72B-Preview.json",
+  "example_error": "unknown/unregistered architecture (model_type='qwen2_vl')",
+  "example_repo": "Qwen/QVQ-72B-Preview"
+ },
+ "qwen3_5_moe_text": {
+  "count": 10,
+  "example_config": "data/raw/configs/Qwen__Qwen-AgentWorld-35B-A3B.json",
+  "example_error": "unknown/unregistered architecture (model_type='qwen3_5_moe_text')",
+  "example_repo": "Qwen/Qwen-AgentWorld-35B-A3B"
+ },
+ "qwen3_5_text": {
+  "count": 42,
+  "example_config": "data/raw/configs/Qwen__Qwen3.5-0.8B.json",
+  "example_error": "unknown/unregistered architecture (model_type='qwen3_5_text')",
+  "example_repo": "Qwen/Qwen3.5-0.8B"
+ },
+ "qwen3_omni_moe": {
+  "count": 3,
+  "example_config": "data/raw/configs/Qwen__Qwen3-Omni-30B-A3B-Captioner.json",
+  "example_error": "unknown/unregistered architecture (model_type='qwen3_omni_moe')",
+  "example_repo": "Qwen/Qwen3-Omni-30B-A3B-Captioner"
+ },
+ "qwen3_scale_seq": {
+  "count": 4,
+  "example_config": "data/raw/configs/tencent__Sequential-Hidden-Decoding-8B-n2.json",
+  "example_error": "unknown/unregistered architecture (model_type='qwen3_scale_seq')",
+  "example_repo": "tencent/Sequential-Hidden-Decoding-8B-n2"
+ },
+ "qwen3_vl_moe_text": {
+  "count": 5,
+  "example_config": "data/raw/configs/Qwen__Qwen3-VL-235B-A22B-Instruct.json",
+  "example_error": "unknown/unregistered architecture (model_type='qwen3_vl_moe_text')",
+  "example_repo": "Qwen/Qwen3-VL-235B-A22B-Instruct"
+ },
+ "qwen3_vl_text": {
+  "count": 35,
+  "example_config": "data/raw/configs/Qwen__Qwen3-VL-2B-Instruct.json",
+  "example_error": "unknown/unregistered architecture (model_type='qwen3_vl_text')",
+  "example_repo": "Qwen/Qwen3-VL-2B-Instruct"
+ },
+ "qwen4_exp_text": {
+  "count": 1,
+  "example_config": "data/raw/configs/Qwen__Qwen3.8-Flash-Next.json",
+  "example_error": "unknown/unregistered architecture (model_type='qwen4_exp_text')",
+  "example_repo": "Qwen/Qwen3.8-Flash-Next"
+ },
+ "rwkv7": {
+  "count": 19,
+  "example_config": "data/raw/configs/RWKV__RWKV7-1.5B-20260805.json",
+  "example_error": "unknown/unregistered architecture (model_type='rwkv7')",
+  "example_repo": "RWKV/RWKV7-1.5B-20260805"
+ },
+ "solar": {
+  "count": 1,
+  "example_config": "data/raw/configs/upstage__solar-pro-preview-instruct.json",
+  "example_error": "unknown/unregistered architecture (model_type='solar')",
+  "example_repo": "upstage/solar-pro-preview-instruct"
+ },
+ "solar_open": {
+  "count": 1,
+  "example_config": "data/raw/configs/upstage__Solar-Open-100B.json",
+  "example_error": "unknown/unregistered architecture (model_type='solar_open')",
+  "example_repo": "upstage/Solar-Open-100B"
+ },
+ "solar_open2": {
+  "count": 1,
+  "example_config": "data/raw/configs/upstage__Solar-Open2-250B.json",
+  "example_error": "unknown/unregistered architecture (model_type='solar_open2')",
+  "example_repo": "upstage/Solar-Open2-250B"
+ },
+ "stablelm_alpha": {
+  "count": 2,
+  "example_config": "data/raw/configs/stabilityai__stablelm-base-alpha-3b-v2.json",
+  "example_error": "unknown/unregistered architecture (model_type='stablelm_alpha')",
+  "example_repo": "stabilityai/stablelm-base-alpha-3b-v2"
+ },
+ "stablelm_epoch": {
+  "count": 2,
+  "example_config": "data/raw/configs/stabilityai__japanese-stablelm-3b-4e1t-base.json",
+  "example_error": "unknown/unregistered architecture (model_type='stablelm_epoch')",
+  "example_repo": "stabilityai/japanese-stablelm-3b-4e1t-base"
+ },
+ "step3p5": {
+  "count": 3,
+  "example_config": "data/raw/configs/stepfun-ai__Step-3.5-Flash.json",
+  "example_error": "unknown/unregistered architecture (model_type='step3p5')",
+  "example_repo": "stepfun-ai/Step-3.5-Flash"
+ },
+ "wedlm": {
+  "count": 4,
+  "example_config": "data/raw/configs/tencent__WeDLM-7B-Base.json",
+  "example_error": "unknown/unregistered architecture (model_type='wedlm')",
+  "example_repo": "tencent/WeDLM-7B-Base"
+ },
+ "youtu": {
+  "count": 2,
+  "example_config": "data/raw/configs/tencent__Youtu-LLM-2B.json",
+  "example_error": "unknown/unregistered architecture (model_type='youtu')",
+  "example_repo": "tencent/Youtu-LLM-2B"
+ },
+ "youtu_vita_text": {
+  "count": 1,
+  "example_config": "data/raw/configs/tencent__Youtu-Parsing-Omni.json",
+  "example_error": "unknown/unregistered architecture (model_type='youtu_vita_text')",
+  "example_repo": "tencent/Youtu-Parsing-Omni"
+ }
+}

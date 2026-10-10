@@ -1,0 +1,20 @@
+{
+ "at_least_3_years_2023_2026": "PASS ({\"2023\": 192, \"2024\": 584, \"2025\": 501, \"2026\": 213})",
+ "attention_type_counts": "{\"gqa\": 652, \"mha\": 568, \"hybrid-mamba\": 125, \"mla\": 50, \"hybrid-gdn\": 40, \"rwkv\": 31, \"local+global\": 8, \"mamba\": 6, \"hybrid-lightning\": 5, \"gqa+swa\": 4, \"mqa\": 1}",
+ "config_file_for_every_row": "PASS (missing=[])",
+ "gated_skipped_count": "237",
+ "geometry_matches_raw_config": "PASS (0 bad e.g. [])",
+ "kv_errors_sample": "[\"01-ai/Yi-VL-34B :: KVConfigError: unknown/unregistered architecture (model_type='llava')\", \"01-ai/Yi-VL-6B :: KVConfigError: unknown/unregistered architecture (model_type='llava')\", \"CohereLabs/North-Mini-Code-1.0 :: KVConfigError: unknown/unregistered architecture (model_type='cohere2_moe')\", \"CohereLabs/North-Mini-Code-1.0-eagle :: KVConfigError: unknown/unregistered architecture (model_type='cohere2')\", \"CohereLabs/command-a-plus-05-2026-bf16 :: KVConfigError: unknown/unregistered architecture (model_type='cohere2_moe')\", \"EleutherAI/GPT-2-wikitext-chunks :: KVConfigError: unknown/unregistered architecture (model_type='gpt2')\", \"EleutherAI/GPT-2-wikitext-chunks-epsroot-0 :: KVConfigError: unknown/unregistered architecture (model_type='gpt2')\", \"EleutherAI/Hermes-btlm-3b-8k :: KVConfigError: unknown/unregistered architecture (model_type='btlm')\", \"EleutherAI/bergson-magic-gpt-2 :: KVConfigError: unknown/unregistered architecture (model_type='gpt2')\", \"EleutherAI/gpt-2-wikitext-chunks-epsroot-0-bs64 :: KVConfigError: unknown/unregistered architecture (model_type='gpt2')\"]",
+ "kv_identity_pure_attention": "PASS (0 bad e.g. [])",
+ "min_150_rows": "PASS (1490 rows)",
+ "n_dedup_groups": "1248",
+ "n_distinct_orgs": "31",
+ "n_kv_errors": "927",
+ "n_params_from_config": "258",
+ "n_params_from_safetensors": "1201",
+ "n_params_missing": "31",
+ "n_rows": "1490",
+ "rows_per_org": "{\"01-ai\": 22, \"EleutherAI\": 374, \"HuggingFaceTB\": 25, \"LGAI-EXAONE\": 6, \"LiquidAI\": 34, \"MiniMaxAI\": 8, \"Qwen\": 105, \"RWKV\": 28, \"ServiceNow-AI\": 4, \"Snowflake\": 3, \"ai21labs\": 6, \"allenai\": 178, \"apple\": 4, \"baichuan-inc\": 11, \"bigcode\": 5, \"deepseek-ai\": 70, \"ibm-granite\": 87, \"inclusionAI\": 28, \"internlm\": 47, \"microsoft\": 118, \"mistralai\": 22, \"moonshotai\": 8, \"nvidia\": 105, \"openai\": 4, \"openbmb\": 35, \"stabilityai\": 26, \"stepfun-ai\": 7, \"tencent\": 20, \"tiiuae\": 45, \"upstage\": 12, \"zai-org\": 43}",
+ "rows_per_year": "{\"2023\": 192, \"2024\": 584, \"2025\": 501, \"2026\": 213}",
+ "unique_repo_id": "PASS"
+}

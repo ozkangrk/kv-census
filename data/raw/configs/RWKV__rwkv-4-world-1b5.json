@@ -1,0 +1,1 @@
+{"attention_hidden_size": 2048, "bos_token_id": 0, "context_length": 1024, "eos_token_id": 0, "hidden_size": 2048, "intermediate_size": 8192, "layer_norm_epsilon": 1e-05, "model_type": "rwkv", "num_hidden_layers": 24, "rescale_every": 6, "tie_word_embeddings": false, "transformers_version": "4.33.1", "use_cache": true, "vocab_size": 65536}

@@ -1,0 +1,3710 @@
+[
+ {
+  "repo_id": "01-ai/Yi-VL-34B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='llava')"
+ },
+ {
+  "repo_id": "01-ai/Yi-VL-6B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='llava')"
+ },
+ {
+  "repo_id": "CohereLabs/North-Mini-Code-1.0",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='cohere2_moe')"
+ },
+ {
+  "repo_id": "CohereLabs/North-Mini-Code-1.0-eagle",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='cohere2')"
+ },
+ {
+  "repo_id": "CohereLabs/command-a-plus-05-2026-bf16",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='cohere2_moe')"
+ },
+ {
+  "repo_id": "EleutherAI/GPT-2-wikitext-chunks",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='gpt2')"
+ },
+ {
+  "repo_id": "EleutherAI/GPT-2-wikitext-chunks-epsroot-0",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='gpt2')"
+ },
+ {
+  "repo_id": "EleutherAI/Hermes-btlm-3b-8k",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='btlm')"
+ },
+ {
+  "repo_id": "EleutherAI/bergson-magic-gpt-2",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='gpt2')"
+ },
+ {
+  "repo_id": "EleutherAI/gpt-2-wikitext-chunks-epsroot-0-bs64",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='gpt2')"
+ },
+ {
+  "repo_id": "EleutherAI/gpt-2-wikitext-chunks-epsroot-1e-6-bs64",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='gpt2')"
+ },
+ {
+  "repo_id": "EleutherAI/gpt2-custom",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='gpt2_custom')"
+ },
+ {
+  "repo_id": "EleutherAI/olmo3-7b-sdf-sft-clean150",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='olmo3')"
+ },
+ {
+  "repo_id": "EleutherAI/olmo3-7b-sdf-sft-scrub-b1reset150",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='olmo3')"
+ },
+ {
+  "repo_id": "HuggingFaceTB/SmolVLM2-2.2B-Base",
+  "error": "KVConfigError: missing required config field 'num_attention_heads' (model_type=llama)"
+ },
+ {
+  "repo_id": "HuggingFaceTB/SmolVLM2-2.2B-Instruct",
+  "error": "KVConfigError: missing required config field 'num_attention_heads' (model_type=llama)"
+ },
+ {
+  "repo_id": "HuggingFaceTB/nanowhale-100m",
+  "error": "KVConfigError: missing required config field 'kv_lora_rank' (model_type=deepseek_v4)"
+ },
+ {
+  "repo_id": "HuggingFaceTB/nanowhale-100m-base",
+  "error": "KVConfigError: missing required config field 'kv_lora_rank' (model_type=deepseek_v4)"
+ },
+ {
+  "repo_id": "LGAI-EXAONE/EXAONE-3.5-2.4B-Instruct",
+  "error": "KVConfigError: missing num_hidden_layers"
+ },
+ {
+  "repo_id": "LGAI-EXAONE/EXAONE-3.5-32B-Instruct",
+  "error": "KVConfigError: missing num_hidden_layers"
+ },
+ {
+  "repo_id": "LGAI-EXAONE/EXAONE-3.5-7.8B-Instruct",
+  "error": "KVConfigError: missing num_hidden_layers"
+ },
+ {
+  "repo_id": "LGAI-EXAONE/EXAONE-4.5-33B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='exaone4_5_text')"
+ },
+ {
+  "repo_id": "LGAI-EXAONE/EXAONE-Deep-2.4B",
+  "error": "KVConfigError: missing num_hidden_layers"
+ },
+ {
+  "repo_id": "LGAI-EXAONE/EXAONE-Deep-32B",
+  "error": "KVConfigError: missing num_hidden_layers"
+ },
+ {
+  "repo_id": "LGAI-EXAONE/EXAONE-Deep-7.8B",
+  "error": "KVConfigError: missing num_hidden_layers"
+ },
+ {
+  "repo_id": "LiquidAI/LFM2-24B-A2B",
+  "error": "KVConfigError: lfm2 config lacks GDN num_heads"
+ },
+ {
+  "repo_id": "LiquidAI/LFM2-8B-A1B",
+  "error": "KVConfigError: lfm2 config lacks GDN num_heads"
+ },
+ {
+  "repo_id": "LiquidAI/LFM2.5-8B-A1B",
+  "error": "KVConfigError: lfm2 config lacks GDN num_heads"
+ },
+ {
+  "repo_id": "LiquidAI/LFM2.5-8B-A1B-Base",
+  "error": "KVConfigError: lfm2 config lacks GDN num_heads"
+ },
+ {
+  "repo_id": "MiniMaxAI/MiniMax-M1-40k",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='minimax_m1')"
+ },
+ {
+  "repo_id": "MiniMaxAI/MiniMax-M1-80k",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='minimax_m1')"
+ },
+ {
+  "repo_id": "MiniMaxAI/MiniMax-M2",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='minimax_m2')"
+ },
+ {
+  "repo_id": "MiniMaxAI/MiniMax-M2.1",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='minimax_m2')"
+ },
+ {
+  "repo_id": "MiniMaxAI/MiniMax-M2.5",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='minimax_m2')"
+ },
+ {
+  "repo_id": "MiniMaxAI/MiniMax-M2.7",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='minimax_m2')"
+ },
+ {
+  "repo_id": "MiniMaxAI/MiniMax-M3",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='minimaxm3sparse')"
+ },
+ {
+  "repo_id": "Qwen/QVQ-72B-Preview",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen2_vl')"
+ },
+ {
+  "repo_id": "Qwen/Qwen-14B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen')"
+ },
+ {
+  "repo_id": "Qwen/Qwen-14B-Chat",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen')"
+ },
+ {
+  "repo_id": "Qwen/Qwen-1_8B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen')"
+ },
+ {
+  "repo_id": "Qwen/Qwen-72B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen')"
+ },
+ {
+  "repo_id": "Qwen/Qwen-72B-Chat",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen')"
+ },
+ {
+  "repo_id": "Qwen/Qwen-7B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen')"
+ },
+ {
+  "repo_id": "Qwen/Qwen-7B-Chat",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen')"
+ },
+ {
+  "repo_id": "Qwen/Qwen-AgentWorld-35B-A3B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_5_moe_text')"
+ },
+ {
+  "repo_id": "Qwen/Qwen-Audio",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen')"
+ },
+ {
+  "repo_id": "Qwen/Qwen-Audio-Chat",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen')"
+ },
+ {
+  "repo_id": "Qwen/Qwen-VL",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen')"
+ },
+ {
+  "repo_id": "Qwen/Qwen-VL-Chat",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen')"
+ },
+ {
+  "repo_id": "Qwen/Qwen2-VL-2B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen2_vl')"
+ },
+ {
+  "repo_id": "Qwen/Qwen2-VL-2B-Instruct",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen2_vl')"
+ },
+ {
+  "repo_id": "Qwen/Qwen2-VL-72B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen2_vl')"
+ },
+ {
+  "repo_id": "Qwen/Qwen2-VL-72B-Instruct",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen2_vl')"
+ },
+ {
+  "repo_id": "Qwen/Qwen2-VL-7B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen2_vl')"
+ },
+ {
+  "repo_id": "Qwen/Qwen2-VL-7B-Instruct",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen2_vl')"
+ },
+ {
+  "repo_id": "Qwen/Qwen2.5-Omni-3B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen2_5_omni')"
+ },
+ {
+  "repo_id": "Qwen/Qwen2.5-Omni-7B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen2_5_omni')"
+ },
+ {
+  "repo_id": "Qwen/Qwen2.5-VL-32B-Instruct",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen2_5_vl')"
+ },
+ {
+  "repo_id": "Qwen/Qwen2.5-VL-3B-Instruct",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen2_5_vl')"
+ },
+ {
+  "repo_id": "Qwen/Qwen2.5-VL-72B-Instruct",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen2_5_vl')"
+ },
+ {
+  "repo_id": "Qwen/Qwen2.5-VL-7B-Instruct",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen2_5_vl')"
+ },
+ {
+  "repo_id": "Qwen/Qwen3-Omni-30B-A3B-Captioner",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_omni_moe')"
+ },
+ {
+  "repo_id": "Qwen/Qwen3-Omni-30B-A3B-Instruct",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_omni_moe')"
+ },
+ {
+  "repo_id": "Qwen/Qwen3-Omni-30B-A3B-Thinking",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_omni_moe')"
+ },
+ {
+  "repo_id": "Qwen/Qwen3-VL-235B-A22B-Instruct",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_vl_moe_text')"
+ },
+ {
+  "repo_id": "Qwen/Qwen3-VL-235B-A22B-Thinking",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_vl_moe_text')"
+ },
+ {
+  "repo_id": "Qwen/Qwen3-VL-2B-Instruct",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_vl_text')"
+ },
+ {
+  "repo_id": "Qwen/Qwen3-VL-2B-Thinking",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_vl_text')"
+ },
+ {
+  "repo_id": "Qwen/Qwen3-VL-30B-A3B-Instruct",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_vl_moe_text')"
+ },
+ {
+  "repo_id": "Qwen/Qwen3-VL-30B-A3B-Thinking",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_vl_moe_text')"
+ },
+ {
+  "repo_id": "Qwen/Qwen3-VL-32B-Instruct",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_vl_text')"
+ },
+ {
+  "repo_id": "Qwen/Qwen3-VL-32B-Thinking",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_vl_text')"
+ },
+ {
+  "repo_id": "Qwen/Qwen3-VL-4B-Instruct",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_vl_text')"
+ },
+ {
+  "repo_id": "Qwen/Qwen3-VL-4B-Thinking",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_vl_text')"
+ },
+ {
+  "repo_id": "Qwen/Qwen3-VL-8B-Instruct",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_vl_text')"
+ },
+ {
+  "repo_id": "Qwen/Qwen3-VL-8B-Thinking",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_vl_text')"
+ },
+ {
+  "repo_id": "Qwen/Qwen3.5-0.8B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_5_text')"
+ },
+ {
+  "repo_id": "Qwen/Qwen3.5-0.8B-Base",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_5_text')"
+ },
+ {
+  "repo_id": "Qwen/Qwen3.5-122B-A10B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_5_moe_text')"
+ },
+ {
+  "repo_id": "Qwen/Qwen3.5-27B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_5_text')"
+ },
+ {
+  "repo_id": "Qwen/Qwen3.5-2B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_5_text')"
+ },
+ {
+  "repo_id": "Qwen/Qwen3.5-2B-Base",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_5_text')"
+ },
+ {
+  "repo_id": "Qwen/Qwen3.5-35B-A3B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_5_moe_text')"
+ },
+ {
+  "repo_id": "Qwen/Qwen3.5-35B-A3B-Base",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_5_moe_text')"
+ },
+ {
+  "repo_id": "Qwen/Qwen3.5-397B-A17B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_5_moe_text')"
+ },
+ {
+  "repo_id": "Qwen/Qwen3.5-4B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_5_text')"
+ },
+ {
+  "repo_id": "Qwen/Qwen3.5-4B-Base",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_5_text')"
+ },
+ {
+  "repo_id": "Qwen/Qwen3.5-9B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_5_text')"
+ },
+ {
+  "repo_id": "Qwen/Qwen3.5-9B-Base",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_5_text')"
+ },
+ {
+  "repo_id": "Qwen/Qwen3.6-27B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_5_text')"
+ },
+ {
+  "repo_id": "Qwen/Qwen3.6-35B-A3B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_5_moe_text')"
+ },
+ {
+  "repo_id": "Qwen/Qwen3.8-2.4T-A95B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_5_moe_text')"
+ },
+ {
+  "repo_id": "Qwen/Qwen3.8-27B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_5_text')"
+ },
+ {
+  "repo_id": "Qwen/Qwen3.8-Flash-Next",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen4_exp_text')"
+ },
+ {
+  "repo_id": "RWKV/RWKV7-1.5B-20260805",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='rwkv7')"
+ },
+ {
+  "repo_id": "RWKV/RWKV7-13.3B-20260805",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='rwkv7')"
+ },
+ {
+  "repo_id": "RWKV/RWKV7-2.9B-20260805",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='rwkv7')"
+ },
+ {
+  "repo_id": "RWKV/RWKV7-7.2B-20260805",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='rwkv7')"
+ },
+ {
+  "repo_id": "RWKV/RWKV7-G1j-1.5B-20260831",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='rwkv7')"
+ },
+ {
+  "repo_id": "RWKV/RWKV7-G1j-13.3B-20260831",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='rwkv7')"
+ },
+ {
+  "repo_id": "RWKV/RWKV7-G1j-2.9B-20260831",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='rwkv7')"
+ },
+ {
+  "repo_id": "RWKV/RWKV7-G1j-7.2B-20260831",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='rwkv7')"
+ },
+ {
+  "repo_id": "RWKV/RWKV7-G1k-1.5B-20260930",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='rwkv7')"
+ },
+ {
+  "repo_id": "RWKV/RWKV7-G1k-13.3B-20260930",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='rwkv7')"
+ },
+ {
+  "repo_id": "RWKV/RWKV7-G1k-2.9B-20260930",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='rwkv7')"
+ },
+ {
+  "repo_id": "RWKV/RWKV7-G1k-7.2B-20260930",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='rwkv7')"
+ },
+ {
+  "repo_id": "RWKV/RWKV7-Goose-Pile-1.47B-HF",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='rwkv7')"
+ },
+ {
+  "repo_id": "RWKV/RWKV7-Goose-Pile-168M-HF",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='rwkv7')"
+ },
+ {
+  "repo_id": "RWKV/RWKV7-Goose-Pile-421M-HF",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='rwkv7')"
+ },
+ {
+  "repo_id": "RWKV/RWKV7-Goose-World2.8-0.1B-HF",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='rwkv7')"
+ },
+ {
+  "repo_id": "RWKV/RWKV7-Goose-World2.9-0.4B-HF",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='rwkv7')"
+ },
+ {
+  "repo_id": "RWKV/RWKV7-Goose-World3-1.5B-HF",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='rwkv7')"
+ },
+ {
+  "repo_id": "RWKV/RWKV7-Goose-World3-2.9B-HF",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='rwkv7')"
+ },
+ {
+  "repo_id": "ServiceNow-AI/Apriel-5B-Base",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='apriel')"
+ },
+ {
+  "repo_id": "ServiceNow-AI/Apriel-5B-Instruct",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='apriel')"
+ },
+ {
+  "repo_id": "ServiceNow-AI/Apriel-H1-15b-Thinker-SFT",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='apriel_h')"
+ },
+ {
+  "repo_id": "Snowflake/Llama-3.1-SwiftKV-8B-Instruct",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='llama_swiftkv')"
+ },
+ {
+  "repo_id": "Snowflake/Llama-3.3-SwiftKV-70B-Instruct",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='llama_swiftkv')"
+ },
+ {
+  "repo_id": "Snowflake/snowflake-arctic-base",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='arctic')"
+ },
+ {
+  "repo_id": "Snowflake/snowflake-arctic-instruct",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='arctic')"
+ },
+ {
+  "repo_id": "Snowflake/snowflake-arctic-instruct-vllm",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='arctic')"
+ },
+ {
+  "repo_id": "allenai/BAR-2x7B-Base",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='flex_olmo')"
+ },
+ {
+  "repo_id": "allenai/BAR-2x7B-Code",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='flex_olmo')"
+ },
+ {
+  "repo_id": "allenai/BAR-2x7B-Code-SFT",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='flex_olmo')"
+ },
+ {
+  "repo_id": "allenai/BAR-2x7B-Math",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='flex_olmo')"
+ },
+ {
+  "repo_id": "allenai/BAR-2x7B-Math-SFT",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='flex_olmo')"
+ },
+ {
+  "repo_id": "allenai/BAR-2x7B-Safety",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='flex_olmo')"
+ },
+ {
+  "repo_id": "allenai/BAR-2x7B-Tool-Use",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='flex_olmo')"
+ },
+ {
+  "repo_id": "allenai/BAR-5x7B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='flex_olmo')"
+ },
+ {
+  "repo_id": "allenai/Bolmo-1B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='bolmo')"
+ },
+ {
+  "repo_id": "allenai/Bolmo-1B-Stage1",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='bolmo')"
+ },
+ {
+  "repo_id": "allenai/Bolmo-7B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='bolmo')"
+ },
+ {
+  "repo_id": "allenai/Bolmo-7B-Stage1",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='bolmo')"
+ },
+ {
+  "repo_id": "allenai/Bwen-8B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='bolmo')"
+ },
+ {
+  "repo_id": "allenai/Bwen-8B-Stage1",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='bolmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-c4-10M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-c4-14M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-c4-150M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-c4-16M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-c4-1B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-c4-20M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-c4-300M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-c4-4M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-c4-530M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-c4-60M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-c4-6M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-c4-750M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-c4-8M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-c4-90M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-10M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-14M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-150M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-16M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-1B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-20M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-25p-dolma1.7-75p-10M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-25p-dolma1.7-75p-14M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-25p-dolma1.7-75p-150M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-25p-dolma1.7-75p-16M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-25p-dolma1.7-75p-1B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-25p-dolma1.7-75p-20M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-25p-dolma1.7-75p-300M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-25p-dolma1.7-75p-4M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-25p-dolma1.7-75p-530M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-25p-dolma1.7-75p-60M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-25p-dolma1.7-75p-6M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-25p-dolma1.7-75p-750M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-25p-dolma1.7-75p-8M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-25p-dolma1.7-75p-90M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-300M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-4M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-50p-dolma1.7-50p-10M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-50p-dolma1.7-50p-14M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-50p-dolma1.7-50p-150M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-50p-dolma1.7-50p-16M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-50p-dolma1.7-50p-1B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-50p-dolma1.7-50p-20M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-50p-dolma1.7-50p-300M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-50p-dolma1.7-50p-4M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-50p-dolma1.7-50p-530M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-50p-dolma1.7-50p-60M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-50p-dolma1.7-50p-6M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-50p-dolma1.7-50p-750M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-50p-dolma1.7-50p-8M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-50p-dolma1.7-50p-90M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-530M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-60M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-6M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-750M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-75p-dolma1.7-25p-10M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-75p-dolma1.7-25p-14M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-75p-dolma1.7-25p-150M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-75p-dolma1.7-25p-16M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-75p-dolma1.7-25p-1B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-75p-dolma1.7-25p-20M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-75p-dolma1.7-25p-300M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-75p-dolma1.7-25p-4M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-75p-dolma1.7-25p-530M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-75p-dolma1.7-25p-60M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-75p-dolma1.7-25p-6M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-75p-dolma1.7-25p-750M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-75p-dolma1.7-25p-8M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-75p-dolma1.7-25p-90M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-8M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-90M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-10p-10M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-10p-14M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-10p-150M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-10p-16M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-10p-1B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-10p-20M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-10p-300M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-10p-4M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-10p-530M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-10p-60M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-10p-6M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-10p-750M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-10p-8M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-10p-90M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-20p-10M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-20p-14M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-20p-150M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-20p-16M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-20p-1B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-20p-20M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-20p-300M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-20p-4M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-20p-530M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-20p-60M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-20p-6M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-20p-750M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-20p-8M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-20p-90M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-7p-fw2-10M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-7p-fw2-14M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-7p-fw2-150M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-7p-fw2-16M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-7p-fw2-1B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-7p-fw2-20M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-7p-fw2-300M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-7p-fw2-4M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-7p-fw2-530M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-7p-fw2-60M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-7p-fw2-6M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-7p-fw2-750M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-7p-fw2-8M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-7p-fw2-90M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-7p-fw3-10M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-7p-fw3-14M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-7p-fw3-150M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-7p-fw3-16M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-7p-fw3-1B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-7p-fw3-20M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-7p-fw3-300M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-7p-fw3-4M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-7p-fw3-530M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-7p-fw3-60M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-7p-fw3-6M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-7p-fw3-750M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-7p-fw3-8M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-7p-fw3-90M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-fw-10p-10M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-fw-10p-14M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-fw-10p-150M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-fw-10p-16M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-fw-10p-1B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-fw-10p-20M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-fw-10p-300M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-fw-10p-4M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-fw-10p-530M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-fw-10p-60M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-fw-10p-6M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-fw-10p-750M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-fw-10p-8M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-fw-10p-90M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-fw-3p-10M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-fw-3p-14M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-fw-3p-150M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-fw-3p-16M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-fw-3p-1B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-fw-3p-20M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-fw-3p-300M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-fw-3p-4M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-fw-3p-530M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-fw-3p-60M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-fw-3p-6M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-fw-3p-750M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-fw-3p-8M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dclm-baseline-qc-fw-3p-90M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_6plus-10M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_6plus-14M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_6plus-150M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_6plus-16M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_6plus-1B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_6plus-20M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_6plus-300M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_6plus-4M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_6plus-530M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_6plus-60M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_6plus-6M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_6plus-750M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_6plus-8M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_6plus-90M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_7-10M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_7-14M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_7-150M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_7-16M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_7-1B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_7-20M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_7-300M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_7-4M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_7-530M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_7-60M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_7-6M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_7-750M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_7-8M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_7-90M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_7-no-code-10M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_7-no-code-14M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_7-no-code-150M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_7-no-code-16M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_7-no-code-1B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_7-no-code-20M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_7-no-code-300M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_7-no-code-4M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_7-no-code-530M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_7-no-code-60M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_7-no-code-6M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_7-no-code-750M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_7-no-code-8M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_7-no-code-90M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_7-no-flan-10M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_7-no-flan-14M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_7-no-flan-150M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_7-no-flan-16M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_7-no-flan-1B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_7-no-flan-20M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_7-no-flan-300M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_7-no-flan-4M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_7-no-flan-530M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_7-no-flan-60M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_7-no-flan-6M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_7-no-flan-750M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_7-no-flan-8M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_7-no-flan-90M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_7-no-math-code-10M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_7-no-math-code-14M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_7-no-math-code-150M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_7-no-math-code-16M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_7-no-math-code-1B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_7-no-math-code-20M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_7-no-math-code-300M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_7-no-math-code-4M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_7-no-math-code-530M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_7-no-math-code-60M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_7-no-math-code-6M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_7-no-math-code-750M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_7-no-math-code-8M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_7-no-math-code-90M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_7-no-reddit-10M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_7-no-reddit-14M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_7-no-reddit-150M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_7-no-reddit-16M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_7-no-reddit-1B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_7-no-reddit-20M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_7-no-reddit-300M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_7-no-reddit-4M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_7-no-reddit-530M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_7-no-reddit-60M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_7-no-reddit-6M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_7-no-reddit-750M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_7-no-reddit-8M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-dolma1_7-no-reddit-90M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-10M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-14M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-150M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-16M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-1B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-20M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-300M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-4M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-530M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-60M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-6M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-750M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-8M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-90M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-and-cc-10M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-and-cc-14M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-and-cc-150M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-and-cc-16M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-and-cc-1B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-and-cc-20M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-and-cc-300M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-and-cc-4M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-and-cc-530M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-and-cc-60M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-and-cc-6M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-and-cc-750M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-and-cc-8M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-and-cc-90M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-and-cc-qc-10p-10M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-and-cc-qc-10p-14M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-and-cc-qc-10p-150M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-and-cc-qc-10p-16M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-and-cc-qc-10p-1B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-and-cc-qc-10p-20M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-and-cc-qc-10p-300M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-and-cc-qc-10p-4M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-and-cc-qc-10p-530M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-and-cc-qc-10p-60M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-and-cc-qc-10p-6M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-and-cc-qc-10p-750M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-and-cc-qc-10p-8M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-and-cc-qc-10p-90M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-and-cc-qc-20p-10M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-and-cc-qc-20p-14M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-and-cc-qc-20p-150M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-and-cc-qc-20p-16M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-and-cc-qc-20p-1B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-and-cc-qc-20p-20M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-and-cc-qc-20p-300M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-and-cc-qc-20p-4M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-and-cc-qc-20p-530M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-and-cc-qc-20p-60M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-and-cc-qc-20p-6M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-and-cc-qc-20p-750M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-and-cc-qc-20p-8M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-and-cc-qc-20p-90M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-and-cc-qc-orig-10p-10M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-and-cc-qc-orig-10p-14M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-and-cc-qc-orig-10p-150M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-and-cc-qc-orig-10p-16M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-and-cc-qc-orig-10p-1B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-and-cc-qc-orig-10p-20M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-and-cc-qc-orig-10p-300M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-and-cc-qc-orig-10p-4M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-and-cc-qc-orig-10p-530M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-and-cc-qc-orig-10p-60M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-and-cc-qc-orig-10p-6M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-and-cc-qc-orig-10p-750M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-and-cc-qc-orig-10p-8M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-and-cc-qc-orig-10p-90M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-and-cc-qc-tulu-10p-10M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-and-cc-qc-tulu-10p-14M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-and-cc-qc-tulu-10p-150M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-and-cc-qc-tulu-10p-16M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-and-cc-qc-tulu-10p-1B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-and-cc-qc-tulu-10p-20M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-and-cc-qc-tulu-10p-300M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-and-cc-qc-tulu-10p-4M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-and-cc-qc-tulu-10p-530M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-and-cc-qc-tulu-10p-60M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-and-cc-qc-tulu-10p-6M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-and-cc-qc-tulu-10p-750M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-and-cc-qc-tulu-10p-8M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-falcon-and-cc-qc-tulu-10p-90M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-fineweb-edu-10M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-fineweb-edu-14M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-fineweb-edu-150M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-fineweb-edu-16M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-fineweb-edu-1B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-fineweb-edu-20M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-fineweb-edu-300M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-fineweb-edu-4M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-fineweb-edu-530M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-fineweb-edu-60M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-fineweb-edu-6M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-fineweb-edu-750M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-fineweb-edu-8M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-fineweb-edu-90M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-fineweb-pro-10M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-fineweb-pro-14M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-fineweb-pro-150M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-fineweb-pro-16M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-fineweb-pro-1B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-fineweb-pro-20M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-fineweb-pro-300M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-fineweb-pro-4M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-fineweb-pro-530M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-fineweb-pro-60M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-fineweb-pro-6M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-fineweb-pro-750M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-fineweb-pro-8M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/DataDecide-fineweb-pro-90M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/Dense_1b_130B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='olmo2_noqknorm_prenorm')"
+ },
+ {
+  "repo_id": "allenai/EMO",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='emo')"
+ },
+ {
+  "repo_id": "allenai/Emo_1b14b_130B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='emo')"
+ },
+ {
+  "repo_id": "allenai/Emo_1b14b_1T",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='emo')"
+ },
+ {
+  "repo_id": "allenai/Flex-code-2x7B-1T",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='flex_olmo')"
+ },
+ {
+  "repo_id": "allenai/Flex-creative-2x7B-1T",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='flex_olmo')"
+ },
+ {
+  "repo_id": "allenai/Flex-math-2x7B-1T",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='flex_olmo')"
+ },
+ {
+  "repo_id": "allenai/Flex-news-2x7B-1T",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='flex_olmo')"
+ },
+ {
+  "repo_id": "allenai/Flex-pes2o-2x7B-1T",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='flex_olmo')"
+ },
+ {
+  "repo_id": "allenai/Flex-reddit-2x7B-1T",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='flex_olmo')"
+ },
+ {
+  "repo_id": "allenai/FlexOlmo-7x7B-1T",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='flex_olmo')"
+ },
+ {
+  "repo_id": "allenai/FlexOlmo-7x7B-1T-RT",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='flex_olmo')"
+ },
+ {
+  "repo_id": "allenai/Llama-3-Blama-8B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='bolmo')"
+ },
+ {
+  "repo_id": "allenai/Llama-3-Blama-8B-Stage1",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='bolmo')"
+ },
+ {
+  "repo_id": "allenai/Molmo-72B-0924",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='molmo')"
+ },
+ {
+  "repo_id": "allenai/Molmo-7B-D-0924",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='molmo')"
+ },
+ {
+  "repo_id": "allenai/Molmo-7B-O-0924",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='molmo')"
+ },
+ {
+  "repo_id": "allenai/MolmoE-1B-0924",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='molmo')"
+ },
+ {
+  "repo_id": "allenai/OLMo-1B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/OLMo-7B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/OLMo-7B-0424",
+  "error": "KVConfigError: missing required config field 'hidden_size' (model_type=olmo)"
+ },
+ {
+  "repo_id": "allenai/OLMo-7B-Instruct",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/OLMo-7B-SFT",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/OLMo-7B-Twin-2T",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hf_olmo')"
+ },
+ {
+  "repo_id": "allenai/Olmo-3-1025-7B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='olmo3')"
+ },
+ {
+  "repo_id": "allenai/Olmo-3-1125-32B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='olmo3')"
+ },
+ {
+  "repo_id": "allenai/Olmo-3-32B-Think",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='olmo3')"
+ },
+ {
+  "repo_id": "allenai/Olmo-3-32B-Think-DPO",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='olmo3')"
+ },
+ {
+  "repo_id": "allenai/Olmo-3-32B-Think-SFT",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='olmo3')"
+ },
+ {
+  "repo_id": "allenai/Olmo-3-7B-Instruct",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='olmo3')"
+ },
+ {
+  "repo_id": "allenai/Olmo-3-7B-Instruct-DPO",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='olmo3')"
+ },
+ {
+  "repo_id": "allenai/Olmo-3-7B-Instruct-SFT",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='olmo3')"
+ },
+ {
+  "repo_id": "allenai/Olmo-3-7B-RL-Zero-Code",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='olmo3')"
+ },
+ {
+  "repo_id": "allenai/Olmo-3-7B-RL-Zero-General",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='olmo3')"
+ },
+ {
+  "repo_id": "allenai/Olmo-3-7B-RL-Zero-IF",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='olmo3')"
+ },
+ {
+  "repo_id": "allenai/Olmo-3-7B-RL-Zero-Math",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='olmo3')"
+ },
+ {
+  "repo_id": "allenai/Olmo-3-7B-RL-Zero-Mix",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='olmo2-retrofit')"
+ },
+ {
+  "repo_id": "allenai/Olmo-3-7B-Think",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='olmo3')"
+ },
+ {
+  "repo_id": "allenai/Olmo-3-7B-Think-DPO",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='olmo3')"
+ },
+ {
+  "repo_id": "allenai/Olmo-3-7B-Think-SFT",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='olmo3')"
+ },
+ {
+  "repo_id": "allenai/Olmo-3.1-32B-Instruct",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='olmo3')"
+ },
+ {
+  "repo_id": "allenai/Olmo-3.1-32B-Instruct-DPO",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='olmo3')"
+ },
+ {
+  "repo_id": "allenai/Olmo-3.1-32B-Instruct-SFT",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='olmo3')"
+ },
+ {
+  "repo_id": "allenai/Olmo-3.1-32B-Think",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='olmo3')"
+ },
+ {
+  "repo_id": "allenai/Olmo-3.1-7B-RL-Zero-Code",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='olmo3')"
+ },
+ {
+  "repo_id": "allenai/Olmo-3.1-7B-RL-Zero-Math",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='olmo3')"
+ },
+ {
+  "repo_id": "allenai/Olmo-Hybrid-7B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='olmo_hybrid')"
+ },
+ {
+  "repo_id": "allenai/Olmo-Hybrid-Instruct-DPO-7B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='olmo_hybrid')"
+ },
+ {
+  "repo_id": "allenai/Olmo-Hybrid-Instruct-SFT-7B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='olmo_hybrid')"
+ },
+ {
+  "repo_id": "allenai/Olmo-Hybrid-Think-SFT-7B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='olmo_hybrid')"
+ },
+ {
+  "repo_id": "allenai/SAGE-MM-Qwen2.5-VL-7B-SFT",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen2_5_vl_text')"
+ },
+ {
+  "repo_id": "allenai/SAGE-MM-Qwen2.5-VL-7B-SFT_RL",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen2_5_vl_text')"
+ },
+ {
+  "repo_id": "allenai/SAGE-MM-Qwen3-VL-4B-SFT",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_vl_text')"
+ },
+ {
+  "repo_id": "allenai/SAGE-MM-Qwen3-VL-4B-SFT_RL",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_vl_text')"
+ },
+ {
+  "repo_id": "allenai/SAGE-MM-Qwen3-VL-8B-SFT",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_vl_text')"
+ },
+ {
+  "repo_id": "allenai/SAGE-MM-Qwen3-VL-8B-SFT_RL",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_vl_text')"
+ },
+ {
+  "repo_id": "allenai/StdMoE_1b14b_130B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='emo')"
+ },
+ {
+  "repo_id": "allenai/StdMoE_1b14b_1T",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='emo')"
+ },
+ {
+  "repo_id": "allenai/StdMoE_1b14b_1T_EmoAnnealed",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='emo')"
+ },
+ {
+  "repo_id": "allenai/StdMoE_1b14b_1T_Preanneal",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='emo')"
+ },
+ {
+  "repo_id": "allenai/StdMoE_1b4b_130B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='emo')"
+ },
+ {
+  "repo_id": "allenai/olmOCR-2-7B-1025",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen2_5_vl_text')"
+ },
+ {
+  "repo_id": "allenai/olmOCR-7B-0225-preview",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen2_vl')"
+ },
+ {
+  "repo_id": "allenai/olmOCR-7B-0725",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen2_5_vl_text')"
+ },
+ {
+  "repo_id": "allenai/olmOCR-7B-0825",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen2_5_vl_text')"
+ },
+ {
+  "repo_id": "allenai/open-instruct-opt-6.7b-tulu",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='opt')"
+ },
+ {
+  "repo_id": "allenai/qwen35-9b-cli-gym",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_5_text')"
+ },
+ {
+  "repo_id": "allenai/qwen35-9b-endless",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_5_text')"
+ },
+ {
+  "repo_id": "allenai/qwen35-9b-openthoughts",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_5_text')"
+ },
+ {
+  "repo_id": "allenai/qwen35-9b-swesmith",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_5_text')"
+ },
+ {
+  "repo_id": "allenai/qwen35-9b-termigen",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_5_text')"
+ },
+ {
+  "repo_id": "allenai/qwen35-9b-terminaltraj",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_5_text')"
+ },
+ {
+  "repo_id": "allenai/tmax-27b",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_5_text')"
+ },
+ {
+  "repo_id": "allenai/tmax-2b",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_5_text')"
+ },
+ {
+  "repo_id": "allenai/tmax-4b",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_5_text')"
+ },
+ {
+  "repo_id": "allenai/tmax-9b",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_5_text')"
+ },
+ {
+  "repo_id": "apple/FastVLM-0.5B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='llava_qwen2')"
+ },
+ {
+  "repo_id": "apple/FastVLM-1.5B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='llava_qwen2')"
+ },
+ {
+  "repo_id": "apple/FastVLM-7B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='llava_qwen2')"
+ },
+ {
+  "repo_id": "apple/LensVLM-9B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_5_text')"
+ },
+ {
+  "repo_id": "apple/OpenELM-1_1B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='openelm')"
+ },
+ {
+  "repo_id": "apple/OpenELM-1_1B-Instruct",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='openelm')"
+ },
+ {
+  "repo_id": "apple/OpenELM-270M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='openelm')"
+ },
+ {
+  "repo_id": "apple/OpenELM-270M-Instruct",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='openelm')"
+ },
+ {
+  "repo_id": "apple/OpenELM-3B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='openelm')"
+ },
+ {
+  "repo_id": "apple/OpenELM-3B-Instruct",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='openelm')"
+ },
+ {
+  "repo_id": "apple/OpenELM-450M",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='openelm')"
+ },
+ {
+  "repo_id": "apple/OpenELM-450M-Instruct",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='openelm')"
+ },
+ {
+  "repo_id": "baichuan-inc/Baichuan-Audio-Base",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='omni')"
+ },
+ {
+  "repo_id": "baichuan-inc/Baichuan-Audio-Instruct",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='omni')"
+ },
+ {
+  "repo_id": "baichuan-inc/Baichuan-M1-14B-Base",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='baichuan_m1')"
+ },
+ {
+  "repo_id": "baichuan-inc/Baichuan-M1-14B-Instruct",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='baichuan_m1')"
+ },
+ {
+  "repo_id": "baichuan-inc/Baichuan-Omni-1d5",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='omni')"
+ },
+ {
+  "repo_id": "baichuan-inc/Baichuan-Omni-1d5-Base",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='omni')"
+ },
+ {
+  "repo_id": "baichuan-inc/BaichuanMed-OCR-72B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen2_5_vl')"
+ },
+ {
+  "repo_id": "baichuan-inc/BaichuanMed-OCR-7B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen2_5_vl')"
+ },
+ {
+  "repo_id": "bigcode/astraios-1b-fft",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='gpt_bigcode')"
+ },
+ {
+  "repo_id": "bigcode/astraios-3b-fft",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='gpt_bigcode')"
+ },
+ {
+  "repo_id": "bigcode/astraios-7b-fft",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='gpt_bigcode')"
+ },
+ {
+  "repo_id": "bigcode/astraios-fft",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='gpt_bigcode')"
+ },
+ {
+  "repo_id": "bigcode/gpt_bigcode-santacoder",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='gpt_bigcode')"
+ },
+ {
+  "repo_id": "bigcode/octogeex",
+  "error": "KVConfigError: missing num_hidden_layers"
+ },
+ {
+  "repo_id": "bigcode/santacoderpack",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='gpt_bigcode')"
+ },
+ {
+  "repo_id": "bigcode/starcoder-co-format",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='gpt_bigcode')"
+ },
+ {
+  "repo_id": "bigcode/starcoder-co-manual",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='gpt_bigcode')"
+ },
+ {
+  "repo_id": "bigcode/starcoder-co-target",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='gpt_bigcode')"
+ },
+ {
+  "repo_id": "bigcode/starcoder-cxo",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='gpt_bigcode')"
+ },
+ {
+  "repo_id": "bigcode/starcoder-cxso",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='gpt_bigcode')"
+ },
+ {
+  "repo_id": "bigcode/starcoder-o",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='gpt_bigcode')"
+ },
+ {
+  "repo_id": "bigcode/starcoder-xo",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='gpt_bigcode')"
+ },
+ {
+  "repo_id": "bigcode/tiny_starcoder_py",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='gpt_bigcode')"
+ },
+ {
+  "repo_id": "deepseek-ai/DeepSeek-OCR",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='deepseekv2')"
+ },
+ {
+  "repo_id": "deepseek-ai/DeepSeek-OCR-2",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='deepseekv2')"
+ },
+ {
+  "repo_id": "deepseek-ai/DeepSeek-V4-Flash",
+  "error": "KVConfigError: missing required config field 'kv_lora_rank' (model_type=deepseek_v4)"
+ },
+ {
+  "repo_id": "deepseek-ai/DeepSeek-V4-Flash-0731",
+  "error": "KVConfigError: missing required config field 'kv_lora_rank' (model_type=deepseek_v4)"
+ },
+ {
+  "repo_id": "deepseek-ai/DeepSeek-V4-Flash-Base",
+  "error": "KVConfigError: missing required config field 'kv_lora_rank' (model_type=deepseek_v4)"
+ },
+ {
+  "repo_id": "deepseek-ai/DeepSeek-V4-Flash-DSpark",
+  "error": "KVConfigError: missing required config field 'kv_lora_rank' (model_type=deepseek_v4)"
+ },
+ {
+  "repo_id": "deepseek-ai/DeepSeek-V4-Flash-Vision-Exp",
+  "error": "KVConfigError: missing required config field 'kv_lora_rank' (model_type=deepseek_v4)"
+ },
+ {
+  "repo_id": "deepseek-ai/DeepSeek-V4-Pro",
+  "error": "KVConfigError: missing required config field 'kv_lora_rank' (model_type=deepseek_v4)"
+ },
+ {
+  "repo_id": "deepseek-ai/DeepSeek-V4-Pro-0813",
+  "error": "KVConfigError: missing required config field 'kv_lora_rank' (model_type=deepseek_v4)"
+ },
+ {
+  "repo_id": "deepseek-ai/DeepSeek-V4-Pro-Base",
+  "error": "KVConfigError: missing required config field 'kv_lora_rank' (model_type=deepseek_v4)"
+ },
+ {
+  "repo_id": "deepseek-ai/DeepSeek-V4-Pro-DSpark",
+  "error": "KVConfigError: missing required config field 'kv_lora_rank' (model_type=deepseek_v4)"
+ },
+ {
+  "repo_id": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='deepseek_v41_text')"
+ },
+ {
+  "repo_id": "deepseek-ai/deepseek-moe-16b-base",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='deepseek')"
+ },
+ {
+  "repo_id": "deepseek-ai/deepseek-moe-16b-chat",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='deepseek')"
+ },
+ {
+  "repo_id": "deepseek-ai/deepseek-vl-7b-base",
+  "error": "KVConfigError: missing required config field 'hidden_size' (model_type=llama)"
+ },
+ {
+  "repo_id": "deepseek-ai/deepseek-vl-7b-chat",
+  "error": "KVConfigError: missing required config field 'hidden_size' (model_type=llama)"
+ },
+ {
+  "repo_id": "google/gemma-4-12B-it-assistant",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='gemma4_unified_text')"
+ },
+ {
+  "repo_id": "google/gemma-4-26B-A4B-it-assistant",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='gemma4_text')"
+ },
+ {
+  "repo_id": "google/gemma-4-31B-it-assistant",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='gemma4_text')"
+ },
+ {
+  "repo_id": "google/gemma-4-E2B-it-assistant",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='gemma4_text')"
+ },
+ {
+  "repo_id": "google/gemma-4-E4B-it-assistant",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='gemma4_text')"
+ },
+ {
+  "repo_id": "ibm-granite/granite-20b-code-base-8k",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='gpt_bigcode')"
+ },
+ {
+  "repo_id": "ibm-granite/granite-20b-code-base-r1.1",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='gpt_bigcode')"
+ },
+ {
+  "repo_id": "ibm-granite/granite-20b-code-instruct-8k",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='gpt_bigcode')"
+ },
+ {
+  "repo_id": "ibm-granite/granite-20b-code-instruct-r1.1",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='gpt_bigcode')"
+ },
+ {
+  "repo_id": "ibm-granite/granite-20b-functioncalling",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='gpt_bigcode')"
+ },
+ {
+  "repo_id": "ibm-granite/granite-34b-code-base-8k",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='gpt_bigcode')"
+ },
+ {
+  "repo_id": "ibm-granite/granite-34b-code-instruct-8k",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='gpt_bigcode')"
+ },
+ {
+  "repo_id": "ibm-granite/granite-swash-2b",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='granite_swa')"
+ },
+ {
+  "repo_id": "ibm-granite/granite-swash-3b-a600m",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='granitemoe_swa')"
+ },
+ {
+  "repo_id": "ibm-granite/granite-switch-4.1-30b-preview",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='granite_switch')"
+ },
+ {
+  "repo_id": "ibm-granite/granite-switch-4.1-3b-preview",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='granite_switch')"
+ },
+ {
+  "repo_id": "ibm-granite/granite-switch-4.1-8b-preview",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='granite_switch')"
+ },
+ {
+  "repo_id": "inclusionAI/ArmorOCR",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_vl_text')"
+ },
+ {
+  "repo_id": "inclusionAI/GUI-G2-3B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen2_5_vl')"
+ },
+ {
+  "repo_id": "inclusionAI/GUI-G2-7B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen2_5_vl')"
+ },
+ {
+  "repo_id": "inclusionAI/Ling-1T",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='bailing_moe')"
+ },
+ {
+  "repo_id": "inclusionAI/Ling-2.5-1T",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='bailing_hybrid')"
+ },
+ {
+  "repo_id": "inclusionAI/Ling-2.6-1T-base",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='bailing_hybrid')"
+ },
+ {
+  "repo_id": "inclusionAI/Ling-2.6-flash",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='bailing_hybrid')"
+ },
+ {
+  "repo_id": "inclusionAI/Ling-2.6-flash-base",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='bailing_hybrid')"
+ },
+ {
+  "repo_id": "inclusionAI/Ling-3.0-flash",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='bailing_hybrid')"
+ },
+ {
+  "repo_id": "inclusionAI/Ling-3.0-flash-Fin",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='bailing_hybrid')"
+ },
+ {
+  "repo_id": "inclusionAI/Ling-3.0-flash-base",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='bailing_hybrid')"
+ },
+ {
+  "repo_id": "inclusionAI/Ling-3.0-flash-base-30T",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='bailing_hybrid')"
+ },
+ {
+  "repo_id": "inclusionAI/Ling-3.0-flash-base-midtrain",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='bailing_hybrid')"
+ },
+ {
+  "repo_id": "inclusionAI/Ling-3.0-tiny",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='bailing_hybrid')"
+ },
+ {
+  "repo_id": "inclusionAI/Ling-3.0-tiny-base",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='bailing_hybrid')"
+ },
+ {
+  "repo_id": "inclusionAI/Ling-3.0-tiny-base-30T",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='bailing_hybrid')"
+ },
+ {
+  "repo_id": "inclusionAI/Ling-3.0-tiny-base-midtrain",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='bailing_hybrid')"
+ },
+ {
+  "repo_id": "inclusionAI/Ling-Coder-lite",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='bailing_moe')"
+ },
+ {
+  "repo_id": "inclusionAI/Ling-Coder-lite-base",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='bailing_moe')"
+ },
+ {
+  "repo_id": "inclusionAI/Ling-flash-2.0",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='bailing_moe')"
+ },
+ {
+  "repo_id": "inclusionAI/Ling-flash-base-2.0",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='bailing_moe')"
+ },
+ {
+  "repo_id": "inclusionAI/Ling-lite",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='bailing_moe')"
+ },
+ {
+  "repo_id": "inclusionAI/Ling-lite-1.5",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='bailing_moe')"
+ },
+ {
+  "repo_id": "inclusionAI/Ling-lite-1.5-2506",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='bailing_moe')"
+ },
+ {
+  "repo_id": "inclusionAI/Ling-lite-1.5-2507",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='bailing_moe')"
+ },
+ {
+  "repo_id": "inclusionAI/Ling-lite-base",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='bailing_moe')"
+ },
+ {
+  "repo_id": "inclusionAI/Ling-lite-base-1.5",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='bailing_moe')"
+ },
+ {
+  "repo_id": "inclusionAI/Ling-mini-2.0",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='bailing_moe')"
+ },
+ {
+  "repo_id": "inclusionAI/Ling-mini-base-2.0",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='bailing_moe')"
+ },
+ {
+  "repo_id": "inclusionAI/Ling-mini-base-2.0-10T",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='bailing_moe')"
+ },
+ {
+  "repo_id": "inclusionAI/Ling-mini-base-2.0-15T",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='bailing_moe')"
+ },
+ {
+  "repo_id": "inclusionAI/Ling-mini-base-2.0-20T",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='bailing_moe')"
+ },
+ {
+  "repo_id": "inclusionAI/Ling-mini-base-2.0-5T",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='bailing_moe')"
+ },
+ {
+  "repo_id": "inclusionAI/Ling-plus",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='bailing_moe')"
+ },
+ {
+  "repo_id": "inclusionAI/Ling-plus-base",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='bailing_moe')"
+ },
+ {
+  "repo_id": "inclusionAI/Ring-1T",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='bailing_moe')"
+ },
+ {
+  "repo_id": "inclusionAI/Ring-flash-2.0",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='bailing_moe')"
+ },
+ {
+  "repo_id": "inclusionAI/Ring-flash-linear-2.0",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='bailing_moe_linear')"
+ },
+ {
+  "repo_id": "inclusionAI/Ring-flash-linear-2.0-128k",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='bailing_moe_linear')"
+ },
+ {
+  "repo_id": "inclusionAI/Ring-lite",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='bailing_moe')"
+ },
+ {
+  "repo_id": "inclusionAI/Ring-lite-2506",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='bailing_moe')"
+ },
+ {
+  "repo_id": "inclusionAI/Ring-lite-2507",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='bailing_moe')"
+ },
+ {
+  "repo_id": "inclusionAI/Ring-lite-distill-preview",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='bailing_moe')"
+ },
+ {
+  "repo_id": "inclusionAI/Ring-lite-linear-preview",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='bailing_moe_linear')"
+ },
+ {
+  "repo_id": "inclusionAI/Ring-mini-2.0",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='bailing_moe')"
+ },
+ {
+  "repo_id": "inclusionAI/Ring-mini-linear-2.0",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='bailing_moe_linear')"
+ },
+ {
+  "repo_id": "inclusionAI/Ring-mini-sparse-2.0-exp",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='bailing_moe')"
+ },
+ {
+  "repo_id": "inclusionAI/SingGuard-0.8b",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_5_text')"
+ },
+ {
+  "repo_id": "inclusionAI/SingGuard-2b",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_vl_text')"
+ },
+ {
+  "repo_id": "inclusionAI/SingGuard-4b",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_vl_text')"
+ },
+ {
+  "repo_id": "inclusionAI/SingGuard-8b",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_vl_text')"
+ },
+ {
+  "repo_id": "inclusionAI/SingGuard-NSFA-0.8B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_5_text')"
+ },
+ {
+  "repo_id": "inclusionAI/SingGuard-NSFA-2B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_5_text')"
+ },
+ {
+  "repo_id": "inclusionAI/SingGuard-NSFA-4B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_5_text')"
+ },
+ {
+  "repo_id": "inclusionAI/SingGuard-NSFA-9B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_5_text')"
+ },
+ {
+  "repo_id": "inclusionAI/UI-Venus-1.5-2B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_vl_text')"
+ },
+ {
+  "repo_id": "inclusionAI/UI-Venus-1.5-30B-A3B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_vl_moe_text')"
+ },
+ {
+  "repo_id": "inclusionAI/UI-Venus-1.5-8B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_vl_text')"
+ },
+ {
+  "repo_id": "inclusionAI/UI-Venus-2-9B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_5_text')"
+ },
+ {
+  "repo_id": "inclusionAI/UI-Venus-Ground-72B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen2_5_vl')"
+ },
+ {
+  "repo_id": "inclusionAI/UI-Venus-Ground-7B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen2_5_vl')"
+ },
+ {
+  "repo_id": "inclusionAI/UI-Venus-Navi-72B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen2_5_vl')"
+ },
+ {
+  "repo_id": "inclusionAI/UI-Venus-Navi-7B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen2_5_vl')"
+ },
+ {
+  "repo_id": "inclusionAI/V2P-7B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen2_5_vl')"
+ },
+ {
+  "repo_id": "inclusionAI/VISTA-4B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_5_text')"
+ },
+ {
+  "repo_id": "inclusionAI/VISTA-9B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_5_text')"
+ },
+ {
+  "repo_id": "inclusionAI/ViLaSR",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen2_5_vl')"
+ },
+ {
+  "repo_id": "inclusionAI/ZwZ-2B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_vl_text')"
+ },
+ {
+  "repo_id": "inclusionAI/ZwZ-4B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_vl_text')"
+ },
+ {
+  "repo_id": "inclusionAI/ZwZ-7B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen2_5_vl_text')"
+ },
+ {
+  "repo_id": "inclusionAI/ZwZ-8B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_vl_text')"
+ },
+ {
+  "repo_id": "internlm/AdvancedMathBench-AutoVerifier",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_5_moe_text')"
+ },
+ {
+  "repo_id": "internlm/Agent-FLAN-7b",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='internlm')"
+ },
+ {
+  "repo_id": "internlm/Atria-Dawn-Preview",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='glm_moe_dsa')"
+ },
+ {
+  "repo_id": "internlm/CapRL-3B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen2_5_vl')"
+ },
+ {
+  "repo_id": "internlm/CapRL-Eval-3B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen2_5_vl')"
+ },
+ {
+  "repo_id": "internlm/CapRL-Qwen3VL-2B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_vl_text')"
+ },
+ {
+  "repo_id": "internlm/CapRL-Qwen3VL-4B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_vl_text')"
+ },
+ {
+  "repo_id": "internlm/CapRL-Video-4B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_vl_text')"
+ },
+ {
+  "repo_id": "internlm/Intern-Decision-0.8B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_5_text')"
+ },
+ {
+  "repo_id": "internlm/Intern-Decision-2B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_5_text')"
+ },
+ {
+  "repo_id": "internlm/Intern-Decision-4B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_5_text')"
+ },
+ {
+  "repo_id": "internlm/Intern-MemDec-4B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_5_text')"
+ },
+ {
+  "repo_id": "internlm/Intern-S2-397B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_5_moe_text')"
+ },
+ {
+  "repo_id": "internlm/JanusCoderV-7B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen2_5_vl_text')"
+ },
+ {
+  "repo_id": "internlm/Spatial-SSRL-7B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen2_5_vl_text')"
+ },
+ {
+  "repo_id": "internlm/Spatial-SSRL-Qwen3VL-4B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_vl_text')"
+ },
+ {
+  "repo_id": "internlm/Visual-ERM",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_vl_text')"
+ },
+ {
+  "repo_id": "internlm/internlm-20b",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='internlm')"
+ },
+ {
+  "repo_id": "internlm/internlm-7b",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='internlm')"
+ },
+ {
+  "repo_id": "internlm/internlm-chat-20b",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='internlm')"
+ },
+ {
+  "repo_id": "internlm/internlm-chat-7b",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='internlm')"
+ },
+ {
+  "repo_id": "internlm/internlm-xcomposer-7b",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='InternLMXComposer')"
+ },
+ {
+  "repo_id": "internlm/internlm-xcomposer-vl-7b",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='InternLMXComposer')"
+ },
+ {
+  "repo_id": "internlm/internlm-xcomposer2-4khd-7b",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='internlmxcomposer2')"
+ },
+ {
+  "repo_id": "internlm/internlm-xcomposer2-7b",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='internlmxcomposer2')"
+ },
+ {
+  "repo_id": "internlm/internlm-xcomposer2-vl-1_8b",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='internlmxcomposer2')"
+ },
+ {
+  "repo_id": "internlm/internlm-xcomposer2-vl-7b",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='internlmxcomposer2')"
+ },
+ {
+  "repo_id": "microsoft/BioGPT-Large",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='biogpt')"
+ },
+ {
+  "repo_id": "microsoft/BioGPT-Large-PubMedQA",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='biogpt')"
+ },
+ {
+  "repo_id": "microsoft/Fara-7B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen2_5_vl_text')"
+ },
+ {
+  "repo_id": "microsoft/Fara1.5-27B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_5_text')"
+ },
+ {
+  "repo_id": "microsoft/Fara1.5-4B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_5_text')"
+ },
+ {
+  "repo_id": "microsoft/Fara1.5-9B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_5_text')"
+ },
+ {
+  "repo_id": "microsoft/FrogNano-4B-2609",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_5_text')"
+ },
+ {
+  "repo_id": "microsoft/GUI-Actor-2B-Qwen2-VL",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen2_vl')"
+ },
+ {
+  "repo_id": "microsoft/GUI-Actor-3B-Qwen2.5-VL",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen2_5_vl')"
+ },
+ {
+  "repo_id": "microsoft/GUI-Actor-7B-Qwen2-VL",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen2_vl')"
+ },
+ {
+  "repo_id": "microsoft/GUI-Actor-7B-Qwen2.5-VL",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen2_5_vl')"
+ },
+ {
+  "repo_id": "microsoft/GUI-Actor-Verifier-2B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen2_vl')"
+ },
+ {
+  "repo_id": "microsoft/Phi-3-small-128k-instruct",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='phi3small')"
+ },
+ {
+  "repo_id": "microsoft/Phi-3-small-8k-instruct",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='phi3small')"
+ },
+ {
+  "repo_id": "microsoft/Phi-3-vision-128k-instruct",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='phi3_v')"
+ },
+ {
+  "repo_id": "microsoft/Phi-3.5-vision-instruct",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='phi3_v')"
+ },
+ {
+  "repo_id": "microsoft/Phi-4-mini-flash-reasoning",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='phi4flash')"
+ },
+ {
+  "repo_id": "microsoft/Phi-Ground",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='phi3_v')"
+ },
+ {
+  "repo_id": "microsoft/Phi-Ground-Any",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='phi3_v')"
+ },
+ {
+  "repo_id": "microsoft/UniRG-CXR",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_vl_text')"
+ },
+ {
+  "repo_id": "microsoft/X-Reasoner-7B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen2_5_vl')"
+ },
+ {
+  "repo_id": "microsoft/bitnet-b1.58-2B-4T",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='bitnet')"
+ },
+ {
+  "repo_id": "microsoft/bitnet-b1.58-2B-4T-bf16",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='bitnet')"
+ },
+ {
+  "repo_id": "microsoft/chatbench-distilgpt2",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='gpt2')"
+ },
+ {
+  "repo_id": "microsoft/elem2design",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='llava_llama')"
+ },
+ {
+  "repo_id": "microsoft/llava-med-7b-delta",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='llava')"
+ },
+ {
+  "repo_id": "microsoft/llava-med-v1.5-mistral-7b",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='llava_mistral')"
+ },
+ {
+  "repo_id": "microsoft/llava-rad",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='llava')"
+ },
+ {
+  "repo_id": "mistralai/Devstral-2-123B-Instruct-2512",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='ministral3')"
+ },
+ {
+  "repo_id": "moonshotai/Kimi-VL-A3B-Instruct",
+  "error": "KVConfigError: config has no model_type and no architectures entry"
+ },
+ {
+  "repo_id": "moonshotai/Kimi-VL-A3B-Thinking",
+  "error": "KVConfigError: config has no model_type and no architectures entry"
+ },
+ {
+  "repo_id": "moonshotai/Kimi-VL-A3B-Thinking-2506",
+  "error": "KVConfigError: config has no model_type and no architectures entry"
+ },
+ {
+  "repo_id": "nvidia/Cosmos-Reason1-7B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen2_5_vl')"
+ },
+ {
+  "repo_id": "nvidia/Cosmos-Reason2-32B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_vl_text')"
+ },
+ {
+  "repo_id": "nvidia/EGM-4B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_vl_text')"
+ },
+ {
+  "repo_id": "nvidia/EGM-4B-SFT",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_vl_text')"
+ },
+ {
+  "repo_id": "nvidia/EGM-8B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_vl_text')"
+ },
+ {
+  "repo_id": "nvidia/EGM-8B-SFT",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_vl_text')"
+ },
+ {
+  "repo_id": "nvidia/Hymba-1.5B-Base",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hymba')"
+ },
+ {
+  "repo_id": "nvidia/Hymba-1.5B-Instruct",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hymba')"
+ },
+ {
+  "repo_id": "nvidia/Ising-Calibration-1-35B-A3B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_5_moe_text')"
+ },
+ {
+  "repo_id": "nvidia/Llama-3_1-Nemotron-51B-Instruct",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='nemotron-nas')"
+ },
+ {
+  "repo_id": "nvidia/Llama-3_1-Nemotron-Ultra-253B-CPT-v1",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='nemotron-nas')"
+ },
+ {
+  "repo_id": "nvidia/Llama-3_1-Nemotron-Ultra-253B-v1",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='nemotron-nas')"
+ },
+ {
+  "repo_id": "nvidia/Llama-3_3-Nemotron-Super-49B-GenRM",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='nemotron-nas')"
+ },
+ {
+  "repo_id": "nvidia/Llama-3_3-Nemotron-Super-49B-GenRM-Multilingual",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='nemotron-nas')"
+ },
+ {
+  "repo_id": "nvidia/Llama-3_3-Nemotron-Super-49B-v1",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='nemotron-nas')"
+ },
+ {
+  "repo_id": "nvidia/Llama-3_3-Nemotron-Super-49B-v1_5",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='nemotron-nas')"
+ },
+ {
+  "repo_id": "nvidia/MM-Embed",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='llava_next')"
+ },
+ {
+  "repo_id": "nvidia/NV-Reason-CT",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_5_text')"
+ },
+ {
+  "repo_id": "nvidia/NV-Reason-CXR-3B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen2_5_vl_text')"
+ },
+ {
+  "repo_id": "nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16",
+  "error": "KVConfigError: missing num_hidden_layers"
+ },
+ {
+  "repo_id": "nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-Base-BF16",
+  "error": "KVConfigError: missing num_hidden_layers"
+ },
+ {
+  "repo_id": "nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-GenRM",
+  "error": "KVConfigError: missing num_hidden_layers"
+ },
+ {
+  "repo_id": "nvidia/NVIDIA-Nemotron-Labs-3-Puzzle-75B-A9B-BF16",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='nemotron_h_puzzle')"
+ },
+ {
+  "repo_id": "nvidia/NVIDIA-Nemotron-Labs-Teacher-Chat",
+  "error": "KVConfigError: missing num_hidden_layers"
+ },
+ {
+  "repo_id": "nvidia/NVIDIA-Nemotron-Labs-Teacher-Competition-Coding",
+  "error": "KVConfigError: missing num_hidden_layers"
+ },
+ {
+  "repo_id": "nvidia/NVIDIA-Nemotron-Labs-Teacher-General-Reasoning",
+  "error": "KVConfigError: missing num_hidden_layers"
+ },
+ {
+  "repo_id": "nvidia/NVIDIA-Nemotron-Labs-Teacher-Instruction-Following",
+  "error": "KVConfigError: missing num_hidden_layers"
+ },
+ {
+  "repo_id": "nvidia/NVIDIA-Nemotron-Labs-Teacher-STEM",
+  "error": "KVConfigError: missing num_hidden_layers"
+ },
+ {
+  "repo_id": "nvidia/Nemotron-Flash-1B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='nemotron_flash')"
+ },
+ {
+  "repo_id": "nvidia/Nemotron-Flash-3B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='nemotron_flash')"
+ },
+ {
+  "repo_id": "nvidia/Nemotron-Flash-3B-Instruct",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='nemotron_flash')"
+ },
+ {
+  "repo_id": "nvidia/Qwen2.5-VL-7B-Surg-CholecT50",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen2_5_vl')"
+ },
+ {
+  "repo_id": "nvidia/gpt-oss-puzzle-88B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='gpt_oss_puzzle')"
+ },
+ {
+  "repo_id": "openai/circuit-sparsity",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='circuitgpt')"
+ },
+ {
+  "repo_id": "openbmb/AgentCPM-GUI",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='minicpmv')"
+ },
+ {
+  "repo_id": "openbmb/AgentCPM-Report",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='minicpm')"
+ },
+ {
+  "repo_id": "openbmb/BitCPM-CANN-0.5B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='minicpm')"
+ },
+ {
+  "repo_id": "openbmb/BitCPM-CANN-0.5B-unquantized",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='minicpm')"
+ },
+ {
+  "repo_id": "openbmb/BitCPM-CANN-8B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='minicpm')"
+ },
+ {
+  "repo_id": "openbmb/BitCPM-CANN-8B-unquantized",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='minicpm')"
+ },
+ {
+  "repo_id": "openbmb/BitCPM4-0.5B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='minicpm')"
+ },
+ {
+  "repo_id": "openbmb/BitCPM4-1B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='minicpm')"
+ },
+ {
+  "repo_id": "openbmb/EVisRAG-3B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen2_5_vl')"
+ },
+ {
+  "repo_id": "openbmb/EVisRAG-7B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen2_5_vl')"
+ },
+ {
+  "repo_id": "openbmb/InfLLM-V2-Long-Sparse-Base",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='minicpm')"
+ },
+ {
+  "repo_id": "openbmb/InfLLM-V2-Short-Dense-Base",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='minicpm')"
+ },
+ {
+  "repo_id": "openbmb/MiniCPM-1B-sft-bf16",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='minicpm')"
+ },
+ {
+  "repo_id": "openbmb/MiniCPM-2B-128k",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='minicpm')"
+ },
+ {
+  "repo_id": "openbmb/MiniCPM-2B-dpo-bf16",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='minicpm')"
+ },
+ {
+  "repo_id": "openbmb/MiniCPM-2B-dpo-fp16",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='minicpm')"
+ },
+ {
+  "repo_id": "openbmb/MiniCPM-2B-dpo-fp32",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='minicpm')"
+ },
+ {
+  "repo_id": "openbmb/MiniCPM-2B-history",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='minicpm')"
+ },
+ {
+  "repo_id": "openbmb/MiniCPM-2B-sft-bf16",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='minicpm')"
+ },
+ {
+  "repo_id": "openbmb/MiniCPM-2B-sft-fp32",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='minicpm')"
+ },
+ {
+  "repo_id": "openbmb/MiniCPM-Llama3-V-2_5",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='minicpmv')"
+ },
+ {
+  "repo_id": "openbmb/MiniCPM-MoE-8x2B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='minicpm')"
+ },
+ {
+  "repo_id": "openbmb/MiniCPM-S-1B-sft",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='minicpm')"
+ },
+ {
+  "repo_id": "openbmb/MiniCPM-SALA",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='minicpm_sala')"
+ },
+ {
+  "repo_id": "openbmb/MiniCPM-V",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='minicpmv')"
+ },
+ {
+  "repo_id": "openbmb/MiniCPM-V-2",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='minicpmv')"
+ },
+ {
+  "repo_id": "openbmb/MiniCPM-V-4",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='minicpmv')"
+ },
+ {
+  "repo_id": "openbmb/MiniCPM-V-4_5",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='minicpmv')"
+ },
+ {
+  "repo_id": "openbmb/MiniCPM3-4B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='minicpm3')"
+ },
+ {
+  "repo_id": "openbmb/MiniCPM3-RAG-LoRA",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='minicpm3')"
+ },
+ {
+  "repo_id": "openbmb/MiniCPM4-0.5B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='minicpm')"
+ },
+ {
+  "repo_id": "openbmb/MiniCPM4-8B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='minicpm')"
+ },
+ {
+  "repo_id": "openbmb/MiniCPM4-8B-Eagle-FRSpec",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='minicpm')"
+ },
+ {
+  "repo_id": "openbmb/MiniCPM4-8B-Eagle-vLLM",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='minicpm')"
+ },
+ {
+  "repo_id": "openbmb/MiniCPM4-MCP",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='minicpm')"
+ },
+ {
+  "repo_id": "openbmb/MiniCPM4-Survey",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='minicpm')"
+ },
+ {
+  "repo_id": "openbmb/MiniCPM4.1-8B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='minicpm')"
+ },
+ {
+  "repo_id": "openbmb/OmniLMM-12B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='omnilmm')"
+ },
+ {
+  "repo_id": "openbmb/RLAIF-V-12B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='omnilmm')"
+ },
+ {
+  "repo_id": "openbmb/RLAIF-V-7B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='llava_llama')"
+ },
+ {
+  "repo_id": "openbmb/RLHF-V",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='beit3_llava')"
+ },
+ {
+  "repo_id": "openbmb/RLHF-V-SFT",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='beit3_llava')"
+ },
+ {
+  "repo_id": "openbmb/cpm-ant-10b",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='cpmant')"
+ },
+ {
+  "repo_id": "openbmb/cpm-bee-10b",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='cpmbee')"
+ },
+ {
+  "repo_id": "openbmb/cpm-bee-1b",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='cpmbee')"
+ },
+ {
+  "repo_id": "openbmb/cpm-bee-2b",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='cpmbee')"
+ },
+ {
+  "repo_id": "openbmb/cpm-bee-5b",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='cpmbee')"
+ },
+ {
+  "repo_id": "stabilityai/japanese-stablelm-3b-4e1t-base",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='stablelm_epoch')"
+ },
+ {
+  "repo_id": "stabilityai/japanese-stablelm-3b-4e1t-instruct",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='stablelm_epoch')"
+ },
+ {
+  "repo_id": "stabilityai/japanese-stablelm-base-alpha-7b",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='japanesestablelmalpha')"
+ },
+ {
+  "repo_id": "stabilityai/japanese-stablelm-instruct-alpha-7b-v2",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='japanesestablelmalpha')"
+ },
+ {
+  "repo_id": "stabilityai/stablelm-base-alpha-3b-v2",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='stablelm_alpha')"
+ },
+ {
+  "repo_id": "stabilityai/stablelm-base-alpha-7b-v2",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='stablelm_alpha')"
+ },
+ {
+  "repo_id": "stepfun-ai/GELab-Zero-4B-preview",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_vl_text')"
+ },
+ {
+  "repo_id": "stepfun-ai/GOT-OCR2_0",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='GOT')"
+ },
+ {
+  "repo_id": "stepfun-ai/Step-3.5-Flash",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='step3p5')"
+ },
+ {
+  "repo_id": "stepfun-ai/Step-3.5-Flash-Base",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='step3p5')"
+ },
+ {
+  "repo_id": "stepfun-ai/Step-3.5-Flash-Base-Midtrain",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='step3p5')"
+ },
+ {
+  "repo_id": "tencent/HiLS-Attention-7B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='olmo_hils')"
+ },
+ {
+  "repo_id": "tencent/Hy3",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hy_v3')"
+ },
+ {
+  "repo_id": "tencent/Hy3-preview",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hy_v3')"
+ },
+ {
+  "repo_id": "tencent/Hy3-preview-Base",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hy_v3')"
+ },
+ {
+  "repo_id": "tencent/Hy4-preview",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='hy_v4')"
+ },
+ {
+  "repo_id": "tencent/Penguin-VL-2B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='penguinvl_qwen3')"
+ },
+ {
+  "repo_id": "tencent/Penguin-VL-8B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='penguinvl_qwen3')"
+ },
+ {
+  "repo_id": "tencent/Sequential-Hidden-Decoding-8B-n2",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_scale_seq')"
+ },
+ {
+  "repo_id": "tencent/Sequential-Hidden-Decoding-8B-n4",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_scale_seq')"
+ },
+ {
+  "repo_id": "tencent/Sequential-Hidden-Decoding-8B-n8",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_scale_seq')"
+ },
+ {
+  "repo_id": "tencent/Sequential-Hidden-Decoding-8B-n8-Instruct",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_scale_seq')"
+ },
+ {
+  "repo_id": "tencent/UI-Mate-27B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_5_text')"
+ },
+ {
+  "repo_id": "tencent/UI-Mate-9B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_5_text')"
+ },
+ {
+  "repo_id": "tencent/UI-Mate-democua-27B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_5_text')"
+ },
+ {
+  "repo_id": "tencent/VersaViT",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen2_vl')"
+ },
+ {
+  "repo_id": "tencent/WeDLM-7B-Base",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='wedlm')"
+ },
+ {
+  "repo_id": "tencent/WeDLM-7B-Instruct",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='wedlm')"
+ },
+ {
+  "repo_id": "tencent/WeDLM-8B-Base",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='wedlm')"
+ },
+ {
+  "repo_id": "tencent/WeDLM-8B-Instruct",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='wedlm')"
+ },
+ {
+  "repo_id": "tencent/WeVisDoc-2B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_vl_text')"
+ },
+ {
+  "repo_id": "tencent/WeVisDoc-4B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='qwen3_vl_text')"
+ },
+ {
+  "repo_id": "tencent/Youtu-LLM-2B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='youtu')"
+ },
+ {
+  "repo_id": "tencent/Youtu-LLM-2B-Base",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='youtu')"
+ },
+ {
+  "repo_id": "tencent/Youtu-Parsing-Omni",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='youtu_vita_text')"
+ },
+ {
+  "repo_id": "tiiuae/falcon-11B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='falcon')"
+ },
+ {
+  "repo_id": "tiiuae/falcon-11B-vlm",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='falcon')"
+ },
+ {
+  "repo_id": "tiiuae/falcon-40b",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='falcon')"
+ },
+ {
+  "repo_id": "tiiuae/falcon-40b-instruct",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='falcon')"
+ },
+ {
+  "repo_id": "tiiuae/falcon-7b",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='falcon')"
+ },
+ {
+  "repo_id": "tiiuae/falcon-rw-1b",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='falcon')"
+ },
+ {
+  "repo_id": "tiiuae/falcon-rw-7b",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='falcon')"
+ },
+ {
+  "repo_id": "upstage/Solar-Open-100B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='solar_open')"
+ },
+ {
+  "repo_id": "upstage/Solar-Open2-250B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='solar_open2')"
+ },
+ {
+  "repo_id": "upstage/solar-pro-preview-instruct",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='solar')"
+ },
+ {
+  "repo_id": "zai-org/AutoGLM-Phone-9B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='glm4v_text')"
+ },
+ {
+  "repo_id": "zai-org/AutoGLM-Phone-9B-Multilingual",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='glm4v_text')"
+ },
+ {
+  "repo_id": "zai-org/GLM-4.1V-9B-Base",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='glm4v_text')"
+ },
+ {
+  "repo_id": "zai-org/GLM-4.1V-9B-Thinking",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='glm4v_text')"
+ },
+ {
+  "repo_id": "zai-org/GLM-4.5V",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='glm4v_moe_text')"
+ },
+ {
+  "repo_id": "zai-org/GLM-4.6V",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='glm4v_moe_text')"
+ },
+ {
+  "repo_id": "zai-org/GLM-4.6V-Flash",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='glm4v_text')"
+ },
+ {
+  "repo_id": "zai-org/GLM-4.7-Flash",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='glm4_moe_lite')"
+ },
+ {
+  "repo_id": "zai-org/GLM-5",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='glm_moe_dsa')"
+ },
+ {
+  "repo_id": "zai-org/GLM-5.1",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='glm_moe_dsa')"
+ },
+ {
+  "repo_id": "zai-org/GLM-5.2",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='glm_moe_dsa')"
+ },
+ {
+  "repo_id": "zai-org/GLM-5.3",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='glm_moe_dsa')"
+ },
+ {
+  "repo_id": "zai-org/GLM-5.3-BF16",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='glm_moe_dsa')"
+ },
+ {
+  "repo_id": "zai-org/Glyph",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='glm4v_text')"
+ },
+ {
+  "repo_id": "zai-org/UI2Code_N",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='glm4v_text')"
+ },
+ {
+  "repo_id": "zai-org/VisionReward-Video",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='cogvlmvideo')"
+ },
+ {
+  "repo_id": "zai-org/WebVIA-Agent",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='glm4v_text')"
+ },
+ {
+  "repo_id": "zai-org/chatglm-6b",
+  "error": "KVConfigError: missing num_hidden_layers"
+ },
+ {
+  "repo_id": "zai-org/chatglm2-6b",
+  "error": "KVConfigError: missing num_hidden_layers"
+ },
+ {
+  "repo_id": "zai-org/chatglm2-6b-32k",
+  "error": "KVConfigError: missing num_hidden_layers"
+ },
+ {
+  "repo_id": "zai-org/chatglm3-6b",
+  "error": "KVConfigError: missing num_hidden_layers"
+ },
+ {
+  "repo_id": "zai-org/chatglm3-6b-128k",
+  "error": "KVConfigError: missing num_hidden_layers"
+ },
+ {
+  "repo_id": "zai-org/chatglm3-6b-32k",
+  "error": "KVConfigError: missing num_hidden_layers"
+ },
+ {
+  "repo_id": "zai-org/chatglm3-6b-base",
+  "error": "KVConfigError: missing num_hidden_layers"
+ },
+ {
+  "repo_id": "zai-org/codegeex2-6b",
+  "error": "KVConfigError: missing num_hidden_layers"
+ },
+ {
+  "repo_id": "zai-org/cogagent-chat-hf",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='cogagent')"
+ },
+ {
+  "repo_id": "zai-org/cogagent-vqa-hf",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='cogagent')"
+ },
+ {
+  "repo_id": "zai-org/cogvlm-base-224-hf",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='cogvlm')"
+ },
+ {
+  "repo_id": "zai-org/cogvlm-base-490-hf",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='cogvlm')"
+ },
+ {
+  "repo_id": "zai-org/cogvlm-chat-hf",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='cogvlm')"
+ },
+ {
+  "repo_id": "zai-org/cogvlm-grounding-base-hf",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='cogvlm')"
+ },
+ {
+  "repo_id": "zai-org/cogvlm-grounding-generalist-hf",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='cogvlm')"
+ },
+ {
+  "repo_id": "zai-org/cogvlm2-llama3-caption",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='cogvlmvideo')"
+ },
+ {
+  "repo_id": "zai-org/cogvlm2-llama3-chat-19B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='cogvlm')"
+ },
+ {
+  "repo_id": "zai-org/cogvlm2-llama3-chat-19B-tgi",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='cogvlm2')"
+ },
+ {
+  "repo_id": "zai-org/cogvlm2-llama3-chinese-chat-19B",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='cogvlm')"
+ },
+ {
+  "repo_id": "zai-org/cogvlm2-llama3-chinese-chat-19B-tgi",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='cogvlm2')"
+ },
+ {
+  "repo_id": "zai-org/cogvlm2-video-llama3-base",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='cogvlmvideo')"
+ },
+ {
+  "repo_id": "zai-org/cogvlm2-video-llama3-chat",
+  "error": "KVConfigError: unknown/unregistered architecture (model_type='cogvlmvideo')"
+ },
+ {
+  "repo_id": "zai-org/glm-4-9b",
+  "error": "KVConfigError: missing num_hidden_layers"
+ },
+ {
+  "repo_id": "zai-org/glm-4v-9b",
+  "error": "KVConfigError: missing num_hidden_layers"
+ },
+ {
+  "repo_id": "zai-org/visualglm-6b",
+  "error": "KVConfigError: missing num_hidden_layers"
+ }
+]
