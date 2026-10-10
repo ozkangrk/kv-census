@@ -1,0 +1,16 @@
+% AUTO-GENERATED
+\begin{table}[t]\centering\small
+\caption{Standardized coefficients of the mechanism regression on $\log_{10}$ KV bytes/token.}\label{tab:mechanism}
+\begin{tabular}{lrr}\toprule predictor & $\beta$ (std.) & VIF\\\midrule
+total params ($\log_{10}$) & 4.928 & 7.3\\
+GQA ratio ($\log(1+r)$) & 0.408 & 2.0\\
+head dim & -0.419 & 2.3\\
+depth ($\log(1+L)$) & 0.166 & 5.6\\
+window layer share & 0.294 & 1.1\\
+recurrent layer share & -0.082 & 1.1\\
+MLA latent (0/1) & -0.214 & 1.2\\
+cross-layer shared KV (0/1) & -0.237 & 1.0\\
+\midrule
+$N$ & \multicolumn{2}{r}{1930}\\
+$R^2$ (full) & \multicolumn{2}{r}{0.841}\\
+\bottomrule\end{tabular}\end{table}

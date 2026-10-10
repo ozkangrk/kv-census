@@ -1,0 +1,29 @@
+% AUTO-GENERATED
+\begin{table}[t]\centering\scriptsize\setlength{\tabcolsep}{3.5pt}
+\caption{Maximum KV tokens at 6 GiB runtime overhead, KV in BF16; \lq--\rq{} means the weights alone exceed the budget, $\infty$ means the cache saturates (bounded window/state).}\label{tab:capacity}
+\begin{tabular}{lrrrrrr}\toprule
+model & 24/BF16 & 24/FP8 & 24/4b & 128/BF16 & 128/FP8 & 128/4b\\\midrule
+starcoder2-3b & $\infty$ & $\infty$ & $\infty$ & $\infty$ & $\infty$ & $\infty$\\
+MiniMax-M2 & -- & -- & -- & -- & -- & 9k\\
+command-a-plus-05-2026-bf16 & -- & -- & -- & -- & -- & 230k\\
+Step-3.5-Flash & -- & -- & -- & -- & -- & 47k\\
+Mixtral-8x22B-Instruct-v0.1 & -- & -- & -- & -- & -- & 226k\\
+internlm2-math-plus-mixtral8x22b & -- & -- & -- & -- & -- & 226k\\
+Eurux-8x22b-kto & -- & -- & -- & -- & -- & 226k\\
+Ling-3.0-flash & -- & -- & -- & -- & 431k & 7.3M\\
+NVIDIA-Nemotron-3-Super-120B-A12B-BF16 & -- & -- & -- & -- & 891k & 7.5M\\
+Mistral-Large-Instruct-2411 & -- & -- & -- & -- & 23k & 172k\\
+gpt-oss-120b & -- & -- & -- & -- & 384k & 1.8M\\
+Qwen1.5-110B & -- & -- & -- & -- & 60k & 209k\\
+GLM-4.5-Air & -- & -- & -- & -- & 109k & 365k\\
+PinkElephants-OpenHermes-13B-DPO & -- & 8k & 15k & 128k & 144k & 151k\\
+OpenMath-CodeLlama-13b-Python-hf & -- & 8k & 15k & 128k & 144k & 151k\\
+OpenMath-CodeLlama-7b-Python-hf & 11k & 24k & 30k & 224k & 237k & 243k\\
+granite-7b-base & 11k & 24k & 30k & 224k & 237k & 243k\\
+RLAIF-V-7B & 10k & 23k & 29k & 223k & 236k & 242k\\
+OLMo-7B & 11k & 24k & 29k & 224k & 237k & 242k\\
+Qwen1.5-4B & 28k & 38k & 42k & 301k & 310k & 314k\\
+Phi-3-mini-128k-instruct & 30k & 39k & 44k & 314k & 323k & 328k\\
+MiniCPM-V & 34k & 43k & 47k & 337k & 346k & 350k\\
+DeepSeek-R1-Distill-Llama-70B & -- & -- & -- & -- & 184k & 279k\\
+\bottomrule\end{tabular}\end{table}

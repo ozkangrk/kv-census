@@ -81,3 +81,12 @@ Optional 7th: KV-dominant boundary fraction by year.
 - Gated-skip count and Hub coverage bias go into Limitations, with exact counts from
   `data/gated_skipped.txt` and `data/raw/hub_api/`.
 - Refuted hypotheses are reported as refuted, in the abstract if primary.
+
+## Dated deviation notes (recorded before computing trend results)
+- 2026-10-10, Phase 2: the RQ3 solver uses an EXACT piecewise-linear root solve over the
+  window-saturation breakpoints instead of the pre-registered log-grid + linear interpolation.
+  Reason: interpolation introduces avoidable error at the breakpoints; the piecewise solve is a
+  strict refinement of the same model (monotone piecewise-linear bytes(T)). The registered
+  thresholds, budgets, precisions, and overheads are unchanged.
+- 2026-10-10, Phase 2: figure/table model subsets use objective, code-documented selection rules
+  (stated in analysis/run_analysis.py docstring), never hand-picking.

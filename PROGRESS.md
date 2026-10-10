@@ -36,3 +36,24 @@ Tüm teslimler orkestratör tarafından bağımsız doğrulandı:
   orkestratör 5/5 arXiv API başlık spot-check. Anahtar listesi yazarlara iletilecek.
 Açık konular: 237 gated skip + 9 kv hatası + 104 paramsız satır → Limitations bölümünde. Sonraki:
 Phase 2 (analiz) orkestratörde.
+
+## Phase 2 — Analiz (tamamlandı, orkestratör)
+- `analysis/run_analysis.py` yazıldı; `make analysis` 5,3 sn, OFFLINE ve deterministik (iki koşu
+  byte-identical; gate koşulu). PLAN.md'ye tarihli sapma notları eklendi (kesin parça-doğrusal
+  çözücü, objektif altküme kuralları) — sonuçlara bakılmadan önce.
+- Çıktılar: results/{rq1_stats.csv, rq3_capacity_overhead6.csv (35k satır), rq3_sensitivity_overhead.csv,
+  analysis_stats.json, dedup_rows.csv}, paper/figures/fig1..fig6.pdf (sabit metadata),
+  paper/generated/{macros,table_overview,table_mechanism,table_capacity,table_validation}.tex.
+- Ana sonuçlar (kaynak: analysis_stats.json / macros.tex):
+  - H1 DESTEKLENDİ: 2025+26 havuz medyanı / 2023 medyanı = 0,413 (eşik ≤0,75). Yıllara göre mutlak
+    medyan KV/token: 327.680 → 131.072 → 70.272 → 36.864 B (2023→2026). KV/param 2025'te küçük model
+    yoğunluğu nedeniyle tepe yapıyor (dürüst nüans, tartışılacak).
+  - H2 DESTEKLENDİ: log-log param-only R²=0,398 (<0,5 "zayıf"); geometri+mekanizma R²=0,792; tam model
+    0,841. Parametre sayısı KV ayak izini zayıf açıklıyor.
+  - H3 DESTEKLENDİ: MoE medyan KV/param = 0,018× yoğun (MWU p=2,7e-99, rank-biserial etkisi).
+  - H4 REDDEDİLDİ: KV-parite bağlamı medyanı (sonlu T*) 26.729 (2023) → 220.157 (2026); oran 2,2×
+    (eşik ≥10×). Ama KV-baskın rejim payı (T*<32k) %71 → %11'e düştü; ∞-payı (doymuş cache) 2026'da %3,9.
+  - Kapasite: 128 GiB / 4-bit'te bile sığmayan dedup model sayısı = \InfeasibleBigModels; gpt-oss-120b
+    128GiB/4-bit'te 1,8M token; tam ızgara (3 bütçe × 3 ağırlık hassasiyeti × 2 KV hassasiyeti ×
+    4 overhead) results/ altında.
+- Sonraki adım: Phase 3 yazım (4 paralel yazar + orkestratör entegrasyonu).
