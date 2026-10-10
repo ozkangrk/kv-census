@@ -4,9 +4,15 @@
 We census open-weight, decoder-only language models published on the Hugging Face Hub
 between January 2023 and the census snapshot in October 2026. We keep checkpoints released
 by the original publisher organization (\kvcOrgCount{} organizations) and exclude
-fine-tunes, merges, and quantized re-uploads from third-party accounts. Multimodal models
+fine-tunes, merges, and quantized re-uploads from third-party accounts; fine-tunes and
+distills hosted by the original publisher themselves are kept (a documented decision,
+with its consequences visible in the deduplication analysis below). Multimodal models
 enter through their text backbone: we parse the language-model sub-configuration and ignore
-vision and audio towers. The census holds \kvcCensusRows{} checkpoint rows ---
+vision and audio towers. Their \emph{parameter counts}, however, come from repository
+safetensors metadata and therefore include the vision tower (flagged per row in the
+\texttt{notes} column; \kvcMMRows{} deduplicated rows): per-parameter KV statistics for
+these rows are deflated, which is why RQ1 reports a multimodal-excluded robustness cut,
+while capacity computations correctly use the full weight footprint. The census holds \kvcCensusRows{} checkpoint rows ---
 \kvcYearRowsTwentyThree{} released in 2023, \kvcYearRowsTwentyFour{} in 2024,
 \kvcYearRowsTwentyFive{} in 2025, and \kvcYearRowsTwentySix{} in 2026 to date. Every
 \texttt{config.json} is snapshotted and all Hub API responses are cached on disk, so the
@@ -51,7 +57,9 @@ tokens and recurrent state is constant. Labels are honest by construction: a mod
 labelled \texttt{mha}, \texttt{gqa}, or \texttt{mqa} only if it is pure full attention and
 the computed per-token bytes equal $2\,L\,n_{\mathrm{kv}}\,d_h\,B$ exactly; any windowed,
 recurrent, latent, or shared component forces a descriptive label such as
-\texttt{gqa+swa}, \texttt{hybrid-mamba}, or \texttt{mla}. Family-specific parsing rules
+\texttt{gqa+swa}, \texttt{hybrid-mamba}, or \texttt{mla}; configurations whose literal
+fields disagree with their family's canonical semantics carry an additional
+\texttt{+legacycfg} marker. Family-specific parsing rules
 follow the upstream \texttt{transformers} configuration semantics --- explicit head
 dimensions, per-family window flags, hybrid layer-pattern strings --- cross-checked against
 published configurations \cite{grattafiori2024llama3,yang2025qwen3}. The library carries
@@ -61,9 +69,15 @@ unknown architecture raises an error rather than defaulting to a guess.
 \subsection{Pre-registered analysis}\label{dm:plan}
 The analysis plan (\texttt{analysis/PLAN.md}) was fixed before any trend statistic was
 computed, and every deviation is recorded there as a dated note. Trend and regression
-statistics use a deduplicated set: checkpoints with identical attention geometry share a
-\texttt{dedup\_group}, and the representative is the earliest-released member, ties broken
-by repository id. This leaves \kvcDedupRows{} rows in \kvcGroups{} groups. RQ1 reports
+statistics use a deduplicated set: the \texttt{dedup\_group} key hashes the publisher
+organization, the name stem (base/instruct/chat and similar suffixes stripped), and the
+attention geometry, and the representative is the earliest-released member, ties broken
+by repository id. This collapses base/instruct twins but not same-geometry fine-tunes
+with distinct names: it leaves \kvcDedupRows{} rows in \kvcGroups{} groups realizing
+only \kvcGeoRows{} distinct geometries (\kvcOrgGeoRows{} organization--geometry
+combinations), with one geometry alone accounting for \kvcWorstGeoCluster{} rows. We
+therefore report the pre-registered family-level unit as primary and a strict
+one-row-per-geometry unit as the robustness view throughout RQ1--RQ4. RQ1 reports
 per-year medians and interquartile ranges of the two primary outcomes and Spearman rank
 correlations against release date, with pre-registered support thresholds. RQ2 regresses
 $\log_{10}$ bytes/token on $\log_{10}$ parameters by OLS, with 95\% confidence intervals
@@ -82,8 +96,10 @@ matching common accelerator and unified-memory tiers. Weights occupy 2 bytes per
 figure including 16 group-scale bits per 32-element group \cite{frantar2022gptq}. The KV
 cache is priced at 2 or 1 byte per element (BF16 or FP8) \cite{liu2024kivi}; we do not
 model allocator fragmentation, which serving systems manage separately
-\cite{kwon2023paged}. Runtime overhead is a free parameter: we report the full grid over
-0, 2, 6, and 12 GiB and use 6 GiB in the headline tables. Because $\mathrm{bytes}(T)$ is
+\cite{kwon2023paged}. Runtime overhead is a free parameter: the full grid over
+0, 2, 6, and 12 GiB is computed and exported with the results (every budget, weight
+precision, and KV precision combination), the paper shows a sensitivity table at
+128\,GiB, and the headline tables use 6 GiB. Because $\mathrm{bytes}(T)$ is
 monotone piecewise linear with breakpoints at the window sizes, the maximum token count
 under the pool and the KV-parity context $T^{*}$ --- the length at which one sequence's
 cache equals the BF16 weight bytes --- are solved exactly on each linear segment. The plan

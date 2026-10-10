@@ -2,11 +2,14 @@
 """Phase 2 offline deterministic analysis (RQ1-RQ4). Reads data/ and results/, writes
 results/, paper/figures/, paper/generated/. See analysis/PLAN.md (pre-registered).
 
-Objective subset rules used for figures/tables (documented per PLAN deviation note):
-- capacity table/heatmap models: dedup-representative rows, params known, released >= 2024-01-01,
-  sorted by kv_bytes_per_token_bf16 descending, first N; plus the 2023 dedup representative with
-  the LOWEST kv-per-param (the trend-story anchor).
-- validation: all rows of results/kv_validation.csv.
+Objective subset rule for the capacity table/heatmap (PLAN deviation note): among dedup
+rows with known params, collapse by (org, num_layers, num_kv_heads, head_dim,
+attention_type, window_size) keeping the earliest release; keep only models feasible at
+128 GiB / 4-bit / 6 GiB overhead; subset = 2023 min-kv-per-param anchor (even if not
+feasible-filtered) + top-12 by params + top-12 by kv_bytes_per_token_bf16; finally collapse
+the subset by full geometry signature (num_layers, num_attention_heads, num_kv_heads,
+head_dim, hidden_size, attention_type, window_size) keeping the earliest repo.
+Validation table: all rows of results/kv_validation.csv.
 """
 import os
 os.environ["SOURCE_DATE_EPOCH"] = "0"
@@ -93,16 +96,22 @@ def rq2(dedup):
     xp = np.log10(s.params.values)
     beta, r2 = ols(xp.reshape(-1, 1), y)
     rng = np.random.default_rng(0)
-    boots = []
+    boots, boots_slope = [], []
     idx = np.arange(len(s))
     for _ in range(1000):
         b = rng.choice(idx, size=len(idx), replace=True)
-        try: _, r2b = ols(xp[b].reshape(-1, 1), y[b]); boots.append(r2b)
+        try:
+            bb, r2b = ols(xp[b].reshape(-1, 1), y[b])
+            boots.append(r2b); boots_slope.append(bb[1])
         except Exception: pass
     ci = np.percentile(boots, [2.5, 97.5])
+    ci_slope = np.percentile(boots_slope, [2.5, 97.5])
     h2 = "weak" if r2 < 0.5 else "not weak"
 
-    s["gqa"] = s.num_attention_heads / s.num_kv_heads
+    # GQA ratio = num_attention_heads / num_kv_heads; when num_kv_heads is missing or
+    # not applicable (MHA, latent, recurrent) we impute 1 = "no head reduction" (m5).
+    kvh = s.num_kv_heads.where(s.num_kv_heads.notna(), s.num_attention_heads)
+    s["gqa"] = s.num_attention_heads / kvh
     feats = dict(
         params=np.log10(s.params.values),
         gqa=np.log1p(s.gqa.values),
@@ -117,12 +126,13 @@ def rq2(dedup):
     keep = F.columns[F.std() > 0]
     F = F[keep]
     z = lambda a: (a - a.mean()) / (a.std() or 1)
+    zy = z(y)
     Z = np.column_stack([z(F[c].values) for c in F.columns])
-    bz, r2_full = ols(Z, y)
+    bz, r2_full = ols(Z, zy)
     cols_geom = [c for c in F.columns if c != "params"]
     Zg = np.column_stack([z(F[c].values) for c in cols_geom])
-    _, r2_geom = ols(Zg, y)
-    _, r2_par = ols(z(F.params.values).reshape(-1, 1), y)
+    _, r2_geom = ols(Zg, zy)
+    _, r2_par = ols(z(F.params.values).reshape(-1, 1), zy)
     vif = {}
     for c in F.columns:
         others = [o for o in F.columns if o != c]
@@ -136,7 +146,10 @@ def rq2(dedup):
     med_dense, med_moe = float(np.median(a)), float(np.median(b_))
     h3_ratio = med_moe / med_dense
     h3 = "supported" if h3_ratio <= 0.5 else "refuted"
-    return dict(n=len(s), n_zero=n_zero, beta=beta, r2=r2, ci=ci, h2=h2, betas=dict(zip(F.columns, bz)),
+    n_noparam_dedup = int(dedup.params.isna().sum())
+    n_shared = int(F.shared.sum())
+    return dict(n=len(s), n_zero=n_zero, n_noparam=n_noparam_dedup, n_shared=n_shared,
+                beta=beta, r2=r2, ci=ci, ci_slope=ci_slope, h2=h2, betas=dict(zip(F.columns, bz[1:])),
                 r2_full=r2_full, r2_geom=r2_geom, r2_par=r2_par, vif=vif,
                 moe=dict(n_dense=len(a), n_moe=len(b_), med_dense=med_dense, med_moe=med_moe,
                          p=float(pmw), rb=float(rb), ratio=h3_ratio, verdict=h3))
@@ -174,6 +187,8 @@ def solve_tokens(curve, pool):
 
 def _solve_bp(curve, pool):
     S, fr, lr, wins = curve
+    if S >= pool:
+        return 0.0  # not even the fixed recurrent state fits (m11)
     bps = sorted({W for _, W in wins})
     prev = 0.0
     for W in bps:
@@ -188,14 +203,23 @@ def _solve_bp(curve, pool):
     if rate <= 0: return math.inf if t0 < pool else prev
     return prev + max(0.0, (pool - t0)) / rate
 
+def parity_Tstar(repo_id, params_b):
+    """KV-parity context with honest censoring (m3): if the asymptotic cache can never
+    reach the weight bytes (bounded window/state caches), there is no parity point: inf."""
+    curve = model_curves(repo_id, 2)
+    wbytes = params_b * 1e9 * 2.0
+    S, fr, lr, wins = curve
+    cap_max = S + sum(r_ * W for r_, W in wins)
+    if fr + lr <= 0 and cap_max < wbytes:
+        return math.inf
+    return _solve_bp(curve, wbytes)
+
 def rq3(dedup):
     s = dedup[dedup.params.notna()].copy()
     s["Tstar"] = np.nan; s["Tstar_inf"] = False
     curves = {}
     for repo in s.repo_id:
-        cfg = json.loads((ROOT / "data/raw/configs" / (repo.replace("/", "__") + ".json")).read_text())
-        T = kvm.kv_par_context(cfg, total_params=float(s.loc[s.repo_id == repo, "params"].iloc[0]) * 1e9,
-                               weight_bytes_per_param=2.0, bytes_per_element=2)
+        T = parity_Tstar(repo, float(s.loc[s.repo_id == repo, "params"].iloc[0]))
         s.loc[s.repo_id == repo, "Tstar"] = T
         if not np.isfinite(T): s.loc[s.repo_id == repo, "Tstar_inf"] = True
     for kp, belem in KPREC.items():
@@ -256,9 +280,50 @@ def main():
     M("SpearmanRhoPP", fmt(r1s["rho_pp"], 3)); M("SpearmanPPp", f"{r1s['p_pp']:.1e}")
     M("HOneRatio", fmt(r1s["ratio"], 3)); M("HOneVerdict", r1s["verdict"])
 
+    # ---- robustness unit: geometry-level dedup (M2/m3) -------------------------
+    GEO = ["num_layers", "num_attention_heads", "num_kv_heads", "head_dim", "hidden_size",
+           "attention_type", "window_size"]
+    dsort = dedup.sort_values(["release_date", "repo_id"], kind="mergesort")
+    geo = dsort.groupby(GEO, dropna=False, sort=True).head(1).copy()
+    orggeo = dsort.groupby(["org"] + GEO, dropna=False, sort=True).head(1)
+    M("GeoRows", len(geo)); M("OrgGeoRows", len(orggeo))
+    gsizes = dsort.groupby(GEO, dropna=False, sort=True).size()
+    worst_sig = gsizes.idxmax()
+    worst_rows = dsort.groupby(GEO, dropna=False, sort=True).get_group(worst_sig)
+    M("WorstGeoCluster", int(gsizes.max()))
+    M("WorstGeoClusterRecent", int((worst_rows.year >= 2025).sum()))
+    M("RegOverlapBoth", int((dedup.params.isna() & (dedup.kv_tok == 0)).sum()))
+    gp = {}
+    for y in YEARS:
+        g = geo[geo.year == y]
+        gp[y] = float(np.nanmedian(g.kv_per_param))
+        M(f"MedianKvppGeo{YLET[y]}", fmt(gp[y] * 1e9, 1))
+        M(f"GeoN{YLET[y]}", len(g))
+    g_new = float(np.nanmedian(geo[geo.year >= 2025].kv_per_param))
+    M("HOneRatioGeo", fmt(g_new / gp[2023], 3))
+    okgeo = np.isfinite(geo.kv_per_param.values)
+    import datetime as _dt2
+    dord_g = pd.to_datetime(geo.release_date).map(_dt2.datetime.toordinal).astype(float).values
+    rho_g, p_g = stats.spearmanr(dord_g[okgeo], geo.kv_per_param.values[okgeo])
+    M("SpearmanRhoGeo", fmt(rho_g, 3)); M("SpearmanPGeo", f"{p_g:.1e}")
+    gg = geo[geo.params.notna() & (geo.kv_tok > 0)]
+    _, r2_geo_only = ols(np.log10(gg.params.values).reshape(-1, 1), np.log10(gg.kv_tok.values))
+    M("ParamsRsqGeo", fmt(r2_geo_only, 3))
+    gmoe = gg.moe.astype(str).str.lower().eq("true")
+    ga = gg[~gmoe].kv_per_param.dropna(); gb = gg[gmoe].kv_per_param.dropna()
+    M("HThreeRatioGeo", fmt(float(np.median(gb) / np.median(ga)), 3))
+    # multimodal rows carry tower-inflated params (m4): robustness excluding them
+    mm = dedup.notes.astype(str).str.contains("vision_tower|multimodal", case=False, na=False)
+    M("MMRows", int(mm.sum()))
+    nomm = dedup[~mm]
+    m23 = float(np.nanmedian(nomm[nomm.year == 2023].kv_per_param))
+    mnew = float(np.nanmedian(nomm[nomm.year >= 2025].kv_per_param))
+    M("HOneRatioNoMM", fmt(mnew / m23, 3))
+
     r2 = rq2(dedup)
-    M("RegN", r2["n"]); M("RegZeroKV", r2["n_zero"])
+    M("RegN", r2["n"]); M("RegZeroKV", r2["n_zero"]); M("RegNoParam", r2["n_noparam"]); M("SharedN", r2["n_shared"])
     M("ParamsSlope", fmt(r2["beta"][1], 3)); M("ParamsRsq", fmt(r2["r2"], 3))
+    M("ParamsSlopeLo", fmt(r2["ci_slope"][0], 3)); M("ParamsSlopeHi", fmt(r2["ci_slope"][1], 3))
     M("ParamsRsqLo", fmt(r2["ci"][0], 3)); M("ParamsRsqHi", fmt(r2["ci"][1], 3))
     M("HTwoVerdict", r2["h2"])
     M("GeomRsq", fmt(r2["r2_geom"], 3)); M("ParRsq", fmt(r2["r2_par"], 3)); M("FullRsq", fmt(r2["r2_full"], 3))
@@ -275,6 +340,25 @@ def main():
         M(f"ParityInfShare{YLET[y]}", fmt(100 * per_year[y]["inf_share"], 1))
         M(f"DominantShare{YLET[y]}", fmt(100 * r3s["dom"][y], 1))
     M("HFourRatio", fmt(r3s["ratio"], 1)); M("HFourVerdict", r3s["verdict"])
+    # H4 under geometry dedup
+    gpar = {}
+    for y in YEARS:
+        gy = geo[(geo.year == y) & geo.params.notna()]
+        Ts = [parity_Tstar(r.repo_id, float(r.params)) for r in gy.itertuples()]
+        fin = [t for t in Ts if np.isfinite(t)]
+        gpar[y] = float(np.median(fin)) if fin else float("nan")
+    M("HFourRatioGeo", fmt(float(np.nanmedian(geo[(geo.year >= 2025) & geo.params.notna()].apply(
+        lambda r: parity_Tstar(r.repo_id, float(r.params)), axis=1).replace([np.inf], np.nan).dropna())) / gpar[2023], 1))
+    for y in YEARS: M(f"ParityMedGeo{YLET[y]}", fmt(gpar[y], 0))
+    # weights-alone infeasibility at 128 GiB / 4-bit (m7)
+    wp = dedup[dedup.params.notna()]
+    M("WeightsAloneBig", int((wp.params * 1e9 * (4.5 / 8) > 128 * GIB).sum()))
+    # concurrency headline (m10): 128 GiB, BF16 weights, BF16 KV, 6 GiB overhead
+    cb = cap[(cap.budget_gib == "128") & (cap.wprec == "bf16") & (cap.kvprec == "bf16") & (cap.overhead_gib == "6")]
+    for col, nm in [("conc_32k", "ConcMedThirtyTwoK"), ("conc_128k", "ConcMedOneHundredTwentyEightK")]:
+        v = cb[col][cb[col] > 0]
+        M(nm, int(np.median(v)))
+        M(nm + "ZeroShare", fmt(100 * float((cb[col] == 0).mean()), 1))
 
     # headline capacity: representative subset (objective rule, PLAN deviation note):
     # collapse dedup rows by (org, num_layers, num_kv_heads, head_dim, attention_type, window_size)
@@ -293,6 +377,14 @@ def main():
     sub = list(anchor.repo_id) + list(recent.sort_values("params", ascending=False).head(12).repo_id) \
         + list(recent.sort_values("kv_tok", ascending=False).head(12).repo_id)
     sub = list(dict.fromkeys(sub))
+    # collapse the subset itself by geometry signature (m12): keep the earliest repo per geometry
+    seen_geo, sub_collapsed = set(), []
+    for repo in sub:
+        row = dedup[dedup.repo_id == repo].iloc[0]
+        gsig = tuple(row[c] for c in GEO)
+        if gsig in seen_geo: continue
+        seen_geo.add(gsig); sub_collapsed.append(repo)
+    sub = sub_collapsed
     heat = cap[(cap.repo_id.isin(sub)) & (cap.overhead_gib == "6") & (cap.kvprec == "bf16")]
 
     # RQ4 validation
@@ -303,16 +395,17 @@ def main():
     # ---------------- outputs: results/
     pd.DataFrame([dict(year=y, **{k: v for k, v in r1[y].items()}) for y in YEARS]).to_csv(ROOT / "results/rq1_stats.csv", index=False)
     json.dump(dict(rq1_spearman={k: (v if isinstance(v, str) else float(v)) for k, v in r1s.items()},
-                   rq2={k: v for k, v in r2.items() if k not in ("beta", "ci")},
+                   rq2={k: v for k, v in r2.items() if k not in ("beta", "ci", "ci_slope")},
                    rq2_ci=list(map(float, r2["ci"])), rq2_slope=float(r2["beta"][1]),
                    rq3_parity=per_year, rq3_h4=r3s),
               (ROOT / "results/analysis_stats.json").open("w"), indent=1, default=float)
+    cap.to_csv(ROOT / "results/rq3_capacity_full.csv", index=False)
     cap[cap.overhead_gib == "6"].to_csv(ROOT / "results/rq3_capacity_overhead6.csv", index=False)
     cap[(cap.budget_gib == "128") & (cap.wprec == "bf16") & (cap.kvprec == "bf16")].to_csv(ROOT / "results/rq3_sensitivity_overhead.csv", index=False)
     dedup.to_csv(ROOT / "results/dedup_rows.csv", index=False)
 
     make_figures(d, dedup, s3, heat, sub, vrows, r2)
-    make_tex(d, dedup, r1, r1s, r2, s3, cap, per_year, r3s, heat, sub, vrows)
+    make_tex(d, dedup, r1, r1s, r2, s3, cap, per_year, r3s, heat, sub, vrows, geo, gp)
     print("analysis complete")
 
 # ================================================================ figures
@@ -401,7 +494,7 @@ def make_figures(d, dedup, s3, heat, sub, vrows, r2):
 # ================================================================ tex
 def esc(s): return str(s).replace("_", r"\_").replace("&", r"\&").replace("%", r"\%")
 
-def make_tex(d, dedup, r1, r1s, r2, s3, cap, per_year, r3s, heat, sub, vrows):
+def make_tex(d, dedup, r1, r1s, r2, s3, cap, per_year, r3s, heat, sub, vrows, geo, gp):
     GEN = ROOT / "paper/generated"
     lines = ["% AUTO-GENERATED by make analysis - do not edit by hand"]
     for k in sorted(macros): lines.append(rf"\newcommand{{\kvc{k}}}{{{macros[k]}}}")
@@ -410,13 +503,35 @@ def make_tex(d, dedup, r1, r1s, r2, s3, cap, per_year, r3s, heat, sub, vrows):
     T = []
     T.append(r"% AUTO-GENERATED by make analysis - do not edit by hand")
     # dataset overview
-    T.append(r"\begin{table}[t]\centering\small" "\n" r"\caption{Census overview. Rows are checkpoints; the deduplicated set keeps one row per geometry group.}\label{tab:overview}")
-    T.append(r"\begin{tabular}{lrrrrr}\toprule")
-    T.append(r"year & rows & dedup rows & median KV B/tok & median KV B/tok per $10^9$ params\\\midrule")
+    T.append(r"\begin{table}[t]\centering\scriptsize\setlength{\tabcolsep}{3.5pt}" "\n" r"\caption{Census overview. Rows are checkpoints; family-dedup keeps one row per publisher family with identical geometry, geo-dedup one row per distinct attention geometry.}\label{tab:overview}")
+    T.append(r"\begin{tabular}{lrrrrrrr}\toprule")
+    T.append(r"year & rows & family & geo & med.\ KV/tok & IQR & B/tok/$10^9$p & geo B/tok/$10^9$p\\\midrule")
+    census_n = {y: int((d.year == y).sum()) for y in YEARS}
+    geo_n = {y: len(geo[geo.year == y]) for y in YEARS}
     for y in YEARS:
-        T.append(f"{y} & {r1[y]['n']} & {r1[y]['n']} & {fmt(r1[y]['med_kv_tok'],0)} & {fmt(r1[y]['med_pp']*1e9,1)}\\\\")
+        T.append(f"{y} & {census_n[y]} & {r1[y]['n']} & {geo_n[y]} & {fmt(r1[y]['med_kv_tok'],0)} & {fmt(r1[y]['iqr_kv_tok'],0)} & {fmt(r1[y]['med_pp']*1e9,1)} & {fmt(gp[y]*1e9,1)}\\\\")
     T.append(r"\bottomrule\end{tabular}\end{table}")
     (GEN / "table_overview.tex").write_text("\n".join(T) + "\n")
+
+    # sensitivity table (m10/pre-registered overhead grid): subset x overhead at 128 GiB BF16/BF16
+    T5 = [r"% AUTO-GENERATED"]
+    T5.append(r"\begin{table}[t]\centering\scriptsize\setlength{\tabcolsep}{4pt}" "\n" r"\caption{Overhead sensitivity: maximum KV tokens at 128 GiB, BF16 weights and KV, for runtime overheads 0/2/6/12 GiB.}\label{tab:sensitivity}")
+    T5.append(r"\begin{tabular}{lrrrr}\toprule model & 0 GiB & 2 GiB & 6 GiB & 12 GiB\\\midrule")
+    sen = pd.read_csv(ROOT / "results/rq3_capacity_full.csv")
+    sen = sen[(sen.budget_gib == 128) & (sen.wprec == "bf16") & (sen.kvprec == "bf16")]
+    for repo in sub:
+        cells = []
+        for ov in ["0", "2", "6", "12"]:
+            row = sen[(sen.repo_id == repo) & (sen.overhead_gib == ov)]
+            v = float(row.max_tokens.iloc[0]) if len(row) and pd.notna(row.max_tokens.iloc[0]) else None
+            if v is None: cells.append("--")
+            elif math.isinf(v): cells.append(r"$\infty$")
+            elif v >= 1e6: cells.append(f"{v/1e6:.1f}M")
+            elif v <= 0: cells.append("0")
+            else: cells.append(f"{v/1e3:.0f}k")
+        T5.append(f"{esc(repo.split('/')[-1])} & " + " & ".join(cells) + r"\\")
+    T5.append(r"\bottomrule\end{tabular}\end{table}")
+    (GEN / "table_sensitivity.tex").write_text("\n".join(T5) + "\n")
 
     T2 = [r"% AUTO-GENERATED"]
     T2.append(r"\begin{table}[t]\centering\small" "\n" r"\caption{Standardized coefficients of the mechanism regression on $\log_{10}$ KV bytes/token.}\label{tab:mechanism}")
@@ -427,7 +542,7 @@ def make_tex(d, dedup, r1, r1s, r2, s3, cap, per_year, r3s, heat, sub, vrows):
               "latent": "MLA latent (0/1)", "shared": "cross-layer shared KV (0/1)"}.get(k, k)
         T2.append(f"{nm} & {fmt(r2['betas'][k],3)} & {fmt(r2['vif'][k],1)}\\\\")
     T2.append(r"\midrule")
-    T2.append(f"$N$ & \\multicolumn{{2}}{{r}}{{{r2['n']}}}\\\\")
+    T2.append(f"$N$ & \\multicolumn{{2}}{{r}}{{{r2['n']}}} (cross-layer shared: $n={r2['n_shared']}$)\\\\")
     T2.append(f"$R^2$ (full) & \\multicolumn{{2}}{{r}}{{{fmt(r2['r2_full'],3)}}}\\\\")
     T2.append(r"\bottomrule\end{tabular}\end{table}")
     (GEN / "table_mechanism.tex").write_text("\n".join(T2) + "\n")
@@ -456,7 +571,7 @@ def make_tex(d, dedup, r1, r1s, r2, s3, cap, per_year, r3s, heat, sub, vrows):
 
     T4 = [r"% AUTO-GENERATED"]
     T4.append(r"\begin{table}[t]\centering\scriptsize\setlength{\tabcolsep}{3pt}" "\n" r"\caption{RQ4 validation: analytic (kv.py) vs measured HF cache bytes on reduced-depth random-init instances.}\label{tab:validation}")
-    T4.append(r"\begin{tabular}{lp{2.1cm}rrrp{5.2cm}}" "\n" r"\toprule model & class & analytic & measured & rel.err & note\\\midrule")
+    T4.append(r"\begin{tabular}{lp{2.1cm}rrr>{\raggedright\arraybackslash}p{5.2cm}}" "\n" r"\toprule model & class & analytic & measured & rel.err & note\\\midrule")
     for r in vrows:
         note = esc(r["explanation"][:180])
         T4.append(f"{esc(r['model_or_arch'].split('/')[-1])} & {esc(r['attention_class'])} & {float(r['analytic_bytes'])/1e6:.2f}M & {float(r['measured_bytes'])/1e6:.2f}M & {100*float(r['rel_error']):.3f}\\% & {note}\\\\")

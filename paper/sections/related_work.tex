@@ -35,8 +35,8 @@ precision as parameters; the census itself is BF16.
 
 \paragraph{Cross-layer KV sharing.}
 YOCO caches key--value pairs once and reuses them across layers through
-cross-attention \cite{sun2024yoco}. Layer-condensed KV caches only a small
-number of bottom layers and reads the rest from that cache \cite{wu2024cla}.
+cross-attention \cite{sun2024yoco}. Layer-condensed KV condenses the key--value cache into a subset of layers
+and lets the remaining layers read from it \cite{wu2024cla}.
 The census counts each shared cache once, as the configs declare it.
 
 \paragraph{Recurrent and linear-attention state.}
@@ -76,11 +76,11 @@ one family; none says what the population does.
 
 \paragraph{Serving systems and edge.}
 vLLM's PagedAttention manages KV memory in pages \cite{kwon2023paged};
-DistServe places prefill and decoding to control KV duplication
+DistServe dis-aggregates prefill and decode onto separate resources
 \cite{zhong2024distserve}; FlashAttention and its successor cut attention
 memory traffic \cite{dao2022flashattention,dao2023flashattention2}. On
-unified-memory hardware, runtime comparisons treat KV and prompt caching as
-first-class metrics \cite{rajesh2025edgemem}. These systems manage whatever
+unified-memory Apple Silicon hardware, production-grade runtime comparisons treat KV
+and prompt caching as first-class metrics \cite{rajesh2025edgemem}. These systems manage whatever
 cache a model brings; they do not say how large that cache is across models.
 
 \paragraph{Position.}

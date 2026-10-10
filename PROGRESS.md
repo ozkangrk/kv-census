@@ -71,3 +71,26 @@ Phase 2 (analiz) orkestratörde.
 - Derleme: make paper → main.pdf, 15 sayfa (≥8), gate-tarzı kelime sayısı 5.242 (≥4.000),
   34/34 bib anahtarı atıflı, 0 uncited, \input{generated/...} mevcut.
 - Sonraki: Phase 4 çapraz inceleme (methods-reviewer + claims-auditor).
+
+## Phase 4 — Çapraz inceleme (tamamlandı)
+- 2 taze hakem: methods-reviewer (2 MAJOR + 12 MINOR + 6 not) ve claims-auditor (3 MAJOR +
+  11 MINOR + 7 not); raporlar reviews/ altında, tüm yanıtlar reviews/responses.md'de.
+- Kritik düzeltmeler (hepsi make analysis ile yeniden üretildi, gate yeniden 6/6 geçti):
+  1) MEKANİZMA REGRESYONU OFF-BY-ONE: beta etiketleri kaymıştı (intercept, params betası
+     gibi okunuyordu) — düzeltildi; y стандартize; tablo/makrolar yeniden üretildi; tüm
+     işaretler artık saf muhasebeyle uyumlu.
+  2) DEDUP BİRİMİ: family-dedup aynı-geometri fine-tune'ları çökertmiyordu (2068 grupta
+     292 farklı geometri; en büyük küme 260 satır, 143'ü 2025+). 2025 "sıçraması" büyük
+     ölçüde bu artifact'miş. Birincil birim (ön-kayıtlı) korundu; geometri-dedup sağlamlık
+     görüşü her yerde raporlandı. H1: 0,413 / 0,071 (geo) destek; multimodal hariç 1,061
+     RED. H4: 2,2× (aile) reddedildi / 11,0× (geo) destek — karar birime duyarlı, açıkça
+     yazıldı.
+  3) T* sansürlüme: sınırlı cache'i pariteye hiç ulaşamayan modeller ∞ kabul edilip
+     medyanlara dahil edilmedi; metin düzeltildi.
+  4) Kapasite çözücü sınır hatası (state havuzu aşınca 0 dönmeli), dolu ızgara CSV'si
+     (rq3_capacity_full.csv), duyarlılık tablosu, eşzamanlılık makroları (32k→30, 128k→8
+     dizi medyan), 74/64 ayrımı, eğim CI, GQA imputasyonu, shared n=2, rank-biserial yönü,
+     Tablo-1 satır sütunu, atıf aşırıları (DistServe/CLA/edgemem), Llama ifadesi, AI
+     ifşası yumuşatması.
+- Düzeltme sonrası: 16 sayfa, ~5.980 kelime, 34/34 atıf, 0 overfull; gate 6/6 PASS (67 sn).
+- Sonraki: Phase 5 — SUMMARY_TR.md, son gate, final commit.

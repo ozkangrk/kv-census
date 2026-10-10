@@ -1,19 +1,25 @@
 \section{Conclusion}\label{sec:conclusion}
 
 We took a census of \kvcCensusRows{} open-weight checkpoints from
-\kvcOrgCount{} organizations, reduced to \kvcDedupRows{} geometry groups, and
-accounted their KV caches from configurations alone, and validated the
-accounting against reference implementations. Four verdicts.
+\kvcOrgCount{} organizations, reduced to \kvcDedupRows{} family-level groups
+(\kvcGeoRows{} distinct attention geometries), accounted their KV caches from
+configurations alone, and validated the accounting against reference
+implementations. Four verdicts.
 For RQ1, per-parameter KV cost is falling: the pooled 2025--2026 median is
-\kvcHOneRatio{} of the 2023 median (H1 supported), though not monotonically,
-because the 2025 release mix moved against the trend.
+\kvcHOneRatio{} of the 2023 median on the pre-registered unit and
+\kvcHOneRatioGeo{} under geometry deduplication (H1 supported on both), though
+not monotonically under the family unit, because the 2025 release mix and
+re-released same-geometry fine-tunes moved against the trend; excluding
+multimodal checkpoints flips the verdict (\kvcHOneRatioNoMM), so the finding is
+real but fragile.
 For RQ2, parameter count is a weak predictor of KV footprint ($R^2=$
 \kvcParRsq) while attention geometry alone explains \kvcGeomRsq, and MoE models
 carry \kvcHThreeRatio{} times the dense per-parameter KV cost (H2 and H3
 supported).
-For RQ3, the KV-parity context grew only \kvcHFourRatio{} (H4 refuted): KV
-savings and weight growth offset each other, and release mix sets the median,
-even as KV-dominance at 32k context receded.
+For RQ3, the KV-parity context grew \kvcHFourRatio{} under the pre-registered unit
+and \kvcHFourRatioGeo{} under geometry deduplication (H4 refuted on the first,
+supported on the second): KV savings and weight growth offset each other, and
+release mix sets the median, even as KV-dominance at 32k context receded.
 For RQ4, the analytic accounting matches reference implementations on
 \kvcValWithin{} of \kvcValRows{} validation rows within 1\%, across
 \kvcValClasses{} attention classes.

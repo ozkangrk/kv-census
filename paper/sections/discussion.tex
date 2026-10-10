@@ -17,19 +17,26 @@ diverge widely: the dense and MoE medians sit at \kvcMedKvppDense{} versus
 memory by parameter count is therefore wrong in both directions, and the error
 lands on the constraint that binds first \cite{kwon2023paged}.
 
-\paragraph{The 2025 bump is release mix.}
-Median per-parameter KV cost fell from \kvcMedianKvppTwentyThree{} (2023) to
-\kvcMedianKvppTwentyFour{} (2024), rose to \kvcMedianKvppTwentyFive{} in 2025,
-then fell to \kvcMedianKvppTwentySix{} in 2026 (Table~\ref{tab:overview}). The
-2025 rise is composition, not regression: the median 2025 model is smaller,
-with absolute KV per token down (\kvcMedianKvTokTwentyFour{} to
-\kvcMedianKvTokTwentyFive) while per-parameter KV rose --- the signature of many
-small checkpoints whose attention stacks stay proportionally large. Across
-checkpoints the pooled trend stays negative (Spearman $\rho=$
-\kvcSpearmanRhoPP, $p=\kvcSpearmanPPp$). The planning lesson is that a yearly
-fleet median tracks what publishers ship that year; in a year dominated by
-small releases, per-parameter heuristics will under-provision KV memory even
-while per-token architecture improves.
+\paragraph{The 2025 bump is composition, mostly duplicated geometry.}
+Median per-parameter KV cost under the pre-registered unit fell from
+\kvcMedianKvppTwentyThree{} (2023) to \kvcMedianKvppTwentyFour{} (2024), rose to
+\kvcMedianKvppTwentyFive{} in 2025, then fell to \kvcMedianKvppTwentySix{} in 2026
+(Table~\ref{tab:overview}). Two composition effects, not architecture, drive the rise.
+First, fine-tune series that reuse a 2023-era geometry with new names survive
+family-level deduplication, and \kvcWorstGeoClusterRecent{} such rows from the single
+most-duplicated geometry landed in 2025 or later; collapsing every geometry to one row
+makes the series monotone (\kvcMedianKvppGeoTwentyThree{} to
+\kvcMedianKvppGeoTwentyFour, \kvcMedianKvppGeoTwentyFive,
+\kvcMedianKvppGeoTwentySix). Second, the remaining 2025 cohort skews small: absolute KV
+per token fell (\kvcMedianKvTokTwentyFour{} to \kvcMedianKvTokTwentyFive) while
+per-parameter KV rose, the signature of small checkpoints whose attention stacks stay
+proportionally large --- and of multimodal checkpoints whose parameter counts include
+vision towers. Across checkpoints the pooled trend stays negative under every counting
+unit (family: $\rho=\kvcSpearmanRhoPP$, $p=\kvcSpearmanPPp$; geometry:
+$\rho=\kvcSpearmanRhoGeo$). The planning lesson is that a yearly fleet median tracks
+what publishers ship that year, deduplication unit included; in a year dominated by
+small releases and re-released fine-tunes, per-parameter heuristics will under-provision
+KV memory even while per-token architecture improves.
 
 \paragraph{MoE dilutes KV per parameter, not KV per sequence.}
 H3 was supported with the strongest effect in the census: MoE median
@@ -38,9 +45,9 @@ parameters (rank-biserial \kvcMoeRB, $p=$\kvcMoeP). The mechanism is dilution:
 experts add weights without adding attention layers, so the cache is set by the
 shared trunk \cite{jiang2024mixtral,deepseekai2024v2}. Dilution is not
 cheapness. Per-sequence KV bytes are unchanged by expert count, while total
-weights crowd the memory pool: \kvcInfeasibleBigModels{} census models exceed
-128\,GiB at 4-bit weights under the modeled 6\,GiB runtime overhead and admit no
-KV at all (Table~\ref{tab:capacity}). On
+weights crowd the memory pool: \kvcInfeasibleBigModels{} deduplicated models with known parameters exceed
+128\,GiB at 4-bit weights under the modeled 6\,GiB runtime overhead and admit no KV at
+all (\kvcWeightsAloneBig{} of them on weights alone; Table~\ref{tab:capacity}). On
 unified-memory edge devices, where weights and KV share one pool, this asymmetry
 decides what can be served at all \cite{rajesh2025edgemem}.
 
@@ -56,10 +63,12 @@ context fell from \kvcDominantShareTwentyThree\% (2023) to
 \kvcDominantShareTwentySix\% (2026). Against this, the 2025 small-model mass
 pulled the yearly median back to \kvcParityMedTwentyFive{} tokens, below the
 2023 median of \kvcParityMedTwentyThree{}. The pooled 2025--2026 median reached
-only \kvcHFourRatio{} times the 2023 value, far short of the pre-registered
-tenfold threshold, so H4 is \kvcHFourVerdict{} (Fig.~\ref{fig:parity}). The
-direction of the hypothesis was right; its magnitude was not, because parity
-inherits weight-byte growth and release mix, not KV savings alone.
+only \kvcHFourRatio{} times the 2023 value under the pre-registered unit, far short of
+the tenfold threshold, so H4 is \kvcHFourVerdict{} there --- but under geometry
+deduplication the same statistic is \kvcHFourRatioGeo$\times$ and crosses the
+threshold (Fig.~\ref{fig:parity}). The direction of the hypothesis was right; its
+magnitude depends on the counting unit, because parity inherits weight-byte growth and
+release mix, not KV savings alone.
 
 \paragraph{Capacity levers.}
 Under fixed budgets, geometry decides which lever pays. At 24\,GiB, small dense

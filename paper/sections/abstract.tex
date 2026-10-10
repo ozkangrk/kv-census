@@ -4,18 +4,25 @@ multi-sequence serving is bound by the key--value (KV) cache, whose size follows
 attention geometry---layers, KV heads, and head dimension---not parameter count.
 We census \kvcCensusRows{} open-weight decoder checkpoints released on the
 Hugging Face Hub since January 2023 (\kvcDedupRows{} after deduplicating
-base/instruct twins; \kvcOrgCount{} publishers), computing KV bytes per token
-from every public model config. We ask four questions. Did KV cost per parameter
+base/instruct twins, \kvcGeoRows{} distinct attention geometries; \kvcOrgCount{}
+publishers), computing KV bytes per token from every public model config that
+exposes its attention geometry (\kvcKvErrRows{} do not). We ask four questions. Did KV cost per parameter
 fall over time (RQ1)? Do parameter count or attention mechanisms predict the KV
 footprint (RQ2)? How much context and concurrency fit fixed memory budgets
 (RQ3)? Do analytic estimates match the caches a reference implementation
 actually allocates (RQ4)? Median KV cost per parameter fell to \kvcHOneRatio{} of
-its 2023 value (H1: \kvcHOneVerdict). Parameters alone predict weakly
-($R^2=\kvcParamsRsq$) while geometry and mechanism indicators alone predict most
-of the variance ($R^2=\kvcGeomRsq$; H2: \kvcHTwoVerdict). Mixture-of-experts
-checkpoints carry \kvcHThreeRatio{} of the dense per-parameter KV cost (H3:
-\kvcHThreeVerdict). The KV-parity context grew only \kvcHFourRatio$\times$ (H4:
-\kvcHFourVerdict). Analytic estimates match \kvcValWithin{} of \kvcValRows{}
-validation rows across \kvcValClasses{} attention classes within 1\%. Memory is
+its 2023 value under the pre-registered checkpoint-family unit, to
+\kvcHOneRatioGeo{} under one-row-per-geometry deduplication, but to
+\kvcHOneRatioNoMM{} once multimodal checkpoints---whose parameter counts include
+vision towers---are excluded; H1 is supported on the first two units and refuted
+on the last. Parameters alone predict weakly ($R^2=\kvcParamsRsq$) while geometry
+and mechanism indicators alone predict most of the variance
+($R^2=\kvcGeomRsq$; H2: \kvcHTwoVerdict, robust to the deduplication unit).
+Mixture-of-experts checkpoints carry \kvcHThreeRatio{} of the dense per-parameter
+KV cost (H3: \kvcHThreeVerdict, robust). The KV-parity context grew
+\kvcHFourRatio$\times$ under the pre-registered unit but
+\kvcHFourRatioGeo$\times$ under geometry deduplication, so H4's refutation is
+unit-sensitive. Analytic estimates match \kvcValWithin{} of \kvcValRows{}
+validation rows within 1\%, across \kvcValClasses{} attention classes\%. Memory is
 architecture: read the config, not the parameter count.
 \end{abstract}

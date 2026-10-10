@@ -4,9 +4,9 @@
 The census covers only what is publicly downloadable without license acceptance.
 Gating excluded \kvcGatedSkipped{} repositories, and the exclusions are
 concentrated: every \texttt{meta-llama} checkpoint was gated at snapshot time,
-so the census contains no Llama rows at all, and the earlier
+so the census contains no rows from that organization, and the earlier
 \texttt{google/gemma} catalog was skipped, leaving only the recent
-\texttt{gemma-4} checkpoints to represent that family. Both families anchor a
+\texttt{gemma-4} checkpoints to represent that family. Llama-architecture checkpoints released by other included publishers are present, but the primary Llama releases are absent. Both families anchor a
 large share of real deployments, and the Gemma~3 report documents exactly the
 window-heavy, KV-saving designs this paper studies \cite{gemmateam2025gemma3}.
 Their partial absence shifts yearly medians and the mechanism mix in directions
@@ -28,9 +28,15 @@ Coverage inside included repositories is imperfect. \kvcKvErrRows{}
 configurations could not be parsed into an attention geometry (missing or
 non-standard fields) and were dropped. \kvcNoParams{} rows lack parameter counts
 and are excluded from per-parameter statistics and from every capacity
-computation. The dedup heuristic collapses checkpoints with identical geometry
-into one row per group and keeps base/instruct twins that differ in geometry
-separate; trend medians are sensitive to where those group boundaries fall.
+computation. The dedup key is organization, name stem, and geometry: it collapses base/instruct twins
+but \emph{not} same-geometry fine-tunes with distinct names, so the
+\kvcDedupRows{} pre-registered groups realize only \kvcGeoRows{} distinct
+geometries (\kvcWorstGeoCluster{} rows share the most common one). Trend medians,
+p-values, and two verdicts (H1, H4) are sensitive to this unit choice, which is why
+every affected statistic is reported under both units. Multimodal rows (\kvcMMRows{}
+deduplicated rows) carry vision-tower-inflated parameter counts against
+language-backbone KV, deflating their per-parameter cost; RQ1 reports the
+multimodal-excluded cut for this reason.
 
 \paragraph{Analytic values are theoretical minima.}
 All KV figures follow from the configurations, not from measurements of deployed

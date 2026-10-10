@@ -90,3 +90,10 @@ Optional 7th: KV-dominant boundary fraction by year.
   thresholds, budgets, precisions, and overheads are unchanged.
 - 2026-10-10, Phase 2: figure/table model subsets use objective, code-documented selection rules
   (stated in analysis/run_analysis.py docstring), never hand-picking.
+- 2026-10-10, Phase 4 (post-review, before final gate): reporting-only additions from
+  adversarial review. The pre-registered primary unit (family-level dedup_group) is kept;
+  every unit-sensitive statistic is additionally reported under one-row-per-geometry
+  deduplication, and multimodal-excluded robustness cuts are reported because multimodal
+  parameter counts include vision towers. No pre-registered threshold was changed. The
+  regression standardized betas had a labeling off-by-one (intercept zipped as the first
+  predictor) found by review and fixed; R^2 values were unaffected.
