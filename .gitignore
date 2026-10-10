@@ -8,3 +8,6 @@ paper/*.aux
 paper/*.log
 paper/*.out
 paper/*.synctex*
+.tools/
+arxiv/
+paper/main.pdf.bak

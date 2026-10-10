@@ -17,8 +17,11 @@ analysis:
 validate:
 	$(VENV) analysis/validate_experiment.py
 
+# Tectonic: the project-local binary when present, else `tectonic` on PATH.
+TECTONIC ?= $(if $(wildcard .tools/tectonic),$(CURDIR)/.tools/tectonic,tectonic)
+
 paper:
-	cd paper && TECTONIC_CACHE_DIR=../.tools/tectonic-cache ../.tools/tectonic -X compile main.tex
+	cd paper && TECTONIC_CACHE_DIR=$(CURDIR)/.tools/tectonic-cache $(TECTONIC) -X compile main.tex
 
 test:
 	$(VENV) -m pytest tests/ -q
