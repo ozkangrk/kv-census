@@ -99,7 +99,7 @@ SWIGLU_TYPES = {
     "baichuan", "granite", "stablelm", "stablecode", "olmo", "olmo2",
     "deepseek", "chatglm", "glm4", "exaone", "codegemma", "arctic", "dbrx",
     "starcoder2", "openelm", "mpt", "nemotron", "olmoe", "hunyuan",
-    "hunyuan_v1_dense",
+    "hunyuan_v1_dense", "internlm", "internlm2",  # internlm2-7b: exact vs st
 }
 
 
